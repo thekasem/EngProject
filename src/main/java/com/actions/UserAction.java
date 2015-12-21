@@ -1,10 +1,18 @@
 package com.actions;
 
-import com.bean.User;
+import java.util.List;
+
+import com.dao.App;
+import com.entity.User;
 
 public class UserAction {
 	private User user;
-	private String arlert ="";
+	private String arlert = "";
+	private List<User> list;
+
+	public String getArlert() {
+		return arlert;
+	}
 
 	public User getUser() {
 		return user;
@@ -12,19 +20,26 @@ public class UserAction {
 
 	public void setUser(User user) {
 		this.user = user;
-	} 
+	}
 	
-	public String getArlert() {
-		return arlert;
+	public List<User> getList() {
+		return list;
 	}
 
-	public String execute(){
-		if (user.getName().equals("kasemsun")&&user.getCity().equals("0000")) {
-			return "success";
+	public String execute() {
+		String result = "";
+		App app = new App();
+		list = app.getUser();
+		for (User listUser : list) {
+			if (listUser.getUserName().equals(user.getUserName())&& listUser.getPassword().equals(user.getPassword())) {
+
+				result = "success";
+				return result;
+			}
 		}
 		arlert = "Login Fail";
-		return "input";
-		
+		result = "input";
+		return result;
 	}
 
 }

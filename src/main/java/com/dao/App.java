@@ -1,16 +1,13 @@
 package com.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.Session;
 
 import com.entity.HibernateUtil;
 import com.entity.User;
 
-/**
- * @author Nagesh Chauhan!
- * 
- */
 public class App {
 	public static void main(String[] args) {
 		App app = new App();
@@ -22,6 +19,8 @@ public class App {
 		user.setLastName("chauhan");
 		user.setGender("male");
 		user.setCity("gurgaon");
+		user.setPassword("0000");
+		user.setUserName("kasemsun");
 
 		User user1 = new User();
 		user1.setUserId(2);
@@ -29,6 +28,9 @@ public class App {
 		user1.setLastName("thakur");
 		user1.setGender("male");
 		user1.setCity("delhi");
+		user1.setPassword("0000");
+		user1.setUserName("kasemsun");
+
 
 		// save user in db
 		app.saveUser(user);
@@ -72,7 +74,7 @@ public class App {
 		session.getTransaction().commit();
 	}
 
-	public void getUser() {
+	public List<User> getUser() {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
@@ -90,5 +92,6 @@ public class App {
 			}
 		}
 		session.getTransaction().commit();
+		return list;
 	}
 }

@@ -15,6 +15,12 @@ public class User {
 	@Column(name = "user_id")
 	private int userId;
 
+	@Column(name = "user_name")
+	private String userName;
+
+	@Column(name = "password")
+	private String password;
+
 	@Column(name = "first_name")
 	private String firstName;
 
@@ -66,4 +72,21 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 }

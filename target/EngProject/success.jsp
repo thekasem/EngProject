@@ -9,7 +9,9 @@
 <title>Success Loging</title>
 </head>
 <body>
-welcome   <h style="color:orange;"><s:property value="user.name"/></h><br>
-password  <h style="color:orange;"><s:property value="user.city"/></h>
+<s:iterator value="list">
+welcome   <h style="color:orange;"><s:property value="User.userName"/></h><br>
+password  <h style="color:orange;"><s:property value="User.city"/></h>
+</s:iterator>
 </body>
 </html>

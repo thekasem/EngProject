@@ -11,7 +11,7 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background: #FEFCFF">
 
 	<div class="container">
 		<div class="container" style="margin-top: 10px;">
@@ -20,7 +20,7 @@
 			<a type="button" class="btn btn-primary">ADD Archive</a>
 		</div>
 		<table class="table table-bordered table-hover table-striped">
-			<thead>
+			 <thead style="color: #4863A0;">
 				<th>Activity Log ID</th>
 				<th>Date</th>
 				<th>Action Class</th>
@@ -33,7 +33,7 @@
 				<th>Condition Archive</th>
 			</thead>
 			<tbody>
-				<tr>
+				 <tr style="color: #98AFC7;">
 					<td>1</td>
 					<td>12/12/2015</td>
 					<td>classTest</td>

@@ -19,7 +19,7 @@
 			<a type="button" class="btn btn-primary">Refresh</a>
 			<a type="button" class="btn btn-primary">ADD Archive</a>
 		</div>
-		<table class="table table-hover table-striped">
+		<table class="table table-bordered table-hover table-striped">
 			<thead>
 				<th>Activity Log ID</th>
 				<th>Date</th>

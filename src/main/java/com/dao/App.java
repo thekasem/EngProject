@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 
+import com.entity.HibernateArchiveUtil;
 import com.entity.HibernateUtil;
 import com.entity.User;
 
@@ -48,7 +49,7 @@ public class App {
 	}
 
 	public void saveUser(User user) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
 		session.save(user);
@@ -57,7 +58,7 @@ public class App {
 	}
 
 	public void updateUser(User user) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
 		session.merge(user);
@@ -66,7 +67,7 @@ public class App {
 	}
 
 	public void deleteUser(User user) {
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
 		session.delete(user);
@@ -75,7 +76,7 @@ public class App {
 	}
 
 	public List<User> getUser() {
-		Session session = HibernateUtil.getSessionFactory().openSession();
+		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
 		ArrayList<User> list = (ArrayList<User>) session.createQuery(

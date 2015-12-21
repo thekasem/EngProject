@@ -1,27 +1,3 @@
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>ActivityArchiveList</title>
-</head>
-<body>
-	<table style="width: 100%">
-		<tr>
-			<th>Firstname</th>
-			<th>Lastname</th>
-			<th>Points</th>
-		</tr>
-		<tr>
-			<td>Eve</td>
-			<td>Jackson</td>
-			<td>94</td>
-		</tr>
-	</table>
-</body>
-</html> --%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,50 +14,134 @@
 <body>
 
 	<div class="container">
-		<div class="container">
-		
-		
-		
-		
-		
-		
+		<div class="container" style="margin-top: 10px;">
+			<a type="button" class="btn btn-primary" href="ActivityArchiveSearch.jsp">Search</a>
+			<a type="button" class="btn btn-primary">Refresh</a>
+			<a type="button" class="btn btn-primary">ADD Archive</a>
 		</div>
-		<div class="container">
-			<button type="button" class="btn btn-primary">Refresh</button>
-			<button type="button" class="btn btn-primary">Search</button>
-			<button type="button" class="btn btn-primary">ADD Archive</button>
-
-		</div>
-		<table class="table">
+		<table class="table table-hover table-striped">
 			<thead>
-				<right>
-				<h6>Archive Activity</h6>
-				</right>
-			<thead>
-				<tr>
-					<th>Firstname</th>
-					<th>Lastname</th>
-					<th>Email</th>
-				</tr>
+				<th>Activity Log ID</th>
+				<th>Date</th>
+				<th>Action Class</th>
+				<th>Action Name</th>
+				<th>Description</th>
+				<th>Client IP</th>
+				<th>Using time(ms.)</th>
+				<th>User Archive</th>
+				<th>Date Archive</th>
+				<th>Condition Archive</th>
 			</thead>
 			<tbody>
-				<tr class="success">
-					<td>John</td>
-					<td>Doe</td>
-					<td>john@example.com</td>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
 				</tr>
-				<tr class="danger">
-					<td>Mary</td>
-					<td>Moe</td>
-					<td>mary@example.com</td>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
 				</tr>
-				<tr class="info">
-					<td>July</td>
-					<td>Dooley</td>
-					<td>july@example.com</td>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>12/12/2015</td>
+					<td>classTest</td>
+					<td>actionTest</td>
+					<td>Test</td>
+					<td>192.103.152.2</td>
+					<td>0.02</td>
+					<td>Test</td>
+					<td>12/01/2016</td>
+					<td>Date = 12/12/2015</td>
 				</tr>
 			</tbody>
-			</thead>
 		</table>
 	</div>
 

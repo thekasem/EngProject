@@ -10,6 +10,41 @@
 			<result name="success">/success.jsp</result>
 			<result name="input">/index.jsp</result>
 		</action>
+		
+		<action name="activityArchive" class="com.actions.ActivityArchiveAction" method="archive">
+			<result name="add">/ActivityArchiveAdd.jsp</result>
+			<result name="list">/ActivityArchiveList.jsp</result>
+			<result name="search">/ActivityArchiveSearch.jsp</result>
+			<result name="refresh"></result>
+		</action>
+		
+		<action name="applicationArchive" class="com.actions.ApplicationArchiveAction" method="archive">
+			<result name="add">/ApplicationArchiveAdd.jsp</result>
+			<result name="list">/ApplicationArchiveList.jsp</result>
+			<result name="search">/ApplicationArchiveSearch.jsp</result>
+			<result name="refresh"></result>
+		</action>
+		
+		<action name="AUMBYCIFArchive" class="com.actions.AUMBYCIFArchiveAction" method="archive">
+			<result name="add">/AUMBYCIFArchiveAdd.jsp</result>
+			<result name="list">/AUMBYCIFArchiveList.jsp</result>
+			<result name="search">/AUMBYCIFArchiveSearch.jsp</result>
+			<result name="refresh"></result>
+		</action>
+		
+		<action name="AUMBYBranchArchive" class="com.actions.AUMBYBranchArchiveAction" method="archive">
+			<result name="add">/AUMBYBranchArchiveAdd.jsp</result>
+			<result name="list">/AUMBYBranchArchiveList.jsp</result>
+			<result name="search">/AUMBYBranchArchiveSearch.jsp</result>
+			<result name="refresh"></result>
+		</action>
+		
+		<action name="portHoldingOutStandingArchive" class="com.actions.PortHoldingOutStandingArchiveAction" method="archive">
+			<result name="add">/PortHoldingOutStandingArchiveAdd.jsp</result>
+			<result name="list">/PortHoldingOutStandingArchiveList.jsp</result>
+			<result name="search">/PortHoldingOutStandingArchiveSearch.jsp</result>
+			<result name="refresh"></result>
+		</action>
 
 	</package>
 

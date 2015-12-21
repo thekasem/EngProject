@@ -75,6 +75,11 @@
 			
 		});
 	</script>
+	<style>
+	 select.ui-datepicker-year {
+	color: #000;
+}
+	</style>
 
 </body>
 </html>

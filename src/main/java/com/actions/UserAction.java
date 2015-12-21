@@ -21,7 +21,7 @@ public class UserAction {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
+
 	public List<User> getList() {
 		return list;
 	}
@@ -31,8 +31,8 @@ public class UserAction {
 		App app = new App();
 		list = app.getUser();
 		for (User listUser : list) {
-			if (listUser.getUserName().equals(user.getUserName())&& listUser.getPassword().equals(user.getPassword())) {
-
+			if (user.getUserName().equals(listUser.getUserName())
+					&& user.getPassword().equals(listUser.getPassword())) {
 				result = "success";
 				return result;
 			}

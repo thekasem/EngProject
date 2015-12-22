@@ -1,12 +1,121 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Application Archive</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script
+	src="../../calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+<link rel="stylesheet"
+	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+
 </head>
 <body>
+	<div class="container">
+		<div class="container" style="margin-top: 50px;">
+			<a type="button" class="btn btn-info"
+				href="ActivityArchiveSearch.jsp">Reset</a> <a type="button"
+				class="btn btn-info">OK</a> <a type="button"
+				class="btn btn-info">Cancel</a>
+		</div>
 
+		<div style="margin-top: 10px;" align="right">
+			<h3>
+				<span class="label label-default">Search</span>
+			</h3>
+		</div>
+
+		<div class="panel panel-default" style="margin-top: 15px;">
+			<div class="panel-heading">
+				<Strong>Search Archive Application Log</Strong>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-md-2 control-label">Date</label>
+						<div class="col-md-3">
+							<s:textfield cssClass="datepicker form-control"></s:textfield>
+						</div>
+						<label class="col-md-2 control-label">Level</label>
+						<div class="btn-group">
+
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">Activity Log ID</label>
+						<div class="col-md-3">
+							<s:textfield name="action" cssClass="form-control"></s:textfield>
+						</div>
+						<label class="col-md-2 control-label">Mode</label>
+						<div class="btn-group">
+
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">Entity Class</label>
+						<div class="col-md-3">
+							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">User Archive</label>
+						<div class="col-md-3">
+							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
+						</div>
+						<label class="col-md-2 control-label">Date Archive</label>
+						<div class="col-md-3">
+							<s:textfield cssClass="datepicker form-control"></s:textfield>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.datepicker').datepicker({
+			changeYear : true,
+			yearRange : '-100:+100',
+			dateFormat : 'dd MM yy'
+
+		});
+	</script>
+	<style>
+select.ui-datepicker-year {
+	color: #000;
+}
+</style>
 </body>
 </html>

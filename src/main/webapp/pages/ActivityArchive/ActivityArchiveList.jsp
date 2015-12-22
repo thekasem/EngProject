@@ -39,21 +39,7 @@
 				<th>Condition Archive</th>
 			</thead>
 			<tbody>
-				 <tr style="color: #98AFC7;">
-					<td>1</td>
-					<td>12/12/2015</td>
-					<td>classTest</td>
-					<td>actionTest</td>
-					<td>Test</td>
-					<td>192.103.152.2</td>
-					<td>0.02</td>
-					<td>Test</td>
-					<td>12/01/2016</td>
-					<td>Date = 12/12/2015</td>
-					
-				</tr>
-				<br>
-				<tr>
+			<tr style="color: #98AFC7;">
 					<td>1</td>
 					<td>12/12/2015</td>
 					<td>classTest</td>
@@ -65,7 +51,7 @@
 					<td>12/01/2016</td>
 					<td>Date = 12/12/2015</td>
 				</tr>
-				<tr>
+				<tr style="color: #98AFC7;">
 					<td>1</td>
 					<td>12/12/2015</td>
 					<td>classTest</td>
@@ -77,7 +63,7 @@
 					<td>12/01/2016</td>
 					<td>Date = 12/12/2015</td>
 				</tr>
-				<tr>
+				<tr style="color: #98AFC7;">
 					<td>1</td>
 					<td>12/12/2015</td>
 					<td>classTest</td>
@@ -89,55 +75,7 @@
 					<td>12/01/2016</td>
 					<td>Date = 12/12/2015</td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>12/12/2015</td>
-					<td>classTest</td>
-					<td>actionTest</td>
-					<td>Test</td>
-					<td>192.103.152.2</td>
-					<td>0.02</td>
-					<td>Test</td>
-					<td>12/01/2016</td>
-					<td>Date = 12/12/2015</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>12/12/2015</td>
-					<td>classTest</td>
-					<td>actionTest</td>
-					<td>Test</td>
-					<td>192.103.152.2</td>
-					<td>0.02</td>
-					<td>Test</td>
-					<td>12/01/2016</td>
-					<td>Date = 12/12/2015</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>12/12/2015</td>
-					<td>classTest</td>
-					<td>actionTest</td>
-					<td>Test</td>
-					<td>192.103.152.2</td>
-					<td>0.02</td>
-					<td>Test</td>
-					<td>12/01/2016</td>
-					<td>Date = 12/12/2015</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>12/12/2015</td>
-					<td>classTest</td>
-					<td>actionTest</td>
-					<td>Test</td>
-					<td>192.103.152.2</td>
-					<td>0.02</td>
-					<td>Test</td>
-					<td>12/01/2016</td>
-					<td>Date = 12/12/2015</td>
-				</tr>
-				<tr>
+				<tr style="color: #98AFC7;">
 					<td>1</td>
 					<td>12/12/2015</td>
 					<td>classTest</td>

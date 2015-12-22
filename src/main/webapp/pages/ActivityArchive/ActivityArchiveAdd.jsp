@@ -22,7 +22,6 @@
 	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
 	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
-
 </head>
 <body>
 
@@ -40,27 +39,30 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading">Delete Archive Activity Log</div>
+			<div class="panel-heading">ADD Archive Activity Log</div>
 			<div class="panel-body">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<label class="col-md-3 control-label">Select Activity Date
+						<label class="col-md-3 control-label">Select Application Date
 							:</label>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>
 
 						<label class="col-md-2 control-label">Select Condition :</label>
-						<div>
-							<div class="btn-group col-md-3">
-								<a class="btn btn-default dropdown-toggle btn-select2"
-									data-toggle="dropdown" href="#"><span class="caret"></span></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">=</a></li>
-									<li><a href="#"><</a></li>
-								</ul>
-							</div>
+						<div class="btn-group">
+
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown">
+								= <span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#">=</a></li>
+								<li><a href="#"><</a></li>
+							</ul>
 						</div>
+
 					</div>
 				</form>
 			</div>

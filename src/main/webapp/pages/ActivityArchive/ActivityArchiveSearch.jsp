@@ -29,9 +29,9 @@
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
 			<a type="button" class="btn btn-info"
-				href="ActivityArchiveSearch.jsp">Search</a> <a type="button"
-				class="btn btn-info">Refresh</a> <a type="button"
-				class="btn btn-info">ADD Archive</a>
+				href="ActivityArchiveSearch.jsp">Reset</a> <a type="button"
+				class="btn btn-info">OK</a> <a type="button"
+				class="btn btn-info">Cancel</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -48,9 +48,6 @@
 				<form class="form-horizontal">
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date</label>
-						<%-- <div class="col-md-3">
-								<s:textfield name="date" cssClass="form-control"></s:textfield>
-							</div> --%>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>
@@ -70,10 +67,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-2 control-label">Date Acrive</label>
-						<%-- <div class="col-md-3">
-							<s:textfield name="dateacrive" cssClass="form-control"></s:textfield>
-						</div> --%>
+						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>
@@ -83,9 +77,9 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-2 control-label">User Acrive</label>
+						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="useracrive" cssClass="form-control"></s:textfield>
+							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
 				</form>

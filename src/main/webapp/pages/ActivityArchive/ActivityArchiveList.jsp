@@ -12,14 +12,20 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
-
 	<div class="container">
-		<div class="container" style="margin-top: 10px;">
-			<a type="button" class="btn btn-primary" href="ActivityArchiveSearch.jsp">Search</a>
-			<a type="button" class="btn btn-primary">Refresh</a>
-			<a type="button" class="btn btn-primary">ADD Archive</a>
+		<div class="container" style="margin-top: 50px;">
+			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp">Search</a>
+			<a type="button" class="btn btn-info">Refresh</a>
+			<a type="button" class="btn btn-info">ADD Archive</a>
 		</div>
-		<table class="table table-bordered table-hover table-striped">
+		
+		<div style="margin-top: 10px;" align="right">
+			<h3>
+				<span class="label label-default">List</span>
+			</h3>
+		</div>
+		
+		<table class="table table-striped table-hover " >
 			 <thead style="color: #4863A0;">
 				<th>Activity Log ID</th>
 				<th>Date</th>
@@ -44,7 +50,9 @@
 					<td>Test</td>
 					<td>12/01/2016</td>
 					<td>Date = 12/12/2015</td>
+					
 				</tr>
+				<br>
 				<tr>
 					<td>1</td>
 					<td>12/12/2015</td>

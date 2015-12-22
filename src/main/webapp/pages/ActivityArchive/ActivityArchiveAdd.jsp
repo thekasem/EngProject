@@ -28,10 +28,9 @@
 
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-primary"
-				href="ActivityArchiveAdd.jsp">Reset</a> <a type="button"
-				class="btn btn-primary" href="ActivityArchiveList.jsp">Cancel</a> <a
-				type="button" class="btn btn-primary" href="ActivityArchiveList.jsp">OK</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveAdd.jsp">Reset</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">Cancel</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">OK</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -43,43 +42,44 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Delete Archive Activity Log</div>
 			<div class="panel-body">
-				Select Activity Date :
-				<!-- Load jQuery and bootstrap datepicker scripts -->
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label class="col-md-3 control-label">Select Activity Date
+							:</label>
+						<div class="col-md-3">
+							<s:textfield cssClass="datepicker form-control"></s:textfield>
+						</div>
 
-				<div class="col-md-3">
-					<s:textfield cssClass="datepicker form-control"></s:textfield>
-				</div>
-				<div>
-					<div class="btn-group">
-						<a class="btn btn-default dropdown-toggle btn-select2"
-							data-toggle="dropdown" href="#"><span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">=</a></li>
-							<li><a href="#"><</a></li>
-						</ul>
+						<label class="col-md-2 control-label">Select Condition :</label>
+						<div>
+							<div class="btn-group col-md-3">
+								<a class="btn btn-default dropdown-toggle btn-select2"
+									data-toggle="dropdown" href="#"><span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">=</a></li>
+									<li><a href="#"><</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-
-
-
-
-
-				</div>
+				</form>
 			</div>
+
 		</div>
 	</div>
 	<script>
 		$('.datepicker').datepicker({
-			changeYear:true,
-			yearRange:'-100:+100',
-			dateFormat:'dd MM yy'
-			
+			changeYear : true,
+			yearRange : '-100:+100',
+			dateFormat : 'dd MM yy'
+
 		});
 	</script>
 	<style>
-	 select.ui-datepicker-year {
+select.ui-datepicker-year {
 	color: #000;
 }
-	</style>
+</style>
 
 </body>
 </html>

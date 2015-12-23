@@ -59,18 +59,12 @@
 					
 					<div class="form-group">
 						<label class="col-md-2 control-label">Action Name</label>
-						<div class="col-md-3 btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-							</ul>
-						</div>
+							<div class="col-md-3">
+								<select id="actionname" class="form-control">
+									<option></option>
+									<option></option>
+								</select>
+							</div>
 						<label class="col-md-2 control-label">Description</label>
 						<div class="col-md-3">
 							<s:textfield name="description" cssClass="form-control"></s:textfield>

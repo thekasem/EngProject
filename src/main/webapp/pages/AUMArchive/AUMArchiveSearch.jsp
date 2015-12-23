@@ -47,21 +47,14 @@
 				<form class="form-horizontal">
 					<div class="form-group">
 						<label class="col-md-2 control-label">View By</label>
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">AUM By CIF</a></li>
-								<li><a href="#">AUM By Branch</a></li>
-								<li><a href="#">Port Holding By Sub Account</a></li>
-							</ul>
+						<div class="col-sm-6 col-md-3">
+							<select id="viewby" class="form-control">
+								<option>AUM By CIF</option>
+								<option>AUM By Branch</option>
+								<option>Port Holding By Sub Account</option>
+							</select>
 						</div>
 					</div>
-
 					<div class="form-group">
 						<label class="col-md-2 control-label">AUM Date</label>
 						<div class="col-md-3">

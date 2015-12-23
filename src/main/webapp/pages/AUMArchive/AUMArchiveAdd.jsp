@@ -39,29 +39,35 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading"><Strong>ADD AUM Archive Log</Strong></div>
+			<div class="panel-heading">
+				<Strong>ADD AUM Archive Log</Strong>
+			</div>
 			<div class="panel-body">
 				<form class="form-horizontal">
+				
+					
 					<div class="form-group">
-						<label class="col-md-3 control-label">AUM Date :</label>
+						<label class="col-md-2 control-label">View By</label>
+						<div class="col-sm-6 col-md-3">
+							<select id="company" class="form-control">
+								<option>AUM By CIF</option>
+								<option>AUM By Branch</option>
+								<option>Port Holding By Sub Account</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">AUM Date</label>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>
-
 						<label class="col-md-2 control-label">Select Condition :</label>
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								= <span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">=</a></li>
-								<li><a href="#"><</a></li>
-							</ul>
-						</div>
-
+							<div class="col-sm-6 col-md-3">
+								<select id="selectcondition" class="form-control">
+									<option>=</option>
+									<option><</option>
+								</select>
+							</div>
 					</div>
 				</form>
 			</div>

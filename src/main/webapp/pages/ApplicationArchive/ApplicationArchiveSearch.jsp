@@ -51,18 +51,12 @@
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Level</label>
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-							</ul>
-						</div>
+							<div class="col-sm-6 col-md-3">
+								<select id="level" class="form-control">
+									<option></option>
+									<option></option>
+								</select>
+							</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">Activity Log ID</label>
@@ -70,18 +64,12 @@
 							<s:textfield name="action" cssClass="form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Mode</label>
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#"></a></li>
-								<li><a href="#"></a></li>
-							</ul>
-						</div>
+							<div class="col-sm-6 col-md-3">
+								<select id="mode" class="form-control">
+									<option></option>
+									<option></option>
+								</select>
+							</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">Entity Class</label>

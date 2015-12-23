@@ -23,7 +23,6 @@
 	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
 	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
-
 </head>
 <body>
 	<div class="container">
@@ -47,18 +46,12 @@
 				<form class="form-horizontal">
 					<div class="form-group">
 						<label class="col-md-2 control-label">View By</label>
-						<div class="btn-group">
-
-							<button type="button" class="btn btn-default dropdown-toggle"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">AUM By CIF</a></li>
-								<li><a href="#">AUM By Branch</a></li>
-								<li><a href="#">Port Holding By Sub Account</a></li>
-							</ul>
+						<div class="col-sm-6 col-md-3">
+							<select id="company" class="form-control">
+								<option>AUM By CIF</option>
+								<option>AUM By Branch</option>
+								<option>Port Holding By Sub Account</option>
+							</select>
 						</div>
 					</div>
 
@@ -67,259 +60,259 @@
 							<span class="label label-default">AUM By CIF</span>
 						</h3>
 					</div>
-					
+
 					<table class="table table-striped table-hover ">
-					<thead style="color: #4863A0;">
-						<th>Event ID</th>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Level</th>
-						<th>Entity Class</th>
-						<th>Mode</th>
-						<th>Client IP</th>
-						<th>Front Server IP</th>
-						<th>Member Name</th>
-						<th>Activity Log ID</th>
-						<th>User Archive</th>
-						<th>Date Archive</th>
-						<th>Condition Archive</th>
-					</thead>
-					<tbody>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-					</tbody>
-				</table>
-					
+						<thead style="color: #4863A0;">
+							<th>Event ID</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Level</th>
+							<th>Entity Class</th>
+							<th>Mode</th>
+							<th>Client IP</th>
+							<th>Front Server IP</th>
+							<th>Member Name</th>
+							<th>Activity Log ID</th>
+							<th>User Archive</th>
+							<th>Date Archive</th>
+							<th>Condition Archive</th>
+						</thead>
+						<tbody>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+						</tbody>
+					</table>
+
 					<div style="margin-top: 10px;" align="right">
 						<h3>
 							<span class="label label-default">AUM By Branch</span>
 						</h3>
 					</div>
-					
+
 					<table class="table table-striped table-hover ">
-					<thead style="color: #4863A0;">
-						<th>Event ID</th>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Level</th>
-						<th>Entity Class</th>
-						<th>Mode</th>
-						<th>Client IP</th>
-						<th>Front Server IP</th>
-						<th>Member Name</th>
-						<th>Activity Log ID</th>
-						<th>User Archive</th>
-						<th>Date Archive</th>
-						<th>Condition Archive</th>
-					</thead>
-					<tbody>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-					</tbody>
-				</table>
-					
+						<thead style="color: #4863A0;">
+							<th>Event ID</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Level</th>
+							<th>Entity Class</th>
+							<th>Mode</th>
+							<th>Client IP</th>
+							<th>Front Server IP</th>
+							<th>Member Name</th>
+							<th>Activity Log ID</th>
+							<th>User Archive</th>
+							<th>Date Archive</th>
+							<th>Condition Archive</th>
+						</thead>
+						<tbody>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+						</tbody>
+					</table>
+
 					<div style="margin-top: 10px;" align="right">
 						<h3>
 							<span class="label label-default">Port Holding By Sub
 								Account</span>
 						</h3>
 					</div>
-					
+
 					<table class="table table-striped table-hover ">
-					<thead style="color: #4863A0;">
-						<th>Event ID</th>
-						<th>Date</th>
-						<th>Time</th>
-						<th>Level</th>
-						<th>Entity Class</th>
-						<th>Mode</th>
-						<th>Client IP</th>
-						<th>Front Server IP</th>
-						<th>Member Name</th>
-						<th>Activity Log ID</th>
-						<th>User Archive</th>
-						<th>Date Archive</th>
-						<th>Condition Archive</th>
-					</thead>
-					<tbody>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-						<tr style="color: #98AFC7;">
-							<th>1</th>
-							<th>20/10/2015</th>
-							<th>12:12:59</th>
-							<th>Test</th>
-							<th>classTest</th>
-							<th>Test</th>
-							<th>192.155.125.0</th>
-							<th>10.10.10.10</th>
-							<th>TestName</th>
-							<th>14525...</th>
-							<th>TestName</th>
-							<th>20/10/2015</th>
-							<th>Date = 20/10/2015</th>
-						</tr>
-					</tbody>
-				</table>
+						<thead style="color: #4863A0;">
+							<th>Event ID</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Level</th>
+							<th>Entity Class</th>
+							<th>Mode</th>
+							<th>Client IP</th>
+							<th>Front Server IP</th>
+							<th>Member Name</th>
+							<th>Activity Log ID</th>
+							<th>User Archive</th>
+							<th>Date Archive</th>
+							<th>Condition Archive</th>
+						</thead>
+						<tbody>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+							<tr style="color: #98AFC7;">
+								<th>1</th>
+								<th>20/10/2015</th>
+								<th>12:12:59</th>
+								<th>Test</th>
+								<th>classTest</th>
+								<th>Test</th>
+								<th>192.155.125.0</th>
+								<th>10.10.10.10</th>
+								<th>TestName</th>
+								<th>14525...</th>
+								<th>TestName</th>
+								<th>20/10/2015</th>
+								<th>Date = 20/10/2015</th>
+							</tr>
+						</tbody>
+					</table>
 				</form>
 			</div>
 		</div>

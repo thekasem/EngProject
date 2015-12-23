@@ -25,27 +25,13 @@
 			<result name="refresh"></result>
 		</action>
 		
-		<action name="AUMBYCIFArchive" class="com.actions.AUMBYCIFArchiveAction" method="archive">
-			<result name="add">/AUMBYCIFArchiveAdd.jsp</result>
-			<result name="list">/AUMBYCIFArchiveList.jsp</result>
-			<result name="search">/AUMBYCIFArchiveSearch.jsp</result>
+		<action name="AUMArchive" class="com.actions.AUMArchiveAction" method="archive">
+			<result name="add">/AUMArchiveAdd.jsp</result>
+			<result name="list">/AUMArchiveList.jsp</result>
+			<result name="search">/AUMArchiveSearch.jsp</result>
 			<result name="refresh"></result>
 		</action>
 		
-		<action name="AUMBYBranchArchive" class="com.actions.AUMBYBranchArchiveAction" method="archive">
-			<result name="add">/AUMBYBranchArchiveAdd.jsp</result>
-			<result name="list">/AUMBYBranchArchiveList.jsp</result>
-			<result name="search">/AUMBYBranchArchiveSearch.jsp</result>
-			<result name="refresh"></result>
-		</action>
-		
-		<action name="portHoldingOutStandingArchive" class="com.actions.PortHoldingOutStandingArchiveAction" method="archive">
-			<result name="add">/PortHoldingOutStandingArchiveAdd.jsp</result>
-			<result name="list">/PortHoldingOutStandingArchiveList.jsp</result>
-			<result name="search">/PortHoldingOutStandingArchiveSearch.jsp</result>
-			<result name="refresh"></result>
-		</action>
-
 	</package>
 
 </struts>

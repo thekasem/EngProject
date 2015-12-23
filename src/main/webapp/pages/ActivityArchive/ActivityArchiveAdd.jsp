@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Activity Archive</title>
+<title>Activity Archive ADD</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -39,11 +39,11 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading">ADD Archive Activity Log</div>
+			<div class="panel-heading"><strong>ADD Archive Activity Log</strong></div>
 			<div class="panel-body">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<label class="col-md-3 control-label">Select Application Date
+						<label class="col-md-3 control-label">Select Activity Date
 							:</label>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
@@ -74,7 +74,6 @@
 			changeYear : true,
 			yearRange : '-100:+100',
 			dateFormat : 'dd MM yy'
-
 		});
 	</script>
 	<style>
@@ -82,6 +81,5 @@ select.ui-datepicker-year {
 	color: #000;
 }
 </style>
-
 </body>
 </html>

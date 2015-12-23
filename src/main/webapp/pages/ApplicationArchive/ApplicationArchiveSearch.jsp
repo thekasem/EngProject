@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Application Archive</title>
+<title>Application Archive Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -28,10 +28,9 @@
 <body>
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info"
-				href="ActivityArchiveSearch.jsp">Reset</a> <a type="button"
-				class="btn btn-info">OK</a> <a type="button"
-				class="btn btn-info">Cancel</a>
+			<a type="button" class="btn btn-info" href="ApplicationArchiveSearch.jsp">Reset</a>
+			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">OK</a>
+			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Cancel</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -109,7 +108,6 @@
 			changeYear : true,
 			yearRange : '-100:+100',
 			dateFormat : 'dd MM yy'
-
 		});
 	</script>
 	<style>

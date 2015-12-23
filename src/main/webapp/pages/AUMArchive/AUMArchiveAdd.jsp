@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Application Archive ADD</title>
+<title>AUM Archive Log ADD</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -27,9 +27,9 @@
 
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info" href="ApplicationArchiveAdd.jsp">Reset</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Cancel</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">OK</a>
+			<a type="button" class="btn btn-info" href="AUMArchiveAdd.jsp">Reset</a>
+			<a type="button" class="btn btn-info" href="AUMArchiveList.jsp">Cancel</a>
+			<a type="button" class="btn btn-info" href="AUMArchiveList.jsp">OK</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -39,12 +39,11 @@
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading"><strong>ADD Archive Application Log</strong></div>
+			<div class="panel-heading"><Strong>ADD AUM Archive Log</Strong></div>
 			<div class="panel-body">
 				<form class="form-horizontal">
 					<div class="form-group">
-						<label class="col-md-3 control-label">Select Application
-							Date :</label>
+						<label class="col-md-3 control-label">AUM Date :</label>
 						<div class="col-md-3">
 							<s:textfield cssClass="datepicker form-control"></s:textfield>
 						</div>

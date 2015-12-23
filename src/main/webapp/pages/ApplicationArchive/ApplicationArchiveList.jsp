@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Application Archive</title>
+<title>Application Archive List</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -14,10 +14,9 @@
 <body style="background: #FEFCFF">
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info"
-				href="ApplicationArchiveSearch.jsp">Search</a> <a type="button"
-				class="btn btn-info">Refresh</a> <a type="button"
-				class="btn btn-info">ADD Archive</a>
+			<a type="button" class="btn btn-info" href="ApplicationArchiveSearch.jsp">Search</a> 
+			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Refresh</a> 
+			<a type="button" class="btn btn-info" href="ApplicationArchiveAdd.jsp">ADD	Archive</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -106,6 +105,5 @@
 			</tbody>
 		</table>
 	</div>
-
 </body>
 </html>

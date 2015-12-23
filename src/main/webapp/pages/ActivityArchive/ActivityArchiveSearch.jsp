@@ -5,7 +5,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Activity Archive</title>
+<title>Activity Archive Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -28,10 +28,9 @@
 <body>
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info"
-				href="ActivityArchiveSearch.jsp">Reset</a> <a type="button"
-				class="btn btn-info">OK</a> <a type="button"
-				class="btn btn-info">Cancel</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp">Reset</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">OK</a> 
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">Cancel</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
@@ -56,10 +55,21 @@
 							<s:textfield name="uri" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
+					
+					
 					<div class="form-group">
 						<label class="col-md-2 control-label">Action Name</label>
-						<div class="col-md-3">
-							<s:textfield name="action" cssClass="form-control"></s:textfield>
+						<div class="col-md-3 btn-group">
+
+							<button type="button" class="btn btn-default dropdown-toggle"
+								data-toggle="dropdown">
+								<span class="caret"></span>
+							</button>
+
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="#"></a></li>
+								<li><a href="#"></a></li>
+							</ul>
 						</div>
 						<label class="col-md-2 control-label">Description</label>
 						<div class="col-md-3">
@@ -91,7 +101,6 @@
 			changeYear : true,
 			yearRange : '-100:+100',
 			dateFormat : 'dd MM yy'
-
 		});
 	</script>
 	<style>

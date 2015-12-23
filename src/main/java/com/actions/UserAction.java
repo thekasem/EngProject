@@ -3,6 +3,7 @@ package com.actions;
 import java.util.List;
 
 import com.dao.App;
+import com.dao.LoginDao;
 import com.entity.User;
 
 public class UserAction {
@@ -27,18 +28,22 @@ public class UserAction {
 	}
 
 	public String execute() {
+		LoginDao loginDao = new LoginDao();
 		String result = "";
-		App app = new App();
-		list = app.getUser();
-		for (User listUser : list) {
-			if (user.getUserName().equals(listUser.getUserName())
-					&& user.getPassword().equals(listUser.getPassword())) {
+		User userlogin = new User();
+		try{
+		  userlogin = loginDao.checkLoginUser(user.getUserName(), user.getPassword());
+			if (userlogin != null){
+				App app = new App();
+				list = app.getUser();
 				result = "success";
 				return result;
 			}
+		}catch(Exception e){
+			result= "input";
+			e.printStackTrace();
 		}
-		arlert = "Login Fail";
-		result = "input";
+		
 		return result;
 	}
 

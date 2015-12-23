@@ -1,4 +1,4 @@
-package com.bean;
+package com.controller;
 
 public class User {
 	private String name;

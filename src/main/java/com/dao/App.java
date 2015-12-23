@@ -9,7 +9,7 @@ import com.entity.HibernateArchiveUtil;
 import com.entity.HibernateUtil;
 import com.entity.User;
 
-public class App {
+public class App  {
 	public static void main(String[] args) {
 		App app = new App();
 
@@ -79,8 +79,7 @@ public class App {
 		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
 		session.beginTransaction();
 
-		ArrayList<User> list = (ArrayList<User>) session.createQuery(
-				"from User").list();
+		ArrayList<User> list = (ArrayList<User>) session.createQuery("from User").list();
 		if (list != null) {
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println("User Data : " + list.get(i).getUserId());

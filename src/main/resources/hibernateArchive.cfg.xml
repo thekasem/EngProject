@@ -19,6 +19,11 @@
 		<property name="current_session_context_class">thread</property>
 
 		<mapping class="com.entity.User" />
+		<mapping class="com.entity.archive.ArchiveActivityLogMini" />
+		<mapping class="com.entity.archive.ArchiveApplictionLogMini"/>
+		<mapping class="com.entity.archive.ArchiveAUMByCIFMini"/>
+		<mapping class="com.entity.archive.ArchiveAUMByBranchMini"/>
+		<mapping class="com.entity.archive.ArchivePortHoldingBySubAccountMini"/>
 
 	</session-factory>
 </hibernate-configuration>

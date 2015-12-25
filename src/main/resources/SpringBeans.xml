@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+
+	<!-- inject ot action -->
+   <bean id="userAction" class="com.contact.action.ContactLogin">
+		<property name="loginController" ref="logincontroller" />
+	</bean>
+
+	<!-- inject to Controller -->
+	<bean id="logincontroller" class="com.controller.implement.LoginController">
+		<property name="loginDao" ref="logindao" />
+	</bean>
+
+	<!-- inject to Dao -->
+	<bean id="logindao" class="com.dao.implement.LoginDao" />
+
+</beans>

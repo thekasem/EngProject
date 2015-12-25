@@ -2,14 +2,18 @@ package com.actions;
 
 import java.util.List;
 
-import com.dao.App;
-import com.dao.LoginDao;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.contact.action.ContactLogin;
+import com.dao.implement.App;
 import com.entity.User;
 
 public class UserAction {
 	private User user;
 	private String arlert = "";
 	private List<User> list;
+	private ContactLogin userController;
 
 	public String getArlert() {
 		return arlert;
@@ -26,16 +30,21 @@ public class UserAction {
 	public List<User> getList() {
 		return list;
 	}
-
+    public void ContactController(){
+    	ApplicationContext context = new ClassPathXmlApplicationContext(
+				"SpringBeans.xml");
+    	 userController = (ContactLogin)context.getBean("userAction");
+    }
+	
 	public String execute() {
-		LoginDao loginDao = new LoginDao();
+		ContactController();
+		
 		String result = "";
 		User userlogin = new User();
 		try{
-		  userlogin = loginDao.checkLoginUser(user.getUserName(), user.getPassword());
+		  userlogin = userController.checkLoginUser(user.getUserName(), user.getPassword());
 			if (userlogin != null){
-				App app = new App();
-				list = app.getUser();
+				list = userController.getUser();
 				result = "success";
 				return result;
 			}

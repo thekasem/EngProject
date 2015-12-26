@@ -45,6 +45,7 @@ public class UserAction {
 		  userlogin = userController.checkLoginUser(user.getUserName(), user.getPassword());
 			if (userlogin != null){
 				list = userController.getUser();
+//				userController.testSent(list);
 				result = "success";
 				return result;
 			}

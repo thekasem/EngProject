@@ -1,5 +1,6 @@
 package com.controller.implement;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.controller.interfaces.ILoginController;
@@ -30,6 +31,11 @@ public class LoginController implements ILoginController {
 	public List<User> getUser() {
 		// TODO Auto-generated method stub
 		return loginDao.getUser();
+	}
+
+	public void testSent(List<User> list) throws IllegalAccessException, InvocationTargetException {
+		loginDao.testSent(list);
+		
 	}
       
       

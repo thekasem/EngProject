@@ -1,5 +1,6 @@
 package com.contact.action;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.controller.interfaces.ILoginController;
@@ -32,5 +33,12 @@ public class ContactLogin implements ILoginController {
 		// TODO Auto-generated method stub
 		return loginController.getUser();
 	}
+
+	public void testSent(List<User> list) throws IllegalAccessException,
+			InvocationTargetException {
+		loginController.testSent(list);
+		
+	}
+	
 
 }

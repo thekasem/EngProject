@@ -1,5 +1,6 @@
 package com.controller.interfaces;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 import com.entity.User;
@@ -10,4 +11,6 @@ public interface ILoginController {
 	public User checkLoginUser(String user, String password);
 	
 	List<User> getUser();
+	
+	public void testSent(List<User> list) throws IllegalAccessException, InvocationTargetException;
 }

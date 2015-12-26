@@ -1,8 +1,10 @@
 package com.dao.implement;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -11,45 +13,48 @@ import com.dao.interfaces.ILoginDao;
 import com.entity.HibernateArchiveUtil;
 import com.entity.HibernateUtil;
 import com.entity.User;
+import com.entity.archive.UserTest;
 
 import freemarker.log.Logger;
 
 
 public class LoginDao implements ILoginDao {
 	private static Logger log = Logger.getLogger(LoginDao.class.getName());
-
+    private static Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+    
 	public  User checkLogin(String user, String password) {
-		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-		Criteria criteria = session.createCriteria(User.class);
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		Criteria criteria = sessionB.createCriteria(User.class);
 		criteria.add(Restrictions.eq("userName", user));
 		criteria.add(Restrictions.eq("password", password));
 
 		User userLogin = (User) criteria.list().get(0);
 		log.info(userLogin.toString());
 
-		session.getTransaction().commit();
+		sessionB.getTransaction().commit();
 
 		return userLogin;
 	}
 
 	public  User checkLoginUser(String user, String password) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		boolean result = false;
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		session.beginTransaction();
+		sessionB.beginTransaction();
 		User userLogin = new User();
 		try {
-			userLogin = (User) session.createQuery("from User where userName='" + user	+ "' and password = '" + password + "'").list().get(0);
+			userLogin = (User) sessionB.createQuery("from User where userName='" + user	+ "' and password = '" + password + "'").list().get(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return userLogin;
 	}
 	public List<User> getUser() {
-		Session session = HibernateArchiveUtil.getSessionFactory().openSession();
-		session.beginTransaction();
-
-		ArrayList<User> list = (ArrayList<User>) session.createQuery("from User").list();
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<User> list = null;
+       try{
+		 list = (List<User>) sessionB.createQuery("from User").list();
 		if (list != null) {
 			for (int i = 0; i < list.size(); i++) {
 				System.out.println("User Data : " + list.get(i).getUserId());
@@ -61,8 +66,33 @@ public class LoginDao implements ILoginDao {
 				System.out.println("User City : " + list.get(i).getCity());
 			}
 		}
-		session.getTransaction().commit();
+       }catch(Exception e){
+    	   e.printStackTrace();
+       }
+		sessionB.getTransaction().commit();
 		return list;
 	}
+
+	public void testSent(List<User> list) throws IllegalAccessException, InvocationTargetException {
+		sessionA.beginTransaction();
+		for(User user:list){
+			UserTest to = new UserTest();
+			BeanUtils.copyProperties(to, user);
+			to.setUserToadd("admin001");
+			sessionA.save(to);
+		}
+		sessionA.getTransaction().commit();
+	}
+	
+	/*
+	public static void main(String args[]){
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		User user = new User();
+		sessionB.load(user, 7);
+		System.out.println(user.getUserId()+"  "+user.getFirstName()+" "+user.getPassword()+"  "+user.getCity());
+		
+		sessionB.getTransaction().commit();
+	}*/
 
 }

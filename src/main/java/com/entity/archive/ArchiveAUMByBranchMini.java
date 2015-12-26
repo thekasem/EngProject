@@ -2,7 +2,6 @@ package com.entity.archive;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,7 +10,6 @@ import javax.persistence.Table;
 public class ArchiveAUMByBranchMini {
 	
 	@Id
-	@GeneratedValue
 	@Column(name = "AUMBYBRANCHID")
 	private int aumByBranchId;
 	

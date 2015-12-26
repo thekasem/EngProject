@@ -13,7 +13,6 @@ import javax.persistence.Table;
 public class ArchivePortHoldingBySubAccountMini {
 	
 	@Id
-	@GeneratedValue
 	@Column(name = "PORTHOLDINGID")
 	private int portHoldingId;
 	

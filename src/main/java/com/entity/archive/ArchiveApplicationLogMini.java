@@ -2,16 +2,14 @@ package com.entity.archive;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "CM_ARCHIVEAPPICATIONLOG")
-public class ArchiveApplictionLogMini {
+public class ArchiveApplicationLogMini {
 
 	@Id
-	@GeneratedValue
 	@Column(name = "EVENTID")
 	private int eventId;
 	

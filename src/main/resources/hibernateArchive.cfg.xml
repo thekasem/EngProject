@@ -24,6 +24,6 @@
 		<mapping class="com.entity.archive.ArchiveAUMByCIFMini"/>
 		<mapping class="com.entity.archive.ArchiveAUMByBranchMini"/>
 		<mapping class="com.entity.archive.ArchivePortHoldingBySubAccountMini"/>
-
+        <mapping class="com.entity.archive.UserTest"/>
 	</session-factory>
 </hibernate-configuration>

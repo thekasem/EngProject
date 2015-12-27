@@ -20,7 +20,7 @@
 
 		<mapping class="com.entity.User" />
 		<mapping class="com.entity.archive.ArchiveActivityLogMini" />
-		<mapping class="com.entity.archive.ArchiveApplictionLogMini"/>
+		<mapping class="com.entity.archive.ArchiveApplicationLogMini"/>
 		<mapping class="com.entity.archive.ArchiveAUMByCIFMini"/>
 		<mapping class="com.entity.archive.ArchiveAUMByBranchMini"/>
 		<mapping class="com.entity.archive.ArchivePortHoldingBySubAccountMini"/>

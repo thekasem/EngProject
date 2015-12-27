@@ -20,7 +20,7 @@
 
 		<mapping class="com.entity.User" />
 		<mapping class="com.entity.bonanza.ActivityLogMini"/>
-		<mapping class="com.entity.bonanza.ApplictionLogMini"/>
+		<mapping class="com.entity.bonanza.ApplicationLogMini"/>
 		<mapping class="com.entity.bonanza.AUMByBranchMini"/>
 		<mapping class="com.entity.bonanza.AUMByCIFMini"/>
 		<mapping class="com.entity.bonanza.PortHoldingBySubAccountMini"/>

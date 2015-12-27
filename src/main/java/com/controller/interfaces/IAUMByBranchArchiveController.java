@@ -13,8 +13,5 @@ public interface IAUMByBranchArchiveController {
 	
 	public ArchiveAUMByBranchMini getObjectById(int eventId);
 	
-	public void save(List<ArchiveAUMByBranchMini> archive);
-	
-	public ArchiveAUMByBranchMini ApplicationConvertToArchiveApplication(ArchiveAUMByBranchMini application, String textCondition);
-
+	public void addArchive();
 }

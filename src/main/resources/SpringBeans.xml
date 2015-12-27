@@ -16,5 +16,15 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 	<!-- inject to Dao -->
 	<bean id="logindao" class="com.dao.implement.LoginDao" />
+	<bean id="activityarchivelogdao" class="com.dao.implement.ActivityArchiveLogDao" />
+	<bean id="applicationarchivelogdao" class="com.dao.implement.ApplicationArchiveLogDao" />
+	<bean id="aumbybrancharchivedao" class="com.dao.implement.AUMByBranchArchiveDao"/>
+	<bean id="aumbycifarchivedao" class="com.dao.implement.AUMByCIFArchiveDao"/>
+	<bean id="portholdingbysubaccountarchivedao" class="com.dao.implement.PortHoldingBySubAccountArchiveDao"/>
+	<bean id="activitylogdao" class="com.dao.implement.ActivityLogDao"/>
+	<bean id="applicationlogdao" class="com.dao.implement.ApplicationLogDao" />
+	<bean id="aumbybranchdao" class="com.dao.implement.AUMByBranchDao"/>
+	<bean id="aumbycifdao" class="com.dao.implement.AUMByCIFDao"/>
+	<bean id="portholdingbysubaccountdao" class="com.dao.implement.PortHoldingBySubAccountDao" />
 
 </beans>

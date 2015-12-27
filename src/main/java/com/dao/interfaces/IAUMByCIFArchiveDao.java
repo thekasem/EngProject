@@ -13,6 +13,10 @@ public interface IAUMByCIFArchiveDao {
 	 
 	 public int getCountByCriteriaSearch(ArchiveAUMByCIFMini criteriaSearch);
 	 
-	 public ArchiveAUMByCIFMini getObjectById(int eventId, boolean arg1);
+	 public ArchiveAUMByCIFMini getObjectById(int eventId);
+	 
+     public void save(ArchiveAUMByCIFMini entity);
+	 
+	 public void delete(ArchiveAUMByCIFMini entity);
 
 }

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "CM_APPICATIONLOG")
-public class ApplictionLogMini {
+public class ApplicationLogMini {
 
 	@Id
 	@GeneratedValue

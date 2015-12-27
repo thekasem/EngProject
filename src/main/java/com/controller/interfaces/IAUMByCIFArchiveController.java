@@ -13,8 +13,5 @@ public interface IAUMByCIFArchiveController {
 	
 	public ArchiveAUMByCIFMini getObjectById(int eventId);
 	
-	public void save(List<ArchiveAUMByCIFMini> archive);
-	
-	public ArchiveAUMByCIFMini ApplicationConvertToArchiveApplication(ArchiveAUMByCIFMini application, String textCondition);
-
+	public void addArchive();
 }

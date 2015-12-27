@@ -45,35 +45,14 @@ public class RMProfileMini {
 	@Column(name = "DATEOFBIRTH")
 	private String dateOfBirth;
 	
-	@Column(name = "IS_RMCENTER")
-	private String is_rmCenter;
-	
-	@Column(name = "CAN_MANAGE_PERSONAL")
-	private String can_manage_personal;
-	
-	@Column(name ="CAN_MANAGE_COPORATE")
-	private String can_manage_coporate;
-	
-	@Column(name = "COUNTOFBIRTHID")
-	private int countOfBirthId;
-	
 	@Column(name = "NATIONALITYID")
 	private int nationalityId;
 	
 	@Column(name = "RELIGIONID")
 	private int religionId;
 	
-	@Column(name = "MARITALSTATUS")
-	private char maritalStatus;
-	
 	@Column(name = "EDUCATIONID")
 	private int educationId;
-	
-	@Column(name = "RMHAEDERID")
-	private int rmHeaderId;
-	
-	@Column(name = "EXPIREID")
-	private int expireId;
 	
 	@Column(name = "PERSONALITYID")
 	private int personalityId;
@@ -108,38 +87,11 @@ public class RMProfileMini {
 	@Column(name = "ZIPCODE")
 	private String zipCode;
 	
-	@Column(name = "TELEPHONE")
-	private String telephone;
-	
 	@Column(name = "FAX")
 	private String fax;
 	
 	@Column(name = "BRANCHID")
 	private int branchId;
-	
-	@Column(name = "POSITIONID")
-	private int positionId;
-	
-	@Column(name = "CREATEDATE")
-	private String createDate;
-	
-	@Column(name = "CREATETIME")
-	private String createTime;
-	
-	@Column(name = "CREATEBY")
-	private int createBy;
-	
-	@Column(name = "CREATEBYNAME")
-	private String createByName;
-	
-	@Column(name = "LASTUPDATEDATE")
-	private String lastUpdateDate;
-	
-	@Column(name = "LASTUPDATETIME")
-	private String lastUpdateTime;
-	
-	@Column(name = "LASTUPDATEBY")
-	private int lastUpdateBy;
 	
 	@Column(name = "LISTENINGLEVEL")
 	private int listeningLevel;
@@ -149,15 +101,6 @@ public class RMProfileMini {
 	
 	@Column(name = "READINGLEVEL")
 	private int readingLevel;
-	
-	@Column(name = "RMTYPE")
-	private int rmType;
-	
-	@Column(name = "RMPROSITIONID")
-	private int rmPrositionId;
-	
-	@Column(name = "RMAPID")
-	private int reAPId;
 
 	public int getRmId() {
 		return rmId;
@@ -247,38 +190,6 @@ public class RMProfileMini {
 		this.dateOfBirth = dateOfBirth;
 	}
 
-	public String getIs_rmCenter() {
-		return is_rmCenter;
-	}
-
-	public void setIs_rmCenter(String is_rmCenter) {
-		this.is_rmCenter = is_rmCenter;
-	}
-
-	public String getCan_manage_personal() {
-		return can_manage_personal;
-	}
-
-	public void setCan_manage_personal(String can_manage_personal) {
-		this.can_manage_personal = can_manage_personal;
-	}
-
-	public String getCan_manage_coporate() {
-		return can_manage_coporate;
-	}
-
-	public void setCan_manage_coporate(String can_manage_coporate) {
-		this.can_manage_coporate = can_manage_coporate;
-	}
-
-	public int getCountOfBirthId() {
-		return countOfBirthId;
-	}
-
-	public void setCountOfBirthId(int countOfBirthId) {
-		this.countOfBirthId = countOfBirthId;
-	}
-
 	public int getNationalityId() {
 		return nationalityId;
 	}
@@ -295,36 +206,12 @@ public class RMProfileMini {
 		this.religionId = religionId;
 	}
 
-	public char getMaritalStatus() {
-		return maritalStatus;
-	}
-
-	public void setMaritalStatus(char maritalStatus) {
-		this.maritalStatus = maritalStatus;
-	}
-
 	public int getEducationId() {
 		return educationId;
 	}
 
 	public void setEducationId(int educationId) {
 		this.educationId = educationId;
-	}
-
-	public int getRmHeaderId() {
-		return rmHeaderId;
-	}
-
-	public void setRmHeaderId(int rmHeaderId) {
-		this.rmHeaderId = rmHeaderId;
-	}
-
-	public int getExpireId() {
-		return expireId;
-	}
-
-	public void setExpireId(int expireId) {
-		this.expireId = expireId;
 	}
 
 	public int getPersonalityId() {
@@ -415,14 +302,6 @@ public class RMProfileMini {
 		this.zipCode = zipCode;
 	}
 
-	public String getTelephone() {
-		return telephone;
-	}
-
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
-
 	public String getFax() {
 		return fax;
 	}
@@ -437,70 +316,6 @@ public class RMProfileMini {
 
 	public void setBranchId(int branchId) {
 		this.branchId = branchId;
-	}
-
-	public int getPositionId() {
-		return positionId;
-	}
-
-	public void setPositionId(int positionId) {
-		this.positionId = positionId;
-	}
-
-	public String getCreateDate() {
-		return createDate;
-	}
-
-	public void setCreateDate(String createDate) {
-		this.createDate = createDate;
-	}
-
-	public String getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(String createTime) {
-		this.createTime = createTime;
-	}
-
-	public int getCreateBy() {
-		return createBy;
-	}
-
-	public void setCreateBy(int createBy) {
-		this.createBy = createBy;
-	}
-
-	public String getCreateByName() {
-		return createByName;
-	}
-
-	public void setCreateByName(String createByName) {
-		this.createByName = createByName;
-	}
-
-	public String getLastUpdateDate() {
-		return lastUpdateDate;
-	}
-
-	public void setLastUpdateDate(String lastUpdateDate) {
-		this.lastUpdateDate = lastUpdateDate;
-	}
-
-	public String getLastUpdateTime() {
-		return lastUpdateTime;
-	}
-
-	public void setLastUpdateTime(String lastUpdateTime) {
-		this.lastUpdateTime = lastUpdateTime;
-	}
-
-	public int getLastUpdateBy() {
-		return lastUpdateBy;
-	}
-
-	public void setLastUpdateBy(int lastUpdateBy) {
-		this.lastUpdateBy = lastUpdateBy;
 	}
 
 	public int getListeningLevel() {
@@ -526,32 +341,4 @@ public class RMProfileMini {
 	public void setReadingLevel(int readingLevel) {
 		this.readingLevel = readingLevel;
 	}
-
-	public int getRmType() {
-		return rmType;
-	}
-
-	public void setRmType(int rmType) {
-		this.rmType = rmType;
-	}
-
-	public int getRmPrositionId() {
-		return rmPrositionId;
-	}
-
-	public void setRmPrositionId(int rmPrositionId) {
-		this.rmPrositionId = rmPrositionId;
-	}
-
-	public int getReAPId() {
-		return reAPId;
-	}
-
-	public void setReAPId(int reAPId) {
-		this.reAPId = reAPId;
-	}
-	
-	
-		
-
 }

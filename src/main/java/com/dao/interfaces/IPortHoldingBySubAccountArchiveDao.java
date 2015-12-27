@@ -13,6 +13,10 @@ public interface IPortHoldingBySubAccountArchiveDao {
 	 
 	 public int getCountByCriteriaSearch(ArchivePortHoldingBySubAccountMini criteriaSearch);
 	 
-	 public ArchivePortHoldingBySubAccountMini getObjectById(int eventId, boolean arg1);
+	 public ArchivePortHoldingBySubAccountMini getObjectById(int eventId);
+	 
+	 public void save(ArchivePortHoldingBySubAccountMini entity);
+	 
+	 public void delete(ArchivePortHoldingBySubAccountMini entity);
 
 }

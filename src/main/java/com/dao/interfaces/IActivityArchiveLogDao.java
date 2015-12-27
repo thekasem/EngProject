@@ -12,7 +12,9 @@ public interface IActivityArchiveLogDao {
 	 
 	 public int getCountByCriteriaSearch(ArchiveActivityLogMini criteriaSearch);
 	 
-	 public ArchiveActivityLogMini getObjectById(int eventId, boolean arg1);
+	 public ArchiveActivityLogMini getObjectById(int eventId);
 
+	 public void save(ArchiveActivityLogMini entity);
 	 
+	 public void delete(ArchiveActivityLogMini entity);
 }

@@ -13,6 +13,10 @@ public interface IAUMByBranchArchiveDao {
 	 
 	 public int getCountByCriteriaSearch(ArchiveAUMByBranchMini criteriaSearch);
 	 
-	 public ArchiveAUMByBranchMini getObjectById(int eventId, boolean arg1);
+	 public ArchiveAUMByBranchMini getObjectById(int eventId);
+	 
+	 public void save(ArchiveAUMByBranchMini entity);
+	 
+	 public void delete(ArchiveAUMByBranchMini entity);
 
 }

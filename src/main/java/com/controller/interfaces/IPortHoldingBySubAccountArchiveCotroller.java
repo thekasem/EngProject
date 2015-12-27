@@ -12,7 +12,5 @@ public interface IPortHoldingBySubAccountArchiveCotroller {
 	
 	public ArchivePortHoldingBySubAccountMini getObjectById(int eventId);
 	
-	public void save(List<ArchivePortHoldingBySubAccountMini> archive);
-	
-	public ArchivePortHoldingBySubAccountMini ApplicationConvertToArchiveApplication(ArchivePortHoldingBySubAccountMini application, String textCondition);
+	public void addArchive();
 }

@@ -24,26 +24,11 @@ public class MemberMini {
 	@Column(name ="MEMBERSINCE")
 	private String memberSince;
 	
-	@Column(name ="LINESEAMOUNT")
-	private int lineseamount;
-
-	@Column(name = "EXPIREDATE")
-	private String expireDate;
-	
 	@Column(name = "STATUS")
 	private char status;
 	
 	@Column(name = "ADDRESSID")
 	private int addressId;
-	
-	@Column(name ="CORPORATEID")
-	private int corporateId;
-	
-	@Column(name = "INDEIVIDUALID")
-	private int indevidualId;
-	
-	@Column(name = "PASSWORDEXPIRE")
-	private String passwordExpire;
 	
 	@Column(name = "LOGINGFAULT")
 	private int loginFault;
@@ -119,22 +104,6 @@ public class MemberMini {
 		this.memberSince = memberSince;
 	}
 
-	public int getLineseamount() {
-		return lineseamount;
-	}
-
-	public void setLineseamount(int lineseamount) {
-		this.lineseamount = lineseamount;
-	}
-
-	public String getExpireDate() {
-		return expireDate;
-	}
-
-	public void setExpireDate(String expireDate) {
-		this.expireDate = expireDate;
-	}
-
 	public char getStatus() {
 		return status;
 	}
@@ -149,30 +118,6 @@ public class MemberMini {
 
 	public void setAddressId(int addressId) {
 		this.addressId = addressId;
-	}
-
-	public int getCorporateId() {
-		return corporateId;
-	}
-
-	public void setCorporateId(int corporateId) {
-		this.corporateId = corporateId;
-	}
-
-	public int getIndevidualId() {
-		return indevidualId;
-	}
-
-	public void setIndevidualId(int indevidualId) {
-		this.indevidualId = indevidualId;
-	}
-
-	public String getPasswordExpire() {
-		return passwordExpire;
-	}
-
-	public void setPasswordExpire(String passwordExpire) {
-		this.passwordExpire = passwordExpire;
 	}
 
 	public int getLoginFault() {
@@ -286,6 +231,4 @@ public class MemberMini {
 	public void setLastNameEn(String lastNameEn) {
 		this.lastNameEn = lastNameEn;
 	}
-	
-	
 }

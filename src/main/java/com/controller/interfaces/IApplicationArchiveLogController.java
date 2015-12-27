@@ -13,8 +13,6 @@ public interface IApplicationArchiveLogController {
 	
 	public ArchiveApplicationLogMini getObjectById(int eventId);
 	
-	public void save(List<ArchiveApplicationLogMini> archive);
-	
-	public ArchiveApplicationLogMini ApplicationConvertToArchiveApplication(ArchiveApplicationLogMini application, String textCondition);
+	public void addArchive();
 
 }

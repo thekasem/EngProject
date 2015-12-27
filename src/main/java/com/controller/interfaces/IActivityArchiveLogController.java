@@ -12,9 +12,7 @@ public interface IActivityArchiveLogController {
 	
 	public ArchiveActivityLogMini getObjectById(int eventId);
 	
-	public void save(List<ArchiveActivityLogMini> archive);
-	
-	public ArchiveActivityLogMini ApplicationConvertToArchiveApplication(ArchiveActivityLogMini application, String textCondition);
+	public void addArchive();
 	
 	
 

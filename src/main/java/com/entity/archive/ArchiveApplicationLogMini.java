@@ -38,7 +38,7 @@ public class ArchiveApplicationLogMini {
 	private String frontServerIP;
 	
 	@Column(name = "ACTIVITY_LOG_ID")
-	private int activityLogId;
+	private String activityLogId;
 	
 	@Column(name = "MEMBERID")
 	private String memberId;
@@ -130,11 +130,11 @@ public class ArchiveApplicationLogMini {
 		this.frontServerIP = frontServerIP;
 	}
 
-	public int getActivityLogId() {
+	public String getActivityLogId() {
 		return activityLogId;
 	}
 
-	public void setActivityLogId(int activityLogId) {
+	public void setActivityLogId(String activityLogId) {
 		this.activityLogId = activityLogId;
 	}
 

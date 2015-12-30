@@ -13,5 +13,5 @@ public interface IAUMByCIFArchiveController {
 	
 	public ArchiveAUMByCIFMini getObjectById(int eventId);
 	
-	public void addArchive();
+	public void addArchive(String date, String condition);
 }

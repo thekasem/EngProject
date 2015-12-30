@@ -18,5 +18,7 @@ public interface IApplicationLogDao {
     public void save(ApplicationLogMini entity);
 	 
 	 public void delete(ApplicationLogMini entity);
+	 
+	 public List<ApplicationLogMini> getListByDate(String date, String condition);
 
 }

@@ -12,6 +12,19 @@ import com.entity.bonanza.PortHoldingBySubAccountMini;
 
 public class PortHoldingBySubAccountDao implements IPortHoldingBySubAccountDao {
 
+	public List<PortHoldingBySubAccountMini> getListByDate(String date,
+			String condition) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<PortHoldingBySubAccountMini> result = null;
+		Query query = sessionB.createQuery("from PortHoldingBySubAccountMini where aumDate "+condition+" '"+date+"'");
+		query.setFirstResult(0);
+		query.setMaxResults(500);
+		result = query.list();
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 	public String createCriteriaSearch(PortHoldingBySubAccountMini obj,
 			boolean isOrdering, boolean isAscending, boolean isCount) {
 		boolean where = true;

@@ -12,5 +12,5 @@ public interface IPortHoldingBySubAccountArchiveCotroller {
 	
 	public ArchivePortHoldingBySubAccountMini getObjectById(int eventId);
 	
-	public void addArchive();
+	public void addArchive(String date, String condition);
 }

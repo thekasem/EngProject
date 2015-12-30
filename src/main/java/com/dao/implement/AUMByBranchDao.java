@@ -76,6 +76,23 @@ public class AUMByBranchDao implements IAUMByBranchDao{
 	}
 	
 
+	public List<AUMByBranchMini> getListByDate(String date, String condition) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<AUMByBranchMini> result = null;
+		try{
+		Query query = sessionB.createQuery("from AUMByBranchMini where aumDate "+condition+" '"+date+"'");
+		query.setFirstResult(0);
+		query.setMaxResults(500);
+		result = query.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
+
 	public List<AUMByBranchMini> getListByCriteriaSearch(
 			AUMByBranchMini criteriaSearch, boolean isOrdering,
 			boolean isAscending, int firstResult, int maxResult) {

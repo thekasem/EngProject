@@ -9,9 +9,17 @@ import org.hibernate.Session;
 import com.dao.interfaces.IAUMByCIFDao;
 import com.entity.HibernateUtil;
 import com.entity.bonanza.AUMByCIFMini;
-import com.entity.bonanza.ActivityLogMini;
 
 public class AUMByCIFDao implements IAUMByCIFDao {
+
+	public List<AUMByCIFMini> getListByDate(String date, String condition) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<AUMByCIFMini> result = null;
+		Query query = sessionB.createQuery("from AUMByCIFMini where aumDate "+condition+" '"+date+"'");
+		
+		return result;
+	}
 
 	public String createCriteriaSearch(AUMByCIFMini obj, boolean isOrdering,
 			boolean isAscending, boolean isCount) {

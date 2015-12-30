@@ -19,9 +19,9 @@ public class ApplicationArchiveLogDao implements IApplicationArchiveLogDao {
 		try {
 			
 			if (isCount) {
-				command += "SELECT COUNT(*) FROM ArchiveApplicationLog ";
+				command += "SELECT COUNT(*) FROM ArchiveApplicationLogMini ";
 			} else {
-				command += "FROM ArchiveApplicationLog ";
+				command += "FROM ArchiveApplicationLogMini ";
 			}
 			
 			if (obj.getLogDate() != null && !obj.getLogDate().trim().equals("")) {
@@ -93,9 +93,9 @@ public class ApplicationArchiveLogDao implements IApplicationArchiveLogDao {
 			if (!isCount) {
 				if (isOrdering) {
 					if (isAscending) {
-						command += " ORDER BY dateArchive ASC , date ASC , time ASC ";
+						command += " ORDER BY dateArchive ASC , logDate ASC , logTime ASC ";
 				} else {
-						command += " ORDER BY dateArchive DESC , date DESC , time DESC ";
+						command += " ORDER BY dateArchive DESC , logDate DESC , logTime DESC ";
 					}
 				}
 			}

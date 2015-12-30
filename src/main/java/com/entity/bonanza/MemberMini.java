@@ -11,7 +11,6 @@ import javax.persistence.Table;
 public class MemberMini {
 	
 	@Id
-	@GeneratedValue
 	@Column(name = "MEMBERID")
 	private int memberId;
 	

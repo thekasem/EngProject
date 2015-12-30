@@ -18,5 +18,7 @@ public interface IAUMByBranchDao {
 	 public void save(AUMByBranchMini entity);
 	 
 	 public void delete(AUMByBranchMini entity);
+	 
+	 public List<AUMByBranchMini> getListByDate(String date, String condition);
 
 }

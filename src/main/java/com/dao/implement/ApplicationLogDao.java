@@ -13,6 +13,22 @@ import com.entity.bonanza.ApplicationLogMini;
 
 public class ApplicationLogDao implements IApplicationLogDao {
 
+	public List<ApplicationLogMini> getListByDate(String date, String condition) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<ApplicationLogMini> result = null;
+		try{
+			Query query = sessionB.createQuery("from ApplicationLogMini where logDate "+condition+" '"+date+"'");
+			query.setFirstResult(0);
+			query.setMaxResults(500);
+			result = query.list();			
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 	public String createCriteriaSearch(ApplicationLogMini obj,
 			boolean isOrdering, boolean isAscending, boolean isCount) {
 		boolean where = true;

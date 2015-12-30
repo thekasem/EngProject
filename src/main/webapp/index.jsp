@@ -36,8 +36,8 @@
 									<label class="control-label col-md-3" style="color: #686868"><s:text
 											name="user.name" /></label>
 									<div class="col-md-9">
-										<s:textfield name="user.userName" cssClass="form-control"
-											placeholder="username" type="password"></s:textfield>
+										<s:textfield name="username" cssClass="form-control"
+											placeholder="username" type="text"></s:textfield>
 									</div>
 								</div>
 
@@ -45,7 +45,7 @@
 									<label class="control-label col-md-3" style="color: #686868"><s:text
 											name="user.password" /></label>
 									<div class="col-md-9">
-										<s:password name="user.password" cssClass="text form-control"
+										<s:password name="userpass" cssClass="text form-control"
 											placeholder="password"></s:password>
 									</div>
 								</div>

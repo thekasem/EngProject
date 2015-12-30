@@ -8,7 +8,7 @@ import com.entity.User;
 public interface ILoginDao {
 	public  User checkLogin(String user, String password);
 	
-	public  User checkLoginUser(String user, String password);
+	public  boolean checkLoginUser(String user, String password);
 	
 	public List<User> getUser();
 	

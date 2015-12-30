@@ -18,4 +18,6 @@ public interface IActivityLogDao {
 	 public void save(ActivityLogMini entity);
 	 
 	 public void delete(ActivityLogMini entity);
+	 
+	 public List<ActivityLogMini> getListByDate(String date, String condition);
 }

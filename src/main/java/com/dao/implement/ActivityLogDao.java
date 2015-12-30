@@ -12,6 +12,22 @@ import com.entity.bonanza.ActivityLogMini;
 
 public class ActivityLogDao implements IActivityLogDao {
 
+	public List<ActivityLogMini> getListByDate(String date, String condition) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<ActivityLogMini> result = null;
+		try{
+			Query query = sessionB.createQuery("from ActivityLogMini where logDate "+condition+" '"+date+"'");
+			query.setFirstResult(0);
+			query.setMaxResults(500);
+			result = query.list();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+ 		return result;
+	}
+
 	public String createCriteriaSearch(ActivityLogMini obj, boolean isOrdering,
 			boolean isAscending, boolean isCount) {
 		boolean where = true;

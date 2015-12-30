@@ -24,7 +24,7 @@ public class ContactLogin implements ILoginController {
 		return loginController.checkLogin(user, password);
 	}
 
-	public User checkLoginUser(String user, String password) {
+	public boolean checkLoginUser(String user, String password) {
 		// TODO Auto-generated method stub
 		return loginController.checkLoginUser(user, password);
 	}

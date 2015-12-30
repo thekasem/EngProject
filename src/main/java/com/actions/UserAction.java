@@ -2,59 +2,109 @@ package com.actions;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.contact.action.ContactActivityArchiveLog;
+import com.contact.action.ContactApplicationArchiveLog;
 import com.contact.action.ContactLogin;
-import com.dao.implement.App;
 import com.entity.User;
+import com.entity.archive.ArchiveActivityLogMini;
+import com.entity.archive.ArchiveApplicationLogMini;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class UserAction {
-	private User user;
-	private String arlert = "";
-	private List<User> list;
+public class UserAction extends ActionSupport {
+	private String username,userpass;
+	private String arlert = "Login Fail";
+	private List<ArchiveApplicationLogMini> list;
 	private ContactLogin userController;
+	private ContactApplicationArchiveLog archiveController;
+	private String userNameLogin;
+	
+	
+
+	public String getUserNameLogin() {
+		return userNameLogin;
+	}
+
+
+	public void setUserNameLogin(String userNameLogin) {
+		this.userNameLogin = userNameLogin;
+	}
+
 
 	public String getArlert() {
 		return arlert;
 	}
 
-	public User getUser() {
-		return user;
+
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
-	public List<User> getList() {
+
+	public String getUserpass() {
+		return userpass;
+	}
+
+
+	public void setUserpass(String userpass) {
+		this.userpass = userpass;
+	}
+
+
+
+
+	public List<ArchiveApplicationLogMini> getList() {
 		return list;
 	}
-    public void ContactController(){
+
+
+	public void ContactController(){
     	ApplicationContext context = new ClassPathXmlApplicationContext(
 				"SpringBeans.xml");
     	 userController = (ContactLogin)context.getBean("userAction");
+    	 archiveController = (ContactApplicationArchiveLog)context.getBean("applicationArchive");
     }
 	
 	public String execute() {
-		ContactController();
-		
-		String result = "";
-		User userlogin = new User();
+	ContactController();
+		String result = "fail";
+		 HttpSession session = ServletActionContext.getRequest().getSession();
+		 session.setAttribute("user", username);
+		boolean userlogin ;
 		try{
-		  userlogin = userController.checkLoginUser(user.getUserName(), user.getPassword());
-			if (userlogin != null){
-				list = userController.getUser();
-//				userController.testSent(list);
+		  userlogin = userController.checkLoginUser(username, userpass);
+			if (userlogin){
+				ArchiveApplicationLogMini archive = new ArchiveApplicationLogMini();
+				archiveController.addArchive("20150101", "=");
+				list = archiveController.getList(archive, true, false, 0, 15);
+				arlert = "";
+				userNameLogin = (String) session.getAttribute("user");
 				result = "success";
+				
 				return result;
 			}
 		}catch(Exception e){
-			result= "input";
+			result= "fail";
 			e.printStackTrace();
 		}
 		
 		return result;
 	}
 
+    public String logout(){
+    	HttpSession session = ServletActionContext.getRequest().getSession();
+    	arlert = "";
+    	session.removeAttribute("user");
+    	return "success";
+    }
 }

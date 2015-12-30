@@ -22,7 +22,7 @@ public class LoginController implements ILoginController {
 		return loginDao.checkLogin(user, password);
 	}
 
-	public User checkLoginUser(String user, String password) {
+	public boolean checkLoginUser(String user, String password) {
 		return loginDao.checkLoginUser(user, password);
 	}
 

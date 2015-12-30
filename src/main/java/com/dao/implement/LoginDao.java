@@ -14,6 +14,7 @@ import com.entity.HibernateArchiveUtil;
 import com.entity.HibernateUtil;
 import com.entity.User;
 import com.entity.archive.UserTest;
+import com.entity.bonanza.MemberMini;
 
 import freemarker.log.Logger;
 
@@ -37,17 +38,20 @@ public class LoginDao implements ILoginDao {
 		return userLogin;
 	}
 
-	public  User checkLoginUser(String user, String password) {
+	public  boolean checkLoginUser(String user, String password) {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		boolean result = false;
 		sessionB.beginTransaction();
-		User userLogin = new User();
+		MemberMini userLogin = new MemberMini();
 		try {
-			userLogin = (User) sessionB.createQuery("from User where userName='" + user	+ "' and password = '" + password + "'").list().get(0);
+			userLogin = (MemberMini) sessionB.createQuery("from MemberMini where loginName='" + user	+ "' and password = '" + password + "'").list().get(0);
+			if(userLogin != null&& userLogin.getMemberId() != 0){
+				result = true;
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return userLogin;
+		return result;
 	}
 	public List<User> getUser() {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();

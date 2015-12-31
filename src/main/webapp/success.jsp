@@ -17,7 +17,7 @@
 <body style="background: #FEFCFF">
 	
 		<strong>hi <s:property value="userNameLogin" /> you login success</strong>
-	<form action="logout" method="post" class="form-horizontal">
+	<form action="login_logout" method="post" class="form-horizontal">
 	<button type="submit" class="btn btn-success btn-submit">
 											Logout</button>
 	

@@ -105,6 +105,6 @@ public class UserAction extends ActionSupport {
     	HttpSession session = ServletActionContext.getRequest().getSession();
     	arlert = "";
     	session.removeAttribute("user");
-    	return "success";
+    	return "logout";
     }
 }

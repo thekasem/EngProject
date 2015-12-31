@@ -16,7 +16,7 @@
 </head>
 <body style="background: #E5E4E2">
 	<div style="margin-top: 150px">
-		<form action="login" method="post" class="form-horizontal">
+		<form action="login_execute" method="post" class="form-horizontal">
 			<div class="container">
  				<s:if test="arlert.equals('Login Fail')">
 					<div class="alert alert-danger col-md-4 col-md-offset-4" >

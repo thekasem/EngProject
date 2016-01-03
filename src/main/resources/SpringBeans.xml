@@ -61,5 +61,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="aumbybranchdao" class="com.dao.implement.AUMByBranchDao"/>
 	<bean id="aumbycifdao" class="com.dao.implement.AUMByCIFDao"/>
 	<bean id="portholdingbysubaccountdao" class="com.dao.implement.PortHoldingBySubAccountDao" />
+	<bean id="branchcustomer" class="com.dao.implement.BranchCustomerDao"/>
+	<bean id="branch" class="com.dao.implement.BranchDao" />
+	<bean id="member" class="com.dao.implement.MemberDao"/>
+	<bean id="rmprofile" class="com.dao.implement.RMProfileDao"/>
 
 </beans>

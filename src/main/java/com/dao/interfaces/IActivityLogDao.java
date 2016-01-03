@@ -3,6 +3,7 @@ package com.dao.interfaces;
 import java.util.List;
 
 import com.entity.bonanza.ActivityLogMini;
+import com.entity.bonanza.BranchCustomerMini;
 
 
 public interface IActivityLogDao {

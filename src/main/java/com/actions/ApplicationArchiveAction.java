@@ -41,6 +41,7 @@ public class ApplicationArchiveAction extends ActionSupport {
 		return LIST;
 	}
 	public String add(){
+		ContactController();
 		return ADD;
 	}
 	public String addArchive(){
@@ -49,6 +50,7 @@ public class ApplicationArchiveAction extends ActionSupport {
 		return LIST;
 	}
 	public String search(){
+		ContactController();
 		return SEARCH;
 	}
 	public String searchArchive(){

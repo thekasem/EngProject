@@ -26,10 +26,10 @@
 	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 
 </head>
-<body>
+<body style="background: #FEFCFF">
 <s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
-		<div class="container" style="margin-top: 50px;">
+		<div class="container">
 			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp"> <span class="fa fa-refresh"></span> Reset</a>
 			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-search"></span> OK</a> 
 			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-times-circle"></span> Cancel</a>
@@ -37,7 +37,7 @@
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-search"> Search</span>
+				<span class="label label-default"><span class="fa fa-search"> </span>Search
 			</h3>
 		</div>
 

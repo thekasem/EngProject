@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.theme.min.css" rel="stylesheet">
-<link href="<s:url value="/css/tutorial.css"/>"
-  rel="stylesheet" type="text/css"/>
+<link href="<s:url value="/css/tutorial.css"/>" rel="stylesheet"
+	type="text/css" />
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
@@ -18,12 +18,10 @@
 <title>Success Login</title>
 </head>
 <body style="background: #FEFCFF">
-    <s:url action="activityArchive_search" var="search"></s:url>
-
+	<s:url action="activityArchive_search" var="search"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
-	
 	<div class="container">
-		<table class="table table-striped table-hover ">
+		<table class="table table-striped table-hover " >
 			<thead style="color: #4863A0;">
 				<td>User</td>
 				<td>password</td>
@@ -43,7 +41,6 @@
 				<td><s:property value="gender" /></td>
 				<td><s:property value="city" /></td> --%>
 				</tr>
-				<br>
 			</s:iterator>
 		</table>
 	</div>

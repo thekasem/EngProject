@@ -19,14 +19,11 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background: #E5E6E8">
   <s:url action="login_logout" var="logout"></s:url>
-    <s:url action="activityArchive_list" var="list"></s:url>
-	<nav class="navbar navbar-inverse">
+    <s:url action="activityArchive_list" var="listactivity"></s:url>
+	<nav class="navbar" style="background:#A7C7E8;">
 	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">WebSiteName</a>
-		</div>
 		<div>
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
@@ -38,7 +35,7 @@
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
 				<li><a href="#">Page 2</a></li>
-				<li><s:a href="%{search}"><span class="glyphicon glyphicon-list"></span>
+				<li><s:a href="%{listactivity}"><span class="glyphicon glyphicon-list"></span>
 						Activity list</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -50,12 +47,5 @@
 		</div>
 	</div>
 	</nav>
-
-	<div class="container">
-		<h3>Right Aligned Navbar</h3>
-		<p>The .navbar-right class is used to right-align navigation bar
-			buttons.</p>
-	</div>
-
 </body>
 </html>

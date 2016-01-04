@@ -45,6 +45,7 @@ public class ActivityArchiveAction extends ActionSupport {
 	}
 	
 	public String add(){
+		ContactController();
 		return ADD;
 	}
 	public String addArchive() throws IllegalAccessException, InvocationTargetException{

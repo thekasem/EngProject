@@ -9,6 +9,8 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.theme.min.css" rel="stylesheet">
+<link href="<s:url value="/css/tutorial.css"/>"
+  rel="stylesheet" type="text/css"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
@@ -16,15 +18,9 @@
 <title>Success Login</title>
 </head>
 <body style="background: #FEFCFF">
-	
-		<strong>hi <span class="fa fa-user"/> <s:property value="userNameLogin" /> you login success</strong>
-	<form action="login_logout" method="post" class="form-horizontal">
-	<button type="submit" class="btn btn-success btn-submit">
-											<span class="fa fa-sign-out"></span> Logout</button>
-	
-	</form>
-		
-		
+    <s:url action="activityArchive_search" var="search"></s:url>
+
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	
 	<div class="container">
 		<table class="table table-striped table-hover ">

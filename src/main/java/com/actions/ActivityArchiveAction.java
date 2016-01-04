@@ -36,9 +36,9 @@ public class ActivityArchiveAction extends ActionSupport {
 	}
 	public String list(){
 		ContactController();
+		archiveActivityLog = new ArchiveActivityLogMini();
 		count = archiveController.getCount(archiveActivityLog);
 		int firstResult = 0;
-		archiveActivityLog = new ArchiveActivityLogMini();
 		list = archiveController.getList(archiveActivityLog, true, false, firstResult, 15);
 		
 		return LIST;
@@ -53,6 +53,7 @@ public class ActivityArchiveAction extends ActionSupport {
 		return LIST;
 	}
 	public String search(){
+		ContactController();
 		return SEARCH;
 	}
 

@@ -8,6 +8,7 @@
 <title>Activity Archive Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script
@@ -26,16 +27,17 @@
 
 </head>
 <body>
+<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp">Reset</a>
-			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">OK</a> 
-			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp">Cancel</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp"> <span class="fa fa-refresh"></span> Reset</a>
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-search"></span> OK</a> 
+			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-times-circle"></span> Cancel</a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default">Search</span>
+				<span class="label label-default"><span class="fa fa-search"> Search</span>
 			</h3>
 		</div>
 

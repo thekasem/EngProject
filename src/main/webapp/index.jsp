@@ -6,6 +6,7 @@
 <head>
 <meta>
 <title>Login System</title>
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.theme.min.css" rel="stylesheet">
 <script type="text/javascript">
@@ -29,6 +30,7 @@
 					<div class="col-md-4 col-md-offset-4">
 						<div class="panel panel-default">
 							<div class="panel-heading" style="color: #686868">
+							 <span class="fa fa-sign-in"></span>
 								<strong><s:text name="user.login" /></strong>
 							</div>
 							<div class="panel-body">

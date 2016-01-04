@@ -17,6 +17,12 @@
 		<property name="hbm2ddl.auto">update</property>
 		<property name="connection.pool_size">1</property>
 		<property name="current_session_context_class">thread</property>
+		
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">500</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
 
 		<mapping class="com.entity.User" />
 		<mapping class="com.entity.archive.ArchiveActivityLogMini" />

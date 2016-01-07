@@ -11,8 +11,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.contact.action.ContactApplicationArchiveLog;
 import com.entity.archive.ArchiveApplicationLogMini;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class ApplicationArchiveAction extends ActionSupport {
+public class ApplicationArchiveAction extends ActionSupport implements ModelDriven<ArchiveApplicationLogMini> {
 	private static String LIST = "list";
 	private static String ADD = "add";
 	private static String SEARCH = "search";
@@ -87,6 +88,9 @@ public class ApplicationArchiveAction extends ActionSupport {
 	}
 	public void setCondition(String condition) {
 		this.condition = condition;
+	}
+	public ArchiveApplicationLogMini getModel() {
+		return archiveApplicationLog;
 	}
 	
 	

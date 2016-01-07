@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,22 +15,29 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
-<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<s:url action="applicationArchive_search" var="searchappl"></s:url>
+	<s:url action="applicationArchive_list" var="listapp"></s:url>
+	<s:url action="applicationArchive_add" var="addapp"></s:url>
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
-		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info" href="ApplicationArchiveSearch.jsp">Search</a> 
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Refresh</a> 
-			<a type="button" class="btn btn-info" href="ApplicationArchiveAdd.jsp">ADD	Archive</a>
+		<div class="container">
+			<s:a type="button" class="btn btn-info" href="%{searchappl}">
+				<span class="fa fa-search"></span> Search</s:a>
+			<s:a type="button" class="btn btn-info" href="%{listapp}">
+				<span class="fa fa-refresh"></span> Refresh</s:a>
+			<s:a type="button" class="btn btn-info" href="%{addapp}">
+				<span class="fa fa-plus-circle"></span> ADD Archive</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default">List</span>
+				<span class="label label-default"><span class="fa fa-list">
+						List</span></span>
 			</h3>
 		</div>
 
 		<table class="table table-striped table-hover ">
-			<thead style="color: #4863A0;">
+			<thead style="color: #4863A0;border-top: solid 2px #CCC">
 				<th>Event ID</th>
 				<th>Date</th>
 				<th>Time</th>
@@ -37,72 +47,27 @@
 				<th>Client IP</th>
 				<th>Front Server IP</th>
 				<th>Member Name</th>
-				<th>Activity Log ID</th>
 				<th>User Archive</th>
 				<th>Date Archive</th>
 				<th>Condition Archive</th>
 			</thead>
 			<tbody>
-				<tr style="color: #98AFC7;">
-					<th>1</th>
-					<th>20/10/2015</th>
-					<th>12:12:59</th>
-					<th>Test</th>
-					<th>classTest</th>
-					<th>Test</th>
-					<th>192.155.125.0</th>
-					<th>10.10.10.10</th>
-					<th>TestName</th>
-					<th>14525...</th>
-					<th>TestName</th>
-					<th>20/10/2015</th>
-					<th>Date = 20/10/2015</th>
-				</tr>
-				<tr style="color: #98AFC7;">
-					<th>1</th>
-					<th>20/10/2015</th>
-					<th>12:12:59</th>
-					<th>Test</th>
-					<th>classTest</th>
-					<th>Test</th>
-					<th>192.155.125.0</th>
-					<th>10.10.10.10</th>
-					<th>TestName</th>
-					<th>14525...</th>
-					<th>TestName</th>
-					<th>20/10/2015</th>
-					<th>Date = 20/10/2015</th>
-				</tr>
-				<tr style="color: #98AFC7;">
-					<th>1</th>
-					<th>20/10/2015</th>
-					<th>12:12:59</th>
-					<th>Test</th>
-					<th>classTest</th>
-					<th>Test</th>
-					<th>192.155.125.0</th>
-					<th>10.10.10.10</th>
-					<th>TestName</th>
-					<th>14525...</th>
-					<th>TestName</th>
-					<th>20/10/2015</th>
-					<th>Date = 20/10/2015</th>
-				</tr>
-				<tr style="color: #98AFC7;">
-					<th>1</th>
-					<th>20/10/2015</th>
-					<th>12:12:59</th>
-					<th>Test</th>
-					<th>classTest</th>
-					<th>Test</th>
-					<th>192.155.125.0</th>
-					<th>10.10.10.10</th>
-					<th>TestName</th>
-					<th>14525...</th>
-					<th>TestName</th>
-					<th>20/10/2015</th>
-					<th>Date = 20/10/2015</th>
-				</tr>
+				<s:iterator value="list">
+					<tr style="color: #98AFC7;">
+						<td><s:property value="eventId" /></td>
+						<td><s:property value="logDate" /></td>
+						<td><s:property value="logTime" /></td>
+						<td><s:property value="level" /></td>
+						<td><s:property value="entityClass" /></td>
+						<td><s:property value="mode" /></td>
+						<td><s:property value="clientIP" /></td>
+						<td><s:property value="frontServerIP" /></td>
+						<td><s:property value="memberId" /></td>
+						<td><s:property value="userArchive" /></td>
+						<td><s:property value="dateArchive" /></td>
+						<td><s:property value="coditionArchive" /></td>
+					</tr>
+				</s:iterator>
 			</tbody>
 		</table>
 	</div>

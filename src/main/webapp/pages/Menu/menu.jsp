@@ -20,28 +20,35 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #E5E6E8">
-  <s:url action="login_logout" var="logout"></s:url>
-    <s:url action="activityArchive_list" var="listactivity"></s:url>
+	<s:url action="login_logout" var="logout"></s:url>
+	<s:url action="login_homeFirst" var="home"></s:url>
+	<s:url action="activityArchive_list" var="listactivity"></s:url>
+	<s:url action="applicationArchive_list" var="listapplication"></s:url>
 	<nav class="navbar" style="background:#A7C7E8;">
 	<div class="container-fluid">
 		<div>
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Home</a></li>
+				<li><s:a href="%{home}"><span class="fa fa-home"></span> Home</s:a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+					data-toggle="dropdown" href="#"> Page 1 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="#">Page 1-1</a></li>
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="#">Page 2</a></li>
-				<li><s:a href="%{listactivity}"><span class="glyphicon glyphicon-list"></span>
+				<li><s:a href="%{listapplication}">
+						<span class="glyphicon glyphicon-list"></span> Application list</s:a></li>
+				<li><s:a href="%{listactivity}">
+						<span class="glyphicon glyphicon-list"></span>
 						Activity list</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><s:a href="%{search}"><span class="glyphicon glyphicon-user"></span>
-						<s:property value="userNameLogin" /></s:a></li>
-				<li><s:a href="%{logout}"><span class="glyphicon glyphicon-log-out"></span>
+				<li><s:a href="%{search}">
+						<span class="glyphicon glyphicon-user"></span>
+						<s:property value="userNameLogin" />
+					</s:a></li>
+				<li><s:a href="%{logout}">
+						<span class="glyphicon glyphicon-log-out"></span>
 						Logout</s:a></li>
 			</ul>
 		</div>

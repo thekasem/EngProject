@@ -23,6 +23,7 @@ public class UserAction extends ActionSupport {
 	private ContactLogin userController;
 	private ContactApplicationArchiveLog archiveController;
 	private String userNameLogin;
+	private HttpSession session;
 	
 	
 
@@ -73,12 +74,12 @@ public class UserAction extends ActionSupport {
 				"SpringBeans.xml");
     	 userController = (ContactLogin)context.getBean("userAction");
     	 archiveController = (ContactApplicationArchiveLog)context.getBean("applicationArchive");
+    	 session = ServletActionContext.getRequest().getSession();
     }
 	
 	public String execute() {
 	ContactController();
 		String result = "fail";
-		 HttpSession session = ServletActionContext.getRequest().getSession();
 		 session.setAttribute("user", username);
 		boolean userlogin ;
 		try{
@@ -101,8 +102,15 @@ public class UserAction extends ActionSupport {
 		return result;
 	}
 
+	public String homeFirst(){
+		ContactController();
+		ArchiveApplicationLogMini archive = new ArchiveApplicationLogMini();
+		list = archiveController.getList(archive, true, false, 0, 15);
+		userNameLogin = (String) session.getAttribute("user");
+		return "success";
+	}
     public String logout(){
-    	HttpSession session = ServletActionContext.getRequest().getSession();
+    	session = ServletActionContext.getRequest().getSession();
     	arlert = "";
     	session.removeAttribute("user");
     	return "logout";

@@ -12,32 +12,49 @@
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script
-	src="../../calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+<script type="text/javascript">
+	function clickOk() {
+		document.getElementById("ok").click();
+	}
 
+	$('.datepicker').datepicker({
+		changeYear : true,
+		yearRange : '-100:+100',
+		dateFormat : 'YYYY-MM-DD'
+	});
+</script>
 </head>
 <body style="background: #FEFCFF">
-<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<s:url action="activityArchive_search" var="searchactivity"></s:url>
+	<s:url action="activityArchive_list" var="listac"></s:url>
+	<s:url action="activityArchive_add" var="addactivity"></s:url>
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<a type="button" class="btn btn-info" href="ActivityArchiveSearch.jsp"> <span class="fa fa-refresh"></span> Reset</a>
-			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-search"></span> OK</a> 
-			<a type="button" class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-times-circle"></span> Cancel</a>
+			<s:a type="button" class="btn btn-info" href="%{searchactivity}">
+				<span class="fa fa-refresh"></span> Reset </s:a>
+			<a type="button" onclick="clickOk()" class="btn btn-info"><span
+				class="fa fa-search"></span> OK</a>
+			<s:a type="button" class="btn btn-info" href="%{listac}">
+				<span class="fa fa-times-circle"></span> Cancel</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-search"> </span>Search
+				<span class="label label-default"><span class="fa fa-search">
+				</span>Search 
 			</h3>
 		</div>
 
@@ -46,59 +63,47 @@
 				<Strong>Search Archive Activity Log</Strong>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form action="activityArchive_searchArchive" method="post"
+					class="form-horizontal">
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="logDate" cssClass="datepicker form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Request URI</label>
 						<div class="col-md-3">
-							<s:textfield name="uri" cssClass="form-control"></s:textfield>
+							<s:textfield name="actionClass" cssClass="text form-control"></s:textfield>
 						</div>
 					</div>
-					
-					
+
+
 					<div class="form-group">
 						<label class="col-md-2 control-label">Action Name</label>
-							<div class="col-md-3">
-								<select id="actionname" class="form-control">
-									<option></option>
-									<option></option>
-								</select>
-							</div>
-						<label class="col-md-2 control-label">Description</label>
 						<div class="col-md-3">
-							<s:textfield name="description" cssClass="form-control"></s:textfield>
+							<s:select class="form-control" headerKey="-1" value="" list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
+								name="action"  />
+						</div>
+						<label class="col-md-2 control-label">Client IP</label>
+						<div class="col-md-3">
+							<s:textfield name="clientIP" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="dateArchive"
+								cssClass="datepicker form-control"></s:textfield>
 						</div>
-						<label class="col-md-2 control-label">Client IP</label>
-						<div class="col-md-3">
-							<s:textfield name="clientip" cssClass="form-control"></s:textfield>
-						</div>
-					</div>
-					<div class="form-group">
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
+							<s:textfield name="userArchive" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
+					<input type="submit" id="ok" style="display: none">
 				</form>
 			</div>
 		</div>
 	</div>
-	<script>
-		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'dd MM yy'
-		});
-	</script>
 	<style>
 select.ui-datepicker-year {
 	color: #000;

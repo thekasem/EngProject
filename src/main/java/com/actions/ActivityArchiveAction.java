@@ -12,9 +12,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.contact.action.ContactActivityArchiveLog;
 import com.entity.archive.ArchiveActivityLogMini;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
-public class ActivityArchiveAction extends ActionSupport {
+public class ActivityArchiveAction extends ActionSupport implements ModelDriven<ArchiveActivityLogMini> {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7974655371562781139L;
 	private static String LIST 	= "list";
 	private static String ADD = "add";
 	private static String SEARCH = "search";
@@ -22,7 +27,7 @@ public class ActivityArchiveAction extends ActionSupport {
 	private List<ArchiveActivityLogMini> list;
 	private ContactActivityArchiveLog archiveController;
 	private String userNameLogin;
-	private ArchiveActivityLogMini archiveActivityLog;
+	private ArchiveActivityLogMini archiveActivityLog = new ArchiveActivityLogMini();
 	private int page;
 	private String date;
 	private String condition;
@@ -89,6 +94,12 @@ public class ActivityArchiveAction extends ActionSupport {
 	}
 	public void setPage(int page) {
 		this.page = page;
+	}
+	public ArchiveActivityLogMini getModel() {
+		return archiveActivityLog;
+	}
+	public ArchiveActivityLogMini getArchiveActivityLog() {
+		return archiveActivityLog;
 	}
 	
 	

@@ -12,19 +12,25 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
+	<s:url action="activityArchive_search" var="searchactivity"></s:url>
+	<s:url action="activityArchive_list" var="listac"></s:url>
+	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<a type="button" class="btn btn-info"
-				href="ActivityArchiveSearch.jsp"><span class="fa fa-search"> Search</a> <a type="button"
-				class="btn btn-info" href="ActivityArchiveList.jsp"><span class="fa fa-refresh"></span> Refresh</a> <a
-				type="button" class="btn btn-info" href="ActivityArchiveAdd.jsp"><span class="fa fa-add"></span> ADD
-				Archive</a>
+			<s:a type="button" class="btn btn-info" href="%{searchactivity}">
+				<span class="fa fa-search"></span>
+					Search</s:a>
+			<s:a type="button" class="btn btn-info" href="%{listac}">
+				<span class="fa fa-refresh"></span> Refresh</s:a>
+			<s:a type="button" class="btn btn-info" href="%{addactivity}"><span
+				class="fa fa-add"></span> ADD Archive</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-list"> List</span></span>
+				<span class="label label-default"><span class="fa fa-list">
+						List</span></span>
 			</h3>
 		</div>
 		<div style="margin-top: 10px;" align="right">

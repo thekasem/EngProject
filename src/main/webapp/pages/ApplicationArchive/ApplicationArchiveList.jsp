@@ -12,6 +12,7 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
+<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container" style="margin-top: 50px;">
 			<a type="button" class="btn btn-info" href="ApplicationArchiveSearch.jsp">Search</a> 

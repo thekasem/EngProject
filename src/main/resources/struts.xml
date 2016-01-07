@@ -6,6 +6,9 @@
 	<constant name="struts.devMode" value="false"/>
 	<constant name="struts.custom.i18n.resources" value="package" />
 	<package name="/" extends="struts-default">
+	   
+	   <default-interceptor-ref name="paramsPrepareParamsStack"/>
+	   
 		<action name="login_*" class="com.actions.UserAction" method="{1}">
 			<result name="success">/success.jsp</result>
 			<result name="fail">/index.jsp</result>

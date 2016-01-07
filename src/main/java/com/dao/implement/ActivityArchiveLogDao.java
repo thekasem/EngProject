@@ -57,6 +57,17 @@ public class ActivityArchiveLogDao implements IActivityArchiveLogDao {
 					command += " AND UPPER(actionClass) LIKE UPPER('%"
 							+ obj.getActionClass().toUpperCase().trim() + "%')";
 			}
+			if (obj.getClientIP() != null
+					&& !obj.getClientIP().trim().equals("")) {
+				if (where) {
+					command += " WHERE UPPER(clientIP) LIKE UPPER('%"
+							+ obj.getClientIP().toUpperCase().trim() + "%')";
+					where = false;
+
+				} else
+					command += " AND UPPER(clientIP) LIKE UPPER('%"
+							+ obj.getClientIP().toUpperCase().trim() + "%')";
+			}
 
 			if (obj.getAction() != null && !obj.getAction().trim().equals("")) {
 				if (where) {

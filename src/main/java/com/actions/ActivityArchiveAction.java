@@ -14,94 +14,115 @@ import com.entity.archive.ArchiveActivityLogMini;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
-public class ActivityArchiveAction extends ActionSupport implements ModelDriven<ArchiveActivityLogMini> {
-	
+public class ActivityArchiveAction extends ActionSupport implements
+		ModelDriven<ArchiveActivityLogMini> {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 7974655371562781139L;
-	private static String LIST 	= "list";
+	private static String LIST = "list";
 	private static String ADD = "add";
 	private static String SEARCH = "search";
-	
+
 	private List<ArchiveActivityLogMini> list;
 	private ContactActivityArchiveLog archiveController;
 	private String userNameLogin;
 	private ArchiveActivityLogMini archiveActivityLog = new ArchiveActivityLogMini();
 	private int page;
-	private String date;
-	private String condition;
+	private String date = "";
+	private String condition = "";
 	private int count;
-	
-	public void ContactController(){
-		ApplicationContext context = new ClassPathXmlApplicationContext("SpringBeans.xml");
-		archiveController = (ContactActivityArchiveLog)context.getBean("activityArchive");
+
+	public void ContactController() {
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"SpringBeans.xml");
+		archiveController = (ContactActivityArchiveLog) context
+				.getBean("activityArchive");
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
 	}
-	public String list(){
+
+	public String list() {
 		ContactController();
 		archiveActivityLog = new ArchiveActivityLogMini();
 		count = archiveController.getCount(archiveActivityLog);
 		int firstResult = 0;
-		list = archiveController.getList(archiveActivityLog, true, false, firstResult, 15);
-		
+		list = archiveController.getList(archiveActivityLog, true, false,
+				firstResult, 15);
+
 		return LIST;
 	}
-	
-	public String add(){
+
+	public String add() {
 		ContactController();
 		return ADD;
 	}
-	public String addArchive() throws IllegalAccessException, InvocationTargetException{
+
+	public String addArchive() throws IllegalAccessException,
+			InvocationTargetException {
 		ContactController();
-		archiveController.addArchive(date, condition);
+		try {
+			archiveController.addArchive(date, condition);
+			list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return LIST;
 	}
-	public String search(){
+
+	public String search() {
 		ContactController();
 		return SEARCH;
 	}
 
-	public String searchArchive(){
+	public String searchArchive() {
 		ContactController();
 		count = archiveController.getCount(archiveActivityLog);
 		int firstResult = 0;
-		list = archiveController.getList(archiveActivityLog, true, false, firstResult, 15);
+		list = archiveController.getList(archiveActivityLog, true, false,
+				firstResult, 15);
 		return LIST;
 	}
-	
+
 	public List<ArchiveActivityLogMini> getList() {
 		return list;
 	}
+
 	public String getUserNameLogin() {
 		return userNameLogin;
 	}
+
 	public void setArchiveActivityLog(ArchiveActivityLogMini archiveActivityLog) {
 		this.archiveActivityLog = archiveActivityLog;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}
+
 	public int getCount() {
 		return count;
 	}
+
 	public int getPage() {
 		return page;
 	}
+
 	public void setPage(int page) {
 		this.page = page;
 	}
+
 	public ArchiveActivityLogMini getModel() {
 		return archiveActivityLog;
 	}
+
 	public ArchiveActivityLogMini getArchiveActivityLog() {
 		return archiveActivityLog;
 	}
-	
-	
-	
+
 }

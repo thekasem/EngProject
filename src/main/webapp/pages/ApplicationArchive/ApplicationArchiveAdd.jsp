@@ -7,56 +7,72 @@
 <title>Application Archive ADD</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="../../calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
-</head>
-<body>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+<script type="text/javascript">
+	function clickOk() {
+		document.getElementById("ok").click();
+	}
 
+	$('.datepicker').datepicker({
+		changeYear : true,
+		yearRange : '-100:+100',
+		dateFormat : 'dd MM yy'
+	});
+</script>
+</head>
+<body style="background: #FEFCFF">
+	<s:url action="applicationArchive_search" var="searchappl"></s:url>
+	<s:url action="applicationArchive_list" var="listapp"></s:url>
+	<s:url action="applicationArchive_add" var="addapp"></s:url>
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
-		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info" href="ApplicationArchiveAdd.jsp">Reset</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Cancel</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">OK</a>
+		<div class="container">
+			<s:a type="button" class="btn btn-info" href="%{addapp}">
+				<span class="fa fa-refresh"></span> Reset</s:a>
+			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+				class="fa fa-plus-circle"></span> OK</a>
+			<s:a type="button" class="btn btn-info" href="%{listapp}">
+				<span class="fa fa-times"></span> Cancel</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default">ADD</span>
+				<span class="label label-default"><span
+					class="fa fa-plus-circle"> ADD</span></span>
 			</h3>
 		</div>
 
 		<div class="panel panel-default">
-			<div class="panel-heading"><strong>ADD Archive Application Log</strong></div>
+			<div class="panel-heading">
+				<strong>ADD Archive Application Log</strong>
+			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form action="applicationArchive_addArchive" class="form-horizontal" method="post">
 					<div class="form-group">
 						<label class="col-md-3 control-label">Select Application
 							Date :</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="date" cssClass="datepicker form-control"></s:textfield>
 						</div>
 
 						<label class="col-md-2 control-label">Select Condition :</label>
-							<div class="col-sm-6 col-md-3">
-								<select id="selectcondition" class="form-control">
-									<option>=</option>
-									<option><</option>
-								</select>
-							</div>
+						<div class="col-sm-6 col-md-3">
+							<s:select class="form-control" headerKey="-1" value="="
+								list="#{'=':'=','<':'<'}" name="condition" />
+						</div>
 					</div>
+					<input type="submit" id="ok" style="display: none">
 				</form>
 			</div>
 

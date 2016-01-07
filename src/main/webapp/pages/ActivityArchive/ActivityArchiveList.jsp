@@ -23,8 +23,8 @@
 					Search</s:a>
 			<s:a type="button" class="btn btn-info" href="%{listac}">
 				<span class="fa fa-refresh"></span> Refresh</s:a>
-			<s:a type="button" class="btn btn-info" href="%{addactivity}"><span
-				class="fa fa-plus-circle"></span> ADD Archive</s:a>
+			<s:a type="button" class="btn btn-info" href="%{addactivity}">
+				<span class="fa fa-plus-circle"></span> ADD Archive</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">

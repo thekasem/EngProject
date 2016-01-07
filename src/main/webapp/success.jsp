@@ -21,7 +21,7 @@
 	<s:url action="activityArchive_search" var="search"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
-		<table class="table table-striped table-hover " >
+		<%-- <table class="table table-striped table-hover " >
 			<thead style="color: #4863A0;">
 				<td>User</td>
 				<td>password</td>
@@ -36,13 +36,16 @@
 					<td><s:property value="logId" /></td>
 					<td><s:property value="logDate" /></td>
 					<td><s:property value="level" /></td>
-					<%-- <td><s:property value="firstName" /></td>
+					<td><s:property value="firstName" /></td>
 				<td><s:property value="lastName" /></td>
 				<td><s:property value="gender" /></td>
-				<td><s:property value="city" /></td> --%>
+				<td><s:property value="city" /></td>
 				</tr>
 			</s:iterator>
-		</table>
+		</table> --%>
+		<div class="panel-heading" style="color: #686868">
+			<span class="fa fa-child"></span> <strong>Hello <s:property value="userNameLogin" /></strong>
+		</div>
 	</div>
 </body>
 </html>

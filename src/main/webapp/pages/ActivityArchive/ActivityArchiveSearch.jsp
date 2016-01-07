@@ -9,12 +9,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
@@ -28,12 +25,6 @@
 	function clickOk() {
 		document.getElementById("ok").click();
 	}
-
-	$('.datepicker').datepicker({
-		changeYear : true,
-		yearRange : '-100:+100',
-		dateFormat : 'YYYY-MM-DD'
-	});
 </script>
 </head>
 <body style="background: #FEFCFF">
@@ -53,8 +44,7 @@
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-search">
-				</span>Search 
+				<span class="label label-default"><span class="fa fa-search"> Search</span></span>
 			</h3>
 		</div>
 
@@ -80,8 +70,9 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Action Name</label>
 						<div class="col-md-3">
-							<s:select class="form-control" headerKey="-1" value="" list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
-								name="action"  />
+							<s:select class="form-control" headerKey="-1" value=""
+								list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
+								name="action" />
 						</div>
 						<label class="col-md-2 control-label">Client IP</label>
 						<div class="col-md-3">
@@ -104,6 +95,13 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$('.datepicker').datepicker({
+			changeYear : true,
+			yearRange : '-100:+100',
+			dateFormat : 'dd MM yy'
+		});
+	</script>
 	<style>
 select.ui-datepicker-year {
 	color: #000;

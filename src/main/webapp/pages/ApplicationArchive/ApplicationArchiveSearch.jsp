@@ -8,34 +8,48 @@
 <title>Application Archive Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="../../calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<%-- <script --%>
-<%-- 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --%>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
-<link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+<script type="text/javascript">
+	function clickOk() {
+		document.getElementById("ok").click();
+	}
 
+	$('.datepicker').datepicker({
+		changeYear : true,
+		yearRange : '-100:+100',
+		dateFormat : 'dd MM yy'
+	});
+</script>
 </head>
-<body>
+<body style="background: #FEFCFF">
+	<s:url action="applicationArchive_search" var="searchappl"></s:url>
+	<s:url action="applicationArchive_list" var="listapp"></s:url>
+	<s:url action="applicationArchive_add" var="addapp"></s:url>
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
-		<div class="container" style="margin-top: 50px;">
-			<a type="button" class="btn btn-info" href="ApplicationArchiveSearch.jsp">Reset</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">OK</a>
-			<a type="button" class="btn btn-info" href="ApplicationArchiveList.jsp">Cancel</a>
+		<div class="container">
+			<s:a type="button" class="btn btn-info" href="%{searchappl}">
+				<span class="fa fa-refresh"></span>
+				Reset</s:a>
+			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+				class="fa fa-search"></span> OK</a>
+			<s:a type="button" class="btn btn-info" href="%{listapp}">
+				<span class="fa fa-times-circle"></span> Cancel</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default">Search</span>
+				<span class="label label-default"><span class="fa fa-search">
+						Search</span></span>
 			</h3>
 		</div>
 
@@ -44,60 +58,52 @@
 				<Strong>Search Archive Application Log</Strong>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form action="applicationArchive_searchArchive" method="post"
+					class="form-horizontal">
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="logDate" cssClass="datepicker form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Level</label>
-							<div class="col-sm-6 col-md-3">
-								<select id="level" class="form-control">
-									<option></option>
-									<option></option>
-								</select>
-							</div>
+						<div class="col-sm-6 col-md-3">
+							<s:select class="form-control" headerKey="-1" value=""
+								list="#{'':'','INFO':'INFO','WARNNING':'WARNNING','DEBUG':'DEBUG','ERROR':'ERROR'}"
+								name="level" />
+						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">Activity Log ID</label>
 						<div class="col-md-3">
-							<s:textfield name="action" cssClass="form-control"></s:textfield>
+							<s:textfield name="activityLogId" cssClass="form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Mode</label>
-							<div class="col-sm-6 col-md-3">
-								<select id="mode" class="form-control">
-									<option></option>
-									<option></option>
-								</select>
-							</div>
+						<div class="col-sm-6 col-md-3">
+							<s:textfield name="mode" cssClass="form-control"></s:textfield>
+						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">Entity Class</label>
 						<div class="col-md-3">
-							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
+							<s:textfield name="entityClass" cssClass="form-control"></s:textfield>
+						</div>
+						<label class="col-md-2 control-label">User Archive</label>
+						<div class="col-md-3">
+							<s:textfield name="userArchive" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-md-2 control-label">User Archive</label>
-						<div class="col-md-3">
-							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
-						</div>
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="dateArchive"
+								cssClass="datepicker form-control"></s:textfield>
 						</div>
 					</div>
+					<input type="submit" id="ok" style="display: none">
 				</form>
 			</div>
 		</div>
 	</div>
-	<script>
-		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'dd MM yy'
-		});
-	</script>
 	<style>
 select.ui-datepicker-year {
 	color: #000;

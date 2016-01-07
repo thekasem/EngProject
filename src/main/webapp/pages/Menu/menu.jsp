@@ -28,7 +28,8 @@
 	<div class="container-fluid">
 		<div>
 			<ul class="nav navbar-nav">
-				<li><s:a href="%{home}"><span class="fa fa-home"></span> Home</s:a></li>
+				<li><s:a href="%{home}">
+						<span class="fa fa-home"></span> Home</s:a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#"> Page 1 <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -37,10 +38,13 @@
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
 				<li><s:a href="%{listapplication}">
-						<span class="glyphicon glyphicon-list"></span> Application list</s:a></li>
+						<span class="fa fa-archive"></span> Application Archive</s:a></li>
 				<li><s:a href="%{listactivity}">
-						<span class="glyphicon glyphicon-list"></span>
-						Activity list</s:a></li>
+						<span class="fa fa-archive"></span>
+						Activity Archive</s:a></li>
+				<li><s:a href="#">
+						<span class="fa fa-tachometer"></span>
+						dashboard</s:a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><s:a href="%{search}">

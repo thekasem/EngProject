@@ -6,11 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/funnel.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="../../js/highcharts.js"></script>
+<script src="../../js/highcharts-3d.js"></script>
+<script src="../../js/highcharts-more.js"></script>
+<script src="../../js/funnel.js"></script>
+<script src="../../js/exporting.js"></script>
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script
@@ -38,15 +38,21 @@
 <body>
 	<div style="margin-top: 200px;" align="right">
 		<h3>
-			<span class="label label-default">Dashboard</span>
+			<span class="label label-default"><span
+				class="fa fa-tachometer">Dashboard</span></span>
 		</h3>
 	</div>
 
-	<div id="browser"
-		style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 20px;"></div>
-
-	<div id="login"
-		style="min-width: 310px; height: 400px; max-width: 600px; margin-left: 700px;"></div>
+	<div class="row col-md-12">
+		<div class="col-md-6">
+			<div id="browser"
+				style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="login"
+				style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
+		</div>
+	</div>
 
 	<div id="result" style="margin: auto;"></div>
 	<table id="table-sparkline" style="margin: auto;">
@@ -129,23 +135,40 @@
 		</tbody>
 	</table>
 
-	<div id="average"
-		style="min-width: 310px; max-width: 800px; height: 400px; margin-top: 30px;"></div>
-
-	<div id="newuser" style="margin-left: 850px;"></div>
-
-	<div id="topmodule"
-		style="min-width: 310px; height: 400px; max-width: 600px; margin: 0;"></div>
-
+	<div class="row col-md-12">
+		<div class="col-md-6">
+			<div id="average"
+				style="min-width: 310px; max-width: 800px; height: 400px; margin-top: 40px;"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="newuser" style="margin-top: 40px;"></div>
+		</div>
+	</div>
+	
+	
+	
+	<div class="row col-md-12">
+		<div class="col-md-6">
+			<div id="topmodule"
+		style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
+		</div>
+		<div class="col-md-6">
 	<div id="topuser"
-		style="min-width: 410px; max-width: 600px; height: 400px; margin-left: 800px;"></div>
+		style="min-width: 410px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
+		</div>
+	</div>
+	
+	<div class="row col-md-12">
+		<div class="col-md-6">
+			<div id="customer" style="height: 400px; margin-top: 40px;"></div>
+		</div>
+		<div class="col-md-6">
+			<div id="diskusage"
+				style="min-width: 310px; max-width: 400px; height: 300px; margin-top: 40px;"></div>
+		</div>
+	</div>
 
-	<div id="customer" style="height: 400px"></div>
-
-	<div id="diskusage"
-		style="min-width: 310px; max-width: 400px; height: 300px; margin-left: 880px;"></div>
-
-	<div id="viewaum" style="min-width: 250px; height: 400px; margin: 0"></div>
+	<div id="viewaum" style="min-width: 250px; height: 400px; margin-top: 40px;"></div>
 
 	<script type="text/javascript">
 $(function () {
@@ -912,6 +935,11 @@ $(function () {
 });
 
 </script>
+<!-- <style> -->
+/* rect{ */
+/* display: none; */
+/* } */
+<!-- </style> -->
 
 </body>
 

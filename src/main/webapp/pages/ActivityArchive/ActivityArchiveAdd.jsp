@@ -7,42 +7,43 @@
 <title>Activity Archive ADD</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="../../calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
-	href="../../calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 <script type="text/javascript">
-function clickOK(){
-	document.getElementById("ok").click();
-}
-</script>	
+	function clickOK() {
+		document.getElementById("ok").click();
+	}
+</script>
 </head>
-<body  style="background: #FEFCFF">
+<body style="background: #FEFCFF">
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{addactivity}"><span class="fa fa-refresh"></span> Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOK()"><span class="fa fa-plus-circle"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listac}"><span class="fa fa-times"></span> Cancel</s:a>
+			<s:a type="button" class="btn btn-info" href="%{addactivity}">
+				<span class="fa fa-refresh"></span> Reset</s:a>
+			<a type="button" class="btn btn-info" onclick="clickOK()"><span
+				class="fa fa-plus-circle"></span> OK</a>
+			<s:a type="button" class="btn btn-info" href="%{listac}">
+				<span class="fa fa-times"></span> Cancel</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-plus-circle"> ADD</span></span>
+				<span class="label label-default"><span
+					class="fa fa-plus-circle"> ADD</span></span>
 			</h3>
 		</div>
 
@@ -51,7 +52,8 @@ function clickOK(){
 				<strong>ADD Archive Activity Log</strong>
 			</div>
 			<div class="panel-body">
-				<form action="activityArchive_addArchive" class="form-horizontal" method="post">
+				<form action="activityArchive_addArchive" class="form-horizontal"
+					method="post">
 					<div class="form-group">
 						<label class="col-md-3 control-label">Select Activity Date
 							:</label>
@@ -61,8 +63,8 @@ function clickOK(){
 
 						<label class="col-md-2 control-label">Select Condition :</label>
 						<div class="col-sm-6 col-md-3">
-							<s:select class="form-control" headerKey="-1" value="=" list="#{'=':'=','<':'<'}"
-								name="condition"  />
+							<s:select class="form-control" headerKey="-1" value="="
+								list="#{'=':'=','<':'<'}" name="condition" />
 						</div>
 					</div>
 					<input type="submit" id="ok" style="display: none">
@@ -75,7 +77,7 @@ function clickOK(){
 		$('.datepicker').datepicker({
 			changeYear : true,
 			yearRange : '-100:+100',
-			dateFormat : 'dd MM yy'
+			dateFormat : 'yymmdd'
 		});
 	</script>
 	<style>

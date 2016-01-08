@@ -23,12 +23,6 @@
 	function clickOk() {
 		document.getElementById("ok").click();
 	}
-
-	$('.datepicker').datepicker({
-		changeYear : true,
-		yearRange : '-100:+100',
-		dateFormat : 'dd MM yy'
-	});
 </script>
 </head>
 <body style="background: #FEFCFF">
@@ -82,7 +76,7 @@
 		$('.datepicker').datepicker({
 			changeYear : true,
 			yearRange : '-100:+100',
-			dateFormat : 'dd MM yy'
+			dateFormat : 'yymmdd'
 		});
 	</script>
 	<style>

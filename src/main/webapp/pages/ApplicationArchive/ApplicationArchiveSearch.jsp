@@ -8,9 +8,12 @@
 <title>Application Archive Search</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 <script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -22,12 +25,6 @@
 	function clickOk() {
 		document.getElementById("ok").click();
 	}
-
-	$('.datepicker').datepicker({
-		changeYear : true,
-		yearRange : '-100:+100',
-		dateFormat : 'dd MM yy'
-	});
 </script>
 </head>
 <body style="background: #FEFCFF">
@@ -104,6 +101,13 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$('.datepicker').datepicker({
+			changeYear : true,
+			yearRange : '-100:+100',
+			dateFormat : 'yymmdd'
+		});
+	</script>
 	<style>
 select.ui-datepicker-year {
 	color: #000;

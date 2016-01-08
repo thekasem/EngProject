@@ -45,7 +45,6 @@ public class ActivityArchiveAction extends ActionSupport implements
 
 	public String list() {
 		ContactController();
-		archiveActivityLog = new ArchiveActivityLogMini();
 		count = archiveController.getCount(archiveActivityLog);
 		int firstResult = 0;
 		list = archiveController.getList(archiveActivityLog, true, false,
@@ -78,10 +77,7 @@ public class ActivityArchiveAction extends ActionSupport implements
 
 	public String searchArchive() {
 		ContactController();
-		count = archiveController.getCount(archiveActivityLog);
-		int firstResult = 0;
-		list = archiveController.getList(archiveActivityLog, true, false,
-				firstResult, 15);
+		list();
 		return LIST;
 	}
 

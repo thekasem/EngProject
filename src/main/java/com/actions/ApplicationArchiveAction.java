@@ -45,9 +45,7 @@ public class ApplicationArchiveAction extends ActionSupport implements
 		ContactController();
 		count = archiveController.getCount(archiveApplicationLog);
 		int firstResult = 0;
-		archiveApplicationLog = new ArchiveApplicationLogMini();
-		list = archiveController.getList(archiveApplicationLog, true, false,
-				firstResult, 15);
+		list = archiveController.getList(archiveApplicationLog, true, false,firstResult, 15);
 		return LIST;
 	}
 
@@ -70,10 +68,7 @@ public class ApplicationArchiveAction extends ActionSupport implements
 
 	public String searchArchive() {
 		ContactController();
-		count = archiveController.getCount(archiveApplicationLog);
-		int firstResult = 0;
-		list = archiveController.getList(archiveApplicationLog, true, false,
-				firstResult, 15);
+		list();
 		return LIST;
 	}
 

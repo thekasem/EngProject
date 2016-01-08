@@ -6,18 +6,6 @@
 <head>
 <title>Bootstrap Case</title>
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.theme.min.css" rel="stylesheet">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width, intial-scale=1">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #E5E6E8">
 	<s:url action="login_logout" var="logout"></s:url>
@@ -31,11 +19,13 @@
 				<li><s:a href="%{home}">
 						<span class="fa fa-home"></span> Home</s:a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"> Page 1 <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Page 1-1</a></li>
-						<li><a href="#">Page 1-2</a></li>
-						<li><a href="#">Page 1-3</a></li>
+					data-toggle="dropdown" href="#"><span class="fa fa-archive"></span>
+						AUM Archive <span class="caret"></span></a>
+					<ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
+						<li><s:a href="%{listapplication}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By CIF</h5></s:a></li>
+						<li><s:a href="%{listapplication}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By Branch</h5></s:a></li>
+						<li><s:a href="%{listapplication}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List PortHolding</h5></s:a></li>
+						<li><s:a href="%{listapplication}"><h5 style="color: #337AB7;"><span class="fa fa-plus-circle"></span> Add Archive AUM </h5></s:a></li>
 					</ul></li>
 				<li><s:a href="%{listapplication}">
 						<span class="fa fa-archive"></span> Application Archive</s:a></li>

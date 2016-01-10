@@ -15,6 +15,7 @@
 	<s:url action="aumByCIFArchive_list" var="listaumbycif"></s:url>
 	<s:url action="aumByBranchArchive_list" var="listaumbybranch"></s:url>
 	<s:url action="portHoldingBySubAccountArchive_list" var="listaumbyport"></s:url>
+	<s:url action="aumByCIFArchive_add" var="addaumbycif"></s:url>
 	<nav class="navbar" style="background:#A7C7E8;">
 	<div class="container-fluid">
 		<div>
@@ -28,7 +29,7 @@
 						<li><s:a href="%{listaumbycif}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By CIF</h5></s:a></li>
 						<li><s:a href="%{listaumbybranch}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By Branch</h5></s:a></li>
 						<li><s:a href="%{listaumbyport}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List PortHolding</h5></s:a></li>
-						<li><s:a href="%{listapplication}"><h5 style="color: #337AB7;"><span class="fa fa-plus-circle"></span> Add Archive AUM </h5></s:a></li>
+						<li><s:a href="%{addaumbycif}"><h5 style="color: #337AB7;"><span class="fa fa-plus-circle"></span> Add Archive AUM </h5></s:a></li>
 					</ul></li>
 				<li><s:a href="%{listapplication}">
 						<span class="fa fa-archive"></span> Application Archive</s:a></li>

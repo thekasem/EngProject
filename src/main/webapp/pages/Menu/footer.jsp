@@ -73,11 +73,13 @@ img:hover {
             <h5 class="fa fa-user">Present by: Kasemsun , Jaturong</h5>
 			<h5 class="fa fa-compress">Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.</h5>
 			<img src="../../pictures/struts-logo.svg" style="width: 64px; hight: 64px;" alt="klematis">
-			<img src="../../pictures/hibernate logo.png" style="width: 64px; hight: 64px;" alt="klematis">
+			
 			<img src="../../pictures/jQuery logo.png" style="width: 64px; hight: 64px;" alt="klematis">
+			<img src="../../pictures/hibernate logo.png" style="width: 64px; hight: 64px;" alt="klematis">
 			<img src="../../pictures/bootstrap.jpg" style="width: 64px; hight: 64px;" alt="klematis">
-			<img src="../../pictures/font-awesome.png" style="width: 64px; hight: 64px;" alt="klematis">
 			<img src="../../pictures/highchart.svg" style="width: 64px; hight: 64px;" alt="klematis">
+			<img src="../../pictures/font-awesome.png" style="width: 64px; hight: 64px;" alt="klematis">
+			
 			
 <!-- 			<div> -->
 <!--             <img src="../../pictures/bootstrap.jpg" style="width: 64px; hight: 64px;" alt="klematis"> -->

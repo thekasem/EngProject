@@ -80,5 +80,36 @@ public class PortHoldingOutStandingArchiveAction extends ActionSupport
 	public ArchivePortHoldingBySubAccountMini getModel() {
 		return archivePortHolding;
 	}
+	public ArchivePortHoldingBySubAccountMini getArchivePortHolding() {
+		return archivePortHolding;
+	}
+	public void setArchivePortHolding(
+			ArchivePortHoldingBySubAccountMini archivePortHolding) {
+		this.archivePortHolding = archivePortHolding;
+	}
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
+	public List<ArchivePortHoldingBySubAccountMini> getList() {
+		return list;
+	}
+	public String getUserNameLogin() {
+		return userNameLogin;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public void setCondition(String condition) {
+		this.condition = condition;
+	}
 
 }

@@ -29,6 +29,26 @@
 			<result name="error">/success.jsp</result>
 		</action>
 		
+		<action name="aumByCIFArchive_*" class="com.actions.AUMBYCIFArchiveAction">
+			<result name="list">/pages/ApplicationArchive/ApplicationArchiveList.jsp</result>
+			<result name="add">/pages/ApplicationArchive/ApplicationArchiveAdd.jsp</result>
+			<result name="search">/pages/ApplicationArchive/ApplicationArchiveSearch.jsp</result>
+			<result name="error">/success.jsp</result>
+		</action>
+		
+		<action name="aumByBranchArchive_*" class="com.actions.AUMBYBranchArchiveAction">
+		    <result name="list">/pages/ApplicationArchive/ApplicationArchiveList.jsp</result>
+			<result name="add">/pages/ApplicationArchive/ApplicationArchiveAdd.jsp</result>
+			<result name="search">/pages/ApplicationArchive/ApplicationArchiveSearch.jsp</result>
+			<result name="error">/success.jsp</result>
+		</action>
+		
+		<action name="portHoldingBySubAccountArchive_*" class="com.actions.PortHoldingOutStandingArchiveAction">
+			<result name="list">/pages/ApplicationArchive/ApplicationArchiveList.jsp</result>
+			<result name="add">/pages/ApplicationArchive/ApplicationArchiveAdd.jsp</result>
+			<result name="search">/pages/ApplicationArchive/ApplicationArchiveSearch.jsp</result>
+			<result name="error">/success.jsp</result>
+		</action>
 		<!-- <action name="activityArchive" class="com.actions.ActivityArchiveAction" method="archive">
 			<result name="add">/ActivityArchiveAdd.jsp</result>
 			<result name="list">/ActivityArchiveList.jsp</result>

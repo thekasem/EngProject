@@ -1,9 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+<title>DashBoard</title>
+<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../../js/highcharts.js"></script>
@@ -15,160 +19,243 @@
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-<title>DashBoard</title>
-
-<style type="text/css">
-#newuser {
-	min-width: 310px;
-	max-width: 800px;
-	margin: 0;
-	height: 400px;
-}
-
-#customer {
-	height: 400px;
-	min-width: 310px;
-	max-width: 800px;
-	margin: 0;
-}
-</style>
-
 </head>
-<body>
-	<div style="margin-top: 200px;" align="right">
-		<h3>
-			<span class="label label-default"><span
-				class="fa fa-tachometer">Dashboard</span></span>
-		</h3>
-	</div>
+<body style="background: #FEFCFF">
+	<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<div class="container" id="main">
+		<div style="margin-top: 10px;" align="right">
+			<h3>
+				<span class="label label-default"><span class="fa fa-list">
+						Dashboard</span></span>
+			</h3>
+		</div>
+		
+		<div class="row" style="">
+			<div class="col-md-4 col-sm-6">
+				<div class="well">
+					<form class="form">
+						<h4>Browsers</h4>
+						<div class="input-group text-center">
+							<div class="col-md-4">
+								<div id="browser"
+									style="min-width: 310px; height: 300px; max-width: 600px;"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-8 col-sm-6">
+				<div class="well">
+					<form class="form">
+						<h4>Login</h4>
+						<div class="input-group text-center">
+							<div class="col-md-4">
+								<div id="login"
+									style="min-width: 700px; height: 300px; max-width: 700px;"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
-	<div class="row col-md-12">
-		<div class="col-md-6">
-			<div id="browser"
-				style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
-		</div>
-		<div class="col-md-6">
-			<div id="login"
-				style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
-		</div>
-	</div>
+		<div class="row" style="margin-left: 10px; margin-right: 10px;">
+			<div class="col-md-8 col-sm-6">
+				<div class="panel panel-info" style="margin: auto;">
+					<div class="panel-heading">
+						<h4>User</h4>
+					</div>
+					<div class="panel-body" style="height: 330px;">
+						<div id="result" style="margin: auto; margin-top: 30px;"></div>
+						<table id="table-sparkline"
+							style="margin: auto; margin-top: 30px;">
+							<thead>
+								<tr>
+									<th>State</th>
+									<th>Income</th>
+									<th>Income per quarter</th>
+									<th>Costs</th>
+									<th>Costs per quarter</th>
+									<th>Result</th>
+									<th>Result per quarter</th>
+								</tr>
+								<hr>
+							</thead>
+							<tbody id="tbody-sparkline">
+								<tr>
+									<th>Alabama</th>
+									<td>254</td>
+									<td data-sparkline="71, 78, 39, 66 " />
+									<td>296</td>
+									<td data-sparkline="68, 52, 80, 96 " />
+									<td>-42</td>
+									<td data-sparkline="3, 26, -41, -30 ; column" />
+								</tr>
+								<tr>
+									<th>Alaska</th>
+									<td>246</td>
+									<td data-sparkline="87, 44, 74, 41 " />
+									<td>181</td>
+									<td data-sparkline="29, 54, 73, 25 " />
+									<td>65</td>
+									<td data-sparkline="58, -10, 1, 16 ; column" />
+								</tr>
+								<tr>
+									<th>Arizona</th>
+									<td>101</td>
+									<td data-sparkline="56, 12, 8, 25 " />
+									<td>191</td>
+									<td data-sparkline="69, 14, 53, 55 " />
+									<td>-90</td>
+									<td data-sparkline="-13, -2, -45, -30 ; column" />
+								</tr>
+								<tr>
+									<th>Arkansas</th>
+									<td>303</td>
+									<td data-sparkline="81, 50, 78, 94 " />
+									<td>76</td>
+									<td data-sparkline="36, 15, 14, 11 " />
+									<td>227</td>
+									<td data-sparkline="45, 35, 64, 83 ; column" />
+								</tr>
+								<tr>
+									<th>California</th>
+									<td>200</td>
+									<td data-sparkline="61, 80, 10, 49 " />
+									<td>217</td>
+									<td data-sparkline="100, 8, 52, 57 " />
+									<td>-17</td>
+									<td data-sparkline="-39, 72, -42, -8 ; column" />
+								</tr>
+								<tr>
+									<th>Wisconsin</th>
+									<td>183</td>
+									<td data-sparkline="24, 55, 21, 83 " />
+									<td>224</td>
+									<td data-sparkline="80, 64, 13, 67 " />
+									<td>-41</td>
+									<td data-sparkline="-56, -9, 8, 16 ; column" />
+								</tr>
+								<tr>
+									<th>Wyoming</th>
+									<td>231</td>
+									<td data-sparkline="52, 49, 97, 33 " />
+									<td>251</td>
+									<td data-sparkline="96, 50, 23, 82 " />
+									<td>-20</td>
+									<td data-sparkline="-44, -1, 74, -49 ; column" />
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
 
-	<div id="result" style="margin: auto;"></div>
-	<table id="table-sparkline" style="margin: auto;">
-		<div>User</div>
-		<thead>
-			<tr>
-				<th>State</th>
-				<th>Income</th>
-				<th>Income per quarter</th>
-				<th>Costs</th>
-				<th>Costs per quarter</th>
-				<th>Result</th>
-				<th>Result per quarter</th>
-			</tr>
-		</thead>
-		<tbody id="tbody-sparkline">
-			<tr>
-				<th>Alabama</th>
-				<td>254</td>
-				<td data-sparkline="71, 78, 39, 66 " />
-				<td>296</td>
-				<td data-sparkline="68, 52, 80, 96 " />
-				<td>-42</td>
-				<td data-sparkline="3, 26, -41, -30 ; column" />
-			</tr>
-			<tr>
-				<th>Alaska</th>
-				<td>246</td>
-				<td data-sparkline="87, 44, 74, 41 " />
-				<td>181</td>
-				<td data-sparkline="29, 54, 73, 25 " />
-				<td>65</td>
-				<td data-sparkline="58, -10, 1, 16 ; column" />
-			</tr>
-			<tr>
-				<th>Arizona</th>
-				<td>101</td>
-				<td data-sparkline="56, 12, 8, 25 " />
-				<td>191</td>
-				<td data-sparkline="69, 14, 53, 55 " />
-				<td>-90</td>
-				<td data-sparkline="-13, -2, -45, -30 ; column" />
-			</tr>
-			<tr>
-				<th>Arkansas</th>
-				<td>303</td>
-				<td data-sparkline="81, 50, 78, 94 " />
-				<td>76</td>
-				<td data-sparkline="36, 15, 14, 11 " />
-				<td>227</td>
-				<td data-sparkline="45, 35, 64, 83 ; column" />
-			</tr>
-			<tr>
-				<th>California</th>
-				<td>200</td>
-				<td data-sparkline="61, 80, 10, 49 " />
-				<td>217</td>
-				<td data-sparkline="100, 8, 52, 57 " />
-				<td>-17</td>
-				<td data-sparkline="-39, 72, -42, -8 ; column" />
-			</tr>
-			<tr>
-				<th>Wisconsin</th>
-				<td>183</td>
-				<td data-sparkline="24, 55, 21, 83 " />
-				<td>224</td>
-				<td data-sparkline="80, 64, 13, 67 " />
-				<td>-41</td>
-				<td data-sparkline="-56, -9, 8, 16 ; column" />
-			</tr>
-			<tr>
-				<th>Wyoming</th>
-				<td>231</td>
-				<td data-sparkline="52, 49, 97, 33 " />
-				<td>251</td>
-				<td data-sparkline="96, 50, 23, 82 " />
-				<td>-20</td>
-				<td data-sparkline="-44, -1, 74, -49 ; column" />
-			</tr>
-		</tbody>
-	</table>
+			<div class="col-md-4 col-sm-6">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>Top Module</h4>
+					</div>
+					<div class="panel-body">
+						<div class="row col-md-12">
+							<div class="col-md-4">
+								<div id="topmodule" style="width: 300px; height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-	<div class="row col-md-12">
-		<div class="col-md-6">
-			<div id="average"
-				style="min-width: 310px; max-width: 800px; height: 400px; margin-top: 40px;"></div>
-		</div>
-		<div class="col-md-6">
-			<div id="newuser" style="margin-top: 40px;"></div>
-		</div>
-	</div>
-	
-	
-	
-	<div class="row col-md-12">
-		<div class="col-md-6">
-			<div id="topmodule"
-		style="min-width: 310px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
-		</div>
-		<div class="col-md-6">
-	<div id="topuser"
-		style="min-width: 410px; height: 400px; max-width: 600px; margin-top: 40px;"></div>
-		</div>
-	</div>
-	
-	<div class="row col-md-12">
-		<div class="col-md-6">
-			<div id="customer" style="height: 400px; margin-top: 40px;"></div>
-		</div>
-		<div class="col-md-6">
-			<div id="diskusage"
-				style="min-width: 310px; max-width: 400px; height: 300px; margin-top: 40px;"></div>
-		</div>
-	</div>
 
-	<div id="viewaum" style="min-width: 250px; height: 400px; margin-top: 40px;"></div>
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-md-6 col-sm-6">
+				<div class="well">
+					<form class="form">
+						<h4>Percent New User</h4>
+						<div class="input-group text-center">
+							<div class="col-md-4">
+								<div id="newuser" style="width: 500px; height: 300px;"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-6 col-sm-6">
+				<div class="well">
+					<h4>Customers</h4>
+					<div class="input-group text-center">
+						<div class="col-md-4">
+							<div id="customer" style="width: 500px; height: 300px;"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row" style="margin-left: 10px; margin-right: 10px;">
+			<div class="col-md-5 col-sm-6">
+				<div class="panel panel-info">
+					<div class="panel-heading">
+						<h4>Top User</h4>
+					</div>
+					<div class="panel-body">
+						<div class="row col-md-12">
+							<div class="col-md-4">
+								<div id="topuser" style="width: 390px; height: 300px;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-7 col-sm-6" style="margin: auto;">
+				<div class="panel panel-info" style="margin: auto;">
+					<div class="panel-heading">
+						<h4>Average Time On Site</h4>
+					</div>
+					<div class="panel-body">
+						<div id="average" style="width: 600px; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col-md-8 col-sm-6">
+				<div class="well">
+					<form class="form">
+						<h4>View AUM</h4>
+						<div class="input-group text-center">
+							<div class="col-md-4">
+								<div id="viewaum" style="width: 700px; height: 300px;"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<div class="well">
+					<h4>Disk Usage</h4>
+					<div class="input-group text-center">
+						<div id="diskusage" style="width: 300px; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+	</div>
 
 	<script type="text/javascript">
 $(function () {
@@ -684,7 +771,7 @@ $(function () {
             text: 'Customer'
         },
         subtitle: {
-            text: 'Notice the difference between a 0 value and a null point'
+            text: ''
         },
         plotOptions: {
             column: {
@@ -935,11 +1022,14 @@ $(function () {
 });
 
 </script>
-<!-- <style> -->
-/* rect{ */
-/* display: none; */
-/* } */
-<!-- </style> -->
+	<!-- <style> -->
+	<!-- rect{ display: none; } -->
+	<!-- </style> -->
+
+</body>
+
+
+
 
 </body>
 

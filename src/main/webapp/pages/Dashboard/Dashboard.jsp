@@ -260,6 +260,13 @@
 	<script type="text/javascript">
 $(function () {
     $('#browser').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -318,6 +325,13 @@ $(function () {
 
 $(function () {
     $('#login').highcharts({
+   	    exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -403,6 +417,13 @@ $(function () {
                 },
                 credits: {
                     enabled: false
+                },
+                exporting: {
+                    buttons: [
+                        {
+                            symbol: '',
+                        }
+                    ]
                 },
                 xAxis: {
                     labels: {
@@ -536,6 +557,13 @@ $(function () {
 
 $(function () {
     $('#average').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -604,6 +632,13 @@ $(function () {
 $(function () {
     // Set up the chart
     var chart = new Highcharts.Chart({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -664,6 +699,13 @@ $(function () {
 
         // Build the chart
         $('#topmodule').highcharts({
+        	exporting: {
+                buttons: [
+                    {
+                        symbol: '',
+                    }
+                ]
+            },
         	credits: {
                 enabled: false
             },
@@ -721,6 +763,13 @@ $(function () {
 $(function () {
 
     $('#topuser').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -761,6 +810,13 @@ $(function () {
 
 $(function () {
     $('#customer').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -796,6 +852,13 @@ $(function () {
 
 $(function () {
     $('#viewaum').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },
@@ -912,6 +975,13 @@ $(function () {
 $(function () {
 
     $('#diskusage').highcharts({
+    	exporting: {
+            buttons: [
+                {
+                    symbol: '',
+                }
+            ]
+        },
     	credits: {
             enabled: false
         },

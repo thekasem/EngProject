@@ -8,14 +8,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class DashBoardAction extends ActionSupport  {
+public class DashBoardAction extends ActionSupport {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -146843680046469165L;
 	private static String DASHBOARD = "dashboard";
-	private String  userNameLogin;
+	private String userNameLogin;
 
 	public void ContactController() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
@@ -23,13 +23,14 @@ public class DashBoardAction extends ActionSupport  {
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
 	}
-	public String showDashBoard(){
+
+	public String showDashBoard() {
 		ContactController();
 		return DASHBOARD;
 	}
+
 	public String getUserNameLogin() {
 		return userNameLogin;
 	}
-	
-	
+
 }

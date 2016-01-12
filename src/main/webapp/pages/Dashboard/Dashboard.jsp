@@ -23,8 +23,8 @@
 	<div class="container" id="main">
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-dashboard">
-						Dashboard</span></span>
+				<span class="label label-default"><span
+					class="fa fa-dashboard"> Dashboard</span></span>
 			</h3>
 		</div>
 

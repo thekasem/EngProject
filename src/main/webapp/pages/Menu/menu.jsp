@@ -27,10 +27,26 @@
 					data-toggle="dropdown" href="#"><span class="fa fa-archive"></span>
 						AUM Archive <span class="caret"></span></a>
 					<ul class="dropdown-menu " aria-labelledby="dropdownMenu1">
-						<li><s:a href="%{listaumbycif}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By CIF</h5></s:a></li>
-						<li><s:a href="%{listaumbybranch}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List AUM By Branch</h5></s:a></li>
-						<li><s:a href="%{listaumbyport}"><h5 style="color: #337AB7;"><span class="fa fa-list"></span> List PortHolding</h5></s:a></li>
-						<li><s:a href="%{addaumbycif}"><h5 style="color: #337AB7;"><span class="fa fa-plus-circle"></span> Add Archive AUM </h5></s:a></li>
+						<li><s:a href="%{listaumbycif}">
+								<h5 style="color: #337AB7;">
+									<span class="fa fa-list"></span> List AUM By CIF
+								</h5>
+							</s:a></li>
+						<li><s:a href="%{listaumbybranch}">
+								<h5 style="color: #337AB7;">
+									<span class="fa fa-list"></span> List AUM By Branch
+								</h5>
+							</s:a></li>
+						<li><s:a href="%{listaumbyport}">
+								<h5 style="color: #337AB7;">
+									<span class="fa fa-list"></span> List PortHolding
+								</h5>
+							</s:a></li>
+						<li><s:a href="%{addaumbycif}">
+								<h5 style="color: #337AB7;">
+									<span class="fa fa-plus-circle"></span> Add Archive AUM
+								</h5>
+							</s:a></li>
 					</ul></li>
 				<li><s:a href="%{listapplication}">
 						<span class="fa fa-archive"></span> Application Archive</s:a></li>

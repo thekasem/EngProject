@@ -29,7 +29,7 @@
 						Dashboard</span></span>
 			</h3>
 		</div>
-		
+
 		<div class="row" style="">
 			<div class="col-md-4 col-sm-6">
 				<div class="well">
@@ -260,6 +260,9 @@
 	<script type="text/javascript">
 $(function () {
     $('#browser').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: 0,
@@ -315,6 +318,9 @@ $(function () {
 
 $(function () {
     $('#login').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'area'
         },
@@ -369,26 +375,6 @@ $(function () {
         }]
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 $(function () {
     /**
@@ -550,6 +536,9 @@ $(function () {
 
 $(function () {
     $('#average').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'bar'
         },
@@ -615,6 +604,9 @@ $(function () {
 $(function () {
     // Set up the chart
     var chart = new Highcharts.Chart({
+    	credits: {
+            enabled: false
+        },
         chart: {
             renderTo: 'newuser',
             type: 'column',
@@ -672,6 +664,9 @@ $(function () {
 
         // Build the chart
         $('#topmodule').highcharts({
+        	credits: {
+                enabled: false
+            },
             chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
@@ -726,6 +721,9 @@ $(function () {
 $(function () {
 
     $('#topuser').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'pyramid',
             marginRight: 100
@@ -763,6 +761,9 @@ $(function () {
 
 $(function () {
     $('#customer').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'column',
             margin: 75,
@@ -795,6 +796,9 @@ $(function () {
 
 $(function () {
     $('#viewaum').highcharts({
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'spline'
         },
@@ -908,7 +912,9 @@ $(function () {
 $(function () {
 
     $('#diskusage').highcharts({
-
+    	credits: {
+            enabled: false
+        },
         chart: {
             type: 'gauge',
             plotBackgroundColor: null,

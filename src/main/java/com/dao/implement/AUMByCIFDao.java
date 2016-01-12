@@ -16,8 +16,11 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		List<AUMByCIFMini> result = null;
-		Query query = sessionB.createQuery("from AUMByCIFMini where aumDate "+condition+" '"+date+"'");
-		
+		Query query = sessionB.createQuery("from AUMByCIFMini where aumDate "
+				+ condition + " '" + date + "'");
+		query.setFirstResult(0);
+		query.setMaxResults(500);
+		result = query.list();
 		return result;
 	}
 
@@ -38,29 +41,31 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 					where = false;
 				}
 			}
-			
+
 			if (obj.getCustomerNameEn() != null) {
 				if (where) {
-					command += " WHERE customerNameEn = '" + obj.getCustomerNameEn().trim() +"'";
+					command += " WHERE customerNameEn = '"
+							+ obj.getCustomerNameEn().trim() + "'";
 					where = false;
 				}
 			}
-			
+
 			if (obj.getAumDate() != null && !obj.getAumDate().trim().equals("")) {
 				if (where) {
-					command += " WHERE aumDate = '" + obj.getAumDate().trim() + "'";
+					command += " WHERE aumDate = '" + obj.getAumDate().trim()
+							+ "'";
 					where = false;
 				}
 			}
-			
-			if (obj.getAumMarketValue() != null && !obj.getAumMarketValue().equals("")) {
-				if (where) {
-					command += " WHERE aumMarketValue = '" + obj.getAumMarketValue() + "'";
-					where = false;
-				}
-			}
-			
 
+			if (obj.getAumMarketValue() != null
+					&& !obj.getAumMarketValue().equals("")) {
+				if (where) {
+					command += " WHERE aumMarketValue = '"
+							+ obj.getAumMarketValue() + "'";
+					where = false;
+				}
+			}
 
 			if (!isCount) {
 				if (isOrdering) {
@@ -134,7 +139,5 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 		sessionB.delete(entity);
 		sessionB.getTransaction().commit();
 	}
-	
-	
 
 }

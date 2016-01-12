@@ -70,7 +70,7 @@ public class AUMByBranchArchiveController implements IAUMByBranchArchiveControll
 					ArchiveAUMByBranchMini entityA = new ArchiveAUMByBranchMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setConditionArchive("Date "+condition+" "+date);
+					entityA.setConditionArchive("Date "+condition+" "+ convertDate(date));
 					entityA.setUserArchive((String)session.getAttribute("user"));
 					aumByBranchArchiveDao.save(entityA);
 					aumByBranchDao.delete(entityB);
@@ -81,5 +81,13 @@ public class AUMByBranchArchiveController implements IAUMByBranchArchiveControll
 		}
 		sessionA.getTransaction().commit();
 	}
-
+	public String convertDate(String datetoconvert) {
+		String dateResult = "";
+		if (datetoconvert != null) {
+			dateResult = datetoconvert.substring(6, 8) + "/"
+					+ datetoconvert.substring(4, 6) + "/"
+					+ datetoconvert.substring(0, 4);
+		}
+		return dateResult;
+	}
 }

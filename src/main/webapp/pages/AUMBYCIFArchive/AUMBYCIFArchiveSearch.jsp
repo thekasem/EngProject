@@ -27,7 +27,7 @@
 	}
 </script>
 </head>
-<body  style="background: #FEFCFF">
+<body style="background: #FEFCFF">
 	<s:url action="aumByCIFArchive_search" var="searchaumcif"></s:url>
 	<s:url action="aumByCIFArchive_list" var="listaumcif"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
@@ -54,23 +54,24 @@
 				<Strong>Search AUM BY CIF Archive Log</Strong>
 			</div>
 			<div class="panel-body">
-				<form class="form-horizontal">
+				<form action="aumByCIFArchive_searchArchive" class="form-horizontal"  method="post">
 					<div class="form-group">
 						<label class="col-md-2 control-label">AUM Date</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="aumDate" cssClass="datepicker form-control"></s:textfield>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="userarchive" cssClass="form-control"></s:textfield>
+							<s:textfield name="userArchive" cssClass="form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="dateArchive" cssClass="datepicker form-control"></s:textfield>
 						</div>
 					</div>
+					<input type="submit" id="ok" style="display: none">
 				</form>
 			</div>
 		</div>
@@ -79,7 +80,7 @@
 		$('.datepicker').datepicker({
 			changeYear : true,
 			yearRange : '-100:+100',
-			dateFormat : 'dd MM yy'
+			dateFormat : 'yymmdd'
 		});
 	</script>
 	<style>

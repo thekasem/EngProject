@@ -18,12 +18,12 @@ import com.entity.HibernateArchiveUtil;
 import com.entity.archive.ArchivePortHoldingBySubAccountMini;
 import com.entity.bonanza.PortHoldingBySubAccountMini;
 
-public class PortHoldingBySubAccountArchiveController implements IPortHoldingBySubAccountArchiveCotroller {
-	
+public class PortHoldingBySubAccountArchiveController implements
+		IPortHoldingBySubAccountArchiveCotroller {
+
 	IPortHoldingBySubAccountArchiveDao portHoldingBySubAccountArchiveDao;
 	IPortHoldingBySubAccountDao portHoldingBySubAccountDao;
 
-	
 	public IPortHoldingBySubAccountArchiveDao getPortHoldingBySubAccountArchiveDao() {
 		return portHoldingBySubAccountArchiveDao;
 	}
@@ -43,14 +43,17 @@ public class PortHoldingBySubAccountArchiveController implements IPortHoldingByS
 	}
 
 	public int getCount(ArchivePortHoldingBySubAccountMini criteriaSearch) {
-		return portHoldingBySubAccountArchiveDao.getCountByCriteriaSearch(criteriaSearch);
+		return portHoldingBySubAccountArchiveDao
+				.getCountByCriteriaSearch(criteriaSearch);
 	}
 
 	public List<ArchivePortHoldingBySubAccountMini> getList(
 			ArchivePortHoldingBySubAccountMini criteriaSearch,
 			Boolean isOrdering, Boolean isAscending, Integer firstResult,
 			Integer maxResult) {
-		return portHoldingBySubAccountArchiveDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		return portHoldingBySubAccountArchiveDao
+				.getListByCriteriaSearch(criteriaSearch, isOrdering,
+						isAscending, firstResult, maxResult);
 	}
 
 	public ArchivePortHoldingBySubAccountMini getObjectById(int eventId) {
@@ -62,25 +65,38 @@ public class PortHoldingBySubAccountArchiveController implements IPortHoldingByS
 		List<PortHoldingBySubAccountMini> listB;
 		String dateToday = dateFormat.format(new Date());
 		HttpSession session = ServletActionContext.getRequest().getSession();
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		try {
 			do {
-				listB = portHoldingBySubAccountDao.getListByDate(date, condition);
-				for(PortHoldingBySubAccountMini entityB: listB){
+				listB = portHoldingBySubAccountDao.getListByDate(date,
+						condition);
+				for (PortHoldingBySubAccountMini entityB : listB) {
 					ArchivePortHoldingBySubAccountMini entityA = new ArchivePortHoldingBySubAccountMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setConditionArchive("Date "+condition+" "+date);
-					entityA.setUserArchive((String)session.getAttribute("user"));
+					entityA.setConditionArchive("Date " + condition + " "
+							+ convertDate(date));
+					entityA.setUserArchive((String) session
+							.getAttribute("user"));
 					portHoldingBySubAccountArchiveDao.save(entityA);
 					portHoldingBySubAccountDao.delete(entityB);
 				}
-			} while (listB==null);
+			} while (listB == null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		sessionA.getTransaction().commit();
 	}
 
+	public String convertDate(String datetoconvert) {
+		String dateResult = "";
+		if (datetoconvert != null) {
+			dateResult = datetoconvert.substring(6, 8) + "/"
+					+ datetoconvert.substring(4, 6) + "/"
+					+ datetoconvert.substring(0, 4);
+		}
+		return dateResult;
+	}
 }

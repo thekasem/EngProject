@@ -11,7 +11,7 @@ import com.entity.HibernateArchiveUtil;
 import com.entity.archive.ArchiveAUMByBranchMini;
 
 public class AUMByBranchArchiveDao implements IAUMByBranchArchiveDao {
-    
+
 	public String createCriteriaSearch(ArchiveAUMByBranchMini obj,
 			boolean isOrdering, boolean isAscending, boolean isCount) {
 		boolean where = true;
@@ -25,53 +25,70 @@ public class AUMByBranchArchiveDao implements IAUMByBranchArchiveDao {
 
 			if (obj.getAumByBranchId() != 0) {
 				if (where) {
-					command += " WHERE aumByBranchId = " + obj.getAumByBranchId();
+					command += " WHERE aumByBranchId = "
+							+ obj.getAumByBranchId();
 					where = false;
 				}
 			}
-
+			if (obj.getAumDate() != null && !obj.getAumDate().trim().equals("")) {
+				if (where) {
+					command += " WHERE aumDate = '" + obj.getAumDate().trim()
+							+ "'";
+					where = false;
+				}
+			}
 			if (obj.getCustomerNameEn() != null) {
 				if (where) {
-					command += " WHERE customerNameEn = '" + obj.getCustomerNameEn().trim() + "'";
+					command += " WHERE customerNameEn = '"
+							+ obj.getCustomerNameEn().trim() + "'";
 					where = false;
 				}
 			}
 
 			if (obj.getBranchCode() != null) {
 				if (where) {
-					command += " WHERE branchName = '" + obj.getBranchCode().trim() + "'";
+					command += " WHERE branchName = '"
+							+ obj.getBranchCode().trim() + "'";
 					where = false;
 				}
 			}
 
 			if (obj.getAumDate() != null && !obj.getAumDate().trim().equals("")) {
 				if (where) {
-					command += " WHERE aumDate = '" + obj.getAumDate().trim() + "'";
+					command += " WHERE aumDate = '" + obj.getAumDate().trim()
+							+ "'";
 					where = false;
 				}
 			}
 
-			if (obj.getAumMarketValue() != null && !obj.getAumMarketValue().equals("")) {
+			if (obj.getAumMarketValue() != null
+					&& !obj.getAumMarketValue().equals("")) {
 				if (where) {
-					command += " WHERE aumMarketValue = '" + obj.getAumMarketValue() + "'";
+					command += " WHERE aumMarketValue = '"
+							+ obj.getAumMarketValue() + "'";
 					where = false;
 				}
 			}
 
-			if (obj.getDateArchive() != null && !obj.getDateArchive().trim().equals("")) {
+			if (obj.getDateArchive() != null
+					&& !obj.getDateArchive().trim().equals("")) {
 				if (where) {
-					command += " WHERE dateArchive = '" + obj.getDateArchive().trim() + "'";
+					command += " WHERE dateArchive = '"
+							+ obj.getDateArchive().trim() + "'";
 					where = false;
 				}
 			}
 
-			if (obj.getUserArchive() != null && !obj.getUserArchive().trim().equals("")) {
+			if (obj.getUserArchive() != null
+					&& !obj.getUserArchive().trim().equals("")) {
 				if (where) {
-					command += " WHERE UPPER(userArchive) LIKE UPPER('%" + obj.getUserArchive().toUpperCase().trim() + "%')";
+					command += " WHERE UPPER(userArchive) LIKE UPPER('%"
+							+ obj.getUserArchive().toUpperCase().trim() + "%')";
 					where = false;
 
 				} else
-					command += " AND UPPER(userArchive) LIKE UPPER('%" + obj.getUserArchive().toUpperCase().trim() + "%')";
+					command += " AND UPPER(userArchive) LIKE UPPER('%"
+							+ obj.getUserArchive().toUpperCase().trim() + "%')";
 			}
 
 			if (!isCount) {
@@ -92,11 +109,13 @@ public class AUMByBranchArchiveDao implements IAUMByBranchArchiveDao {
 	public List<ArchiveAUMByBranchMini> getListByCriteriaSearch(
 			ArchiveAUMByBranchMini criteriaSearch, boolean isOrdering,
 			boolean isAscending, int firstResult, int maxResult) {
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		List<ArchiveAUMByBranchMini> result = null;
 		try {
-			Query query = sessionA.createQuery(createCriteriaSearch(criteriaSearch, isOrdering, isAscending, false));
+			Query query = sessionA.createQuery(createCriteriaSearch(
+					criteriaSearch, isOrdering, isAscending, false));
 			query.setFirstResult(firstResult);
 			query.setMaxResults(maxResult);
 
@@ -114,7 +133,8 @@ public class AUMByBranchArchiveDao implements IAUMByBranchArchiveDao {
 				.openSession();
 		sessionA.beginTransaction();
 		try {
-			Query query = sessionA.createQuery(createCriteriaSearch(criteriaSearch, false, false, true));
+			Query query = sessionA.createQuery(createCriteriaSearch(
+					criteriaSearch, false, false, true));
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (HibernateException ex) {
 			ex.printStackTrace();
@@ -132,18 +152,21 @@ public class AUMByBranchArchiveDao implements IAUMByBranchArchiveDao {
 		sessionA.getTransaction().commit();
 		return archiveAUMByBranchMini;
 	}
+
 	public void save(ArchiveAUMByBranchMini entity) {
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		sessionA.save(entity);
 		sessionA.getTransaction().commit();
 	}
 
 	public void delete(ArchiveAUMByBranchMini entity) {
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		sessionA.delete(entity);
 		sessionA.getTransaction().commit();
 	}
-	
+
 }

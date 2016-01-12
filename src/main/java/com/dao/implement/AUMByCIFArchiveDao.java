@@ -29,7 +29,12 @@ public class AUMByCIFArchiveDao implements IAUMByCIFArchiveDao {
 					where = false;
 				}
 			}
-			
+			if (obj.getAumDate() != null && !obj.getAumDate().trim().equals("")) {
+				if (where) {
+					command += " WHERE aumDate = '" + obj.getAumDate().trim() + "'";
+					where = false;
+				}
+			}
 			if (obj.getCustomerNameEn() != null) {
 				if (where) {
 					command += " WHERE customerNameEn = '" + obj.getCustomerNameEn().trim() +"'";

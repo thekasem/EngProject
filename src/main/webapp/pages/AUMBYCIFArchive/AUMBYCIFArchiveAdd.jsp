@@ -52,7 +52,7 @@
 				<strong>ADD Archive AUM Log</strong>
 			</div>
 			<div class="panel-body">
-				<form action="applicationArchive_addArchive" class="form-horizontal" method="post">
+				<form action="aumByCIFArchive_addArchive" class="form-horizontal" method="post">
 					<div class="form-group">
 						<label class="col-md-3 control-label">Select AUM
 							Date :</label>

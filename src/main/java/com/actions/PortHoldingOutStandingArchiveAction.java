@@ -42,37 +42,50 @@ public class PortHoldingOutStandingArchiveAction extends ActionSupport
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
 	}
-    public String list(){
-    	ContactController();
-    	count = archiveController.getCount(archivePortHolding);
-    	int firstResult = 0;
-    	list = archiveController.getList(archivePortHolding, true, false, firstResult, 15);
-    	return LIST;
-    }
-    
-    public String add(){
-    	ContactController();
-    	return ADD;
-    }
-    
-    public String addArchive() throws IllegalAccessException,
-	InvocationTargetException {
-    	ContactController();
-    	archiveController.addArchive(date, condition);
-    	list();
-    	return LIST;
-    }
-    
-    public String search(){
-    	ContactController();
-    	return SEARCH;
-    }
-    
-    public String searchArchive(){
-    	ContactController();
-    	list();
-    	return LIST;
-    }
+
+	public String list() {
+		ContactController();
+		count = archiveController.getCount(archivePortHolding);
+		int firstResult = 0;
+		list = archiveController.getList(archivePortHolding, true, false,
+				firstResult, 15);
+		return LIST;
+	}
+
+	public String add() {
+		ContactController();
+		return ADD;
+	}
+
+	public String addArchive() throws IllegalAccessException,
+			InvocationTargetException {
+		ContactController();
+		archiveController.addArchive(date, condition);
+		list();
+		return LIST;
+	}
+
+	public static String convertDate(String datetoconvert) {
+		String dateResult = "";
+		if (datetoconvert != null) {
+			dateResult = datetoconvert.substring(6, 8) + "/"
+					+ datetoconvert.substring(4, 6) + "/"
+					+ datetoconvert.substring(0, 4);
+		}
+		return dateResult;
+	}
+
+	public String search() {
+		ContactController();
+		return SEARCH;
+	}
+
+	public String searchArchive() {
+		ContactController();
+		list();
+		return LIST;
+	}
+
 	public String archive() {
 		return "list";
 	}
@@ -80,34 +93,44 @@ public class PortHoldingOutStandingArchiveAction extends ActionSupport
 	public ArchivePortHoldingBySubAccountMini getModel() {
 		return archivePortHolding;
 	}
+
 	public ArchivePortHoldingBySubAccountMini getArchivePortHolding() {
 		return archivePortHolding;
 	}
+
 	public void setArchivePortHolding(
 			ArchivePortHoldingBySubAccountMini archivePortHolding) {
 		this.archivePortHolding = archivePortHolding;
 	}
+
 	public int getPage() {
 		return page;
 	}
+
 	public void setPage(int page) {
 		this.page = page;
 	}
+
 	public int getCount() {
 		return count;
 	}
+
 	public void setCount(int count) {
 		this.count = count;
 	}
+
 	public List<ArchivePortHoldingBySubAccountMini> getList() {
 		return list;
 	}
+
 	public String getUserNameLogin() {
 		return userNameLogin;
 	}
+
 	public void setDate(String date) {
 		this.date = date;
 	}
+
 	public void setCondition(String condition) {
 		this.condition = condition;
 	}

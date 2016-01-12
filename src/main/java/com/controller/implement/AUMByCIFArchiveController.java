@@ -69,7 +69,7 @@ public class AUMByCIFArchiveController implements IAUMByCIFArchiveController {
 					ArchiveAUMByCIFMini entityA = new ArchiveAUMByCIFMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setCoditionArhcive("Date "+condition+" "+date);
+					entityA.setCoditionArhcive("Date "+condition+" "+convertDate(date));
 					entityA.setUserArchive((String)session.getAttribute("user"));
 					aumByCIFArchiveDao.save(entityA);
 					aumByCIFDao.delete(entityB);
@@ -80,6 +80,14 @@ public class AUMByCIFArchiveController implements IAUMByCIFArchiveController {
 		}
 		sessionA.getTransaction().commit();
 	}
-	
+	public String convertDate(String datetoconvert) {
+		String dateResult = "";
+		if (datetoconvert != null) {
+			dateResult = datetoconvert.substring(6, 8) + "/"
+					+ datetoconvert.substring(4, 6) + "/"
+					+ datetoconvert.substring(0, 4);
+		}
+		return dateResult;
+	}
 
 }

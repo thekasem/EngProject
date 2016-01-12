@@ -71,7 +71,7 @@ public class ApplicationArchiveLogController implements IApplicationArchiveLogCo
 					ArchiveApplicationLogMini entityA = new ArchiveApplicationLogMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setCoditionArchive("Date " +condition+" "+date);
+					entityA.setCoditionArchive("Date " +condition+" "+convertDate(date));
 					entityA.setUserArchive((String)session.getAttribute("user"));
 					applicationArchiveLogDao.save(entityA);
 					applicationLogDao.delete(entityB);
@@ -82,5 +82,13 @@ public class ApplicationArchiveLogController implements IApplicationArchiveLogCo
 		}
 		sessionA.getTransaction().commit();
 	}
-
+	public String convertDate(String datetoconvert) {
+		String dateResult = "";
+		if (datetoconvert != null) {
+			dateResult = datetoconvert.substring(6, 8) + "/"
+					+ datetoconvert.substring(4, 6) + "/"
+					+ datetoconvert.substring(0, 4);
+		}
+		return dateResult;
+	}
 }

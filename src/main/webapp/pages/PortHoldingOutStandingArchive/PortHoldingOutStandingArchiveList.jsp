@@ -15,7 +15,8 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
-	<s:url action="portHoldingBySubAccountArchive_search" var="searchaumport"></s:url>
+	<s:url action="portHoldingBySubAccountArchive_search"
+		var="searchaumport"></s:url>
 	<s:url action="portHoldingBySubAccountArchive_list" var="listaumport"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
@@ -47,7 +48,7 @@
 							<th>AccountName</th>
 							<th>BranchCode</th>
 							<th>CurrencyCode</th>
-							<th>CustomerID</th>
+							<th>CustomerName</th>
 							<th>AUM Date</th>
 							<th>Market Value</th>
 							<th>User Archive</th>
@@ -55,32 +56,21 @@
 							<th>Condition Archive</th>
 						</thead>
 						<tbody>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>0158849786414913</th>
-								<th>Mrs.Test Test</th>
-								<th>Test</th>
-								<th>Mutual</th>
-								<th>00014</th>
-								<th>27/06/2015</th>
-								<th>258782.9</th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>0158849786414913</th>
-								<th>Mrs.Test Test</th>
-								<th>Test</th>
-								<th>Mutual</th>
-								<th>00014</th>
-								<th>27/06/2015</th>
-								<th>258782.9</th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
+							<s:iterator value="list">
+								<tr style="color: #98AFC7;">
+									<td><s:property value="portHoldingId" /></td>
+									<td><s:property value="subAccountId" /></td>
+									<td><s:property value="accountName" /></td>
+									<td><s:property value="branchCode" /></td>
+									<td><s:property value="currencyCode" /></td>
+									<td><s:property value="customerNameEn" /></td>
+									<td><s:property value="aumDate" /></td>
+									<td><s:property value="marketValue" /></td>
+									<td><s:property value="userArchive" /></td>
+									<td><s:property value="dateArchive" /></td>
+									<td><s:property value="conditionArchive" /></td>
+								</tr>
+							</s:iterator>
 						</tbody>
 					</table>
 				</form>

@@ -53,30 +53,20 @@
 							<th>Condition Archive</th>
 						</thead>
 						<tbody>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>Mr.Test Test</th>
-								<th>08/06/2015</th>
-								<th>145214.2</th>
-								<th></th>
-								<th>25/06/2015</th>
-								<th></th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>Mr.Test Test</th>
-								<th>08/06/2015</th>
-								<th>145214.2</th>
-								<th></th>
-								<th>25/06/2015</th>
-								<th></th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
+							<s:iterator value="list">
+								<tr style="color: #98AFC7;">
+									<td><s:property value="aumbyCifId" /></td>
+									<td><s:property value="customerNameEn" /></td>
+									<td><s:property value="aumDate" /></td>
+									<td><s:property value="aumMarketValue" /></td>
+									<td><s:property value="remark" /></td>
+									<td><s:property value="createDate" /></td>
+									<td><s:property value="lastUpdateDate" /></td>
+									<td><s:property value="userArchive" /></td>
+									<td><s:property value="dateArchive" /></td>
+									<td><s:property value="coditionArhcive" /></td>
+								</tr>
+							</s:iterator>
 						</tbody>
 					</table>
 				</form>

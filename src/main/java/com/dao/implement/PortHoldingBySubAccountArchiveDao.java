@@ -22,7 +22,12 @@ public class PortHoldingBySubAccountArchiveDao implements IPortHoldingBySubAccou
 			} else {
 				command += "FROM ArchivePortHoldingBySubAccountMini ";
 			}
-
+			if (obj.getAumDate() != null && !obj.getAumDate().trim().equals("")) {
+				if (where) {
+					command += " WHERE aumDate = '" + obj.getAumDate().trim() + "'";
+					where = false;
+				}
+			}
 			if (obj.getPortHoldingId() != 0) {
 				if (where) {
 					command += " WHERE portHoldingId = " + obj.getPortHoldingId();

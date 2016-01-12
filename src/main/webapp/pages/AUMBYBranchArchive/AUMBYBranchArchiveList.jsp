@@ -46,7 +46,7 @@
 							<th>CustomerName</th>
 							<th>AUM Date</th>
 							<th>Market Value</th>
-							<th>Max</th>
+							<th>Max AUM</th>
 							<th>Create Date</th>
 							<th>Update Date</th>
 							<th>User Archive</th>
@@ -54,32 +54,21 @@
 							<th>Condition Archive</th>
 						</thead>
 						<tbody>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>00594</th>
-								<th>Mr.Test Test</th>
-								<th>08/06/2015</th>
-								<th>10145877.9</th>
-								<th>Y</th>
-								<th>10/06/2015</th>
-								<th></th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
-							<tr style="color: #98AFC7;">
-								<th>1</th>
-								<th>00594</th>
-								<th>Mr.Test Test</th>
-								<th>08/06/2015</th>
-								<th>10145877.9</th>
-								<th>Y</th>
-								<th>10/06/2015</th>
-								<th></th>
-								<th>TestName</th>
-								<th>20/10/2015</th>
-								<th>Date = 20/10/2015</th>
-							</tr>
+							<s:iterator value="list">
+								<tr style="color: #98AFC7;">
+									<td><s:property value="aumByBranchId" /></td>
+									<td><s:property value="branchCode" /></td>
+									<td><s:property value="customerNameEn" /></td>
+									<td><s:property value="aumDate" /></td>
+									<td><s:property value="aumMarketValue" /></td>
+									<td><s:property value="isMaxAUM" /></td>
+									<td><s:property value="createDate" /></td>
+									<td><s:property value="latUpdateDate" /></td>
+									<td><s:property value="userArchive" /></td>
+									<td><s:property value="dateArchive" /></td>
+									<td><s:property value="conditionArchive" /></td>
+								</tr>
+							</s:iterator>
 						</tbody>
 					</table>
 				</form>

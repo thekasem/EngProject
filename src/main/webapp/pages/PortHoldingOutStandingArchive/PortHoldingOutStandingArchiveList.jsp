@@ -41,7 +41,7 @@
 			</div>
 			<div class="panel-body">
 				<form class="form-horizontal">
-					<table class="table table-striped table-hover ">
+					<table class="table table-striped table-hover">
 						<thead style="color: #4863A0;">
 							<th>Port Holding ID</th>
 							<th>SubaccountNo</th>

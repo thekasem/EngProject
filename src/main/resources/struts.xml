@@ -47,6 +47,11 @@
 			<result name="search">/pages/PortHoldingOutStandingArchive/PortHoldingOutStandingArchiveSearch.jsp</result>
 			<result name="error">/success.jsp</result>
 		</action>
+		
+		<action name="dashBoard_*" class="com.actions.DashBoardAction" method="{1}">
+		    <result name="dashboard">/pages/Dashboard/Dashboard.jsp</result>
+			<result name="error">/success.jsp</result>
+		</action>
 		<!-- <action name="activityArchive" class="com.actions.ActivityArchiveAction" method="archive">
 			<result name="add">/ActivityArchiveAdd.jsp</result>
 			<result name="list">/ActivityArchiveList.jsp</result>

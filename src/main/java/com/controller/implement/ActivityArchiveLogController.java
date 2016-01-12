@@ -3,6 +3,7 @@ package com.controller.implement;
 import java.lang.reflect.InvocationTargetException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -49,8 +50,16 @@ public class ActivityArchiveLogController implements
 	public List<ArchiveActivityLogMini> getList(
 			ArchiveActivityLogMini criteriaSearch, Boolean isOrdering,
 			Boolean isAscending, Integer firstResult, Integer maxResult) {
-		return activityArchiveLogDao.getListByCriteriaSearch(criteriaSearch,
-				isOrdering, isAscending, firstResult, maxResult);
+		List<ArchiveActivityLogMini> result = new ArrayList<ArchiveActivityLogMini>();
+		List<ArchiveActivityLogMini> list = activityArchiveLogDao
+				.getListByCriteriaSearch(criteriaSearch, isOrdering,
+						isAscending, firstResult, maxResult);
+		for (ArchiveActivityLogMini entity : list) {
+			entity.setDateArchive(convertDate(entity.getDateArchive()));
+			entity.setLogDate(convertDate(entity.getLogDate()));
+			result.add(entity);
+		}
+		return result;
 	}
 
 	public ArchiveActivityLogMini getObjectById(int eventId) {
@@ -58,32 +67,37 @@ public class ActivityArchiveLogController implements
 		return null;
 	}
 
-	public void addArchive(String date, String condition)throws IllegalAccessException, InvocationTargetException {
+	public void addArchive(String date, String condition)
+			throws IllegalAccessException, InvocationTargetException {
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		List<ActivityLogMini> listB;
 		String dateToday = dateFormat.format(new Date());
 		HttpSession session = ServletActionContext.getRequest().getSession();
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		try {
 			do {
-			listB = activityLogDao.getListByDate(date, condition);
+				listB = activityLogDao.getListByDate(date, condition);
 				for (ActivityLogMini entityB : listB) {
 					ArchiveActivityLogMini entityA = new ArchiveActivityLogMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setConditionArchive("Date " + condition + " "+ convertDate(date));
-					entityA.setUserArchive((String) session.getAttribute("user"));
+					entityA.setConditionArchive("Date " + condition + " "
+							+ convertDate(date));
+					entityA.setUserArchive((String) session
+							.getAttribute("user"));
 					activityArchiveLogDao.save(entityA);
 					activityLogDao.delete(entityB);
 				}
-			} while (listB==null);
+			} while (listB == null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		sessionA.getTransaction().commit();
 	}
+
 	public String convertDate(String datetoconvert) {
 		String dateResult = "";
 		if (datetoconvert != null) {

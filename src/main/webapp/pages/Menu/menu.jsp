@@ -16,6 +16,7 @@
 	<s:url action="aumByBranchArchive_list" var="listaumbybranch"></s:url>
 	<s:url action="portHoldingBySubAccountArchive_list" var="listaumbyport"></s:url>
 	<s:url action="aumByCIFArchive_add" var="addaumbycif"></s:url>
+	<s:url action="dashBoard_showDashBoard" var="showDashBoard"></s:url>
 	<nav class="navbar" style="background:#A7C7E8;">
 	<div class="container-fluid">
 		<div>
@@ -36,7 +37,7 @@
 				<li><s:a href="%{listactivity}">
 						<span class="fa fa-archive"></span>
 						Activity Archive</s:a></li>
-				<li><s:a href="#">
+				<li><s:a href="%{showDashBoard}">
 						<span class="fa fa-tachometer"></span>
 						dashboard</s:a></li>
 			</ul>

@@ -2,6 +2,7 @@ package com.controller.implement;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -49,7 +50,15 @@ public class AUMByBranchArchiveController implements IAUMByBranchArchiveControll
 	public List<ArchiveAUMByBranchMini> getList(
 			ArchiveAUMByBranchMini criteriaSearch, Boolean isOrdering,
 			Boolean isAscending, Integer firstResult, Integer maxResult) {
-		return aumByBranchArchiveDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		List<ArchiveAUMByBranchMini> result = new ArrayList<ArchiveAUMByBranchMini>();
+		List<ArchiveAUMByBranchMini> list = aumByBranchArchiveDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		for(ArchiveAUMByBranchMini entity : list){
+			entity.setAumDate(convertDate(entity.getAumDate()));
+			entity.setCreateDate(convertDate(entity.getCreateDate()));
+			entity.setDateArchive(convertDate(entity.getDateArchive()));
+			result.add(entity);
+		}
+		return result;
 	}
 
 	public ArchiveAUMByBranchMini getObjectById(int eventId) {

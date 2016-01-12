@@ -2,6 +2,7 @@ package com.controller.implement;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -18,13 +19,11 @@ import com.entity.HibernateArchiveUtil;
 import com.entity.archive.ArchiveApplicationLogMini;
 import com.entity.bonanza.ApplicationLogMini;
 
-public class ApplicationArchiveLogController implements IApplicationArchiveLogController {
-	 
-	IApplicationArchiveLogDao applicationArchiveLogDao ;
-	IApplicationLogDao applicationLogDao;
-	
-	
+public class ApplicationArchiveLogController implements
+		IApplicationArchiveLogController {
 
+	IApplicationArchiveLogDao applicationArchiveLogDao;
+	IApplicationLogDao applicationLogDao;
 
 	public IApplicationLogDao getApplicationLogDao() {
 		return applicationLogDao;
@@ -44,13 +43,23 @@ public class ApplicationArchiveLogController implements IApplicationArchiveLogCo
 	}
 
 	public int getCount(ArchiveApplicationLogMini criteriaSearch) {
-		return applicationArchiveLogDao.getCountByCriteriaSearch(criteriaSearch);
+		return applicationArchiveLogDao
+				.getCountByCriteriaSearch(criteriaSearch);
 	}
 
 	public List<ArchiveApplicationLogMini> getList(
 			ArchiveApplicationLogMini criteriaSearch, Boolean isOrdering,
 			Boolean isAscending, Integer firstResult, Integer maxResult) {
-		return applicationArchiveLogDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		List<ArchiveApplicationLogMini> result = new ArrayList<ArchiveApplicationLogMini>();
+		List<ArchiveApplicationLogMini> list = applicationArchiveLogDao
+				.getListByCriteriaSearch(criteriaSearch, isOrdering,
+						isAscending, firstResult, maxResult);
+		for (ArchiveApplicationLogMini entity : list) {
+			entity.setDateArchive(convertDate(entity.getDateArchive()));
+			entity.setLogDate(convertDate(entity.getLogDate()));
+			result.add(entity);
+		}
+		return result;
 	}
 
 	public ArchiveApplicationLogMini getObjectById(int eventId) {
@@ -62,26 +71,30 @@ public class ApplicationArchiveLogController implements IApplicationArchiveLogCo
 		List<ApplicationLogMini> listB;
 		String dateToday = dateFormat.format(new Date());
 		HttpSession session = ServletActionContext.getRequest().getSession();
-		Session sessionA = HibernateArchiveUtil.getSessionFactory().openSession();
+		Session sessionA = HibernateArchiveUtil.getSessionFactory()
+				.openSession();
 		sessionA.beginTransaction();
 		try {
 			do {
 				listB = applicationLogDao.getListByDate(date, condition);
-				for(ApplicationLogMini entityB : listB){
+				for (ApplicationLogMini entityB : listB) {
 					ArchiveApplicationLogMini entityA = new ArchiveApplicationLogMini();
 					BeanUtils.copyProperties(entityA, entityB);
 					entityA.setDateArchive(dateToday);
-					entityA.setCoditionArchive("Date " +condition+" "+convertDate(date));
-					entityA.setUserArchive((String)session.getAttribute("user"));
+					entityA.setCoditionArchive("Date " + condition + " "
+							+ convertDate(date));
+					entityA.setUserArchive((String) session
+							.getAttribute("user"));
 					applicationArchiveLogDao.save(entityA);
 					applicationLogDao.delete(entityB);
 				}
-			} while (listB==null);
+			} while (listB == null);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		sessionA.getTransaction().commit();
 	}
+
 	public String convertDate(String datetoconvert) {
 		String dateResult = "";
 		if (datetoconvert != null) {

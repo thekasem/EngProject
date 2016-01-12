@@ -10,22 +10,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../../js/highcharts.js"></script>
-<script src="../../js/highcharts-3d.js"></script>
-<script src="../../js/highcharts-more.js"></script>
-<script src="../../js/funnel.js"></script>
-<script src="../../js/exporting.js"></script>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-3d.js"></script>
+<script src="js/highcharts-more.js"></script>
+<script src="js/funnel.js"></script>
+<script src="js/exporting.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container" id="main">
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-list">
+				<span class="label label-default"><span class="fa fa-dashboard">
 						Dashboard</span></span>
 			</h3>
 		</div>

@@ -2,6 +2,7 @@ package com.controller.implement;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -48,7 +49,16 @@ public class AUMByCIFArchiveController implements IAUMByCIFArchiveController {
 	public List<ArchiveAUMByCIFMini> getList(
 			ArchiveAUMByCIFMini criteriaSearch, Boolean isOrdering,
 			Boolean isAscending, Integer firstResult, Integer maxResult) {
-		return aumByCIFArchiveDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		
+		List<ArchiveAUMByCIFMini> result = new ArrayList<ArchiveAUMByCIFMini>();
+		List<ArchiveAUMByCIFMini> list = aumByCIFArchiveDao.getListByCriteriaSearch(criteriaSearch, isOrdering, isAscending, firstResult, maxResult);
+		for(ArchiveAUMByCIFMini entity: list){
+			entity.setAumDate(convertDate(entity.getAumDate()));
+			entity.setCreateDate(convertDate(entity.getCreateDate()));
+			entity.setDateArchive(convertDate(entity.getDateArchive()));
+			result.add(entity);
+		}
+		return result;
 	}
 
 	public ArchiveAUMByCIFMini getObjectById(int eventId) {

@@ -2,6 +2,7 @@ package com.controller.implement;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,9 +52,17 @@ public class PortHoldingBySubAccountArchiveController implements
 			ArchivePortHoldingBySubAccountMini criteriaSearch,
 			Boolean isOrdering, Boolean isAscending, Integer firstResult,
 			Integer maxResult) {
-		return portHoldingBySubAccountArchiveDao
+		List<ArchivePortHoldingBySubAccountMini> result = new ArrayList<ArchivePortHoldingBySubAccountMini>();
+		List<ArchivePortHoldingBySubAccountMini> list = portHoldingBySubAccountArchiveDao
 				.getListByCriteriaSearch(criteriaSearch, isOrdering,
 						isAscending, firstResult, maxResult);
+		for (ArchivePortHoldingBySubAccountMini entity : list) {
+               entity.setDateArchive(convertDate(entity.getDateArchive()));
+               entity.setAumDate(convertDate(entity.getAumDate()));
+               entity.setCreateDate(convertDate(entity.getCreateDate()));
+               result.add(entity);
+		}
+		return result;
 	}
 
 	public ArchivePortHoldingBySubAccountMini getObjectById(int eventId) {

@@ -114,6 +114,10 @@ public class AUMBYCIFArchiveAction extends ActionSupport implements
 		this.userNameLogin = userNameLogin;
 	}
 
+	public String getUserNameLogin() {
+		return userNameLogin;
+	}
+
 	public void setPage(int page) {
 		this.page = page;
 	}

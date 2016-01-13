@@ -58,17 +58,17 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">AUM Date</label>
 						<div class="col-md-3">
-							<s:textfield name="aumDate" cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="entity.aumDate" cssClass="datepicker form-control"></s:textfield>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="userArchive" cssClass="form-control"></s:textfield>
+							<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="dateArchive" cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="entity.dateArchive" cssClass="datepicker form-control"></s:textfield>
 						</div>
 					</div>
 					<input type="submit" id="ok" style="display: none">

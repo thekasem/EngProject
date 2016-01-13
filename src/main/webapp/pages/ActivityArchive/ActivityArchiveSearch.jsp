@@ -58,11 +58,11 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date</label>
 						<div class="col-md-3">
-							<s:textfield name="logDate" cssClass="datepicker form-control"></s:textfield>
+							<s:textfield name="entity.logDate" cssClass="datepicker form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">Request URI</label>
 						<div class="col-md-3">
-							<s:textfield name="actionClass" cssClass="text form-control"></s:textfield>
+							<s:textfield name="entity.actionClass" cssClass="text form-control"></s:textfield>
 						</div>
 					</div>
 
@@ -72,7 +72,7 @@
 						<div class="col-md-3">
 							<s:select class="form-control" headerKey="-1" value=""
 								list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
-								name="action" />
+								name="entity.action" />
 						</div>
 						<label class="col-md-2 control-label">Client IP</label>
 						<div class="col-md-3">
@@ -82,12 +82,12 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="dateArchive"
+							<s:textfield name="entity.dateArchive"
 								cssClass="datepicker form-control"></s:textfield>
 						</div>
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="userArchive" cssClass="form-control"></s:textfield>
+							<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
 						</div>
 					</div>
 					<input type="submit" id="ok" style="display: none">

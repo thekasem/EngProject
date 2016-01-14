@@ -36,40 +36,48 @@
 			</h3>
 		</div>
 
-		<table class="table table-striped table-hover ">
-			<thead style="color: #4863A0;border-top: solid 2px #CCC">
-				<th>Event ID</th>
-				<th>Date</th>
-				<th>Time</th>
-				<th>Level</th>
-				<th>Entity Class</th>
-				<th>Mode</th>
-				<th>Client IP</th>
-				<th>Front Server IP</th>
-				<th>Member Name</th>
-				<th>User Archive</th>
-				<th>Date Archive</th>
-				<th>Condition Archive</th>
-			</thead>
-			<tbody>
-				<s:iterator value="list">
-					<tr style="color: #98AFC7;">
-						<td><s:property value="eventId" /></td>
-						<td><s:property value="logDate" /></td>
-						<td><s:property value="logTime" /></td>
-						<td><s:property value="level" /></td>
-						<td><s:property value="entityClass" /></td>
-						<td><s:property value="mode" /></td>
-						<td><s:property value="clientIP" /></td>
-						<td><s:property value="frontServerIP" /></td>
-						<td><s:property value="memberId" /></td>
-						<td><s:property value="userArchive" /></td>
-						<td><s:property value="dateArchive" /></td>
-						<td><s:property value="coditionArchive" /></td>
-					</tr>
-				</s:iterator>
-			</tbody>
-		</table>
-	</div>
+		<div class="panel panel-default" style="margin-top: 15px;">
+			<div class="panel-heading">
+				<Strong>List Application Archive Log</Strong>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<table class="table table-striped table-hover ">
+						<thead style="color: #4863A0;">
+							<th>Event ID</th>
+							<th>Date</th>
+							<th>Time</th>
+							<th>Level</th>
+							<th>Entity Class</th>
+							<th>Mode</th>
+							<th>Client IP</th>
+							<th>Front Server IP</th>
+							<th>Member Name</th>
+							<th>User Archive</th>
+							<th>Date Archive</th>
+							<th>Condition Archive</th>
+						</thead>
+						<tbody>
+							<s:iterator value="list">
+								<tr style="color: #98AFC7;">
+									<td><s:property value="eventId" /></td>
+									<td><s:property value="logDate" /></td>
+									<td><s:property value="logTime" /></td>
+									<td><s:property value="level" /></td>
+									<td><s:property value="entityClass" /></td>
+									<td><s:property value="mode" /></td>
+									<td><s:property value="clientIP" /></td>
+									<td><s:property value="frontServerIP" /></td>
+									<td><s:property value="memberId" /></td>
+									<td><s:property value="userArchive" /></td>
+									<td><s:property value="dateArchive" /></td>
+									<td><s:property value="coditionArchive" /></td>
+								</tr>
+							</s:iterator>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
 </body>
 </html>

@@ -33,39 +33,44 @@
 						List</span></span>
 			</h3>
 		</div>
-		<div style="margin-top: 10px;" align="right">
-			<!-- 		<div class="table table-responsive"> -->
-			<table class="table table-striped table-hover">
-				<thead style="color: #4863A0; border-top: solid 2px #CCC">
-					<th>Activity Log ID</th>
-					<th>Date</th>
-					<th>Action Class</th>
-					<th>Action Name</th>
-					<th>ScreenName</th>
-					<th>Client IP</th>
-					<th>Browser</th>
-					<th>User Archive</th>
-					<th>Date Archive</th>
-					<th>Condition Archive</th>
-				</thead>
-				<tbody>
-					<s:iterator value="list">
-						<tr style="color: #98AFC7;">
-							<td><s:property value="logId" /></td>
-							<td><s:property value="logDate" /></td>
-							<td><s:property value="actionClass" /></td>
-							<td><s:property value="action" /></td>
-							<td><s:property value="screenname" /></td>
-							<td><s:property value="clientIP" /></td>
-							<td><s:property value="browser" /></td>
-							<td><s:property value="userArchive" /></td>
-							<td><s:property value="dateArchive" /></td>
-							<td><s:property value="conditionArchive" /></td>
-						</tr>
-					</s:iterator>
-				</tbody>
-			</table>
-
+		<div class="panel panel-default" style="margin-top: 15px;">
+			<div class="panel-heading">
+				<Strong>List Activity Archive Log</Strong>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<table class="table table-striped table-hover ">
+						<thead style="color: #4863A0;">
+							<th>Activity Log ID</th>
+							<th>Date</th>
+							<th>Action Class</th>
+							<th>Action Name</th>
+							<th>ScreenName</th>
+							<th>Client IP</th>
+							<th>Browser</th>
+							<th>User Archive</th>
+							<th>Date Archive</th>
+							<th>Condition Archive</th>
+						</thead>
+						<tbody>
+							<s:iterator value="list">
+								<tr style="color: #98AFC7;">
+									<td><s:property value="logId" /></td>
+									<td><s:property value="logDate" /></td>
+									<td><s:property value="actionClass" /></td>
+									<td><s:property value="action" /></td>
+									<td><s:property value="screenname" /></td>
+									<td><s:property value="clientIP" /></td>
+									<td><s:property value="browser" /></td>
+									<td><s:property value="userArchive" /></td>
+									<td><s:property value="dateArchive" /></td>
+									<td><s:property value="conditionArchive" /></td>
+								</tr>
+							</s:iterator>
+						</tbody>
+					</table>
+				</form>
+			</div>
 		</div>
 </body>
 </html>

@@ -62,7 +62,7 @@
 					</div>
 
 					<table class="table table-striped table-hover ">
-						<thead style="color: #4863A0;">
+						<thead style="color: #4863A0; border-top: solid 2px #CCC">
 							<th>Event ID</th>
 							<th>Date</th>
 							<th>Time</th>

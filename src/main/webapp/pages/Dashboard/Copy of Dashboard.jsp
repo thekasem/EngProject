@@ -20,7 +20,6 @@
 <script src="js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
-	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container" id="main">
 		<div style="margin-top: 10px;" align="right">
 			<h3>
@@ -1104,4 +1103,11 @@ $(function () {
 	<!-- rect{ display: none; } -->
 	<!-- </style> -->
 </body>
+
+
+
+
+</body>
+
+
 </html>

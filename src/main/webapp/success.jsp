@@ -43,41 +43,50 @@
 				</tr>
 			</s:iterator>
 		</table> --%>
-		<div class="panel-heading" style="color: #686868">
-			<h3>
-				<span class="fa fa-child"></span> Hello
-				<s:property value="userNameLogin" />
-			</h3>
-			<h4>
-				<span class="fa fa-archive"></span> <strong>Data archiving</strong>
-				is the process of moving data that is no longer actively used to a
-				separate storage device for long-term retention. Archive data
-				consists of older data that is still important to the organization
-				and may be needed for future reference, as well as data that must be
-				retained for regulatory compliance. Data archives are indexed and
-				have search capabilities so files and parts of files can be easily
-				located and retrieved.
-			</h4>
-			<img class="img-rounded" alt="Cinque Terre"  src="pages/Menu/pig1.jpg"
-				class="img-thumbnail "/>
-			<h4>
-				<span class="fa fa-dashboard"></span> <strong>Dashboards</strong>
-				often provide at-a-glance views of KPIs (key performance indicators)
-				relevant to a particular objective or business process (e.g. sales,
-				marketing, human resources, or production) The term dashboard
-				originates from the automobile dashboard where drivers monitor the
-				major functions at a glance via the instrument cluster. Dashboards
-				give signs about a business letting the user know something is wrong
-				or something is right. The corporate world has tried for years to
-				come up with a solution that would tell them if their business
-				needed maintenance or if the temperature of their business was
-				running above normal. Dashboards typically are limited to show
-				summaries, key trends, comparisons, and exceptions.
-			</h4>
-			<img class="img-rounded" alt="Cinque Terre" width="600" height="400" src="pages/Menu/pig2.png"
-				class="img-thumbnail "/>
-		</div>
 
+		<div class="panel panel-default" style="margin-top: 15px;">
+			<div class="panel-heading" style="color: #686868">
+				<h4>
+					<span class="fa fa-child"></span> 
+					<Strong>Hello</Strong> 
+					<Strong><s:property value="userNameLogin" /></Strong>
+				</h4>
+			</div>
+			<div class="panel-body">
+				<form class="form-horizontal">
+					<h4>
+						<span class="fa fa-archive"></span> <strong>Data
+							archiving</strong> is the process of moving data that is no longer
+						actively used to a separate storage device for long-term
+						retention. Archive data consists of older data that is still
+						important to the organization and may be needed for future
+						reference, as well as data that must be retained for regulatory
+						compliance. Data archives are indexed and have search capabilities
+						so files and parts of files can be easily located and retrieved.
+					</h4>
+					<img class="img-rounded" alt="Cinque Terre"
+						src="pages/Menu/pig1.jpg" class="img-thumbnail " />
+					<h4>
+						<span class="fa fa-dashboard"></span> <strong>Dashboards</strong>
+						often provide at-a-glance views of KPIs (key performance
+						indicators) relevant to a particular objective or business process
+						(e.g. sales, marketing, human resources, or production) The term
+						dashboard originates from the automobile dashboard where drivers
+						monitor the major functions at a glance via the instrument
+						cluster. Dashboards give signs about a business letting the user
+						know something is wrong or something is right. The corporate world
+						has tried for years to come up with a solution that would tell
+						them if their business needed maintenance or if the temperature of
+						their business was running above normal. Dashboards typically are
+						limited to show summaries, key trends, comparisons, and
+						exceptions.
+					</h4>
+					<img class="img-rounded" alt="Cinque Terre" width="600"
+						height="400" src="pages/Menu/pig2.png" class="img-thumbnail " />
+
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

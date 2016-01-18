@@ -8,7 +8,8 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/highcharts.js"></script>
@@ -16,6 +17,13 @@
 <script src="js/highcharts-3d.js"></script>
 <script src="js/team-highcharts.js"></script>
 <script src="DetailsDashboardSidebar/percentnewuser.js"></script>
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 </head>
 <body style="background: #FEFCFF">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
@@ -33,10 +41,30 @@
 					<div class="panel-body">
 						<form class="form-horizontal">
 							<div class="well">
-								<h4>Percent New User</h4>
+								<h4><span class="fa fa-user-plus"> <b>Percent New User</b></span></h4>
+								<div class="form-group" style="margin-left: 50px;">
+									<label class="col-md-2 control-label">From Date :</label>
+									<div class="col-md-3">
+										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+									</div>
+									<label class="col-md-2 control-label">To Date :</label>
+									<div class="col-md-3">
+										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+									</div>
+									<div class="container"
+										style="margin-top: 50px; margin-left: 520px;">
+										<s:a type="button" class="btn btn-info" href="%{}">
+											<span class="fa fa-refresh"></span>	Reset</s:a>
+										<a type="button" class="btn btn-info" onclick="clickOk()"><span
+											class="fa fa-search"></span> OK</a>
+										<s:a type="button" class="btn btn-info" href="%{}">
+											<span class="fa fa-times-circle"></span> Cancel</s:a>
+									</div>
+								</div>
+
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div id="dashboardnewuser" style="width: 800px;"></div>
+										<div id="dashboardnewuser" style="width: 800px; margin-top: -280px;"></div>
 									</div>
 								</div>
 							</div>
@@ -46,6 +74,18 @@
 			</div>
 		</div>
 	</div>
+	<script>
+		$('.datepicker').datepicker({
+			changeYear : true,
+			yearRange : '-100:+100',
+			dateFormat : 'yymmdd'
+		});
+	</script>
+	<style>
+select.ui-datepicker-year {
+	color: #000;
+}
+</style>
 	<script type="text/css">
 #dashboardnewuser {
     height: 400px; 

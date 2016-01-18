@@ -80,16 +80,16 @@ body {
 			<div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar"
 				role="navigation">
 				<ul class="nav nav-pills nav-stacked">
-					<li  class="active"><s:a href="dashBoard_browser">Browsers</s:a></li>
-					<li><s:a href="dashBoard_login">Login</s:a></li>
-					<li><s:a href="dashBoard_user">User</s:a></li>
-					<li><s:a href="dashBoard_topModule">Top Module</s:a></li>
-					<li><s:a href="dashBoard_newUser">Percent New User</s:a></li>
-					<li><s:a href="dashBoard_customer">Customers</s:a></li>
-					<li><s:a href="dashBoard_topUser">Top User</s:a></li>
-					<li><s:a href="dashBoard_argTimeOnSite">Average Time On Site</s:a></li>
-					<li><s:a href="dashBoard_viewAUM">View AUM</s:a></li>
-					<li><s:a href="dashBoard_diskUsage">Disk Usage</s:a></li>
+					<li class="active"><s:a href="dashBoard_browser"><span class="fa fa-edge">    Browsers</span></s:a></li>
+					<li><s:a href="dashBoard_login"><span class="fa fa-sign-in">    Login</span></s:a></li>
+					<li><s:a href="dashBoard_user"><span class="fa fa-users">    User</span></s:a></li>
+					<li><s:a href="dashBoard_topModule"><span class="fa fa-file-archive-o">    Top Module</span></s:a></li>
+					<li><s:a href="dashBoard_newUser"><span class="fa fa-user-plus">    Percent New User</span></s:a></li>
+					<li><s:a href="dashBoard_customer"><span class="fa fa-odnoklassniki">    Customers</span></s:a></li>
+					<li><s:a href="dashBoard_topUser"><span class="fa fa-user">    Top User</span></s:a></li>
+					<li><s:a href="dashBoard_argTimeOnSite"><span class="fa fa-clock-o">    Average Time On Site</span></s:a></li>
+					<li><s:a href="dashBoard_viewAUM"><span class="fa fa-briefcase">    View AUM</span></s:a></li>
+					<li><s:a href="dashBoard_diskUsage"><span class="fa fa-database">    Disk Usage</span></s:a></li>
 				</ul>
 			</div>
 		</div>

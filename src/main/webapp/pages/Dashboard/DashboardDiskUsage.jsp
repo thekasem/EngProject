@@ -33,7 +33,7 @@
 					<div class="panel-body">
 						<form class="form-horizontal">
 							<div class="well" style="width: 868px; height: 400px;">
-								<h4>Disk Usage</h4>
+								<h4><span class="fa fa-database"> <b>Disk Usage</b></span></h4>
 								<div class="input-group text-center">
 									<div class="col-md-2">
 										<div style="width: 800px; margin-left: 115px; margin-top: 50px;">										

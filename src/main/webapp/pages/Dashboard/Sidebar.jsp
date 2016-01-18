@@ -10,15 +10,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="../../js/highcharts.js"></script>
-<script src="../../js/highcharts-3d.js"></script>
-<script src="../../js/highcharts-more.js"></script>
-<script src="../../js/funnel.js"></script>
-<script src="../../js/exporting.js"></script>
-<script src="../../js/solid-gauge.js"></script>
-<script src="../../js/team-highcharts.js"></script>
-<link rel="stylesheet" href="../../css/bootstrap.min.css">
-<script src="../../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-3d.js"></script>
+<script src="js/highcharts-more.js"></script>
+<script src="js/funnel.js"></script>
+<script src="js/exporting.js"></script>
+<script src="js/solid-gauge.js"></script>
+<script src="js/team-highcharts.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+<link rel="stylesheet"
+	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+<script src="DetailsDashboardSidebar/browsers.js"></script>
+<script src="DetailsDashboardSidebar/login.js"></script>
+<script src="DetailsDashboardSidebar/user.js"></script>
+<script src="DetailsDashboardSidebar/topmodule.js"></script>
+<script src="DetailsDashboardSidebar/percentnewuser.js"></script>
+<script src="DetailsDashboardSidebar/customer.js"></script>
+<script src="DetailsDashboardSidebar/topuser.js"></script>
+<script src="DetailsDashboardSidebar/average.js"></script>
+<script src="DetailsDashboardSidebar/viewaum.js"></script>
+<script src="DetailsDashboardSidebar/diskusage.js"></script>
 </head>
 
 <style type="text/css">
@@ -94,17 +115,16 @@ body {
 			<div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar"
 				role="navigation">
 				<ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="DashboardDate.jsp">Select Date</a></li>
-					<li><a href="DashboardBrowsers.jsp">Browsers</a></li>
-					<li><a href="DashboardLogin.jsp">Login</a></li>
-					<li><a href="DashboardUser.jsp">User</a></li>
-					<li><a href="DashboardTopModule.jsp">Top Module</a></li>
-					<li><a href="DashboardPercentNewUser.jsp">Percent New User</a></li>
-					<li><a href="DashboardCustomer.jsp">Customers</a></li>
-					<li><a href="DashboardTopUser.jsp">Top User</a></li>
-					<li><a href="DashboardAverage.jsp">Average Time On Site</a></li>
-					<li><a href="DashboardViewAUM.jsp">View AUM</a></li>
-					<li><a href="DashboardDiskUsage.jsp">Disk Usage</a></li>
+					<li  class="active"><s:a href="dashBoard_browser">Browsers</s:a></li>
+					<li><s:a href="dashBoard_login">Login</s:a></li>
+					<li><s:a href="dashBoard_user">User</s:a></li>
+					<li><s:a href="dashBoard_topModule">Top Module</s:a></li>
+					<li><s:a href="dashBoard_newUser">Percent New User</s:a></li>
+					<li><s:a href="dashBoard_customer">Customers</s:a></li>
+					<li><s:a href="dashBoard_topUser">Top User</s:a></li>
+					<li><s:a href="dashBoard_argTimeOnSite">Average Time On Site</s:a></li>
+					<li><s:a href="dashBoard_viewAUM">View AUM</s:a></li>
+					<li><s:a href="dashBoard_diskUsage">Disk Usage</s:a></li>
 				</ul>
 			</div>
 		</div>

@@ -44,7 +44,7 @@
 					.highcharts(
 							{
 								title : {
-									text : 'Combination chart'
+									text : ''
 								},
 								xAxis : {
 									categories : [ 'Apples', 'Oranges',

@@ -93,17 +93,18 @@ body {
 		<div class="row">
 			<div class="col-xs-4 col-sm-3 sidebar-offcanvas" id="sidebar"
 				role="navigation">
-				<ul class="nav">
-					<li><a href="#">Browsers</a></li>
-					<li><a href="#">Login</a></li>
-					<li><a href="#">User</a></li>
-					<li><a href="#">Top Module</a></li>
-					<li><a href="#">Percent New User</a></li>
-					<li><a href="#">Customers</a></li>
-					<li><a href="#">Top User</a></li>
-					<li><a href="#">Average Time On Site</a></li>
-					<li><a href="#">View AUM</a></li>
-					<li><a href="#">Disk Usage</a></li>
+				<ul class="nav nav-pills nav-stacked">
+					<li class="active"><a href="DashboardDate.jsp">Select Date</a></li>
+					<li><a href="DashboardBrowsers.jsp">Browsers</a></li>
+					<li><a href="DashboardLogin.jsp">Login</a></li>
+					<li><a href="DashboardUser.jsp">User</a></li>
+					<li><a href="DashboardTopModule.jsp">Top Module</a></li>
+					<li><a href="DashboardPercentNewUser.jsp">Percent New User</a></li>
+					<li><a href="DashboardCustomer.jsp">Customers</a></li>
+					<li><a href="DashboardTopUser.jsp">Top User</a></li>
+					<li><a href="DashboardAverage.jsp">Average Time On Site</a></li>
+					<li><a href="DashboardViewAUM.jsp">View AUM</a></li>
+					<li><a href="DashboardDiskUsage.jsp">Disk Usage</a></li>
 				</ul>
 			</div>
 		</div>

@@ -5,6 +5,17 @@
 <html lang="en">
 <head>
 <title>DashBoard Disk Usage</title>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-more.js"></script>
+<script src="js/solid-gauge.js"></script>
+<script src="js/team-highcharts.js"></script>
+<script src="DetailsDashboardSidebar/diskusage.js"></script>
 </head>
 <body style="background: #FEFCFF">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>

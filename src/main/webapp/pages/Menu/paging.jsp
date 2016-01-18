@@ -13,23 +13,30 @@
 	var totalPage = "<s:property value="totalPage" />";
 	var url = location.href;
 	jQuery(function() {
-		hideAndShow(page, totalPage);
-		url = url.substring((url.indexOf("/",32)+1), url.indexOf("_"));
+		hideAndShow(page, totalPage, countAll);
+		url = url.substring((url.indexOf("/", 32) + 1), url.indexOf("_"));
 	});
 
-	function hideAndShow(page, totalPage) {
+	function hideAndShow(page, totalPage, countAll) {
 		if (page == 0) {
 			$(".firstpage").hide();
 			$(".prevpage").hide();
 			$(".nextpage").show();
 			$(".lastpage").show();
 		}
-		if (page == totalPage) {
+		if (page == totalPage && totalPage > 1) {
 			$(".firstpage").show();
 			$(".prevpage").show();
 			$(".nextpage").hide();
 			$(".lastpage").hide();
 		}
+        if(totalPage == 1 ||totalPage == 0 || countAll == 0){
+        	$(".firstpage").hide();
+			$(".prevpage").hide();
+			$(".nextpage").hide();
+			$(".lastpage").hide();
+        }
+		
 	}
 
 	function next() {
@@ -41,7 +48,7 @@
 	function previousPage() {
 		location.href = url + "_list?page=" + (parseInt(page) - 1);
 	}
-	function first(){
+	function first() {
 		location.href = url + "_list?page=" + (parseInt(0));
 	}
 </script>
@@ -50,8 +57,15 @@
 	<ul class="pager">
 		<li class="firstpage" onclick="first()"><s:a href="">First Page</s:a></li>
 		<li class="prevpage" onclick="previousPage()"><s:a href="">Previous</s:a></li>
-		<Strong style="color: #98AFC7;"><s:property value="page+1" />
-			of <s:property value="totalPage+1" /></Strong>
+		<s:if test="count.equals(0)">
+			<h4 class="text-primary">
+				<span class="fa fa-database"> NO Data </span>
+			</h4>
+		</s:if>
+		<s:else>
+			<Strong class="text-primary"><s:property value="page+1" />
+				of <s:property value="totalPage+1" /></Strong>
+		</s:else>
 		<li class="nextpage" onclick="next()"><s:a href="">Next</s:a></li>
 		<li class="lastpage" onclick="lastPage()"><s:a href="">Last Page</s:a></li>
 	</ul>

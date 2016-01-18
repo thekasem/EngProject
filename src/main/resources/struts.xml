@@ -50,6 +50,17 @@
 		
 		<action name="dashBoard_*" class="com.actions.DashBoardAction" method="{1}">
 		    <result name="dashboard">/pages/Dashboard/Dashboard.jsp</result>
+		    <result name="browsers">/pages/Dashboard/DashboardBrowsers.jsp</result>
+		    <result name="login">/pages/Dashboard/DashboardLogin.jsp</result>
+		    <result name="user">/pages/Dashboard/DashboardUser.jsp</result>
+		    <result name="topmodule">/pages/Dashboard/DashboardTopModule.jsp</result>
+		    <result name="newuser">/pages/Dashboard/DashboardPercentNewUser.jsp</result>
+		    <result name="customers">/pages/Dashboard/DashboardCustomer.jsp</result>
+		    <result name="topuser">/pages/Dashboard/DashboardTopUser.jsp</result>
+		    <result name="argonsite">/pages/Dashboard/DashboardAverage.jsp</result>
+		    <result name="viewaum">/pages/Dashboard/DashboardViewAUM.jsp</result>
+		    <result name="diskusage">/pages/Dashboard/DashboardDiskUsage.jsp</result>
+		    
 			<result name="error">/success.jsp</result>
 		</action>
 		<!-- <action name="activityArchive" class="com.actions.ActivityArchiveAction" method="archive">

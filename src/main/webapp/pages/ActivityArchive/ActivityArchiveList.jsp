@@ -6,10 +6,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </head>
 <body style="background: #FEFCFF">
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
@@ -71,6 +69,7 @@
 					</table>
 				</form>
 			</div>
+			<s:include value="/pages/Menu/paging.jsp"></s:include>
 		</div>
 </body>
 </html>

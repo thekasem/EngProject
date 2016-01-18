@@ -26,9 +26,11 @@ public class PortHoldingOutStandingArchiveAction extends ActionClass<ArchivePort
 	@Override
 	public String list() {
 		ContactController();
+		int record = 15;
 		count = archiveController.getCount(entity);
-		int firstResult = 0;
-		list = archiveController.getList(entity, true, false, firstResult, 15);
+		totalPage = totalPage(count, record);
+		list = archiveController.getList(entity, true, false, page*record, record);
+
 		return LIST;
 	}
 	@Override

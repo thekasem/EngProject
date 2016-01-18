@@ -75,6 +75,7 @@
 					</table>
 				</form>
 			</div>
+			<s:include value="/pages/Menu/paging.jsp"></s:include>
 		</div>
 	</div>
 </body>

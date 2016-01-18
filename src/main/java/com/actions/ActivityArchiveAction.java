@@ -6,15 +6,14 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.contact.action.ContactActivityArchiveLog;
 import com.entity.archive.ArchiveActivityLogMini;
 
-public class ActivityArchiveAction extends ActionClass<ArchiveActivityLogMini>{
+public class ActivityArchiveAction extends ActionClass<ArchiveActivityLogMini> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 3390300902292062058L;
 	private ContactActivityArchiveLog archiveController;
-	
-	
+
 	@Override
 	public void ContactController() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
@@ -23,16 +22,18 @@ public class ActivityArchiveAction extends ActionClass<ArchiveActivityLogMini>{
 				.getBean("activityArchive");
 		session();
 	}
+
 	@Override
 	public String list() {
 		ContactController();
+		int record = 15;
 		count = archiveController.getCount(entity);
-		int firstResult = 0;
-		list = archiveController.getList(entity, true, false,
-				firstResult, 15);
+		totalPage = totalPage(count, record);
+		list = archiveController.getList(entity, true, false, page*record, record);
 
 		return LIST;
 	}
+
 	@Override
 	public String addArchive() {
 		ContactController();
@@ -44,5 +45,5 @@ public class ActivityArchiveAction extends ActionClass<ArchiveActivityLogMini>{
 		}
 		return LIST;
 	}
-	
+
 }

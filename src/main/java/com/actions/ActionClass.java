@@ -34,6 +34,7 @@ public abstract class ActionClass<T>  extends ActionSupport implements ModelDriv
 	protected String date = "";
 	protected String condition = "";
 	protected int count;
+	protected int totalPage;
 
 	public abstract void ContactController();
 
@@ -116,8 +117,26 @@ public abstract class ActionClass<T>  extends ActionSupport implements ModelDriv
 		return list;
 	}
 
+	public int getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}
+
 	public void session(){
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
+	}
+	
+	public int totalPage(int count, int record){
+		int result = 0;
+		if(count % record == 0){
+			result = (count/record)-1;
+		}else {
+			result = (count/record);
+		}
+		return result;
 	}
 }

@@ -22,6 +22,11 @@
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+<script type="text/javascript">
+	function clickOk() {
+		document.getElementById("ok").click();
+	}
+</script>
 </head>
 <body style="background: #FEFCFF">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
@@ -49,24 +54,16 @@
 									<div class="col-md-3">
 										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
 									</div>
-									<div class="container"
-										style="margin-top: 50px; margin-left: 520px;">
-										<s:a type="button" class="btn btn-info" href="%{}">
-											<span class="fa fa-refresh"></span>	Reset</s:a>
-										<a type="button" class="btn btn-info" onclick="clickOk()"><span
-											class="fa fa-search"></span> OK</a>
-										<s:a type="button" class="btn btn-info" href="%{}">
-											<span class="fa fa-times-circle"></span> Cancel</s:a>
-									</div>
 								</div>
 								
 								<div class="input-group text-center">
 									<div class="col-md-2">
 										<div id="dashboardaverage"
-											style="width: 800px; margin-top: -230px;"></div>
+											style="width: 800px; margin-top: -300px;"></div>
 									</div>
 								</div>
 							</div>
+							<input type="submit" id="ok" style="display: none">
 						</form>
 					</div>
 				</div>

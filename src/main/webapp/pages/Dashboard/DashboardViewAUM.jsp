@@ -49,20 +49,11 @@
 									<div class="col-md-3">
 										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
 									</div>
-									<div class="container"
-										style="margin-top: 50px; margin-left: 520px;">
-										<s:a type="button" class="btn btn-info" href="%{}">
-											<span class="fa fa-refresh"></span>	Reset</s:a>
-										<a type="button" class="btn btn-info" onclick="clickOk()"><span
-											class="fa fa-search"></span> OK</a>
-										<s:a type="button" class="btn btn-info" href="%{}">
-											<span class="fa fa-times-circle"></span> Cancel</s:a>
-									</div>
 								</div>
 								
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div id="dashboardviewaum" style="width: 800px; margin-top: -230px;"></div>
+										<div id="dashboardviewaum" style="width: 800px; margin-top: -300px;"></div>
 									</div>
 								</div>
 							</div>

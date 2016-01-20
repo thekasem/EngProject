@@ -7,7 +7,7 @@
 <title>Bootstrap Case</title>
 <link rel="stylesheet" href="css/font-awesome.min.css">
 </head>
-<body style="background: #E5E6E8">
+<body>
 	<s:url action="login_logout" var="logout"></s:url>
 	<s:url action="login_homeFirst" var="home"></s:url>
 	<s:url action="activityArchive_list" var="listactivity"></s:url>

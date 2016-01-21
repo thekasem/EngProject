@@ -11,11 +11,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
-<script src="js/highcharts.js"></script>
+<script src="js/highmaps.js"></script>
 <script src="js/exporting.js"></script>
+<script src="js/th-all.js"></script>
 <script src="js/team-highcharts.js"></script>
-<script src="DetailsDashboardSidebar/user.js"></script>
-<script src="DetailsDashboardSidebar/browsers.js"></script>
+<script src="DetailsDashboardSidebar/usermap.js"></script>
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 <script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -55,7 +55,7 @@
 								<div class="input-group text-center">
 									<div class="col-md-2">
 										<div id="dashboarduser"
-											style="width: 800px; margin-top: -300px;"></div>
+											style="width: 800px; height: 500px; margin-top: -300px;"></div>
 									</div>
 								</div>
 							</div>
@@ -65,6 +65,9 @@
 			</div>
 		</div>
 	</div>
+	
+
+	
 		<script>
 		$('.datepicker').datepicker({
 			changeYear : true,

@@ -32,14 +32,27 @@
 					</div>
 					<div class="panel-body">
 						<form class="form-horizontal">
-							<div class="well" style="width: 868px; height: 400px;">
+							<div class="well">
 								<h4><span class="fa fa-database"> <b>Disk Usage</b></span></h4>
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div style="width: 800px; margin-left: 115px; margin-top: 50px;">										
-											<div id="dashboardbonanza"
+										<div style="width: 800px; margin-left: 115px; margin-top: 0px;">										
+											<div id="dashboardactivity"
 												style="width: 300px; height: 200px; float: left"></div>
-											<div id="dashboardarchive"
+											<div id="dashboardapplication"
+												style="width: 300px; height: 200px; float: left"></div>
+										</div>
+										<div style="width: 800px; margin-left: 115px; margin-top: 50px;">										
+											<div id="dashboardaumbycif"
+												style="width: 300px; height: 200px; float: left"></div>
+											<div id="dashboardaumbybranch"
+												style="width: 300px; height: 200px; float: left"></div>
+										</div>
+										
+										</div>
+										<div class="col-md-2">
+										<div style="width: 1200px; margin-left: 50px; margin-top: 400px;">										
+											<div id="dashboardportholding"
 												style="width: 300px; height: 200px; float: left"></div>
 										</div>
 									</div>

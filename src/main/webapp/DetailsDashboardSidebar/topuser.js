@@ -1,63 +1,127 @@
 $(function() {
-	$('#dashboardtopuser').highcharts(
-			{
-				chart : {
-					type : 'area'
-				},
-				title : {
-					text : ''
-				},
-				subtitle : {
-					text : ''
-				},
-				xAxis : {
-					categories : [ '1750', '1800', '1850', '1900', '1950',
-							'1999', '2050' ],
-					tickmarkPlacement : 'on',
-					title : {
-						enabled : false
-					}
-				},
-				yAxis : {
-					title : {
-						text : 'Billions'
-					},
-					labels : {
-						formatter : function() {
-							return this.value / 1000;
-						}
-					}
-				},
-				tooltip : {
-					shared : true,
-					valueSuffix : ' millions'
-				},
-				plotOptions : {
-					area : {
-						stacking : 'normal',
-						lineColor : '#666666',
-						lineWidth : 1,
-						marker : {
-							lineWidth : 1,
-							lineColor : '#666666'
-						}
-					}
-				},
-				series : [ {
-					name : 'Asia',
-					data : [ 502, 635, 809, 947, 1402, 3634, 5268 ]
-				}, {
-					name : 'Africa',
-					data : [ 106, 107, 111, 133, 221, 767, 1766 ]
-				}, {
-					name : 'Europe',
-					data : [ 163, 203, 276, 408, 547, 729, 628 ]
-				}, {
-					name : 'America',
-					data : [ 18, 31, 54, 156, 339, 818, 1201 ]
-				}, {
-					name : 'Oceania',
-					data : [ 2, 2, 2, 6, 13, 30, 46 ]
-				} ]
-			});
+
+	var user = [];
+
+	var datauser1 = [];
+	var datauser2 = [];
+	var datauser3 = [];
+	var datauser4 = [];
+	var datauser5 = [];
+	var datauser6 = [];
+	var datauser7 = [];
+	var datauser8 = [];
+	var datauser9 = [];
+	var datauser10 = [];
+
+	var sex = [];
+
+	$.ajax({
+		type : "GET",
+		url : 'TopUserJson.action',
+		data : {},
+		success : function(response) {
+			datauser1 = response.datauser1;
+			datauser2 = response.datauser2;
+			datauser3 = response.datauser3;
+			datauser4 = response.datauser4;
+			datauser5 = response.datauser5;
+			datauser6 = response.datauser6;
+			datauser7 = response.datauser7;
+			datauser8 = response.datauser8;
+			datauser9 = response.datauser9;
+			datauser10 = response.datauser10;
+
+			user = response.user;
+
+			sex = response.sex;
+			$('#dashboardtopuser').highcharts(
+					{
+						chart : {
+							type : 'column'
+						},
+						title : {
+							text : ''
+						},
+						subtitle : {
+							text : ''
+						},
+						xAxis : {
+							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+							tickmarkPlacement : 'on',
+							title : {
+								enabled : false
+							}
+						},
+						yAxis : {
+							title : {
+								text : 'Time'
+							},
+							labels : {
+								formatter : function() {
+									return this.value / 1000;
+								}
+							}
+						},
+						tooltip : {
+							shared : true,
+							valueSuffix : ' millions'
+						},
+						plotOptions : {
+							area : {
+								stacking : 'normal',
+								lineColor : '#666666',
+								lineWidth : 1,
+								marker : {
+									lineWidth : 1,
+									lineColor : '#666666'
+								}
+							}
+						},
+						series : [ {
+							name : user[0],
+							data : datauser1,
+							stack : sex[1]
+						}, {
+							name : user[1],
+							data : datauser2,
+							stack : sex[0]
+						}, {
+							name : user[2],
+							data : datauser3,
+							stack : sex[0]
+						}, {
+							name : user[3],
+							data : datauser4,
+							stack : sex[1]
+						}, {
+							name : user[4],
+							data : datauser5,
+							stack : sex[0]
+						}, {
+							name : user[5],
+							data : datauser6,
+							stack : sex[1]
+						}, {
+							name : user[6],
+							data : datauser7,
+							stack : sex[0]
+						}, {
+							name : user[7],
+							data : datauser8,
+							stack : sex[0]
+						}, {
+							name : user[8],
+							data : datauser9,
+							stack : sex[0]
+						}, {
+							name : user[9],
+							data : datauser10,
+							stack : sex[0]
+						} ]
+					});
+		},
+		error : function(e) {
+			alert('Error: ' + e);
+		}
+	});
 });

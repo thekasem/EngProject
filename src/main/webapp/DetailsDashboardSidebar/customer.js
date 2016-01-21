@@ -1,58 +1,66 @@
 $(function() {
-	$('#dashboardcustomer').highcharts(
-			{
+	
+	var customer = "";
+	
+	var datacustomer = [];
+	
+	$.ajax({
+		type : "GET",
+		url : 'customerJson.action',
+		data : {},
+		success : function(response) {
 
-				chart : {
-					type : 'column'
-				},
+			customer = response.customer;
+			
+			datacustomer = response.datacustomer;
+			
+			$('#dashboardcustomer').highcharts(
+					{
 
-				title : {
-					text : ''
-				},
+						chart : {
+							type : ''
+						},
 
-				xAxis : {
-					categories : [ 'Apples', 'Oranges', 'Pears', 'Grapes',
-							'Bananas' ]
-				},
+						title : {
+							text : ''
+						},
 
-				yAxis : {
-					allowDecimals : false,
-					min : 0,
-					title : {
-						text : 'Number of fruits'
-					}
-				},
+						xAxis : {
+							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+						},
 
-				tooltip : {
-					formatter : function() {
-						return '<b>' + this.x + '</b><br/>' + this.series.name
-								+ ': ' + this.y + '<br/>' + 'Total: '
-								+ this.point.stackTotal;
-					}
-				},
+						yAxis : {
+							allowDecimals : false,
+							min : 0,
+							title : {
+								text : 'Number of Customers'
+							}
+						},
 
-				plotOptions : {
-					column : {
-						stacking : 'normal'
-					}
-				},
+						tooltip : {
+							formatter : function() {
+								return '<b>' + this.x + '</b><br/>'
+										+ this.series.name + ': ' + this.y
+										+ '<br/>' + 'Total: '
+										+ this.point.stackTotal;
+							}
+						},
 
-				series : [ {
-					name : 'John',
-					data : [ 5, 3, 4, 7, 2 ],
-					stack : 'male'
-				}, {
-					name : 'Joe',
-					data : [ 3, 4, 4, 2, 5 ],
-					stack : 'male'
-				}, {
-					name : 'Jane',
-					data : [ 2, 5, 6, 2, 1 ],
-					stack : 'female'
-				}, {
-					name : 'Janet',
-					data : [ 3, 0, 4, 4, 3 ],
-					stack : 'female'
-				} ]
-			});
+						plotOptions : {
+							column : {
+								stacking : 'normal'
+							}
+						},
+
+						series : [ {
+							name : customer,
+							data : datacustomer,
+							stack : ''
+						} ]
+					});
+		},
+		error : function(e) {
+			alert('Error: ' + e);
+		}
+	});
 });

@@ -12,9 +12,10 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/highcharts.js"></script>
+<script src="js/highcharts-3d.js"></script>
 <script src="js/exporting.js"></script>
 <script src="js/team-highcharts.js"></script>
-<script src="DetailsDashboardSidebar/average.js"></script>
+<script src="DetailsDashboardSidebar/argtimeonsite.js"></script>
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
 <script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
@@ -59,7 +60,7 @@
 								<div class="input-group text-center">
 									<div class="col-md-2">
 										<div id="dashboardaverage"
-											style="width: 800px; margin-top: -300px;"></div>
+											style="width: 800px; margin-top: -360px;"></div>
 									</div>
 								</div>
 							</div>

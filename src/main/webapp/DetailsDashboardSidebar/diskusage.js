@@ -1,5 +1,27 @@
 $(function() {
+	
+	var modules = [];
+	
+	var dataactivity = [];
+	var dataapplication = [];
+	var dataaumbycif = [];
+	var dataaumbybranch = [];
+	var dataportholding = [];
+	
+	$.ajax({
+		type : "GET",
+		url : 'diskUsageJson.action',
+		data : {},
+		success : function(response) {
 
+			modules = response.modules;
+			
+			dataactivity = response.dataactivity;
+			dataapplication = response.dataapplication;
+			dataaumbycif = response.dataaumbycif;
+			dataaumbybranch = response.dataaumbybranch;
+			dataportholding = response.dataportholding;
+			
 	var gaugeOptions = {
 
 		chart : {
@@ -55,8 +77,7 @@ $(function() {
 		}
 	};
 
-	// The speed gauge
-	$('#dashboardbonanza')
+	$('#dashboardactivity')
 			.highcharts(
 					Highcharts
 							.merge(
@@ -64,19 +85,15 @@ $(function() {
 									{
 										yAxis : {
 											min : 0,
-											max : 200,
+											max : 1000,
 											title : {
-												text : 'Bonanza'
+												text : modules[0]
 											}
 										},
 
-										credits : {
-											enabled : false
-										},
-
 										series : [ {
-											name : 'Bonanza',
-											data : [ 80 ],
+											name : modules[0],
+											data : dataactivity,
 											dataLabels : {
 												format : '<div style="text-align:center"><span style="font-size:25px;color:'
 														+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
@@ -84,14 +101,13 @@ $(function() {
 														+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
 											},
 											tooltip : {
-												valueSuffix : ' km/h'
+												valueSuffix : ''
 											}
 										} ]
 
 									}));
 
-	// The RPM gauge
-	$('#dashboardarchive')
+	$('#dashboardapplication')
 			.highcharts(
 					Highcharts
 							.merge(
@@ -99,57 +115,197 @@ $(function() {
 									{
 										yAxis : {
 											min : 0,
-											max : 5,
+											max : 1000,
 											title : {
-												text : 'Archive'
+												text : modules[1]
 											}
 										},
 
 										series : [ {
-											name : 'Archive',
-											data : [ 1 ],
+											name : modules[1],
+											data : dataapplication,
 											dataLabels : {
 												format : '<div style="text-align:center"><span style="font-size:25px;color:'
 														+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
-														+ '">{y:.1f}</span><br/>'
+														+ '">{y}</span><br/>'
 														+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
 											},
 											tooltip : {
-												valueSuffix : ' revolutions/min'
+												valueSuffix : ''
+											}
+										} ]
+
+									}));
+
+	$('#dashboardaumbycif')
+			.highcharts(
+					Highcharts
+							.merge(
+									gaugeOptions,
+									{
+										yAxis : {
+											min : 0,
+											max : 1000,
+											title : {
+												text : modules[2]
+											}
+										},
+
+										series : [ {
+											name : modules[2],
+											data : dataaumbycif,
+											dataLabels : {
+												format : '<div style="text-align:center"><span style="font-size:25px;color:'
+														+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
+														+ '">{y}</span><br/>'
+														+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+											},
+											tooltip : {
+												valueSuffix : ''
+											}
+										} ]
+
+									}));
+
+	$('#dashboardaumbybranch')
+			.highcharts(
+					Highcharts
+							.merge(
+									gaugeOptions,
+									{
+										yAxis : {
+											min : 0,
+											max : 1000,
+											title : {
+												text : modules[3]
+											}
+										},
+
+										series : [ {
+											name : modules[3],
+											data : dataaumbybranch,
+											dataLabels : {
+												format : '<div style="text-align:center"><span style="font-size:25px;color:'
+														+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
+														+ '">{y}</span><br/>'
+														+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+											},
+											tooltip : {
+												valueSuffix : ''
+											}
+										} ]
+
+									}));
+
+	$('#dashboardportholding')
+			.highcharts(
+					Highcharts
+							.merge(
+									gaugeOptions,
+									{
+										yAxis : {
+											min : 0,
+											max : 1000,
+											title : {
+												text : modules[4]
+											}
+										},
+
+										series : [ {
+											name : modules[4],
+											data : dataportholding,
+											dataLabels : {
+												format : '<div style="text-align:center"><span style="font-size:25px;color:'
+														+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
+														+ '">{y}</span><br/>'
+														+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+											},
+											tooltip : {
+												valueSuffix : ''
 											}
 										} ]
 
 									}));
 
 	// Bring life to the dials
-	setTimeout(function() {
-		// Speed
-		var chart = $('#dashboardbonanza').highcharts(), point, newVal, inc;
-
-		if (chart) {
-			point = chart.series[0].points[0];
-			inc = Math.round((Math.random() - 0.5) * 100);
-			newVal = point.y + inc;
-
-			if (newVal < 0 || newVal > 200) {
-				newVal = point.y - inc;
-			}
-
-			point.update(newVal);
+//	setTimeout(
+//			function() {
+//				var chart = $('#dashboardactivity').highcharts(), point, newVal, inc;
+//
+//				if (chart) {
+//					point = chart.series[0].points[0];
+//					inc = Math.round((Math.random() - 0.5) * 100);
+//					newVal = point.y + inc;
+//
+//					if (newVal < 0 || newVal > 1000) {
+//						newVal = point.y - inc;
+//					}
+//
+//					point.update(newVal);
+//				}
+//
+//				var chart = $('#dashboardapplication').highcharts(), point, newVal, inc;
+//
+//				if (chart) {
+//					point = chart.series[0].points[0];
+//					inc = Math.round((Math.random() - 0.5) * 100);
+//					newVal = point.y + inc;
+//
+//					if (newVal < 0 || newVal > 1000) {
+//						newVal = point.y - inc;
+//					}
+//
+//					point.update(newVal);
+//				}
+//
+//				var chart = $('#dashboardaumbycif').highcharts(), point, newVal, inc;
+//
+//				if (chart) {
+//					point = chart.series[0].points[0];
+//					inc = Math.round((Math.random() - 0.5) * 100);
+//					newVal = point.y + inc;
+//
+//					if (newVal < 0 || newVal > 1000) {
+//						newVal = point.y - inc;
+//					}
+//
+//					point.update(newVal);
+//				}
+//
+//				var chart = $('#dashboardaumbybranch').highcharts(), point, newVal, inc;
+//
+//				if (chart) {
+//					point = chart.series[0].points[0];
+//					inc = Math.round((Math.random() - 0.5) * 100);
+//					newVal = point.y + inc;
+//
+//					if (newVal < 0 || newVal > 1000) {
+//						newVal = point.y - inc;
+//					}
+//
+//					point.update(newVal);
+//				}
+//
+//				var chart = $('#dashboardportholding').highcharts(), point, newVal, inc;
+//
+//				if (chart) {
+//					point = chart.series[0].points[0];
+//					inc = Math.round((Math.random() - 0.5) * 100);
+//					newVal = point.y + inc;
+//
+//					if (newVal < 0 || newVal > 1000) {
+//						newVal = point.y - inc;
+//					}
+//
+//					point.update(newVal);
+//				}
+//
+//			}, 2000);
+	
+		},
+		error : function(e) {
+			alert('Error: ' + e);
 		}
-
-		// RPM
-		chart = $('#dashboardarchive').highcharts();
-		if (chart) {
-			point = chart.series[0].points[0];
-			inc = Math.random() - 0.5;
-			newVal = point.y + inc;
-
-			if (newVal < 0 || newVal > 5) {
-				newVal = point.y - inc;
-			}
-
-			point.update(newVal);
-		}
-	}, 2000);
+	});
+	
 });

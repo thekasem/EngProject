@@ -1,92 +1,79 @@
 $(function() {
 
+	var monthName = [];
+	var nameModule = [];
+	var dataModule1 = [];
+	var dataModule2 = [];
+	var dataModule3 = [];
+	var dataModule4 = [];
+	var dataModule5 = [];
+
 	$
 			.ajax({
 				type : "GET",
 				url : 'TopModuleJson.action',
 				data : {},
 				success : function(response) {
+
+					monthName = response.month;
+					nameModule = response.nameModule;
+					dataModule1 = response.dataModule1;
+					dataModule2 = response.dataModule2;
+					dataModule3 = response.dataModule3;
+					dataModule4 = response.dataModule4;
+					dataModule5 = response.dataModule5;
 					$('#dashboardtopmodule')
 							.highcharts(
 									{
+										chart : {
+											type : 'spline'
+										},
 										title : {
 											text : ''
 										},
+										subtitle : {
+											text : ''
+										},
 										xAxis : {
-											categories : [ 'Apples', 'Oranges3',
-													'Pears', 'Bananas', 'Plums' ]
+											categories : monthName,
+											crosshair : true
 										},
-										labels : {
-											items : [ {
-												html : 'Total fruit consumption',
-												style : {
-													left : '50px',
-													top : '18px',
-													color : (Highcharts.theme && Highcharts.theme.textColor)
-															|| 'black'
-												}
-											} ]
+										yAxis : {
+											min : 0,
+											title : {
+												text : 'value of Module'
+											}
 										},
-										series : [
-												{
-													type : 'column',
-													name : 'Jane',
-													data : [ 3, 2, 1, 3, 4 ]
-												},
-												{
-													type : 'column',
-													name : 'John',
-													data : [ 2, 3, 5, 7, 6 ]
-												},
-												{
-													type : 'column',
-													name : 'Joe',
-													data : [ 4, 3, 3, 9, 0 ]
-												},
-												{
-													type : 'spline',
-													name : 'Average',
-													data : [ 3, 2.67, 3, 6.33,
-															3.33 ],
-													marker : {
-														lineWidth : 2,
-														lineColor : Highcharts
-																.getOptions().colors[3],
-														fillColor : 'white'
-													}
-												},
-												{
-													type : 'pie',
-													name : 'Total consumption',
-													data : [
-															{
-																name : 'Jane',
-																y : 13,
-																color : Highcharts
-																		.getOptions().colors[0]
-															// Jane's color
-															},
-															{
-																name : 'John',
-																y : 23,
-																color : Highcharts
-																		.getOptions().colors[1]
-															// John's color
-															},
-															{
-																name : 'Joe',
-																y : 19,
-																color : Highcharts
-																		.getOptions().colors[2]
-															// Joe's color
-															} ],
-													center : [ 100, 80 ],
-													size : 100,
-													showInLegend : false,
-													dataLabels : {
-														enabled : false
-													}
-												} ]
+										tooltip : {
+											headerFormat : '<span style="font-size:10px">{point.key}</span><table>',
+											pointFormat : '<tr><td style="color:{series.color};padding:0">{series.name}: </td>'
+													+ '<td style="padding:0"><b>{point.y:.1f} used</b></td></tr>',
+											footerFormat : '</table>',
+											shared : true,
+											useHTML : true
+										},
+										plotOptions : {
+											column : {
+												pointPadding : 0.2,
+												borderWidth : 0
+											}
+										},
+										series : [ {
+											name : nameModule[0],
+											data : dataModule1
+										}, {
+											name : nameModule[1],
+											data : dataModule2
+										}, {
+											name : nameModule[2],
+											data : dataModule3
+										}, {
+											name : nameModule[2],
+											data : dataModule4
+										}, {
+											name : nameModule[2],
+											data : dataModule5
+										} ]
 									});
 				},
 				error : function(e) {

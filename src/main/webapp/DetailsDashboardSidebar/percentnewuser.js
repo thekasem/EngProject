@@ -1,13 +1,8 @@
 $(function() {
-	
-	var name1;
-	var name2;
-	var name3;
-	var name4;
-	var array1 = [];
-	var array2 = [];
-	var array3 = [];
-	var array4 = [];
+
+	var dateLastYear = [];
+	var dateCurrentYear = [];
+	var monthName = [];
 
 	$
 			.ajax({
@@ -15,6 +10,9 @@ $(function() {
 				url : 'percentNewUserJson.action',
 				data : {},
 				success : function(response) {
+					monthName = response.month;
+					dateLastYear = response.dataLastYear;
+					dateCurrentYear = response.dataCurrentYear;
 					$('#dashboardnewuser')
 							.highcharts(
 									{
@@ -37,16 +35,14 @@ $(function() {
 										},
 
 										xAxis : {
-											categories : [ 'Apples', 'Oranges',
-													'Pears', 'Grapes',
-													'Bananas' ]
+											categories : monthName
 										},
 
 										yAxis : {
 											allowDecimals : false,
 											min : 0,
 											title : {
-												text : 'Number of fruits'
+												text : 'Number of Percent'
 											}
 										},
 
@@ -63,21 +59,13 @@ $(function() {
 										},
 
 										series : [ {
-											name : 'John',
-											data : [ 5, 3, 4, 7, 2 ],
+											name : 'Current Year',
+											data : dateCurrentYear,
 											stack : 'male'
 										}, {
-											name : 'Joe',
-											data : [ 3, 4, 4, 2, 5 ],
+											name : 'Last Year',
+											data : dateLastYear,
 											stack : 'male'
-										}, {
-											name : 'Jane',
-											data : [ 2, 5, 6, 2, 1 ],
-											stack : 'female'
-										}, {
-											name : 'Janet',
-											data : [ 3, 0, 4, 4, 3 ],
-											stack : 'female'
 										} ]
 									});
 				},

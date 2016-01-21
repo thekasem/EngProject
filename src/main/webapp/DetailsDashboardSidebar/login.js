@@ -1,8 +1,6 @@
 $(function() {
 	 var test1 = [];
 	 var test2 = [];
-	 var test3 ="";
-	 var test4 ="";
 	$.ajax({
 		  type : "GET",
 		  url : 'loginJson.action',
@@ -10,8 +8,6 @@ $(function() {
 		  success : function(response) {
 			  test1 = response.numberarray1;
 			  test2 = response.numberarray2;
-			  test3 = response.text1;
-			  test4 = response.text2;	  
 		    $('#dashboardlogin')
 			.highcharts(
 					{
@@ -63,11 +59,11 @@ $(function() {
 						},
 						series : [
 								{
-									name : test3,
+									name : 'Current Year',
 									data : test1
 								},
 								{
-									name : test4,
+									name : 'Last Year',
 									data : test2
 								} ]
 					});

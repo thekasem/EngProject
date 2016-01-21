@@ -1,66 +1,89 @@
 $(function() {
-	$('#dashboardnewuser')
-			.highcharts(
-					{
+	
+	var name1;
+	var name2;
+	var name3;
+	var name4;
+	var array1 = [];
+	var array2 = [];
+	var array3 = [];
+	var array4 = [];
 
-						chart : {
-							type : 'column',
-							options3d : {
-								enabled : true,
-								alpha : 15,
-								beta : 15,
-								viewDistance : 25,
-								depth : 40
-							},
-							marginTop : 80,
-							marginRight : 40
-						},
+	$
+			.ajax({
+				type : "GET",
+				url : 'percentNewUserJson.action',
+				data : {},
+				success : function(response) {
+					$('#dashboardnewuser')
+							.highcharts(
+									{
 
-						title : {
-							text : ''
-						},
+										chart : {
+											type : 'column',
+											options3d : {
+												enabled : true,
+												alpha : 15,
+												beta : 15,
+												viewDistance : 25,
+												depth : 40
+											},
+											marginTop : 80,
+											marginRight : 40
+										},
 
-						xAxis : {
-							categories : [ 'Apples', 'Oranges', 'Pears',
-									'Grapes', 'Bananas' ]
-						},
+										title : {
+											text : ''
+										},
 
-						yAxis : {
-							allowDecimals : false,
-							min : 0,
-							title : {
-								text : 'Number of fruits'
-							}
-						},
+										xAxis : {
+											categories : [ 'Apples', 'Oranges',
+													'Pears', 'Grapes',
+													'Bananas' ]
+										},
 
-						tooltip : {
-							headerFormat : '<b>{point.key}</b><br>',
-							pointFormat : '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
-						},
+										yAxis : {
+											allowDecimals : false,
+											min : 0,
+											title : {
+												text : 'Number of fruits'
+											}
+										},
 
-						plotOptions : {
-							column : {
-								stacking : 'normal',
-								depth : 40
-							}
-						},
+										tooltip : {
+											headerFormat : '<b>{point.key}</b><br>',
+											pointFormat : '<span style="color:{series.color}">\u25CF</span> {series.name}: {point.y} / {point.stackTotal}'
+										},
 
-						series : [ {
-							name : 'John',
-							data : [ 5, 3, 4, 7, 2 ],
-							stack : 'male'
-						}, {
-							name : 'Joe',
-							data : [ 3, 4, 4, 2, 5 ],
-							stack : 'male'
-						}, {
-							name : 'Jane',
-							data : [ 2, 5, 6, 2, 1 ],
-							stack : 'female'
-						}, {
-							name : 'Janet',
-							data : [ 3, 0, 4, 4, 3 ],
-							stack : 'female'
-						} ]
-					});
+										plotOptions : {
+											column : {
+												stacking : 'normal',
+												depth : 40
+											}
+										},
+
+										series : [ {
+											name : 'John',
+											data : [ 5, 3, 4, 7, 2 ],
+											stack : 'male'
+										}, {
+											name : 'Joe',
+											data : [ 3, 4, 4, 2, 5 ],
+											stack : 'male'
+										}, {
+											name : 'Jane',
+											data : [ 2, 5, 6, 2, 1 ],
+											stack : 'female'
+										}, {
+											name : 'Janet',
+											data : [ 3, 0, 4, 4, 3 ],
+											stack : 'female'
+										} ]
+									});
+				},
+				error : function(e) {
+					alert('Error: ' + e);
+				}
+			});
+
 });

@@ -1,48 +1,58 @@
 $(function() {
 
-	var test;
-	var test2 = [];
+	var y = [];
+	var nameBrowser = [];
+	var dataMSIE = [];
+	var dataFirefox = [];
+	var dateChrome = [];
+	var dataSafari = [];
+	var dataOpera = [];
+	var dateProprietary = [];
 	$
 			.ajax({
 				type : "GET",
 				url : 'browserJson.action',
 				data : {},
 				success : function(response) {
-					test2 = response.arrayResult1;
-					test = response.result1;
-					var colors = Highcharts.getOptions().colors, categories = [
-							'MSIE', 'Firefox', 'Chrome', 'Safari', 'Opera' ], data = [
+					dataMSIE = response.dataMSIE;
+					dataFirefox = response.dataFirefox;
+					dateChrome = response.dataChrome;
+					dataSafari = response.dataSafari;
+					dataOpera = response.dataOpera;
+					dateProprietary = response.dateProprietary;
+					nameBrowser = response.nameBrowser;
+					y = response.y;
+					var colors = Highcharts.getOptions().colors, categories = nameBrowser, data = [
 							{
-								y : test,
+								y : y[0],
 								color : colors[0],
 								drilldown : {
-									name : 'MSIE versions',
+									name : nameBrowser[0],
 									categories : [ 'MSIE 6.0', 'MSIE 7.0',
 											'MSIE 8.0', 'MSIE 9.0',
 											'MSIE 10.0', 'MSIE 11.0' ],
-									data : test2,
+									data : dataMSIE,
 									color : colors[0]
 								}
 							},
 							{
-								y : 10.38,
+								y : y[1],
 								color : colors[1],
 								drilldown : {
-									name : 'Firefox versions',
+									name : nameBrowser[1],
 									categories : [ 'Firefox v31',
 											'Firefox v32', 'Firefox v33',
 											'Firefox v35', 'Firefox v36',
 											'Firefox v37', 'Firefox v38' ],
-									data : [ 0.33, 0.15, 0.22, 1.27, 2.76,
-											2.32, 2.31, 1.02 ],
+									data : dataFirefox,
 									color : colors[1]
 								}
 							},
 							{
-								y : 24.03,
+								y : y[2],
 								color : colors[2],
 								drilldown : {
-									name : 'Chrome versions',
+									name : nameBrowser[2],
 									categories : [ 'Chrome v30.0',
 											'Chrome v31.0', 'Chrome v32.0',
 											'Chrome v33.0', 'Chrome v34.0',
@@ -51,43 +61,40 @@ $(function() {
 											'Chrome v39.0', 'Chrome v40.0',
 											'Chrome v41.0', 'Chrome v42.0',
 											'Chrome v43.0' ],
-									data : [ 0.14, 1.24, 0.55, 0.19, 0.14,
-											0.85, 2.53, 0.38, 0.6, 2.96, 5,
-											4.32, 3.68, 1.45 ],
+									data : dateChrome,
 									color : colors[2]
 								}
 							},
 							{
-								y : 4.77,
+								y : y[3],
 								color : colors[3],
 								drilldown : {
-									name : 'Safari versions',
+									name : nameBrowser[3],
 									categories : [ 'Safari v5.0',
 											'Safari v5.1', 'Safari v6.1',
 											'Safari v6.2', 'Safari v7.0',
 											'Safari v7.1', 'Safari v8.0' ],
-									data : [ 0.3, 0.42, 0.29, 0.17, 0.26, 0.77,
-											2.56 ],
+									data : dataSafari,
 									color : colors[3]
 								}
 							},
 							{
-								y : 0.91,
+								y : y[4],
 								color : colors[4],
 								drilldown : {
-									name : 'Opera versions',
+									name : nameBrowser[4],
 									categories : [ 'Opera v12.x', 'Opera v27',
 											'Opera v28', 'Opera v29' ],
-									data : [ 0.34, 0.17, 0.24, 0.16 ],
+									data : dataOpera,
 									color : colors[4]
 								}
 							}, {
-								y : 0.2,
+								y : y[5],
 								color : colors[5],
 								drilldown : {
 									name : 'Proprietary or Undetectable',
 									categories : [],
-									data : [],
+									data : dateProprietary,
 									color : colors[5]
 								}
 							} ], browserData = [], versionsData = [], i, j, dataLen = data.length, drillDataLen, brightness;

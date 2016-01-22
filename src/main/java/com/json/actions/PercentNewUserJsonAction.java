@@ -14,6 +14,8 @@ public class PercentNewUserJsonAction extends ActionSupport {
 	private int[] dataCurrentYear = { 1, 13, 6, 5, 25, 40, 12, 15, 17, 28, 29,
 			10 };
 	private int[] dataLastYear = { 3, 6, 7, 2, 32, 12, 45, 56, 75, 76, 24, 25 };
+	private float[] avgDate={2, 10, 6, 5, 23, 44, 10, 10, 10, 24, 26,
+			14};
 
 	public String execute() {
 		return Action.SUCCESS;
@@ -29,6 +31,10 @@ public class PercentNewUserJsonAction extends ActionSupport {
 
 	public int[] getDataLastYear() {
 		return dataLastYear;
+	}
+
+	public float[] getAvgDate() {
+		return avgDate;
 	}
 
 }

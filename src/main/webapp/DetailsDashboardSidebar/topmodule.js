@@ -68,10 +68,10 @@ $(function() {
 											name : nameModule[2],
 											data : dataModule3
 										}, {
-											name : nameModule[2],
+											name : nameModule[3],
 											data : dataModule4
 										}, {
-											name : nameModule[2],
+											name : nameModule[4],
 											data : dataModule5
 										} ]
 									});

@@ -4,7 +4,8 @@ $(function () {
     var data = [
         {
             "hc-key": "th-ct",
-            "value": 0
+            "value": 0,
+            "text" : 'kasemsun'
         },
         {
             "hc-key": "th-4255",

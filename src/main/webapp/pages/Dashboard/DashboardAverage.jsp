@@ -60,7 +60,7 @@
 								<div class="input-group text-center">
 									<div class="col-md-2">
 										<div id="dashboardaverage"
-											style="width: 800px; margin-top: -360px;"></div>
+											style="width: 800px; margin-top: -300px;"></div>
 									</div>
 								</div>
 							</div>

@@ -55,7 +55,7 @@
 
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div id="dashboardbrowser" style="width: 800px; margin-top: -300px;"></div>
+										<div id="dashboardbrowser" style="width: 800px; margin-top: -250px;"></div>
 									</div>
 								</div>
 							</div>

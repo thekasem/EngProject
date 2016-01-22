@@ -33,12 +33,12 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchaumbranch}">
+			<s:a type="button" class="btn btn-primary" href="%{searchaumbranch}">
 				<span class="fa fa-refresh"></span>
 				Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+			<a type="button" class="btn btn-primary" onclick="clickOk()"><span
 				class="fa fa-search"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listaumbranch}">
+			<s:a type="button" class="btn btn-primary" href="%{listaumbranch}">
 				<span class="fa fa-times-circle"></span> Cancel</s:a>
 		</div>
 

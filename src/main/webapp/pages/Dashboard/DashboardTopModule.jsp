@@ -54,7 +54,7 @@
 
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div id="dashboardtopmodule" style="width: 800px; margin-top: -300px;"></div>
+										<div id="dashboardtopmodule" style="width: 800px; margin-top: -250px;"></div>
 									</div>
 								</div>
 							</div>

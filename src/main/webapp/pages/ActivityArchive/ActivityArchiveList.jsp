@@ -9,19 +9,19 @@
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body style="background: #FEFCFF">
+<body hold-transition skin-blue sidebar-mini>
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchactivity}">
+			<s:a type="button" class="btn btn-primary" href="%{searchactivity}">
 				<span class="fa fa-search"></span>
 					Search</s:a>
-			<s:a type="button" class="btn btn-info" href="%{listac}">
+			<s:a type="button" class="btn btn-primary" href="%{listac}">
 				<span class="fa fa-refresh"></span> Refresh</s:a>
-			<s:a type="button" class="btn btn-info" href="%{addactivity}">
+			<s:a type="button" class="btn btn-primary" href="%{addactivity}">
 				<span class="fa fa-plus-circle"></span> ADD Archive</s:a>
 		</div>
 

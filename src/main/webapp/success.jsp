@@ -8,16 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.theme.min.css" rel="stylesheet">
-<link href="<s:url value="/css/tutorial.css"/>" rel="stylesheet"
-	type="text/css" />
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <title>Success Login</title>
 </head>
-<body style="background: #FEFCFF">
+<body class="hold-transition skin-blue sidebar-mini">
 	<s:url action="activityArchive_search" var="search"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
@@ -46,15 +41,15 @@
 
 		<div class="panel panel-default" style="margin-top: 15px;">
 			<div class="panel-heading" style="color: #686868">
-				<h4>
+				<h5>
 					<span class="fa fa-child"></span> 
 					<Strong>Hello</Strong> 
 					<Strong><s:property value="userNameLogin" /></Strong>
-				</h4>
+				</h5>
 			</div>
 			<div class="panel-body">
 				<form class="form-horizontal">
-					<h4>
+					<h5>
 						<span class="fa fa-archive"></span> <strong>Data
 							archiving</strong> is the process of moving data that is no longer
 						actively used to a separate storage device for long-term
@@ -63,10 +58,10 @@
 						reference, as well as data that must be retained for regulatory
 						compliance. Data archives are indexed and have search capabilities
 						so files and parts of files can be easily located and retrieved.
-					</h4>
+					</h5>
 					<img class="img-rounded" alt="Cinque Terre"
 						src="pages/Menu/pig1.jpg" class="img-thumbnail " />
-					<h4>
+					<h5>
 						<span class="fa fa-dashboard"></span> <strong>Dashboards</strong>
 						often provide at-a-glance views of KPIs (key performance
 						indicators) relevant to a particular objective or business process
@@ -80,7 +75,7 @@
 						their business was running above normal. Dashboards typically are
 						limited to show summaries, key trends, comparisons, and
 						exceptions.
-					</h4>
+					</h5>
 					<img class="img-rounded" alt="Cinque Terre" width="600"
 						height="400" src="pages/Menu/pig2.png" class="img-thumbnail " />
 

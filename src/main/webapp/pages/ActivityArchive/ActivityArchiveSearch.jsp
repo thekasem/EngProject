@@ -10,17 +10,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 <script type="text/javascript">
 	function clickOk() {
 		document.getElementById("ok").click();
@@ -32,19 +23,21 @@
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
+	
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchactivity}">
+			<s:a type="button" class="btn btn-primary" href="%{searchactivity}">
 				<span class="fa fa-refresh"></span> Reset </s:a>
-			<a type="button" onclick="clickOk()" class="btn btn-info"><span
+			<a type="button" onclick="clickOk()" class="btn btn-primary"><span
 				class="fa fa-search"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listac}">
+			<s:a type="button" class="btn btn-primary" href="%{listac}">
 				<span class="fa fa-times-circle"></span> Cancel</s:a>
 		</div>
 
 		<div style="margin-top: 10px;" align="right">
 			<h3>
-				<span class="label label-default"><span class="fa fa-search"> Search</span></span>
+				<span class="label label-default"><span class="fa fa-search">
+						Search</span></span>
 			</h3>
 		</div>
 
@@ -58,11 +51,16 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.logDate" cssClass="datepicker form-control"></s:textfield>
+							<div class="form-group has-feedback">
+								<s:textfield name="entity.logDate"
+									cssClass="datepicker form-control"></s:textfield>
+								<span class="fa fa-calendar form-control-feedback"></span>
+							</div>
 						</div>
 						<label class="col-md-2 control-label">Request URI</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.actionClass" cssClass="text form-control"></s:textfield>
+							<s:textfield name="entity.actionClass"
+								cssClass="text form-control"></s:textfield>
 						</div>
 					</div>
 
@@ -70,9 +68,12 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Action Name</label>
 						<div class="col-md-3">
-							<s:select class="form-control" headerKey="-1" value=""
-								list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
-								name="entity.action" />
+							<div class="form-group has-feedback">
+								<s:select class="form-control" headerKey="-1" value=""
+									list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
+									name="entity.action" />
+								<span class="fa fa-list form-control-feedback"></span>
+							</div>
 						</div>
 						<label class="col-md-2 control-label">Client IP</label>
 						<div class="col-md-3">
@@ -82,8 +83,11 @@
 					<div class="form-group">
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.dateArchive"
-								cssClass="datepicker form-control"></s:textfield>
+							<div class="form-group has-feedback">
+								<s:textfield name="entity.dateArchive"
+									cssClass="datepicker form-control"></s:textfield>
+								<span class="fa fa-calendar form-control-feedback"></span>
+							</div>
 						</div>
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
@@ -95,11 +99,10 @@
 			</div>
 		</div>
 	</div>
+	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 	<script>
 		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'yymmdd'
+			format : 'yyyymmdd'
 		});
 	</script>
 	<style>

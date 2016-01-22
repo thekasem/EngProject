@@ -21,11 +21,11 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchappl}">
+			<s:a type="button" class="btn btn-primary" href="%{searchappl}">
 				<span class="fa fa-search"></span> Search</s:a>
-			<s:a type="button" class="btn btn-info" href="%{listapp}">
+			<s:a type="button" class="btn btn-primary" href="%{listapp}">
 				<span class="fa fa-refresh"></span> Refresh</s:a>
-			<s:a type="button" class="btn btn-info" href="%{addapp}">
+			<s:a type="button" class="btn btn-primary" href="%{addapp}">
 				<span class="fa fa-plus-circle"></span> ADD Archive</s:a>
 		</div>
 

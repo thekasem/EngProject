@@ -32,11 +32,11 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{addapp}">
+			<s:a type="button" class="btn btn-primary" href="%{addapp}">
 				<span class="fa fa-refresh"></span> Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+			<a type="button" class="btn btn-primary" onclick="clickOk()"><span
 				class="fa fa-plus-circle"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listapp}">
+			<s:a type="button" class="btn btn-primary" href="%{listapp}">
 				<span class="fa fa-times"></span> Cancel</s:a>
 		</div>
 

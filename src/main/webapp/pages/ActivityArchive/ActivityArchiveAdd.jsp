@@ -8,17 +8,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 <script type="text/javascript">
 	function clickOK() {
 		document.getElementById("ok").click();
@@ -32,11 +23,11 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{addactivity}">
+			<s:a type="button" class="btn btn-primary" href="%{addactivity}">
 				<span class="fa fa-refresh"></span> Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOK()"><span
+			<a type="button" class="btn btn-primary" onclick="clickOK()"><span
 				class="fa fa-plus-circle"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listac}">
+			<s:a type="button" class="btn btn-primary" href="%{listac}">
 				<span class="fa fa-times"></span> Cancel</s:a>
 		</div>
 
@@ -58,13 +49,20 @@
 						<label class="col-md-3 control-label">Select Activity Date
 							:</label>
 						<div class="col-md-3">
-							<s:textfield name="date" cssClass="datepicker form-control"></s:textfield>
+							<div class="form-group has-feedback">
+
+								<s:textfield name="date" cssClass="datepicker form-control"></s:textfield>
+								<span class="fa fa-calendar form-control-feedback"></span>
+							</div>
 						</div>
 
 						<label class="col-md-2 control-label">Select Condition :</label>
 						<div class="col-sm-6 col-md-3">
+						<div class="form-group has-feedback">
 							<s:select class="form-control" headerKey="-1" value="="
 								list="#{'=':'=','<':'<'}" name="condition" />
+								<span class="fa fa-list form-control-feedback"></span>
+							</div>
 						</div>
 					</div>
 					<input type="submit" id="ok" style="display: none">
@@ -73,11 +71,10 @@
 
 		</div>
 	</div>
+	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 	<script>
 		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'yymmdd'
+			format : 'yyyymmdd'
 		});
 	</script>
 	<style>

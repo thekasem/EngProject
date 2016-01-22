@@ -33,12 +33,12 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchaumcif}">
+			<s:a type="button" class="btn btn-primary" href="%{searchaumcif}">
 				<span class="fa fa-refresh"></span>
 				Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+			<a type="button" class="btn btn-primary" onclick="clickOk()"><span
 				class="fa fa-search"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listaumcif}">
+			<s:a type="button" class="btn btn-primary" href="%{listaumcif}">
 				<span class="fa fa-times-circle"></span> Cancel</s:a>
 		</div>
 

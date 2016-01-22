@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap.theme.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="plugins/iCheck/square/blue.css">
 <script type="text/javascript">
 	
 </script>
@@ -19,44 +22,51 @@
 	<div style="margin-top: 150px">
 		<form action="login_execute" method="post" class="form-horizontal">
 			<div class="container">
- 				<s:if test="arlert.equals('Login Fail')">
-					<div class="alert alert-danger col-md-4 col-md-offset-4" >
+				<s:if test="arlert.equals('Login Fail')">
+					<div class="alert alert-danger col-md-4 col-md-offset-4">
 						<div class="center">
-						<s:property value="arlert"/>
+							<s:property value="arlert" />
 						</div>
 					</div>
- 				</s:if>
- 				<div class="row">
+				</s:if>
+				<div class="row">
 					<div class="col-md-4 col-md-offset-4">
 						<div class="panel panel-default">
 							<div class="panel-heading" style="color: #686868">
-							 <span class="fa fa-sign-in"></span>
-								<strong><s:text name="user.login" /></strong>
+								<span class="fa fa-sign-in"></span> <strong><s:text
+										name="user.login" /></strong>
 							</div>
 							<div class="panel-body">
 								<div class="form-group">
 									<label class="control-label col-md-3" style="color: #686868"><s:text
 											name="user.name" /></label>
-									<div class="col-md-9">
-										<s:textfield name="username" cssClass="form-control"
-											placeholder="username" type="text"></s:textfield>
+									<div class="col-md-8">
+										<div class="form-group has-feedback">
+											<s:textfield name="username" cssClass="form-control"
+												placeholder="username" type="text"></s:textfield>
+											<span
+												class="glyphicon glyphicon-envelope form-control-feedback"></span>
+										</div>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<label class="control-label col-md-3" style="color: #686868"><s:text
 											name="user.password" /></label>
-									<div class="col-md-9">
-										<s:password name="userpass" cssClass="text form-control"
-											placeholder="password"></s:password>
+									<div class="col-md-8">
+										<div class="form-group has-feedback">
+											<s:password name="userpass" cssClass="text form-control"
+												placeholder="password"></s:password>
+											<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+										</div>
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="col-sm-offset-3 col-sm-9">
 										<div class="checkbox">
-											<label class=""> <input type="checkbox" class="">Remember
-												me
+											<label class=""> <input type="checkbox" class="">
+												Remember me
 											</label>
 										</div>
 									</div>
@@ -64,9 +74,9 @@
 
 								<div class="form-group">
 									<div class="col-sm-offset-3 col-sm-9">
-										<button type="submit" class="btn btn-success btn-submit">
-											Submit</button>
-										<a class="btn btn-default btn-reset" href="index.jsp">reset</a>
+										<button type="submit" class="btn btn-primary btn-flat">
+											Sign in</button>
+										<a class="btn btn-default btn-flat" href="index.jsp">reset</a>
 									</div>
 								</div>
 
@@ -77,6 +87,17 @@
 			</div>
 		</form>
 	</div>
+	<script src="plugins/jQuery/jQuery-2.1.4.min.js"></script>
+	<script src="plugins/iCheck/icheck.min.js"></script>
+	<script>
+		$(function() {
+			$('input').iCheck({
+				checkboxClass : 'icheckbox_square-blue',
+				radioClass : 'iradio_square-blue',
+				increaseArea : '20%' // optional
+			});
+		});
+	</script>
 </body>
 
 </html>

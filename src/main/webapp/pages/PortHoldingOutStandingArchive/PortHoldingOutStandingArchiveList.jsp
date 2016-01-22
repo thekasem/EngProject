@@ -21,9 +21,9 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{searchaumport}">
+			<s:a type="button" class="btn btn-primary" href="%{searchaumport}">
 				<span class="fa fa-search"></span> Search</s:a>
-			<s:a type="button" class="btn btn-info" href="%{listaumport}">
+			<s:a type="button" class="btn btn-primary" href="%{listaumport}">
 				<span class="fa fa-refresh"></span> Refresh</s:a>
 		</div>
 

@@ -32,11 +32,11 @@
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="container">
-			<s:a type="button" class="btn btn-info" href="%{addbycif}">
+			<s:a type="button" class="btn btn-primary" href="%{addbycif}">
 				<span class="fa fa-refresh"></span> Reset</s:a>
-			<a type="button" class="btn btn-info" onclick="clickOk()"><span
+			<a type="button" class="btn btn-primary" onclick="clickOk()"><span
 				class="fa fa-plus-circle"></span> OK</a>
-			<s:a type="button" class="btn btn-info" href="%{listbycif}">
+			<s:a type="button" class="btn btn-primary" href="%{listbycif}">
 				<span class="fa fa-times"></span> Cancel</s:a>
 		</div>
 

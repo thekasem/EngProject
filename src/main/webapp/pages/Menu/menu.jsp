@@ -24,16 +24,11 @@
 	<s:url action="dashBoard_browser" var="showDashBoard"></s:url>
 
 	<div class="wrapper">
-		<header class="main-header">
-		<!-- Logo -->
-        <a href="login_homeFirst.action" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Eng</b>Pro</span>
-        </a> 
-		<nav
-			class="navbar navbar-static-top" role="navigation">
+		<header class="main-header"> <!-- Logo --> <a
+			href="login_homeFirst.action" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
+			<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><b>Eng</b>Pro</span>
+		</a> <nav class="navbar navbar-static-top" role="navigation">
 		<div class="container-fluid">
 			<ul class="nav navbar-nav">
 				<li><s:a href="%{home}">
@@ -74,8 +69,9 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><s:a href="%{search}">
-						<span class="glyphicon glyphicon-user"></span>
-						<s:property value="userNameLogin" />
+						<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="Cinque Terre" width="21" height="21">
+						<span class="hidden-xs"> <s:property value="userNameLogin" />
+						</span>
 					</s:a></li>
 				<li><s:a href="%{logout}">
 						<span class="glyphicon glyphicon-log-out"></span>
@@ -84,7 +80,7 @@
 		</div>
 		</nav> </header>
 	</div>
-    <div style="margin-top: 50px"></div>
+	<div style="margin-top: 20px"></div>
 	<script src="plugins/fastclick/fastclick.min.js"></script>
 	<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
 	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>

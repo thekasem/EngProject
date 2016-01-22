@@ -12,7 +12,7 @@
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <title>Success Login</title>
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
+<body style="background: #E5E4E2">
 	<s:url action="activityArchive_search" var="search"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">

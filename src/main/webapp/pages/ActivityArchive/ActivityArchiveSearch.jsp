@@ -18,7 +18,7 @@
 	}
 </script>
 </head>
-<body style="background: #FEFCFF">
+<body style="background: #E5E4E2">
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>

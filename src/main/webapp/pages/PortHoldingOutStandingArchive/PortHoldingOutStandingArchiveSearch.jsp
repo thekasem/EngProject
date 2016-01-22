@@ -27,7 +27,7 @@
 	}
 </script>
 </head>
-<body  style="background: #FEFCFF">
+<body  style="background: #E5E4E2">
 	<s:url action="portHoldingBySubAccountArchive_search" var="searchaumport"></s:url>
 	<s:url action="portHoldingBySubAccountArchive_list" var="listaumport"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>

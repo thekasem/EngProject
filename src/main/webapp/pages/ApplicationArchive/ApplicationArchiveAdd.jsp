@@ -25,7 +25,7 @@
 	}
 </script>
 </head>
-<body style="background: #FEFCFF">
+<body style="background: #E5E4E2">
 	<s:url action="applicationArchive_search" var="searchappl"></s:url>
 	<s:url action="applicationArchive_list" var="listapp"></s:url>
 	<s:url action="applicationArchive_add" var="addapp"></s:url>

@@ -45,7 +45,7 @@
 											<s:textfield name="username" cssClass="form-control"
 												placeholder="username" type="text"></s:textfield>
 											<span
-												class="glyphicon glyphicon-envelope form-control-feedback"></span>
+												class="fa fa-user-md form-control-feedback"></span>
 										</div>
 									</div>
 								</div>

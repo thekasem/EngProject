@@ -23,7 +23,7 @@
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 </head>
-<body style="background: #FEFCFF">
+<body style="background: #E5E4E2">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="row">

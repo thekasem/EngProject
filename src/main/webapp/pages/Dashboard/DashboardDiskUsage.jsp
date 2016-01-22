@@ -17,7 +17,7 @@
 <script src="js/team-highcharts.js"></script>
 <script src="DetailsDashboardSidebar/diskusage.js"></script>
 </head>
-<body style="background: #FEFCFF">
+<body style="background: #E5E4E2">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
 	<div class="container">
 		<div class="row">

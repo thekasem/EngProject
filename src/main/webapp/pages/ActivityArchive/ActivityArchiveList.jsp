@@ -9,7 +9,7 @@
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </head>
-<body hold-transition skin-blue sidebar-mini>
+<body style="background: #E5E4E2">
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>

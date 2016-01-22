@@ -31,7 +31,7 @@ $(function() {
 						},
 						yAxis : {
 							title : {
-								text : 'Nuclear weapon states'
+								text : 'Value Of Time /sec.'
 							},
 							labels : {
 								formatter : function() {

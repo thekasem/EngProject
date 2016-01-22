@@ -65,9 +65,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-	
 		<script>
 		$('.datepicker').datepicker({
 			changeYear : true,

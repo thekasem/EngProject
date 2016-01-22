@@ -2,7 +2,8 @@ $(function() {
 	
 	var customer = "";
 	
-	var datacustomer = [];
+	var datacustomer1 = [];
+	var datacustomer2 = [];
 	
 	$.ajax({
 		type : "GET",
@@ -12,7 +13,8 @@ $(function() {
 
 			customer = response.customer;
 			
-			datacustomer = response.datacustomer;
+			datacustomer1 = response.datacustomer1;
+			datacustomer2 = response.datacustomer2;
 			
 			$('#dashboardcustomer').highcharts(
 					{
@@ -53,10 +55,14 @@ $(function() {
 						},
 
 						series : [ {
-							name : customer,
-							data : datacustomer,
+							name : 'Current Year',
+							data : datacustomer1,
 							stack : ''
-						} ]
+						}, {
+							name : 'Last Year',
+							data : datacustomer2,
+							stack : ''
+						}]
 					});
 		},
 		error : function(e) {

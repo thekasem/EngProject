@@ -83,7 +83,7 @@ body {
 				    <li class="active"><s:a href="#"><span class="fa fa-bars">    Menu Dashboard</span></s:a></li>
 					<li><s:a href="dashBoard_browser"><span class="fa fa-edge">    Browsers</span></s:a></li>
 					<li><s:a href="dashBoard_login"><span class="fa fa-sign-in">    Login</span></s:a></li>
-					<li><s:a href="dashBoard_user"><span class="fa fa-users">    User</span></s:a></li>
+<%-- 					<li><s:a href="dashBoard_user"><span class="fa fa-users">    User</span></s:a></li> --%>
 					<li><s:a href="dashBoard_topModule"><span class="fa fa-file-archive-o">    Top Module</span></s:a></li>
 					<li><s:a href="dashBoard_newUser"><span class="fa fa-user-plus">    Percent New User</span></s:a></li>
 					<li><s:a href="dashBoard_customer"><span class="fa fa-odnoklassniki">    Customers</span></s:a></li>

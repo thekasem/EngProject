@@ -35,7 +35,7 @@
 		<div class="container-fluid">
 			<ul class="nav navbar-nav navbar-right">
 				<li><s:a href="%{search}">
-						<img src="dist/img/user2-160x160.jpg" class="img-circle"
+						<img src="dist/img/usertest.png" class="img-circle"
 							alt="Cinque Terre" width="19" height="19">
 						<span class="hidden-xs"> <s:property value="userNameLogin" />
 						</span>

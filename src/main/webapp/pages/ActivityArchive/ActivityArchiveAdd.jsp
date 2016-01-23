@@ -38,8 +38,8 @@
 			</h3>
 		</div>
 
-		<div class="panel panel-default">
-			<div class="panel-heading">
+			<div class="box box-success">
+			<div class="box-header with-border">
 				<strong>ADD Archive Activity Log</strong>
 			</div>
 			<div class="panel-body">

@@ -9,9 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/highcharts.js"></script>
 <script src="js/exporting.js"></script>
@@ -25,23 +24,24 @@
 <link rel="stylesheet"
 	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 </head>
-<body style="background: #E5E4E2">
+<body style="background: #222D32">
+<div class="wrapper">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
-	<div class="container">
+
+	<div class="container ">
 		<div class="row">
-			<div class="col-md-3">
-				<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
-			</div>
-			<div col-md-9>
-				<div class="panel panel-default"
-					style="margin-top: 60px; margin-left: 270px;">
-					<div class="panel-heading">
+			
+			<div class="col-md-9">
+				<div class="box box-warning">
+					<div class="box-header with-border">
 						<Strong>Details Dashboard</Strong>
 					</div>
-					<div class="panel-body">
+					<div class="panel-body box box-warning">
 						<form class="form-horizontal">
 							<div class="well">
-								<h4><span class="fa fa-edge"> <b>Browsers</b></span></h4>
+								<h4>
+									<span class="fa fa-edge"> <b>Browsers</b></span>
+								</h4>
 								<div class="form-group" style="margin-left: 50px;">
 									<label class="col-md-2 control-label">From Date :</label>
 									<div class="col-md-3">
@@ -55,7 +55,7 @@
 
 								<div class="input-group text-center">
 									<div class="col-md-2">
-										<div id="dashboardbrowser" style="width: 800px; margin-top: -250px;"></div>
+										<div id="dashboardbrowser" style="width: 750px;"></div>
 									</div>
 								</div>
 							</div>
@@ -63,7 +63,11 @@
 					</div>
 				</div>
 			</div>
+			<div class="col-md-3">
+				<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
+			</div>
 		</div>
+	</div>
 	</div>
 	<script>
 		$('.datepicker').datepicker({

@@ -7,12 +7,10 @@
 <title>PortHolding OutStanding Archive Log List</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 </head>
 <body style="background: #E5E4E2">
 	<s:url action="portHoldingBySubAccountArchive_search"
@@ -35,8 +33,8 @@
 		</div>
 
 
-		<div class="panel panel-default" style="margin-top: 15px;">
-			<div class="panel-heading">
+		<div class="box box-success">
+			<div class="box-header with-border">
 				<Strong>List PortHolding OutStanding Archive Log</Strong>
 			</div>
 			<div class="panel-body">
@@ -74,8 +72,8 @@
 						</tbody>
 					</table>
 				</form>
+				<s:include value="/pages/Menu/paging.jsp"></s:include>
 			</div>
-			<s:include value="/pages/Menu/paging.jsp"></s:include>
 		</div>
 	</div>
 </body>

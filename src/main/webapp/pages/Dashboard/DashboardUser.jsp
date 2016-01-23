@@ -8,8 +8,8 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/highmaps.js"></script>
 <script src="js/exporting.js"></script>
@@ -37,7 +37,7 @@
 					<div class="panel-heading">
 						<Strong>Details Dashboard</Strong>
 					</div>
-					<div class="panel-body">
+					<div class="panel-body box box-warning">
 						<form class="form-horizontal">
 							<div class="well">
 								<h4><span class="fa fa-users"> <b>User</b></span></h4>

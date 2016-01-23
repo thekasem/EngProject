@@ -36,8 +36,8 @@
 			</h3>
 		</div>
 
-		<div class="panel panel-default" style="margin-top: 15px;">
-			<div class="panel-heading">
+		<div class="box box-success">
+			<div class="box-header with-border">
 				<Strong>List Application Archive Log</Strong>
 			</div>
 			<div class="panel-body">
@@ -77,8 +77,8 @@
 						</tbody>
 					</table>
 				</form>
+				<s:include value="/pages/Menu/paging.jsp"></s:include>
 			</div>
-			<s:include value="/pages/Menu/paging.jsp"></s:include>
 		</div>
 </body>
 </html>

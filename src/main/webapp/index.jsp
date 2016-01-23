@@ -57,7 +57,7 @@
 										<div class="form-group has-feedback">
 											<s:password name="userpass" cssClass="text form-control"
 												placeholder="password"></s:password>
-											<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+											<span class="fa fa-key form-control-feedback"></span>
 										</div>
 									</div>
 								</div>

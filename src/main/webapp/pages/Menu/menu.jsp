@@ -5,10 +5,12 @@
 <html>
 <head>
 <title>Bootstrap Case</title>
+<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/ionicons.min.css">
-<link rel="stylesheet"
-	href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
@@ -69,7 +71,7 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><s:a href="%{search}">
-						<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="Cinque Terre" width="21" height="21">
+						<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="Cinque Terre" width="19" height="19">
 						<span class="hidden-xs"> <s:property value="userNameLogin" />
 						</span>
 					</s:a></li>
@@ -80,12 +82,11 @@
 		</div>
 		</nav> </header>
 	</div>
+	
 	<div style="margin-top: 20px"></div>
+	<div class="control-sidebar-bg"></div>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>
-	<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
-	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-	<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
-	<script src="dist/js/demo.js"></script>
 </body>
 </html>

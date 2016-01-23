@@ -10,24 +10,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
 <script type="text/javascript">
 	function clickOk() {
 		document.getElementById("ok").click();
 	}
 </script>
 </head>
-<body  style="background: #E5E4E2">
+<body style="background: #E5E4E2">
 	<s:url action="aumByBranchArchive_search" var="searchaumbranch"></s:url>
 	<s:url action="aumByBranchArchive_list" var="listaumbranch"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
@@ -49,26 +40,38 @@
 			</h3>
 		</div>
 
-		<div class="panel panel-default" style="margin-top: 15px;">
-			<div class="panel-heading">
+		<div class="box box-success">
+			<div class="box-header with-border">
 				<Strong>Search AUM BY Branch Archive Log</Strong>
 			</div>
 			<div class="panel-body">
-				<form action="aumByBranchArchive_searchArchive" class="form-horizontal" method="post">
+				<form action="aumByBranchArchive_searchArchive"
+					class="form-horizontal" method="post">
 					<div class="form-group">
 						<label class="col-md-2 control-label">AUM Date</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.aumDate" cssClass="datepicker form-control"></s:textfield>
+							<div class="form-group has-feedback">
+								<s:textfield name="entity.aumDate"
+									cssClass="datepicker form-control"></s:textfield>
+								<span class="fa fa-calendar form-control-feedback"></span>
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="col-md-2 control-label">User Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
+							<div class="form-group has-feedback">
+								<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
+								<span class="fa fa-pencil form-control-feedback"></span>
+							</div>
 						</div>
 						<label class="col-md-2 control-label">Date Archive</label>
 						<div class="col-md-3">
-							<s:textfield name="entity.dateArchive" cssClass="datepicker form-control"></s:textfield>
+							<div class="form-group has-feedback">
+								<s:textfield name="entity.dateArchive"
+									cssClass="datepicker form-control"></s:textfield>
+								<span class="fa fa-calendar form-control-feedback"></span>
+							</div>
 						</div>
 					</div>
 					<input type="submit" id="ok" style="display: none">
@@ -76,11 +79,10 @@
 			</div>
 		</div>
 	</div>
+	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 	<script>
 		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'yymmdd'
+			format : 'yyyymmdd'
 		});
 	</script>
 	<style>

@@ -25,42 +25,52 @@
 </head>
 <body style="background: #222D32">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
-	<div class="container">
-		<div class="row">
-			
-			<div class="col-md-9">
-				<div class="box box-warning">
-					<div class="box-header with-border">
-						<Strong>Details Dashboard</Strong>
-					</div>
-					<div class="panel-body box box box-warning">
-						<form class="form-horizontal">
-							<div class="well">
-									<h4><span class="fa fa-odnoklassniki"> <b>Customer</b></span></h4>
-									<div class="form-group" style="margin-left: 50px;">
-									<label class="col-md-2 control-label">From Date :</label>
-									<div class="col-md-3">
-										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-									</div>
-									<label class="col-md-2 control-label">To Date :</label>
-									<div class="col-md-3">
-										<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-									</div>
-								</div>
-									
-									<div class="input-group text-center">
-										<div class="col-md-2">
-											<div id="dashboardcustomer"
-												style="width: 750px;"></div>
+	<div class="row">
+
+		<div class="col-md-2">
+			<s:include value="/pages/Menu/menuV.jsp"></s:include>
+		</div>
+		<div class="col-md-10">
+			<div style="margin-top: 20px"></div>
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-9">
+						<div class="box box-warning">
+							<div class="box-header with-border">
+								<Strong>Details Dashboard</Strong>
+							</div>
+							<div class="panel-body box box box-warning">
+								<form class="form-horizontal">
+									<div class="well">
+										<h4>
+											<span class="fa fa-odnoklassniki"> <b>Customer</b></span>
+										</h4>
+										<div class="form-group" style="margin-left: 50px;">
+											<label class="col-md-2 control-label">From Date :</label>
+											<div class="col-md-3">
+												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+											</div>
+											<label class="col-md-2 control-label">To Date :</label>
+											<div class="col-md-3">
+												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+											</div>
+										</div>
+
+										<div class="input-group text-center">
+											<div class="col-md-2">
+												<div id="dashboardcustomer" style="width: 750px;"></div>
+											</div>
 										</div>
 									</div>
+								</form>
 							</div>
-						</form>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 					</div>
 				</div>
-			</div>
-			<div class="col-md-3">
-				<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 			</div>
 		</div>
 	</div>

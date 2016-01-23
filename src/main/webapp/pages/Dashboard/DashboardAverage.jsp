@@ -32,6 +32,13 @@
 <body style="background: #222D32">
 <div class="wrapper">
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<div class="row">
+
+			<div class="col-md-2">
+				<s:include value="/pages/Menu/menuV.jsp"></s:include>
+			</div>
+			<div class="col-md-10">
+			<div style="margin-top: 20px"></div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
@@ -70,6 +77,7 @@
 				<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 			</div>
 		</div>
+	</div>
 	</div>
 	</div>
 	<script>

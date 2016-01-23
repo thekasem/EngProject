@@ -6,9 +6,11 @@
 <head>
 <title>Bootstrap Case</title>
 <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/ionicons.min.css">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
@@ -28,50 +30,13 @@
 	<div class="wrapper">
 		<header class="main-header"> <!-- Logo --> <a
 			href="login_homeFirst.action" class="logo"> <!-- mini logo for sidebar mini 50x50 pixels -->
-			<span class="logo-mini"><b>A</b>LT</span> <!-- logo for regular state and mobile devices -->
 			<span class="logo-lg"><b>Eng</b>Pro</span>
 		</a> <nav class="navbar navbar-static-top" role="navigation">
 		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-				<li><s:a href="%{home}">
-						<span class="fa fa-home"></span> Home</s:a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#"><span class="fa fa-archive"></span>
-						AUM Archive <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><s:a href="%{listaumbycif}">
-								<h5 style="color: #337AB7;">
-									<span class="fa fa-list"></span> List AUM By CIF
-								</h5>
-							</s:a></li>
-						<li><s:a href="%{listaumbybranch}">
-								<h5 style="color: #337AB7;">
-									<span class="fa fa-list"></span> List AUM By Branch
-								</h5>
-							</s:a></li>
-						<li><s:a href="%{listaumbyport}">
-								<h5 style="color: #337AB7;">
-									<span class="fa fa-list"></span> List PortHolding
-								</h5>
-							</s:a></li>
-						<li><s:a href="%{addaumbycif}">
-								<h5 style="color: #337AB7;">
-									<span class="fa fa-plus-circle"></span> Add Archive AUM
-								</h5>
-							</s:a></li>
-					</ul></li>
-				<li><s:a href="%{listapplication}">
-						<span class="fa fa-archive"></span> Application Archive</s:a></li>
-				<li><s:a href="%{listactivity}">
-						<span class="fa fa-archive"></span>
-						Activity Archive</s:a></li>
-				<li><s:a href="%{showDashBoard}">
-						<span class="fa fa-tachometer"></span>
-						dashboard</s:a></li>
-			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><s:a href="%{search}">
-						<img src="dist/img/user2-160x160.jpg" class="img-circle" alt="Cinque Terre" width="19" height="19">
+						<img src="dist/img/user2-160x160.jpg" class="img-circle"
+							alt="Cinque Terre" width="19" height="19">
 						<span class="hidden-xs"> <s:property value="userNameLogin" />
 						</span>
 					</s:a></li>
@@ -82,8 +47,8 @@
 		</div>
 		</nav> </header>
 	</div>
-	
-	<div style="margin-top: 20px"></div>
+
+
 	<div class="control-sidebar-bg"></div>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>

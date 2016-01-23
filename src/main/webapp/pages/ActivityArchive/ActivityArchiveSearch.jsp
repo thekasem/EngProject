@@ -23,88 +23,96 @@
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<div class="row">
 
-	<div class="container">
-		<div class="container">
-			<s:a type="button" class="btn btn-primary" href="%{searchactivity}">
-				<span class="fa fa-refresh"></span> Reset </s:a>
-			<a type="button" onclick="clickOk()" class="btn btn-primary"><span
-				class="fa fa-search"></span> OK</a>
-			<s:a type="button" class="btn btn-primary" href="%{listac}">
-				<span class="fa fa-times-circle"></span> Cancel</s:a>
+		<div class="col-md-2">
+			<s:include value="/pages/Menu/menuV.jsp"></s:include>
 		</div>
+		<div class="col-md-10">
+			<div style="margin-top: 20px"></div>
+			<div class="container">
+				<div class="container">
+					<s:a type="button" class="btn btn-primary" href="%{searchactivity}">
+						<span class="fa fa-refresh"></span> Reset </s:a>
+					<a type="button" onclick="clickOk()" class="btn btn-primary"><span
+						class="fa fa-search"></span> OK</a>
+					<s:a type="button" class="btn btn-primary" href="%{listac}">
+						<span class="fa fa-times-circle"></span> Cancel</s:a>
+				</div>
 
-		<div style="margin-top: 10px;" align="right">
-			<h3>
-				<span class="label label-default"><span class="fa fa-search">
-						Search</span></span>
-			</h3>
-		</div>
+				<div style="margin-top: 10px;" align="right">
+					<h3>
+						<span class="label label-default"><span
+							class="fa fa-search"> Search</span></span>
+					</h3>
+				</div>
 
-		<div class="box box-success">
-			<div class="box-header with-border">
-				<Strong>Search Archive Activity Log</Strong>
-			</div>
-			<div class="panel-body">
-				<form action="activityArchive_searchArchive" method="post"
-					class="form-horizontal">
-					<div class="form-group">
-						<label class="col-md-2 control-label">Date</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:textfield name="entity.logDate"
-									cssClass="datepicker form-control"></s:textfield>
-								<span class="fa fa-calendar form-control-feedback"></span>
-							</div>
-						</div>
-						<label class="col-md-2 control-label">Request URI</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:textfield name="entity.actionClass"
-									cssClass="text form-control"></s:textfield>
-								<span class="fa fa-pencil form-control-feedback"></span>
-							</div>
-						</div>
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<Strong>Search Archive Activity Log</Strong>
 					</div>
+					<div class="panel-body">
+						<form action="activityArchive_searchArchive" method="post"
+							class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-2 control-label">Date</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.logDate"
+											cssClass="datepicker form-control"></s:textfield>
+										<span class="fa fa-calendar form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">Request URI</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.actionClass"
+											cssClass="text form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
+							</div>
 
 
-					<div class="form-group">
-						<label class="col-md-2 control-label">Action Name</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:select class="form-control" headerKey="-1" value=""
-									list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
-									name="entity.action" />
-								<span class="fa fa-list form-control-feedback"></span>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Action Name</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:select class="form-control" headerKey="-1" value=""
+											list="#{'':'','LIST':'LIST', 'SEARCH':'SEARCH', 'ADD':'ADD', 'EDIT':'EDIT'}"
+											name="entity.action" />
+										<span class="fa fa-list form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">Client IP</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="clientIP" cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<label class="col-md-2 control-label">Client IP</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:textfield name="clientIP" cssClass="form-control"></s:textfield>
-								<span class="fa fa-pencil form-control-feedback"></span>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Date Archive</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.dateArchive"
+											cssClass="datepicker form-control"></s:textfield>
+										<span class="fa fa-calendar form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">User Archive</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
 							</div>
-						</div>
+							<input type="submit" id="ok" style="display: none">
+						</form>
 					</div>
-					<div class="form-group">
-						<label class="col-md-2 control-label">Date Archive</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:textfield name="entity.dateArchive"
-									cssClass="datepicker form-control"></s:textfield>
-								<span class="fa fa-calendar form-control-feedback"></span>
-							</div>
-						</div>
-						<label class="col-md-2 control-label">User Archive</label>
-						<div class="col-md-3">
-							<div class="form-group has-feedback">
-								<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
-								<span class="fa fa-pencil form-control-feedback"></span>
-							</div>
-						</div>
-					</div>
-					<input type="submit" id="ok" style="display: none">
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>

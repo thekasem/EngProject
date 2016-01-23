@@ -21,6 +21,13 @@
 	<s:url action="activityArchive_list" var="listac"></s:url>
 	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
+	<div class="row">
+
+			<div class="col-md-2">
+				<s:include value="/pages/Menu/menuV.jsp"></s:include>
+			</div>
+			<div class="col-md-10">
+			<div style="margin-top: 20px"></div>
 	<div class="container">
 		<div class="container">
 			<s:a type="button" class="btn btn-primary" href="%{addactivity}">
@@ -70,7 +77,7 @@
 			</div>
 
 		</div>
-	</div>
+	</div></div></div>
 	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 	<script>
 		$('.datepicker').datepicker({

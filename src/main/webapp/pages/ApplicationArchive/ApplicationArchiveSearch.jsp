@@ -22,94 +22,104 @@
 	<s:url action="applicationArchive_list" var="listapp"></s:url>
 	<s:url action="applicationArchive_add" var="addapp"></s:url>
 	<s:include value="/pages/Menu/menu.jsp"></s:include>
-	<div class="container">
-		<div class="container">
-			<s:a type="button" class="btn btn-primary" href="%{searchappl}">
-				<span class="fa fa-refresh"></span>
+	<div class="row">
+
+		<div class="col-md-2">
+			<s:include value="/pages/Menu/menuV.jsp"></s:include>
+		</div>
+		<div class="col-md-10">
+			<div style="margin-top: 20px"></div>
+			<div class="container">
+				<div class="container">
+					<s:a type="button" class="btn btn-primary" href="%{searchappl}">
+						<span class="fa fa-refresh"></span>
 				Reset</s:a>
-			<a type="button" class="btn btn-primary" onclick="clickOk()"><span
-				class="fa fa-search"></span> OK</a>
-			<s:a type="button" class="btn btn-primary" href="%{listapp}">
-				<span class="fa fa-times-circle"></span> Cancel</s:a>
-		</div>
+					<a type="button" class="btn btn-primary" onclick="clickOk()"><span
+						class="fa fa-search"></span> OK</a>
+					<s:a type="button" class="btn btn-primary" href="%{listapp}">
+						<span class="fa fa-times-circle"></span> Cancel</s:a>
+				</div>
 
-		<div style="margin-top: 10px;" align="right">
-			<h3>
-				<span class="label label-default"><span class="fa fa-search">
-						Search</span></span>
-			</h3>
-		</div>
+				<div style="margin-top: 10px;" align="right">
+					<h3>
+						<span class="label label-default"><span
+							class="fa fa-search"> Search</span></span>
+					</h3>
+				</div>
 
-		<div class="box box-success">
-			<div class="box-header with-border">
-				<Strong>Search Archive Application Log</Strong>
-			</div>
-			<div class="panel-body">
-				<form action="applicationArchive_searchArchive" method="post"
-					class="form-horizontal">
-					<div class="form-group">
-						<label class="col-md-2 control-label">Date</label>
-						<div class="col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.logDate"
-								cssClass="datepicker form-control"></s:textfield>
-								<span class="fa fa-calendar form-control-feedback"></span>
-							</div>
-						</div>
-						<label class="col-md-2 control-label">Level</label>
-						<div class="col-sm-6 col-md-3">
-						<div class="form-group has-feedback">
-							<s:select class="form-control" headerKey="-1" value=""
-								list="#{'':'','INFO':'INFO','WARNNING':'WARNNING','DEBUG':'DEBUG','ERROR':'ERROR'}"
-								name="entity.level" />
-								<span class="fa fa-list form-control-feedback"></span>
-							</div>
-						</div>
+				<div class="box box-success">
+					<div class="box-header with-border">
+						<Strong>Search Archive Application Log</Strong>
 					</div>
-					<div class="form-group">
-						<label class="col-md-2 control-label">Activity Log ID</label>
-						<div class="col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.activityLogId" cssClass="form-control"></s:textfield>
-							<span class="fa fa-pencil form-control-feedback"></span>
+					<div class="panel-body">
+						<form action="applicationArchive_searchArchive" method="post"
+							class="form-horizontal">
+							<div class="form-group">
+								<label class="col-md-2 control-label">Date</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.logDate"
+											cssClass="datepicker form-control"></s:textfield>
+										<span class="fa fa-calendar form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">Level</label>
+								<div class="col-sm-6 col-md-3">
+									<div class="form-group has-feedback">
+										<s:select class="form-control" headerKey="-1" value=""
+											list="#{'':'','INFO':'INFO','WARNNING':'WARNNING','DEBUG':'DEBUG','ERROR':'ERROR'}"
+											name="entity.level" />
+										<span class="fa fa-list form-control-feedback"></span>
+									</div>
+								</div>
 							</div>
-						</div>
-						<label class="col-md-2 control-label">Mode</label>
-						<div class="col-sm-6 col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.mode" cssClass="form-control"></s:textfield>
-							<span class="fa fa-pencil form-control-feedback"></span>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Activity Log ID</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.activityLogId"
+											cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">Mode</label>
+								<div class="col-sm-6 col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.mode" cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
 							</div>
-						</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Entity Class</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.entityClass" cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
+								<label class="col-md-2 control-label">User Archive</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
+										<span class="fa fa-pencil form-control-feedback"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-2 control-label">Date Archive</label>
+								<div class="col-md-3">
+									<div class="form-group has-feedback">
+										<s:textfield name="entity.dateArchive"
+											cssClass="datepicker form-control"></s:textfield>
+										<span class="fa fa-calendar form-control-feedback"></span>
+									</div>
+								</div>
+							</div>
+							<input type="submit" id="ok" style="display: none">
+						</form>
 					</div>
-					<div class="form-group">
-						<label class="col-md-2 control-label">Entity Class</label>
-						<div class="col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.entityClass" cssClass="form-control"></s:textfield>
-							<span class="fa fa-pencil form-control-feedback"></span>
-							</div>
-						</div>
-						<label class="col-md-2 control-label">User Archive</label>
-						<div class="col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.userArchive" cssClass="form-control"></s:textfield>
-							<span class="fa fa-pencil form-control-feedback"></span>
-							</div>
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-md-2 control-label">Date Archive</label>
-						<div class="col-md-3">
-						<div class="form-group has-feedback">
-							<s:textfield name="entity.dateArchive"
-								cssClass="datepicker form-control"></s:textfield>
-								<span class="fa fa-calendar form-control-feedback"></span>
-							</div>
-						</div>
-					</div>
-					<input type="submit" id="ok" style="display: none">
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>

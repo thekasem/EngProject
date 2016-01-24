@@ -5,118 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Footer</title>
-<style type="text/css">
-/* Footer styles
--------------------------------------------------- */
-html {
-	position: relative;
-	min-height: 100%;
-}
-
-body {
-	/* Margin bottom by footer height */
-	
-}
-
-#footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	/* Set the fixed height of the footer here */
-	height: 100px;
-	background: #A7C7E8;
-}
-
-/* Custom footer CSS
--------------------------------------------------- */
-.container {
-	width: auto;
-	max-width: 680px;
-	padding: 0 15px;
-}
-
-.container .text-muted {
-	margin: 20px 0;
-}
-
-.footertext {
-	color: #ffffff;
-}
-
-img {
-	opacity: 0.4;
-	filter: alpha(opacity = 40); /* For IE8 and earlier */
-}
-
-img:hover {
-	opacity: 1.0;
-	filter: alpha(opacity = 100); /* For IE8 and earlier */
-}
-</style>
-<link rel="stylesheet" href="css/font-awesome.min.css">
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/bootstrap.theme.min.css" rel="stylesheet">
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-</head>
-
-
-
-<body style="background: #E5E6E8">
-	<!-- 	<nav class="navbar" style="background:#A7C7E8;"> -->
-	<div id="footer">
-		<div class="row" style="margin-top: 5px; margin-left: 100px;">
-			<div class="row" style="margin-top: 0px; margin-left: 0px;">
-				<h4 class="footertext">About Us</h4>
+<body>
+	<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				<b>Version</b> X.X.X
 			</div>
-			<div class="row" style="margin-left: 40px;">
-				<h5 class="fa fa-user">Present by: Kasemsun , Jaturong</h5>
-				<h5 class="fa fa-compress">
-					Contact information: <a href="mailto:someone@example.com">someone@example.com</a>.
-				</h5>
+			<strong>Copyright &copy; 2015-2016 <a
+				href="http://almsaeedstudio.com">By Hipler Man</a>.
+			</strong> All rights reserved.
+		</footer>
+
+		<!-- Control Sidebar -->
+		<aside class="control-sidebar control-sidebar-dark">
+			<!-- Create the tabs -->
+			<ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane" id="control-sidebar-home-tab"></div>
 			</div>
-		<div class="row" style="margin-top: -100px; margin-left: 450px;">
-		<h5 class="fa fa-user">Powered By:</h5>
-		
-		<div class="row" style="margin-left: 50px;">
-			<img src="../../pictures/java_logo.png"
-				style="width: 40px; hight: 40px;" alt="klematis">
-			<img src="../../pictures/eclipse_logo.jpg"
-				style="width: 80px; hight: 80px;" alt="klematis">
-			<img src="../../pictures/struts_logo.svg"
-				style="width: 80px; hight: 80px;" alt="klematis"> <img
-				src="../../pictures/jQuery_logo.png"
-				style="width: 110px; hight: 110px;" alt="klematis"> <img
-				src="../../pictures/hibernate_logo.png"
-				style="width: 80px; hight: 80px;" alt="klematis"> <img
-				src="../../pictures/bootstrap_logo.jpg" style="width: 90px; hight: 90px;"
-				alt="klematis"> <img src="../../pictures/highchart_logo.svg"
-				style="width: 100px; hight: 100px;" alt="klematis"> 
-				<img
-				src="../../pictures/mysql_logo.jpg"
-				style="width: 90px; hight: 90px;" alt="klematis">
-				
-				
-				<img
-				src="../../pictures/font-awesome_logo.png"
-				style="width: 90px; hight: 90px;" alt="klematis">
-				</div>
-		</div>
-			<!-- 			<div> -->
-			<!--             <img src="../../pictures/bootstrap.jpg" style="width: 64px; hight: 64px;" alt="klematis"> -->
-			<!--             </div> -->
-		</div>
-
-
-		
-	</div>
-	<!-- 	</nav> -->
+		</aside>
+		<div class="control-sidebar-bg"></div>
 </body>
-
-
 </html>

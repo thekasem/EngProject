@@ -1,103 +1,117 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-<title>DashBoard Percent New User</title>
+<title>Dashboard Percent New User</title>
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.min.css">
 <script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/highcharts.js"></script>
-<script src="js/exporting.js"></script>
-<script src="js/highcharts-3d.js"></script>
-<script src="js/team-highcharts.js"></script>
-<script src="DetailsDashboardSidebar/percentnewuser.js"></script>
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
 <link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.css">
-<script src="calendar/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
-<link rel="stylesheet"
-	href="calendar/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+	href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 </head>
-<body style="background: #222D32">
-	<s:include value="/pages/Menu/menu.jsp"></s:include>
-	<div class="row">
+<body class="hold-transition skin-blue sidebar-mini">
+	<s:url action="activityArchive_search" var="searchactivity"></s:url>
+	<s:url action="activityArchive_list" var="listac"></s:url>
+	<s:url action="activityArchive_add" var="addactivity"></s:url>
+	<div class="wrapper">
+		<s:url action="activityArchive_search" var="search"></s:url>
+		<s:include value="/pages/Menu/menuV.jsp"></s:include>
 
-		<div class="col-md-2">
-			<s:include value="/pages/Menu/menuV.jsp"></s:include>
-		</div>
-		<div class="col-md-10">
-			<div style="margin-top: 20px"></div>
-			<div class="container">
-				<div class="row">
 
-					<div class="col-md-9">
-						<div class="box box-warning">
-							<div class="box-header with-border">
-								<div class="panel-heading">
-									<Strong>Details Dashboard</Strong>
-								</div>
-								<div class="panel-body box box box-warning">
-									<form class="form-horizontal">
-										<div class="well">
-											<h4>
-												<span class="fa fa-user-plus"> <b>Percent New
-														User</b></span>
-											</h4>
-											<div class="form-group" style="margin-left: 50px;">
-												<label class="col-md-2 control-label">From Date :</label>
-												<div class="col-md-3">
-													<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-												</div>
-												<label class="col-md-2 control-label">To Date :</label>
-												<div class="col-md-3">
-													<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-												</div>
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper" style="background: #2C3B41;">
+			<!-- Content Header (Page header) -->
+			<section class="content-header" style="color: white">
+			<h1>
+				Dashboard <small>Version 6.0</small>
+			</h1>
+			<ol class="breadcrumb">
+				<li><a href="#" style="color: white"><i class="fa fa-home"></i>
+						Dashboard </a></li>
+				<li class="active" style="color: white">Percent New User</li>
+			</ol>
+			</section>
+
+			<section class="content">
+			<div class="row">
+
+				<div class="col-md-9">
+					<div class="box box-warning">
+						<div class="box-header with-border">
+							<div class="panel-heading">
+								<Strong>Details Dashboard</Strong>
+							</div>
+							<div class="panel-body box box box-warning">
+								<form class="form-horizontal">
+									<div class="well">
+										<h4>
+											<span class="fa fa-user-plus"> <b>Percent New User</b></span>
+										</h4>
+										<div class="form-group" style="margin-left: 50px;">
+											<label class="col-md-2 control-label">From Date :</label>
+											<div class="col-md-3">
+												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
 											</div>
-
-											<div class="input-group text-center">
-												<div class="col-md-2">
-													<div id="dashboardnewuser" style="width: 750px;"></div>
-												</div>
+											<label class="col-md-2 control-label">To Date :</label>
+											<div class="col-md-3">
+												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
 											</div>
 										</div>
-									</form>
-								</div>
+
+										<div class="input-group text-center">
+											<div class="col-md-2">
+												<div id="dashboardnewuser" style="width: 750px;"></div>
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
 						</div>
+					</div>
 
-					</div>
-					<div class="col-md-3">
-						<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
-					</div>
+				</div>
+				<div class="col-md-3">
+					<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 				</div>
 			</div>
+			</section>
+			<!-- Main content -->
 		</div>
+		<s:include value="/pages/Menu/footer.jsp"></s:include>
 	</div>
+	<script
+		src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script src="js/highcharts.js"></script>
+	<script src="js/exporting.js"></script>
+	<script src="js/highcharts-3d.js"></script>
+	<script src="js/team-highcharts.js"></script>
+	<script src="DetailsDashboardSidebar/percentnewuser.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="plugins/fastclick/fastclick.min.js"></script>
+	<script src="dist/js/app.min.js"></script>
+	<script src="plugins/sparkline/jquery.sparkline.min.js"></script>
+	<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+	<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
+	<script src="plugins/chartjs/Chart.min.js"></script>
+	<script src="dist/js/demo.js"></script>
+	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
 	<script>
 		$('.datepicker').datepicker({
-			changeYear : true,
-			yearRange : '-100:+100',
-			dateFormat : 'yymmdd'
+			format : 'yyyymmdd'
 		});
 	</script>
-	<style>
-select.ui-datepicker-year {
-	color: #000;
-}
-</style>
-	<script type="text/css">
-#dashboardnewuser {
-    height: 400px; 
-    min-width: 310px; 
-    max-width: 800px;
-    margin: 0 auto;
-}
-</script>
 </body>
 </html>

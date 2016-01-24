@@ -25,7 +25,7 @@ public class DashBoardAction extends ActionSupport {
 	private static final String ARGONSITE = "argonsite";
 	private static final String VIEWAUM = "viewaum";
 	private static final String DISKUSAGE = "diskusage";
-	
+
 	private String userNameLogin;
 	private String date;
 
@@ -40,47 +40,57 @@ public class DashBoardAction extends ActionSupport {
 		ContactController();
 		return DASHBOARD;
 	}
-    
-	public String browser(){
+
+	public String browser() {
+		ContactController();
 		return BROWSERS;
 	}
-	
-	public String user(){
+
+	public String user() {
+		ContactController();
 		return USER;
 	}
-	
-	public String login(){
+
+	public String login() {
+		ContactController();
 		return LOGIN;
 	}
-	
-	public String topModule(){
+
+	public String topModule() {
+		ContactController();
 		return TOPMODULE;
 	}
-	
-	public String newUser(){
+
+	public String newUser() {
+		ContactController();
 		return NEWUSER;
 	}
-	
-	public String customer(){
+
+	public String customer() {
+		ContactController();
 		return CUSTOMERS;
 	}
-	
-	public String topUser(){
+
+	public String topUser() {
+		ContactController();
 		return TOPUSER;
 	}
-	
-	public String argTimeOnSite(){
+
+	public String argTimeOnSite() {
+		ContactController();
 		return ARGONSITE;
 	}
-	
-	public String viewAUM(){
+
+	public String viewAUM() {
+		ContactController();
 		return VIEWAUM;
 	}
-	
-	public String diskUsage(){
+
+	public String diskUsage() {
+		ContactController();
 		return DISKUSAGE;
 	}
-	
+
 	public String getDate() {
 		return date;
 	}

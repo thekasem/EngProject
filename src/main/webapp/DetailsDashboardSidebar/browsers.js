@@ -8,12 +8,23 @@ $(function() {
 	var dataSafari = [];
 	var dataOpera = [];
 	var dateProprietary = [];
+	
+	var nameMSIEVersions = [];
+	var nameFirefoxVersions = [];
+	var nameChromeVersions = [];
+	var nameSafariVersions = [];
+	var nameOperaVersions = [];
 	$
 			.ajax({
 				type : "GET",
 				url : 'browserJson.action',
 				data : {},
 				success : function(response) {
+					nameMSIEVersions = response.nameMSIEVersions;
+					nameFirefoxVersions = response.nameFirefoxVersions;
+					nameChromeVersions = response.nameChromeVersions;
+					nameSafariVersions = response.nameSafariVersions;
+					nameOperaVersions = response.nameOparaVersions;
 					dataMSIE = response.dataMSIE;
 					dataFirefox = response.dataFirefox;
 					dateChrome = response.dataChrome;
@@ -28,9 +39,7 @@ $(function() {
 								color : colors[0],
 								drilldown : {
 									name : nameBrowser[0],
-									categories : [ 'MSIE 6.0', 'MSIE 7.0',
-											'MSIE 8.0', 'MSIE 9.0',
-											'MSIE 10.0', 'MSIE 11.0' ],
+									categories : nameMSIEVersions,
 									data : dataMSIE,
 									color : colors[0]
 								}
@@ -40,10 +49,7 @@ $(function() {
 								color : colors[1],
 								drilldown : {
 									name : nameBrowser[1],
-									categories : [ 'Firefox v31',
-											'Firefox v32', 'Firefox v33',
-											'Firefox v35', 'Firefox v36',
-											'Firefox v37', 'Firefox v38' ],
+									categories : nameFirefoxVersions,
 									data : dataFirefox,
 									color : colors[1]
 								}
@@ -53,14 +59,7 @@ $(function() {
 								color : colors[2],
 								drilldown : {
 									name : nameBrowser[2],
-									categories : [ 'Chrome v30.0',
-											'Chrome v31.0', 'Chrome v32.0',
-											'Chrome v33.0', 'Chrome v34.0',
-											'Chrome v35.0', 'Chrome v36.0',
-											'Chrome v37.0', 'Chrome v38.0',
-											'Chrome v39.0', 'Chrome v40.0',
-											'Chrome v41.0', 'Chrome v42.0',
-											'Chrome v43.0' ],
+									categories : nameChromeVersions,
 									data : dateChrome,
 									color : colors[2]
 								}
@@ -70,10 +69,7 @@ $(function() {
 								color : colors[3],
 								drilldown : {
 									name : nameBrowser[3],
-									categories : [ 'Safari v5.0',
-											'Safari v5.1', 'Safari v6.1',
-											'Safari v6.2', 'Safari v7.0',
-											'Safari v7.1', 'Safari v8.0' ],
+									categories : nameSafariVersions,
 									data : dataSafari,
 									color : colors[3]
 								}
@@ -83,13 +79,12 @@ $(function() {
 								color : colors[4],
 								drilldown : {
 									name : nameBrowser[4],
-									categories : [ 'Opera v12.x', 'Opera v27',
-											'Opera v28', 'Opera v29' ],
+									categories : nameOperaVersions,
 									data : dataOpera,
 									color : colors[4]
 								}
 							}, {
-								y : y[5],
+								y : 0,
 								color : colors[5],
 								drilldown : {
 									name : 'Proprietary or Undetectable',

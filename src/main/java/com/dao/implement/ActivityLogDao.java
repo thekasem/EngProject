@@ -187,7 +187,43 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.getTransaction().commit();
 		
 	}
-
 	
+	private String criteriaGetDataBrowsers(String name, Boolean searchBy){
+		String command = "";
+		if(searchBy){
+			command = "SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%"+ name +"%')";
+		}else{
+			command = "SELECT  COUNT(browser) from ActivityLogMini where browser = '"+ name +"'";
+		}
+		return command;
+	}
+
+	public int getDataBrowsers(String name, Boolean searchBy) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		int result = 0;
+		try {
+			Query query = sessionB.createQuery(criteriaGetDataBrowsers(name, searchBy));
+			result = Integer.parseInt(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
+	public List<String> getNameBrowsers(String name) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%" +name+ "%')");
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
 	
 }

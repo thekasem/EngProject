@@ -21,4 +21,8 @@ public interface IActivityLogDao {
 	 public void delete(ActivityLogMini entity);
 	 
 	 public List<ActivityLogMini> getListByDate(String date, String condition);
+	 
+	 public int getDataBrowsers(String name, Boolean searchBy);
+	 
+	 public List<String> getNameBrowsers(String name);
 }

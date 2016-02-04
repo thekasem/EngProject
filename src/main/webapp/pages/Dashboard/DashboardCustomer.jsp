@@ -30,14 +30,15 @@
 
 
 		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper"  style="background: #2C3B41;">
+		<div class="content-wrapper" style="background: #2C3B41;">
 			<!-- Content Header (Page header) -->
 			<section class="content-header" style="color: white">
 			<h1>
 				Dashboard <small>Version 6.0</small>
 			</h1>
 			<ol class="breadcrumb">
-				<li><a href="#" style="color: white"><i class="fa fa-home"></i> Dashboard </a></li>
+				<li><a href="#" style="color: white"><i class="fa fa-home"></i>
+						Dashboard </a></li>
 				<li class="active" style="color: white">Customer</li>
 			</ol>
 			</section>
@@ -45,48 +46,57 @@
 			<section class="content">
 			<div class="row">
 
-					<div class="col-md-9">
-						<div class="box box-warning">
-							<div class="box-header with-border">
-								<Strong>Details Dashboard</Strong>
-							</div>
-							<div class="panel-body box box box-warning">
-								<form class="form-horizontal">
-									<div class="well">
-										<h4>
-											<span class="fa fa-odnoklassniki"> <b>Customer</b></span>
-										</h4>
-										<div class="form-group" style="margin-left: 50px;">
-											<label class="col-md-2 control-label">From Date :</label>
-											<div class="col-md-3">
-												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-											</div>
-											<label class="col-md-2 control-label">To Date :</label>
-											<div class="col-md-3">
-												<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-											</div>
-										</div>
+				<div class="col-md-12">
+					<div style="margin-top: 20px"></div>
+					<div class="container ">
+						<div class="row">
 
-										<div class="input-group text-center">
-											<div class="col-md-2">
-												<div id="dashboardcustomer" style="width: 750px;"></div>
-											</div>
-										</div>
+							<div class="col-md-9">
+								<div class="box box-warning">
+									<div class="box-header with-border">
+										<Strong>Details Dashboard</Strong>
 									</div>
-								</form>
+									<div class="panel-body box box box-warning">
+										<form class="form-horizontal">
+											<div class="well">
+												<h4>
+													<span class="fa fa-odnoklassniki"> <b>Customer</b></span>
+												</h4>
+												<div class="form-group" style="margin-left: 50px;">
+													<label class="col-md-2 control-label">From Date :</label>
+													<div class="col-md-3">
+														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+													</div>
+													<label class="col-md-2 control-label">To Date :</label>
+													<div class="col-md-3">
+														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+													</div>
+												</div>
+
+												<div class="input-group text-center">
+													<div class="col-md-2">
+														<div id="dashboardcustomer" style="width: 750px;"></div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3">
-						<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
-					</div>
 				</div>
+			</div>
 			</section>
 			<!-- Main content -->
 		</div>
 		<s:include value="/pages/Menu/footer.jsp"></s:include>
 	</div>
-	<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script
+		src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 	<script src="js/highcharts.js"></script>
 	<script src="js/exporting.js"></script>
 	<script src="js/team-highcharts.js"></script>

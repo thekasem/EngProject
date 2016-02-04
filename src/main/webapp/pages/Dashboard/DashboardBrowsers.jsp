@@ -55,6 +55,7 @@
 									<div class="box-header with-border">
 										<Strong>Details Dashboard</Strong>
 									</div>
+<!-- 									<button id="export2pdf">Export to PDF</button> -->
 									<div class="panel-body box box-warning">
 										<form class="form-horizontal">
 											<div class="well">

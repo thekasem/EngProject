@@ -40,13 +40,13 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 			<h1>
-				Home <small>Version 6.0</small>
+				 Activity Archive <small>Version 6.0</small>
 			</h1>
 			<ol class="breadcrumb">
-				<li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+				<li><a href="#"><i class="fa fa-home"></i> Activity Archive </a></li>
+				<li class="active">Search</li>
 			</ol>
 			</section>
-
 			<section class="content">
 			<div class="col-md-12">
 				<div class="col-md-5">

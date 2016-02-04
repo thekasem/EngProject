@@ -46,52 +46,56 @@
 			<section class="content">
 			<div class="row">
 
-				<div class="col-md-9">
-					<div class="box box-warning">
-						<div class="box-header with-border">
-							<div class="panel-heading">
-								<Strong>Details Dashboard</Strong>
-							</div>
-							<div class="panel-body box box box-warning">
-								<form class="form-horizontal">
-									<div class="well">
-										<h4>
-											<span class="fa fa-database"> <b>Disk Usage</b></span>
-										</h4>
-										<div class="input-group text-center">
-											<div class="col-md-2">
-												<div
-													style="width: 800px;  margin-top: 0px;">
-													<div id="dashboardactivity"
-														style="width: 300px; height: 200px; float: left"></div>
-													<div id="dashboardapplication"
-														style="width: 300px; height: 200px; float: left"></div>
-												</div>
-												<div
-													style="width: 800px; margin-top: 50px;">
-													<div id="dashboardaumbycif"
-														style="width: 300px; height: 200px; float: left"></div>
-													<div id="dashboardaumbybranch"
-														style="width: 300px; height: 200px; float: left"></div>
-												</div>
+				<div class="col-md-12">
+					<div style="margin-top: 20px"></div>
+					<div class="container ">
+						<div class="row">
 
-											</div>
-											<div class="col-md-2">
-												<div
-													style="width: 1200px; margin-left: 20px; margin-top: 400px;">
-													<div id="dashboardportholding"
-														style="width: 300px; height: 200px; float: left"></div>
+							<div class="col-md-9">
+								<div class="box box-warning">
+									<div class="box-header with-border">
+										<Strong>Details Dashboard</Strong>
+									</div>
+									<div class="panel-body box box box-warning">
+										<form class="form-horizontal">
+											<div class="well">
+												<h4>
+													<span class="fa fa-database"> <b>Disk Usage</b></span>
+												</h4>
+												<div class="input-group text-center">
+													<div class="col-md-2">
+														<div style="width: 800px; margin-top: 0px;">
+															<div id="dashboardactivity"
+																style="width: 300px; height: 200px; float: left"></div>
+															<div id="dashboardapplication"
+																style="width: 300px; height: 200px; float: left"></div>
+														</div>
+														<div style="width: 800px; margin-top: 50px;">
+															<div id="dashboardaumbycif"
+																style="width: 300px; height: 200px; float: left"></div>
+															<div id="dashboardaumbybranch"
+																style="width: 300px; height: 200px; float: left"></div>
+														</div>
+
+													</div>
+													<div class="col-md-2">
+														<div
+															style="width: 1200px; margin-left: 20px; margin-top: 400px;">
+															<div id="dashboardportholding"
+																style="width: 300px; height: 200px; float: left"></div>
+														</div>
+													</div>
 												</div>
 											</div>
-										</div>
+										</form>
 									</div>
-								</form>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-3">
-					<s:include value="/pages/Dashboard/Sidebar.jsp"></s:include>
 				</div>
 			</div>
 			</section>

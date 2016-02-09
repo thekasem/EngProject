@@ -30,11 +30,9 @@ $(function() {
 										},
 										title : {
 											text : 'Data Monthly Users Top Modules',
-//												x: -20 
 										},
 										subtitle : {
 											text : '',
-//												x: -20
 										},
 										xAxis : {
 											categories : monthName,
@@ -58,24 +56,64 @@ $(function() {
 											column : {
 												pointPadding : 0.2,
 												borderWidth : 0
+											},
+											pie : {
+												allowPointSelect : true,
 											}
 										},
-										series : [ {
-											name : nameModule[0],
-											data : dataModule1
-										}, {
-											name : nameModule[1],
-											data : dataModule2
-										}, {
-											name : nameModule[2],
-											data : dataModule3
-										}, {
-											name : nameModule[3],
-											data : dataModule4
-										}, {
-											name : nameModule[4],
-											data : dataModule5
-										} ]
+										series : [
+												{
+													name : nameModule[0],
+													data : dataModule1
+												},
+												{
+													name : nameModule[1],
+													data : dataModule2
+												},
+												{
+													name : nameModule[2],
+													data : dataModule3
+												},
+												{
+													name : nameModule[3],
+													data : dataModule4
+												},
+												{
+													name : nameModule[4],
+													data : dataModule5
+												},
+												{
+													type : 'pie',
+													name : 'Total consumption',
+													data : [
+															{
+																name : 'Jane',
+																y : 13,
+																color : Highcharts
+																		.getOptions().colors[0]
+															// Jane's color
+															},
+															{
+																name : 'John',
+																y : 23,
+																color : Highcharts
+																		.getOptions().colors[1]
+															// John's color
+															},
+															{
+																name : 'Joe',
+																y : 19,
+																color : Highcharts
+																		.getOptions().colors[2]
+															// Joe's color
+															} ],
+													center : [ 80, -15 ],
+													size : 80,
+													showInLegend : false,
+													dataLabels : {
+														enabled : false
+													}
+												}],
 									});
 				},
 				error : function(e) {

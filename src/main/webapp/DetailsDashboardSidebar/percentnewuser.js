@@ -22,6 +22,11 @@ $(function() {
 				        xAxis: {
 				            categories: monthName
 				        },
+				        plotOptions : {
+							pie : {
+								allowPointSelect : true,
+							}
+						},
 				        labels: {
 				            items: [{
 				                html: 'Total percent user/year',

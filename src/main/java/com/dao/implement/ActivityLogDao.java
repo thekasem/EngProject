@@ -225,5 +225,10 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.getTransaction().commit();
 		return result;
 	}
+
+	public List<String> getNameAction(String name, String year) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

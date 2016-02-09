@@ -25,4 +25,6 @@ public interface IActivityLogDao {
 	 public int getDataBrowsers(String name, Boolean searchBy);
 	 
 	 public List<String> getNameBrowsers(String name);
-}
+	 
+	 public List<String> getNameAction(String name, String year);
+ }

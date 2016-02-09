@@ -24,7 +24,7 @@ $(function() {
 						},
 
 						title : {
-							text : ''
+							text : 'Data Monthly Customers'
 						},
 
 						xAxis : {

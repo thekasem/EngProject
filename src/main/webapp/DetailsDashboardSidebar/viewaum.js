@@ -24,7 +24,7 @@ $(function() {
 											type : 'spline'
 										},
 										title : {
-											text : ''
+											text : 'Data Monthly Users AUM'
 										},
 										subtitle : {
 											text : ''

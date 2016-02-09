@@ -16,8 +16,8 @@ $(function() {
 					dateCurrentYear = response.dataCurrentYear;
 					avgDate = response.avgDate;
 					$('#dashboardnewuser').highcharts({
-				        title: {
-				            text: ' '
+						title: {
+				            text: 'Data Monthly Percent New Users'
 				        },
 				        xAxis: {
 				            categories: monthName
@@ -76,7 +76,6 @@ $(function() {
 					alert('Error: ' + e);
 				}
 			});
-
 });
 function sumArray(array) {
 	var result = 0;

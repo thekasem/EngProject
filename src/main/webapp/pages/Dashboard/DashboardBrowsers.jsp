@@ -30,14 +30,15 @@
 
 
 		<!-- Content Wrapper. Contains page content -->
-		<div class="content-wrapper"  style="background: #2C3B41;">
+		<div class="content-wrapper" style="background: #2C3B41;">
 			<!-- Content Header (Page header) -->
 			<section class="content-header" style="color: white">
 			<h1>
 				Dashboard <small>Version 6.0</small>
 			</h1>
 			<ol class="breadcrumb">
-				<li><a href="#" style="color: white"><i class="fa fa-home"></i> Dashboard </a></li>
+				<li><a href="#" style="color: white"><i class="fa fa-home"></i>
+						Dashboard </a></li>
 				<li class="active" style="color: white">Browser</li>
 			</ol>
 			</section>
@@ -55,7 +56,7 @@
 									<div class="box-header with-border">
 										<Strong>Details Dashboard</Strong>
 									</div>
-<!-- 									<button id="export2pdf">Export to PDF</button> -->
+									<!-- 									<button id="export2pdf">Export to PDF</button> -->
 									<div class="panel-body box box-warning">
 										<form class="form-horizontal">
 											<div class="well">
@@ -95,9 +96,10 @@
 		</div>
 		<s:include value="/pages/Menu/footer.jsp"></s:include>
 	</div>
-	<script src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+	<script
+		src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
 	<script src="js/highcharts.js"></script>
-	<script src="js/exporting.js"></script>
+	<script	src="js/exporting.js"></script>
 	<script src="js/team-highcharts.js"></script>
 	<script src="DetailsDashboardSidebar/browsers.js"></script>
 	<script src="js/bootstrap.min.js"></script>

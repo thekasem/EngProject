@@ -29,10 +29,12 @@ $(function() {
 											type : 'spline'
 										},
 										title : {
-											text : ''
+											text : 'Data Monthly Users Top Modules',
+//												x: -20 
 										},
 										subtitle : {
-											text : ''
+											text : '',
+//												x: -20
 										},
 										xAxis : {
 											categories : monthName,

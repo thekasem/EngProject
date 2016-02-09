@@ -80,7 +80,6 @@
 													</div>
 												</div>
 											</div>
-											<input type="submit" id="ok" style="display: none">
 										</form>
 									</div>
 								</div>

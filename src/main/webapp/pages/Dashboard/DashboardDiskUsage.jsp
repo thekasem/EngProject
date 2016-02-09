@@ -62,7 +62,7 @@
 												<h4>
 													<span class="fa fa-database"> <b>Disk Usage</b></span>
 												</h4>
-												<div class="input-group text-center">
+												<div class="input-group text-center" style="margin-left: 75px;">
 													<div class="col-md-2">
 														<div style="width: 800px; margin-top: 0px;">
 															<div id="dashboardactivity"
@@ -80,7 +80,7 @@
 													</div>
 													<div class="col-md-2">
 														<div
-															style="width: 1200px; margin-left: 20px; margin-top: 400px;">
+															style="width: 200px; margin-left: 0px; margin-top: 400px;">
 															<div id="dashboardportholding"
 																style="width: 300px; height: 200px; float: left"></div>
 														</div>
@@ -109,7 +109,7 @@
 	<script src="js/highcharts.js"></script>
 	<script src="js/highcharts-more.js"></script>
 	<script src="js/solid-gauge.js"></script>
-	<script src="js/team-highcharts.js"></script>
+<%-- 	<script src="js/team-highcharts.js"></script> --%>
 	<script src="DetailsDashboardSidebar/diskusage.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>

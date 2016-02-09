@@ -8,7 +8,7 @@ $(function() {
 	var dataSafari = [];
 	var dataOpera = [];
 	var dateProprietary = [];
-	
+
 	var nameMSIEVersions = [];
 	var nameFirefoxVersions = [];
 	var nameChromeVersions = [];
@@ -43,8 +43,7 @@ $(function() {
 									data : dataMSIE,
 									color : colors[0]
 								}
-							},
-							{
+							}, {
 								y : y[1],
 								color : colors[1],
 								drilldown : {
@@ -53,8 +52,7 @@ $(function() {
 									data : dataFirefox,
 									color : colors[1]
 								}
-							},
-							{
+							}, {
 								y : y[2],
 								color : colors[2],
 								drilldown : {
@@ -63,8 +61,7 @@ $(function() {
 									data : dateChrome,
 									color : colors[2]
 								}
-							},
-							{
+							}, {
 								y : y[3],
 								color : colors[3],
 								drilldown : {
@@ -73,8 +70,7 @@ $(function() {
 									data : dataSafari,
 									color : colors[3]
 								}
-							},
-							{
+							}, {
 								y : y[4],
 								color : colors[4],
 								drilldown : {
@@ -116,7 +112,7 @@ $(function() {
 							});
 						}
 					}
-
+					 
 					// Create the chart
 					$('#dashboardbrowser')
 							.highcharts(
@@ -125,7 +121,7 @@ $(function() {
 											type : 'pie'
 										},
 										title : {
-											text : ''
+											text : 'Data Monthly Users Browsers'
 										},
 										subtitle : {
 											text : ''
@@ -137,8 +133,7 @@ $(function() {
 										},
 										plotOptions : {
 											pie : {
-												shadow : false,
-												center : [ '50%', '50%' ]
+												allowPointSelect : true,
 											}
 										},
 										tooltip : {
@@ -182,5 +177,4 @@ $(function() {
 					alert('Error: ' + e);
 				}
 			});
-
 });

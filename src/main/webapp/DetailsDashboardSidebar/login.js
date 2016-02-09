@@ -18,7 +18,7 @@ $(function() {
 							type : 'area'
 						},
 						title : {
-							text : ''
+							text : 'Data Yearly Users Login'
 						},
 						subtitle : {
 							text : ''

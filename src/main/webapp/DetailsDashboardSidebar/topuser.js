@@ -40,7 +40,7 @@ $(function() {
 							type : 'column'
 						},
 						title : {
-							text : ''
+							text : 'Data Monthly Users Top Users'
 						},
 						subtitle : {
 							text : ''

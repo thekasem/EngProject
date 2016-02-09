@@ -26,7 +26,7 @@ $(function() {
 					}
 				},
 				title : {
-					text : ''
+					text : 'Data Monthly Users Average Time On Site'
 				},
 				subtitle : {
 					text : ''

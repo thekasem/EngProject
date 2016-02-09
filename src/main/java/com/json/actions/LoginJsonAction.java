@@ -1,5 +1,8 @@
 package com.json.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -9,6 +12,9 @@ public class LoginJsonAction extends ActionSupport {
 	 * 
 	 */
 	private static final long serialVersionUID = 4937366360808612638L;
+	private List<Integer> numberArrayI = new ArrayList<Integer>();
+	private List<Integer> numberArrayII = new ArrayList<Integer>();
+	
 	private int[] numberarray1 = { 1005, 1436, 2063, 3057, 4618, 6444, 9822,
 			15468, 20434, 24126, 27387, 29459, 31056, 31982, 32040, 31233,
 			29224, 27342, 26662, 26956, 27912, 28999, 28965, 27826, 25579,

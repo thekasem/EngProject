@@ -25,6 +25,9 @@ public class ArchiveActivityLogMini {
 	@Column(name = "LEVEL")
 	private String level;
 	
+	@Column(name = "USINGTIME")
+	private int usigTime;
+	
 	@Column(name = "SCREENCODE")
 	private String screencode;
 	
@@ -54,6 +57,8 @@ public class ArchiveActivityLogMini {
 	
 	@Column(name = "CONDITIONARCHIVE")
 	private String conditionArchive;
+	
+	
 	
 	
 
@@ -175,6 +180,14 @@ public class ArchiveActivityLogMini {
 
 	public void setConditionArchive(String conditionArchive) {
 		this.conditionArchive = conditionArchive;
+	}
+
+	public int getUsigTime() {
+		return usigTime;
+	}
+
+	public void setUsigTime(int usigTime) {
+		this.usigTime = usigTime;
 	}
 
 }

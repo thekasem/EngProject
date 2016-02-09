@@ -1,6 +1,8 @@
 $(function() {
 	 var test1 = [];
 	 var test2 = [];
+	 var data1 = [];
+	 var data2 = [];
 	$.ajax({
 		  type : "GET",
 		  url : 'loginJson.action',
@@ -8,6 +10,7 @@ $(function() {
 		  success : function(response) {
 			  test1 = response.numberarray1;
 			  test2 = response.numberarray2;
+			  
 		    $('#dashboardlogin')
 			.highcharts(
 					{

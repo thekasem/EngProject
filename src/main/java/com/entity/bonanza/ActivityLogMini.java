@@ -28,6 +28,9 @@ public class ActivityLogMini {
 	@Column(name = "LEVEL")
 	private String level;
 	
+	@Column(name = "USINGTIME")
+	private int usigTime;
+	
 	@Column(name = "SCREENCODE")
 	private String screencode;
 	
@@ -143,6 +146,14 @@ public class ActivityLogMini {
 
 	public void setBrowser(String browser) {
 		this.browser = browser;
+	}
+
+	public int getUsigTime() {
+		return usigTime;
+	}
+
+	public void setUsigTime(int usigTime) {
+		this.usigTime = usigTime;
 	}
 	
 

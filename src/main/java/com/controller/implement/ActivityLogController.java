@@ -19,22 +19,22 @@ public class ActivityLogController implements IActivityLogController {
 		this.activityLogDao = activityLogDao;
 	}
 
-	public List<String> getNameBrowsers(String name) {
-		return activityLogDao.getNameBrowsers(name);
+	public List<String> getNameBrowsers(String name ,String year) {
+		return activityLogDao.getNameBrowsers(name,year);
 	}
 
-	public List<Float> getDataBrowsers(List<String> name, Boolean searchBy) {
+	public List<Float> getDataBrowsers(List<String> name, Boolean searchBy ,String year) {
 		List<Float> result = new ArrayList<Float>();
 		for (String data : name) {
-			float percent = calPercent(data, searchBy);
+			float percent = calPercent(data, searchBy, year);
 			result.add(percent);
 			
 		}
 		return result;
 	}
 	
-	private float calPercent(String name,Boolean searchBy){ 
-		float countBrowser = activityLogDao.getDataBrowsers(name, searchBy);
+	private float calPercent(String name,Boolean searchBy, String year){ 
+		float countBrowser = activityLogDao.getDataBrowsers(name, searchBy, year);
 		float countAll = activityLogDao.getCountByCriteriaSearch(new ActivityLogMini());
 		float result = (countBrowser/countAll)*100;
 		return result; 

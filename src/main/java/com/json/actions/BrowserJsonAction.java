@@ -30,6 +30,7 @@ public class BrowserJsonAction extends ActionSupport {
 	private List<String> nameOparaVersions = new ArrayList<String>();;
 	private List<Float> dateProprietary = new ArrayList<Float>();
 	private List<Float> y = new ArrayList<Float>();
+	private String year = "";
 	private String[] nameBrowser = { "Internet Explorer", "Firefox", "Chrome", "Safari",
 			"Opera" };
 
@@ -41,19 +42,19 @@ public class BrowserJsonAction extends ActionSupport {
 
 	public String execute() {
 		ContactController();
-		nameMSIEVersions = Controller.getNameBrowsers(nameBrowser[0]);
-		nameFirefoxVersions = Controller.getNameBrowsers(nameBrowser[1]);
-		nameChromeVersions = Controller.getNameBrowsers(nameBrowser[2]);
-		nameSafariVersions = Controller.getNameBrowsers(nameBrowser[3]);
-		nameOparaVersions = Controller.getNameBrowsers(nameBrowser[4]);
+		nameMSIEVersions = Controller.getNameBrowsers(nameBrowser[0], year);
+		nameFirefoxVersions = Controller.getNameBrowsers(nameBrowser[1], year);
+		nameChromeVersions = Controller.getNameBrowsers(nameBrowser[2], year);
+		nameSafariVersions = Controller.getNameBrowsers(nameBrowser[3], year);
+		nameOparaVersions = Controller.getNameBrowsers(nameBrowser[4], year);
 		
-		dataMSIE = Controller.getDataBrowsers(nameMSIEVersions,false);
-		dataFirefox = Controller.getDataBrowsers(nameFirefoxVersions,false);
-		dataChrome = Controller.getDataBrowsers(nameChromeVersions,false);
-		dataSafari = Controller.getDataBrowsers(nameSafariVersions,false);
-		dataOpera = Controller.getDataBrowsers(nameOparaVersions,false);
+		dataMSIE = Controller.getDataBrowsers(nameMSIEVersions,false, year);
+		dataFirefox = Controller.getDataBrowsers(nameFirefoxVersions,false, year);
+		dataChrome = Controller.getDataBrowsers(nameChromeVersions,false, year);
+		dataSafari = Controller.getDataBrowsers(nameSafariVersions,false, year);
+		dataOpera = Controller.getDataBrowsers(nameOparaVersions,false, year);
 		
-		y = Controller.getDataBrowsers(Arrays.asList(nameBrowser),true);
+		y = Controller.getDataBrowsers(Arrays.asList(nameBrowser),true, year);
 		return Action.SUCCESS;
 	}
 
@@ -107,6 +108,14 @@ public class BrowserJsonAction extends ActionSupport {
 
 	public String[] getNameBrowser() {
 		return nameBrowser;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
 	}
 
 }

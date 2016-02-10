@@ -19,12 +19,12 @@ public class ContactActivityLog implements IActivityLogController {
 		this.activityLogController = activityLogController;
 	}
 
-	public List<String> getNameBrowsers(String name) {
-		return activityLogController.getNameBrowsers(name);
+	public List<String> getNameBrowsers(String name,String year) {
+		return activityLogController.getNameBrowsers(name, year);
 	}
 
-	public List<Float> getDataBrowsers(List<String> name, Boolean searchBy) {
-		return activityLogController.getDataBrowsers(name, searchBy);
+	public List<Float> getDataBrowsers(List<String> name, Boolean searchBy, String year) {
+		return activityLogController.getDataBrowsers(name, searchBy, year);
 	}
 
 	public List<Integer> getDataAction(String name, String year) {

@@ -22,9 +22,9 @@ public interface IActivityLogDao {
 	 
 	 public List<ActivityLogMini> getListByDate(String date, String condition);
 	 
-	 public int getDataBrowsers(String name, Boolean searchBy);
+	 public int getDataBrowsers(String name, Boolean searchBy,String year);
 	 
-	 public List<String> getNameBrowsers(String name);
+	 public List<String> getNameBrowsers(String name,String year);
 	 
 	 public List<String> getNameAction(String year);
 	 

@@ -1,24 +1,36 @@
+var y = [];
+var nameBrowser = [];
+var dataMSIE = [];
+var dataFirefox = [];
+var dateChrome = [];
+var dataSafari = [];
+var dataOpera = [];
+var dateProprietary = [];
+
+var nameMSIEVersions = [];
+var nameFirefoxVersions = [];
+var nameChromeVersions = [];
+var nameSafariVersions = [];
+var nameOperaVersions = [];
+$('#top-module').val(moment().format("YYYY"));
+var years = $('#top-module').val();
+
 $(function() {
+	showBrowsers();
+	$('#top-module').change(function() {
+		years = $('#top-module').val()
+		showBrowsers();
+	});
+});
 
-	var y = [];
-	var nameBrowser = [];
-	var dataMSIE = [];
-	var dataFirefox = [];
-	var dateChrome = [];
-	var dataSafari = [];
-	var dataOpera = [];
-	var dateProprietary = [];
-
-	var nameMSIEVersions = [];
-	var nameFirefoxVersions = [];
-	var nameChromeVersions = [];
-	var nameSafariVersions = [];
-	var nameOperaVersions = [];
+function showBrowsers() {
 	$
 			.ajax({
 				type : "GET",
 				url : 'browserJson.action',
-				data : {},
+				data : {
+					year : years
+				},
 				success : function(response) {
 					nameMSIEVersions = response.nameMSIEVersions;
 					nameFirefoxVersions = response.nameFirefoxVersions;
@@ -112,7 +124,7 @@ $(function() {
 							});
 						}
 					}
-					 
+
 					// Create the chart
 					$('#dashboardbrowser')
 							.highcharts(
@@ -121,7 +133,7 @@ $(function() {
 											type : 'pie'
 										},
 										title : {
-											text : 'Data Monthly Users Browsers'
+											text : 'Year '+years+' Users Browsers'
 										},
 										subtitle : {
 											text : ''
@@ -177,4 +189,4 @@ $(function() {
 					alert('Error: ' + e);
 				}
 			});
-});
+}

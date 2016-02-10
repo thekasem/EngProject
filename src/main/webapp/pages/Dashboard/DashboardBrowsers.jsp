@@ -102,6 +102,7 @@
 	<script src="js/highcharts.js"></script>
 	<script	src="js/exporting.js"></script>
 	<script src="js/team-highcharts.js"></script>
+	<script src="js/moment.js"></script>
 	<script src="DetailsDashboardSidebar/browsers.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>

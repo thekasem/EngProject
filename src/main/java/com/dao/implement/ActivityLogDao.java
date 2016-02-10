@@ -188,22 +188,22 @@ public class ActivityLogDao implements IActivityLogDao {
 		
 	}
 	
-	private String criteriaGetDataBrowsers(String name, Boolean searchBy){
+	private String criteriaGetDataBrowsers(String name, Boolean searchBy, String year){
 		String command = "";
 		if(searchBy){
-			command = "SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%"+ name +"%')";
+			command = "SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%"+ name +"%') and logDate between '"+year+"0101' and '"+year+"1231' ";
 		}else{
-			command = "SELECT  COUNT(browser) from ActivityLogMini where browser = '"+ name +"'";
+			command = "SELECT  COUNT(browser) from ActivityLogMini where browser = '"+ name +"' and logDate between '"+year+"0101' and '"+year+"1231'";
 		}
 		return command;
 	}
 
-	public int getDataBrowsers(String name, Boolean searchBy) {
+	public int getDataBrowsers(String name, Boolean searchBy, String year) {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		int result = 0;
 		try {
-			Query query = sessionB.createQuery(criteriaGetDataBrowsers(name, searchBy));
+			Query query = sessionB.createQuery(criteriaGetDataBrowsers(name, searchBy, year));
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -212,12 +212,12 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
-	public List<String> getNameBrowsers(String name) {
+	public List<String> getNameBrowsers(String name, String year) {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		List<String> result = null;
 		try {
-			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%" +name+ "%')");
+			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%" +name+ "%') and logDate between '"+year+"0101' and '"+year+"1231' ");
 			result = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -1,18 +1,30 @@
+var monthName = [];
+var nameModule = [];
+var dataModule1 = [];
+var dataModule2 = [];
+var dataModule3 = [];
+var dataModule4 = [];
+var dataModule5 = [];
+$('#top-module').val(moment().format("YYYY"));
+var years = $('#top-module').val();
+
 $(function() {
+	calTopmodule();
+});
 
-	var monthName = [];
-	var nameModule = [];
-	var dataModule1 = [];
-	var dataModule2 = [];
-	var dataModule3 = [];
-	var dataModule4 = [];
-	var dataModule5 = [];
+$('#top-module').change(function() {
+	years = $('#top-module').val()
+	calTopmodule();
+});
 
+function calTopmodule() {
 	$
 			.ajax({
 				type : "GET",
 				url : 'TopModuleJson.action',
-				data : {},
+				data : {
+					year : years
+				},
 				success : function(response) {
 
 					monthName = response.month;
@@ -29,7 +41,8 @@ $(function() {
 											type : 'spline'
 										},
 										title : {
-											text : 'Data Monthly Users Top Modules',
+											text : 'Year ' + years
+													+ ' Users using Top Modules',
 										},
 										subtitle : {
 											text : '',
@@ -87,24 +100,38 @@ $(function() {
 													name : 'Total consumption',
 													data : [
 															{
-																name : 'Jane',
-																y : 13,
+																name : nameModule[0],
+																y : sumArray(dataModule1),
 																color : Highcharts
 																		.getOptions().colors[0]
 															// Jane's color
 															},
 															{
-																name : 'John',
-																y : 23,
+																name : nameModule[1],
+																y : sumArray(dataModule2),
 																color : Highcharts
 																		.getOptions().colors[1]
 															// John's color
 															},
 															{
-																name : 'Joe',
-																y : 19,
+																name : nameModule[2],
+																y : sumArray(dataModule3),
 																color : Highcharts
 																		.getOptions().colors[2]
+															// Joe's color
+															},
+															{
+																name : nameModule[3],
+																y : sumArray(dataModule4),
+																color : Highcharts
+																		.getOptions().colors[3]
+															// Joe's color
+															},
+															{
+																name : nameModule[4],
+																y : sumArray(dataModule5),
+																color : Highcharts
+																		.getOptions().colors[4]
 															// Joe's color
 															} ],
 													center : [ 80, -15 ],
@@ -113,12 +140,18 @@ $(function() {
 													dataLabels : {
 														enabled : false
 													}
-												}],
+												} ],
 									});
 				},
 				error : function(e) {
 					alert('Error: ' + e);
 				}
 			});
-
-});
+}
+function sumArray(array) {
+	var result = 0;
+	for (var int = 0; int < array.length; int++) {
+		result = array[int] + result;
+	}
+	return result;
+}

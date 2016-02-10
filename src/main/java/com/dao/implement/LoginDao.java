@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
@@ -88,6 +89,19 @@ public class LoginDao implements ILoginDao {
 		sessionA.getTransaction().commit();
 	}
 	
+	public List<String> getListYear() {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createSQLQuery("select distinct(SUBSTR(logdate,1,4))  from cm_activitylog");
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
 	/*
 	public static void main(String args[]){
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();

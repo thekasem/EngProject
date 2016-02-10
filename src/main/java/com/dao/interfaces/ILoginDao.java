@@ -13,5 +13,7 @@ public interface ILoginDao {
 	public List<User> getUser();
 	
 	public void testSent(List<User> list) throws IllegalAccessException, InvocationTargetException;
+	
+	public List<String> getListYear();
 
 }

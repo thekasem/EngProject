@@ -27,4 +27,12 @@ public class ContactActivityLog implements IActivityLogController {
 		return activityLogController.getDataBrowsers(name, searchBy);
 	}
 
+	public List<Integer> getDataAction(String name, String year) {
+		return activityLogController.getDataAction(name, year);
+	}
+
+	public List<String> getNameAction(String year) {
+		return activityLogController.getNameAction(year);
+	}
+
 }

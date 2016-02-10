@@ -18,7 +18,6 @@
 	href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<s:url action="activityArchive_search" var="searchactivity"></s:url>
@@ -64,13 +63,14 @@
 															Module</b></span>
 												</h4>
 												<div class="form-group">
-													<label class="col-md-2 control-label">From Date :</label>
+													<label class="col-md-2 control-label">Year :</label>
 													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-													</div>
-													<label class="col-md-2 control-label">To Date :</label>
-													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+														<div class="form-group has-feedback">
+															<s:select id="top-module" class="form-control"
+																headerKey="-1" list="listYears"
+																name="year" />
+															<span class="fa fa-calendar form-control-feedback"></span>
+														</div>
 													</div>
 												</div>
 
@@ -101,6 +101,7 @@
 	<script src="js/highcharts.js"></script>
 	<script src="js/exporting.js"></script>
 	<script src="js/team-highcharts.js"></script>
+	<script src="js/moment.js"></script>
 	<script src="DetailsDashboardSidebar/topmodule.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>
@@ -111,11 +112,5 @@
 	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 	<script src="plugins/chartjs/Chart.min.js"></script>
 	<script src="dist/js/demo.js"></script>
-	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-	<script>
-		$('.datepicker').datepicker({
-			format : 'yyyymmdd'
-		});
-	</script>
 </body>
 </html>

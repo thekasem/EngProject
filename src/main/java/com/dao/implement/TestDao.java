@@ -15,7 +15,9 @@ public class TestDao {
 		List<String> result = null;
 		try {
 //			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini ");
-			Query query = sessionB.createQuery("SELECT  browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%Firefox%')");
+			Query query = sessionB.createSQLQuery("select distinct(SUBSTR(logdate,1,4))  from cm_activitylog");
+			query.setFirstResult(0);
+			query.setMaxResults(5);
 			result = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -31,7 +33,7 @@ public class TestDao {
 		try {
 //			Query query = sessionB.createQuery("SELECT  browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%chrome%')");
 //			result = query.list().size();
-			Query query = sessionB.createQuery("SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%Firefox 36.0%')");
+			Query query = sessionB.createQuery("SELECT  COUNT(actionClass) from ActivityLogMini where logDate between '20150101' and '20150231' and actionClass = 'DashboardAction'");
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,10 +47,12 @@ public class TestDao {
 		int result = getcount();
 		System.out
 				.println("++++++++++++++++++++++++++++ test browser ++++++++++++++++++++++++++++++++");
+		System.out.println("count list : " + list.size());
 		for (Object te : list) {
 			System.out.println(te);
 		}
        System.out.println("total count record : "+ result +" record");
+		
 	}
 
 }

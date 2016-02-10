@@ -39,6 +39,10 @@ public class ContactLogin implements ILoginController {
 		loginController.testSent(list);
 		
 	}
+
+	public List<String> getListYear() {
+		return loginController.getListYear();
+	}
 	
 
 }

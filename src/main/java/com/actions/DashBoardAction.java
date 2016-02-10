@@ -1,11 +1,15 @@
 package com.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.contact.action.ContactLogin;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class DashBoardAction extends ActionSupport {
@@ -28,12 +32,18 @@ public class DashBoardAction extends ActionSupport {
 
 	private String userNameLogin;
 	private String date;
-
+	private ContactLogin userController;
+	private List<String> listYears = new ArrayList<String>();
+	
 	public void ContactController() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"SpringBeans.xml");
+		userController = (ContactLogin)context.getBean("userAction");
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
+		listYears = userController.getListYear();
+		
+		
 	}
 
 	public String showDashBoard() {
@@ -103,4 +113,9 @@ public class DashBoardAction extends ActionSupport {
 		return userNameLogin;
 	}
 
+	public List<String> getListYears() {
+		return listYears;
+	}
+
+	
 }

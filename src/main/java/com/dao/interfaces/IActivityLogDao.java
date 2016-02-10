@@ -26,5 +26,8 @@ public interface IActivityLogDao {
 	 
 	 public List<String> getNameBrowsers(String name);
 	 
-	 public List<String> getNameAction(String name, String year);
+	 public List<String> getNameAction(String year);
+	 
+	 public int getDataAction(String name, String year);
+	 
  }

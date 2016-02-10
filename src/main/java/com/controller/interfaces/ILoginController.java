@@ -13,4 +13,6 @@ public interface ILoginController {
 	List<User> getUser();
 	
 	public void testSent(List<User> list) throws IllegalAccessException, InvocationTargetException;
+	
+	public List<String> getListYear();
 }

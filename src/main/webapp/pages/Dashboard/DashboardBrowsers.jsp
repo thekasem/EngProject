@@ -63,14 +63,15 @@
 												<h4>
 													<span class="fa fa-edge"> <b>Browsers</b></span>
 												</h4>
-												<div class="form-group" style="margin-left: 50px;">
-													<label class="col-md-2 control-label">From Date :</label>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Year :</label>
 													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-													</div>
-													<label class="col-md-2 control-label">To Date :</label>
-													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+														<div class="form-group has-feedback">
+															<s:select id="top-module" class="form-control"
+																headerKey="-1" list="listYears"
+																name="year" />
+															<span class="fa fa-calendar form-control-feedback"></span>
+														</div>
 													</div>
 												</div>
 
@@ -111,11 +112,5 @@
 	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 	<script src="plugins/chartjs/Chart.min.js"></script>
 	<script src="dist/js/demo.js"></script>
-	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-	<script>
-		$('.datepicker').datepicker({
-			format : 'yyyymmdd'
-		});
-	</script>
 </body>
 </html>

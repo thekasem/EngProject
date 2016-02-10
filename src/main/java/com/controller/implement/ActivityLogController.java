@@ -40,4 +40,26 @@ public class ActivityLogController implements IActivityLogController {
 		return result; 
 	}
 
+	public List<Integer> getDataAction(String name, String year) {
+		List<Integer> result = new ArrayList<Integer>();
+		for (int i = 1; i <= 12; i++) {
+			result.add(activityLogDao.getDataAction(name, yearAndMonth(year, i)));
+		}
+		return result; 
+	}
+
+	public List<String> getNameAction(String year) {
+		return activityLogDao.getNameAction(year);
+	}
+	
+	private String yearAndMonth(String year, int month){
+		String result = "";
+		if (month < 10) {
+			result = year + "0"+Integer.toString(month);
+		} else {
+			result = year +Integer.toString(month);
+		}
+		return result;
+	}
+
 }

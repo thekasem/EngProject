@@ -34,6 +34,10 @@ public class LoginController implements ILoginController {
 		loginDao.testSent(list);
 		
 	}
+
+	public List<String> getListYear() {
+		return loginDao.getListYear();
+	}
       
       
 }

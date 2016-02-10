@@ -226,9 +226,34 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
-	public List<String> getNameAction(String name, String year) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<String> getNameAction(String year) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createQuery("SELECT  actionClass from ActivityLogMini where logDate between '"+year+"0101' and '"+year+"1231' group by actionClass order by count(actionClass) desc ");
+			query.setFirstResult(0);
+			query.setMaxResults(5);
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
 	}
+
+	public int getDataAction(String name, String year) { // year sent xxxxXX 
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		int result = 0 ;
+		try {
+			Query query = sessionB.createQuery("SELECT  COUNT(actionClass) from ActivityLogMini where logDate between '"+year+"01' and '"+year+"31' and actionClass = '"+name+"'");
+			result = Integer.parseInt(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	
 }

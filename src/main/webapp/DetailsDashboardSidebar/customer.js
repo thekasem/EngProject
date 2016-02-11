@@ -1,21 +1,35 @@
+var customer = "";
+
+var datacustomer1 = [];
+var datacustomer2 = [];
+$('#top-module').val(moment().format("YYYY"));
+//$('#top-module').val("2014");
+var years = $('#top-module').val();
+
 $(function() {
-	
-	var customer = "";
-	
-	var datacustomer1 = [];
-	var datacustomer2 = [];
-	
+
+	showCustomer();
+
+	$('#top-module').change(function() {
+		years = $('#top-module').val()
+		showBrowsers();
+	});
+});
+
+function showCustomer() {
 	$.ajax({
 		type : "GET",
 		url : 'customerJson.action',
-		data : {},
+		data : {
+			year : years
+		},
 		success : function(response) {
 
 			customer = response.customer;
-			
-			datacustomer1 = response.datacustomer1;
-			datacustomer2 = response.datacustomer2;
-			
+
+			datacustomer1 = response.datacustomerCurrent;
+			datacustomer2 = response.datacustomerLast;
+
 			$('#dashboardcustomer').highcharts(
 					{
 
@@ -28,7 +42,9 @@ $(function() {
 						},
 
 						xAxis : {
-							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ]
+							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May',
+									'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
+									'Dec' ]
 						},
 
 						yAxis : {
@@ -62,11 +78,11 @@ $(function() {
 							name : 'Last Year',
 							data : datacustomer2,
 							stack : ''
-						}]
+						} ]
 					});
 		},
 		error : function(e) {
 			alert('Error: ' + e);
 		}
 	});
-});
+}

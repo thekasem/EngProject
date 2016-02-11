@@ -104,4 +104,30 @@ public class BranchCustomerDao implements IBranchCustomerDao {
 		sessionB.getTransaction().commit();
 	}
 
+	public int getDataCustomer(String yearAndMonth) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		int result = 0;
+		try {
+			Query query = sessionB.createQuery("select count(createDate)  from BranchCustomerMini where createDate between '"+yearAndMonth+"01' and '"+yearAndMonth+"31'");
+			result = Integer.parseInt(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	public List<String> getListYear() {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createSQLQuery("select distinct(SUBSTR(createdate,1,4))  from branchcustomer");
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 }

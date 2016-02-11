@@ -18,4 +18,8 @@ public interface IBranchCustomerDao {
 	 
 	 public void delete(BranchCustomerMini entity);
 	 
+	 public int getDataCustomer(String yearAndMonth);
+	 
+	 public List<String> getListYear();
+	 
 }

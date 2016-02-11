@@ -20,11 +20,7 @@
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-	<s:url action="activityArchive_search" var="searchactivity"></s:url>
-	<s:url action="activityArchive_list" var="listac"></s:url>
-	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<div class="wrapper">
-		<s:url action="activityArchive_search" var="search"></s:url>
 		<s:include value="/pages/Menu/menuV.jsp"></s:include>
 
 

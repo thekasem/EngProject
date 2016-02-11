@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.contact.action.ContactBranchCustomer;
 import com.contact.action.ContactLogin;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -33,15 +34,17 @@ public class DashBoardAction extends ActionSupport {
 	private String userNameLogin;
 	private String date;
 	private ContactLogin userController;
+	private ContactBranchCustomer ControllerCustomer;
 	private List<String> listYears = new ArrayList<String>();
 	
 	public void ContactController() {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"SpringBeans.xml");
 		userController = (ContactLogin)context.getBean("userAction");
+		ControllerCustomer = (ContactBranchCustomer) context.getBean("branchcustomers");
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
-		listYears = userController.getListYear();
+		
 		
 		
 	}
@@ -53,6 +56,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String browser() {
 		ContactController();
+		listYears = userController.getListYear();
 		return BROWSERS;
 	}
 
@@ -68,6 +72,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String topModule() {
 		ContactController();
+		listYears = userController.getListYear();
 		return TOPMODULE;
 	}
 
@@ -78,6 +83,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String customer() {
 		ContactController();
+		listYears = ControllerCustomer.getListYear();
 		return CUSTOMERS;
 	}
 

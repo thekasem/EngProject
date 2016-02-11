@@ -39,6 +39,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="portHoldingBySubAccount" class="com.contact.action.ContactPortHoldingBySubAccount">
 	   <property name="portHoldingBySubAccountController" ref="portholdingbysubaccountcontroller" />
 	</bean>
+	<bean id="branchcustomers" class="com.contact.action.ContactBranchCustomer">
+		<property name="branchCustomerController" ref="branchcustomercontroller"></property>
+	</bean>
 	
 	<!-- inject to Controller -->
 	<bean id="logincontroller" class="com.controller.implement.LoginController">
@@ -82,6 +85,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="portholdingbysubaccountcontroller"
 		class="com.controller.implement.PortHoldingBySubAccountController">
 		<property name="portHoldingBySubAccountDao" ref="portholdingbysubaccountdao" />
+	</bean>
+	<bean id="branchcustomercontroller" class="com.controller.implement.BranchCustomerController">
+		<property name="branchCustomerDao" ref="branchcustomer"></property>
 	</bean>
 
 	<!-- inject to Dao -->

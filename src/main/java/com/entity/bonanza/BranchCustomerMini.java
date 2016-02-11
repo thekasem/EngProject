@@ -34,6 +34,15 @@ public class BranchCustomerMini {
 		@Column(name = "RMID")
 		private int rmId;
 		
+		@Column(name ="CREATEDATE")
+		private String createDate;
+		
+		@Column(name ="CREATETIME")
+		private String createTime;
+		
+		@Column(name = "CREATEBY")
+		private int createBy;
+		
 		@Column(name ="LASTUPDATEBY")
 		private int lastUpdateBy;
 		
@@ -209,6 +218,30 @@ public class BranchCustomerMini {
 
 		public void setMobilephone(String mobilephone) {
 			this.mobilephone = mobilephone;
+		}
+
+		public String getCreateDate() {
+			return createDate;
+		}
+
+		public void setCreateDate(String createDate) {
+			this.createDate = createDate;
+		}
+
+		public String getCreateTime() {
+			return createTime;
+		}
+
+		public void setCreateTime(String createTime) {
+			this.createTime = createTime;
+		}
+
+		public int getCreateBy() {
+			return createBy;
+		}
+
+		public void setCreateBy(int createBy) {
+			this.createBy = createBy;
 		}
 		
 				

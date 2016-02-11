@@ -105,7 +105,6 @@
 	</div>
 	<script
 		src="calendar/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
 	<script src="js/highcharts.js"></script>
 	<script src="js/highcharts-more.js"></script>
 	<script src="js/solid-gauge.js"></script>

@@ -27,7 +27,19 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	<bean id="activitylog" class="com.contact.action.ContactActivityLog">
 	   <property name="activityLogController" ref="activitylogcontroller" />
 	</bean>
-
+	<bean id="applicationlog" class="com.contact.action.ContactApplicationLog">
+	   <property name="applicationLogController" ref="applicationlogcontroller" />
+	</bean>
+	<bean id="aumByCIF" class="com.contact.action.ContactAUMByCIF">
+	   <property name="aumByCIFController" ref="aumbycifcontroller" />
+	</bean>
+	<bean id="aumByBranch" class="com.contact.action.ContactAUMByBranch">
+	   <property name="aumByBranchController" ref="aumbybranchcontroller" />
+	</bean>
+	<bean id="portHoldingBySubAccount" class="com.contact.action.ContactPortHoldingBySubAccount">
+	   <property name="portHoldingBySubAccountController" ref="portholdingbysubaccountcontroller" />
+	</bean>
+	
 	<!-- inject to Controller -->
 	<bean id="logincontroller" class="com.controller.implement.LoginController">
 		<property name="loginDao" ref="logindao" />
@@ -54,8 +66,22 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="portHoldingBySubAccountArchiveDao" ref="portholdingbysubaccountarchivedao" />
 		<property name="portHoldingBySubAccountDao" ref="portholdingbysubaccountdao" />
 	</bean>
+	
 	<bean id="activitylogcontroller" class="com.controller.implement.ActivityLogController">
 		<property name="activityLogDao" ref="activitylogdao" />
+	</bean>
+	<bean id="applicationlogcontroller" class="com.controller.implement.ApplicationLogController">
+		<property name="applicationLogDao" ref="applicationlogdao" />
+	</bean>
+	<bean id="aumbybranchcontroller" class="com.controller.implement.AUMByBranchController">
+		<property name="aumByBranchDao" ref="aumbybranchdao" />
+	</bean>
+	<bean id="aumbycifcontroller" class="com.controller.implement.AUMByCIFController">
+		<property name="aumByCIFDao" ref="aumbycifdao" />
+	</bean>
+	<bean id="portholdingbysubaccountcontroller"
+		class="com.controller.implement.PortHoldingBySubAccountController">
+		<property name="portHoldingBySubAccountDao" ref="portholdingbysubaccountdao" />
 	</bean>
 
 	<!-- inject to Dao -->

@@ -2,6 +2,8 @@ package com.controller.interfaces;
 
 import java.util.List;
 
+import com.entity.bonanza.ActivityLogMini;
+
 
 public interface IActivityLogController {
 	
@@ -13,4 +15,5 @@ public interface IActivityLogController {
 	
 	public List<String> getNameAction(String year);
 	
+	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch);
 }

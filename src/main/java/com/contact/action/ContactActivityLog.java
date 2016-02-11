@@ -3,6 +3,7 @@ package com.contact.action;
 import java.util.List;
 
 import com.controller.interfaces.IActivityLogController;
+import com.entity.bonanza.ActivityLogMini;
 
 public class ContactActivityLog implements IActivityLogController {
 	
@@ -35,4 +36,8 @@ public class ContactActivityLog implements IActivityLogController {
 		return activityLogController.getNameAction(year);
 	}
 
+	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch) {
+		return activityLogController.getCountByCriteriaSearch(criteriaSearch);
+	}
+	
 }

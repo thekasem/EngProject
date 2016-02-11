@@ -62,4 +62,8 @@ public class ActivityLogController implements IActivityLogController {
 		return result;
 	}
 
+	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch) {
+		return activityLogDao.getCountByCriteriaSearch(criteriaSearch);
+	}
+
 }

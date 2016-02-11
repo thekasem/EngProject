@@ -1,6 +1,6 @@
 $(function() {
 
-	var modules = [];
+	var namemodules = [];
 
 	var dataactivity = [];
 	var dataapplication = [];
@@ -15,7 +15,7 @@ $(function() {
 				data : {},
 				success : function(response) {
 
-					modules = response.modules;
+					namemodules = response.namemodules;
 
 					dataactivity = response.dataactivity;
 					dataapplication = response.dataapplication;
@@ -97,20 +97,20 @@ $(function() {
 													{
 														yAxis : {
 															min : 0,
-															max : 1000,
+															max : 10000,
 															title : {
-																text : modules[0]
+																text : namemodules[0]
 															}
 														},
 
 														series : [ {
-															name : modules[0],
+															name : namemodules[0],
 															data : dataactivity,
 															dataLabels : {
 																format : '<div style="text-align:center"><span style="font-size:25px;color:'
 																		+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
 																		+ '">{y}</span><br/>'
-																		+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+																		+ '<span style="font-size:12px;color:silver">Records/ 10000 Records</span></div>'
 															},
 															tooltip : {
 																valueSuffix : ''
@@ -127,20 +127,20 @@ $(function() {
 													{
 														yAxis : {
 															min : 0,
-															max : 1000,
+															max : 10000,
 															title : {
-																text : modules[1]
+																text : namemodules[1]
 															}
 														},
 
 														series : [ {
-															name : modules[1],
+															name : namemodules[1],
 															data : dataapplication,
 															dataLabels : {
 																format : '<div style="text-align:center"><span style="font-size:25px;color:'
 																		+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
 																		+ '">{y}</span><br/>'
-																		+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+																		+ '<span style="font-size:12px;color:silver">Records/ 10000 Records</span></div>'
 															},
 															tooltip : {
 																valueSuffix : ''
@@ -157,20 +157,20 @@ $(function() {
 													{
 														yAxis : {
 															min : 0,
-															max : 1000,
+															max : 10000,
 															title : {
-																text : modules[2]
+																text : namemodules[2]
 															}
 														},
 
 														series : [ {
-															name : modules[2],
+															name : namemodules[2],
 															data : dataaumbycif,
 															dataLabels : {
 																format : '<div style="text-align:center"><span style="font-size:25px;color:'
 																		+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
 																		+ '">{y}</span><br/>'
-																		+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+																		+ '<span style="font-size:12px;color:silver">Records/ 10000 Records</span></div>'
 															},
 															tooltip : {
 																valueSuffix : ''
@@ -187,20 +187,20 @@ $(function() {
 													{
 														yAxis : {
 															min : 0,
-															max : 1000,
+															max : 10000,
 															title : {
-																text : modules[3]
+																text : namemodules[3]
 															}
 														},
 
 														series : [ {
-															name : modules[3],
+															name : namemodules[3],
 															data : dataaumbybranch,
 															dataLabels : {
 																format : '<div style="text-align:center"><span style="font-size:25px;color:'
 																		+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
 																		+ '">{y}</span><br/>'
-																		+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+																		+ '<span style="font-size:12px;color:silver">Records/ 10000 Records</span></div>'
 															},
 															tooltip : {
 																valueSuffix : ''
@@ -217,20 +217,20 @@ $(function() {
 													{
 														yAxis : {
 															min : 0,
-															max : 1000,
+															max : 10000,
 															title : {
-																text : modules[4]
+																text : namemodules[4]
 															}
 														},
 
 														series : [ {
-															name : modules[4],
+															name : namemodules[4],
 															data : dataportholding,
 															dataLabels : {
 																format : '<div style="text-align:center"><span style="font-size:25px;color:'
 																		+ ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black')
 																		+ '">{y}</span><br/>'
-																		+ '<span style="font-size:12px;color:silver">GB/ 1000 GB</span></div>'
+																		+ '<span style="font-size:12px;color:silver">Records/ 10000 Records</span></div>'
 															},
 															tooltip : {
 																valueSuffix : ''

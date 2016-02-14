@@ -114,6 +114,7 @@ public class BranchCustomerDao implements IBranchCustomerDao {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		sessionB.getTransaction().commit();
 		return result;
 	}
 	public List<String> getListYear() {

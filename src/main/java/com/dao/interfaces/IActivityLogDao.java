@@ -30,4 +30,6 @@ public interface IActivityLogDao {
 	 
 	 public int getDataAction(String name, String year);
 	 
+	 public List<Integer> getListSumTimeUsingSite(String yearAndMonth);
+	 
  }

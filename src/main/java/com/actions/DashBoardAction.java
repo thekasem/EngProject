@@ -94,6 +94,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String argTimeOnSite() {
 		ContactController();
+		listYears = userController.getListYear();
 		return ARGONSITE;
 	}
 

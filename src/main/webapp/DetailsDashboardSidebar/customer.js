@@ -12,7 +12,7 @@ $(function() {
 
 	$('#top-module').change(function() {
 		years = $('#top-module').val()
-		showBrowsers();
+		showCustomer();
 	});
 });
 
@@ -38,7 +38,7 @@ function showCustomer() {
 						},
 
 						title : {
-							text : 'Data Monthly Customers'
+							text : 'Data Year '+years+' Monthly Customers'
 						},
 
 						xAxis : {

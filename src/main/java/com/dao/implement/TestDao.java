@@ -15,7 +15,7 @@ public class TestDao {
 		List<Integer> result = null;
 		try {
 //			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini ");
-			Query query = sessionB.createQuery("select count(createDate)  from BranchCustomerMini where createDate between '20140106' and '20140106' group by createDate ");
+			Query query = sessionB.createQuery("select  sum(usigTime)  from ActivityLogMini where logDate between '20150101' and '20150131' Group by logDate, memberId ");
 //			query.setFirstResult(0);
 //			query.setMaxResults(5);
 			result = (List<Integer>) query.list();
@@ -48,9 +48,13 @@ public class TestDao {
 		System.out
 				.println("++++++++++++++++++++++++++++ test browser ++++++++++++++++++++++++++++++++");
 		System.out.println("count list : " + list.size());
+		float i = 0;
 		for (Object te : list) {
 			System.out.println(te);
+			i = i + Integer.parseInt(te.toString());
 		}
+		float results = i / Float.parseFloat(list.size()+"");
+		System.out.println("\n average time is : "+ results);
        System.out.println("total count record : "+ result +" record");
 		
 	}

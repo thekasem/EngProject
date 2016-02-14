@@ -16,4 +16,6 @@ public interface IActivityLogController {
 	public List<String> getNameAction(String year);
 	
 	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch);
+	
+	public List<Float> getListAverageTimeOnSite(String year);
 }

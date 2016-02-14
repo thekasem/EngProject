@@ -255,5 +255,19 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
+	public List<Integer> getListSumTimeUsingSite(String yearAndMonth) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<Integer> result = null;
+		try {
+			Query query = sessionB.createQuery("select  sum(usigTime)  from ActivityLogMini where logDate between '"+yearAndMonth+"01' and '"+yearAndMonth+"31' Group by logDate, memberId ");
+			result = (List<Integer>) query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 	
 }

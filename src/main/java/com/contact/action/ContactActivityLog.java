@@ -39,5 +39,9 @@ public class ContactActivityLog implements IActivityLogController {
 	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch) {
 		return activityLogController.getCountByCriteriaSearch(criteriaSearch);
 	}
+
+	public List<Float> getListAverageTimeOnSite(String year) {
+		return activityLogController.getListAverageTimeOnSite(year);
+	}
 	
 }

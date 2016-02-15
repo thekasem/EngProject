@@ -19,5 +19,7 @@ public interface IPortHoldingBySubAccountDao {
 	 public void delete(PortHoldingBySubAccountMini entity);
 	 
 	 public List<PortHoldingBySubAccountMini> getListByDate(String date, String condition);
+	 
+	 public double sumMarketValue(String yearAndMonth); 
 
 }

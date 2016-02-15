@@ -20,5 +20,7 @@ public interface IAUMByCIFDao {
 	 public void delete(AUMByCIFMini entity);
 	 
 	 public List<AUMByCIFMini> getListByDate(String date, String condition);
+	 
+	 public double sumMarketValue(String yearAndMonth);
 
 }

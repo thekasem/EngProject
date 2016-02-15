@@ -103,7 +103,7 @@ public class PortHoldingBySubAccountMini {
 	private BigDecimal localLaccruedinterest;
 	
 	@Column(name = "MARKETVALUE")
-	private BigDecimal marketValue;
+	private double marketValue;
 	
 	@Column(name = "REMARK")
 	private String remark;
@@ -445,11 +445,12 @@ public class PortHoldingBySubAccountMini {
 		this.localLaccruedinterest = localLaccruedinterest;
 	}
 
-	public BigDecimal getMarketValue() {
+
+	public double getMarketValue() {
 		return marketValue;
 	}
 
-	public void setMarketValue(BigDecimal marketValue) {
+	public void setMarketValue(double marketValue) {
 		this.marketValue = marketValue;
 	}
 

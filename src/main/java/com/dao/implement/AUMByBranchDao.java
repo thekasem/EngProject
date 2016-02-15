@@ -51,9 +51,9 @@ public class AUMByBranchDao implements IAUMByBranchDao{
 				}
 			}
 
-			if (obj.getAumMarketValue() != null && !obj.getAumMarketValue().equals("")) {
+			if (obj.getAumMarketValue() != 0) {
 				if (where) {
-					command += " WHERE aumMarketValue = '" + obj.getAumMarketValue() + "'";
+					command += " WHERE aumMarketValue = " + obj.getAumMarketValue() + "";
 					where = false;
 				}
 			}
@@ -149,6 +149,21 @@ public class AUMByBranchDao implements IAUMByBranchDao{
 		sessionB.beginTransaction();
 		sessionB.delete(entity);
 		sessionB.getTransaction().commit();
+	}
+
+
+	public double sumMarketValue(String yearAndMonth) {
+		double result = 0;
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		try {
+			Query query = sessionB.createQuery("select  sum(aumMarketValue)  from AUMByBranchMini where aumDate between '"+yearAndMonth+"01' and '"+yearAndMonth+"31'");
+			result = Double.parseDouble(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
 	}
 	
 	

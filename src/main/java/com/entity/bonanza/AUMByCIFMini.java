@@ -28,7 +28,7 @@ public class AUMByCIFMini {
 	private String aumDate;
 	
 	@Column(name = "AUMMARKET_VALUE")
-	private String aumMarketValue;
+	private double aumMarketValue;
 	
 	@Column(name = "REMARK")
 	private BigDecimal remark;
@@ -86,11 +86,12 @@ public class AUMByCIFMini {
 		this.aumDate = aumDate;
 	}
 
-	public String getAumMarketValue() {
+
+	public double getAumMarketValue() {
 		return aumMarketValue;
 	}
 
-	public void setAumMarketValue(String aumMarketValue) {
+	public void setAumMarketValue(double aumMarketValue) {
 		this.aumMarketValue = aumMarketValue;
 	}
 

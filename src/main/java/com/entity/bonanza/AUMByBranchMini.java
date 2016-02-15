@@ -28,7 +28,7 @@ public class AUMByBranchMini {
 	private String aumDate;
 	
 	@Column(name = "AUMMARKETVALUE")
-	private String aumMarketValue;
+	private double aumMarketValue;
 	
 	@Column(name = "RAMARK")
 	private String remark;
@@ -100,11 +100,12 @@ public class AUMByBranchMini {
 		this.aumDate = aumDate;
 	}
 
-	public String getAumMarketValue() {
+
+	public double getAumMarketValue() {
 		return aumMarketValue;
 	}
 
-	public void setAumMarketValue(String aumMarketValue) {
+	public void setAumMarketValue(double aumMarketValue) {
 		this.aumMarketValue = aumMarketValue;
 	}
 

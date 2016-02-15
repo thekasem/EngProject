@@ -20,5 +20,7 @@ public interface IAUMByBranchDao {
 	 public void delete(AUMByBranchMini entity);
 	 
 	 public List<AUMByBranchMini> getListByDate(String date, String condition);
+	 
+	 public double sumMarketValue(String yearAndMonth);
 
 }

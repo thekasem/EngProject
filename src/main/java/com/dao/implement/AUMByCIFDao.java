@@ -58,11 +58,10 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 				}
 			}
 
-			if (obj.getAumMarketValue() != null
-					&& !obj.getAumMarketValue().equals("")) {
+			if (obj.getAumMarketValue()!=0) {
 				if (where) {
-					command += " WHERE aumMarketValue = '"
-							+ obj.getAumMarketValue() + "'";
+					command += " WHERE aumMarketValue = "
+							+ obj.getAumMarketValue() + "";
 					where = false;
 				}
 			}
@@ -139,5 +138,12 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 		sessionB.delete(entity);
 		sessionB.getTransaction().commit();
 	}
+
+	public double sumMarketValue(String yearAndMonth) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	
 
 }

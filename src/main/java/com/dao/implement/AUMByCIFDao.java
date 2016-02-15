@@ -140,8 +140,17 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 	}
 
 	public double sumMarketValue(String yearAndMonth) {
-		// TODO Auto-generated method stub
-		return 0;
+		double result = 0;
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		try {
+			Query query = sessionB.createQuery("select  sum(aumMarketValue)  from AUMByCIFMini where aumDate between '"+yearAndMonth+"01' and '"+yearAndMonth+"31'");
+			result = Double.parseDouble(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
 	}
 	
 	

@@ -1,5 +1,7 @@
 package com.contact.action;
 
+import java.util.List;
+
 import com.controller.interfaces.IPortHoldingBySubAccountController;
 import com.entity.bonanza.PortHoldingBySubAccountMini;
 
@@ -18,6 +20,10 @@ public class ContactPortHoldingBySubAccount implements IPortHoldingBySubAccountC
 	public void setPortHoldingBySubAccountController(
 			IPortHoldingBySubAccountController portHoldingBySubAccountController) {
 		this.portHoldingBySubAccountController = portHoldingBySubAccountController;
+	}
+
+	public List<Double> getSumAumSubAccByYear(String year) {
+		return portHoldingBySubAccountController.getSumAumSubAccByYear(year);
 	}	
 	
 }

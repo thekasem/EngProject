@@ -22,5 +22,7 @@ public interface IAUMByCIFDao {
 	 public List<AUMByCIFMini> getListByDate(String date, String condition);
 	 
 	 public double sumMarketValue(String yearAndMonth);
+	 
+	 public List<String> getListYear();
 
 }

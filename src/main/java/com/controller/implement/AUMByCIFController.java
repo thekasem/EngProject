@@ -40,5 +40,10 @@ public class AUMByCIFController implements IAUMByCIFController {
 		}
 		return result;
 	}
+
+	public List<String> getListYear() {
+		return aumByCIFDao.getListYear();
+	}
+	
 	
 }

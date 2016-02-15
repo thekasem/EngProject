@@ -152,6 +152,20 @@ public class AUMByCIFDao implements IAUMByCIFDao {
 		sessionB.getTransaction().commit();
 		return result;
 	}
+
+	public List<String> getListYear() {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createSQLQuery("select distinct(SUBSTR(aumdate,1,4))  from crm_aumbycif");
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
 	
 	
 

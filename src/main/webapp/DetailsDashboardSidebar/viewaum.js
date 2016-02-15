@@ -1,14 +1,27 @@
+var asset = [];
+
+var dataAUMBYCIF = [];
+var dataAUMBYBranch = [];
+var dataPortholding = [];
+$('#top-module').val(moment().format("YYYY"));
+var years = $('#top-module').val();
+
 $(function() {
-	var asset = [];
+	showViewAUM()
+	$('#top-module').change(function() {
+		years = $('#top-module').val()
+		showViewAUM();
+	});
+});
 
-	var dataAUMBYCIF = [];
-	var dataAUMBYBranch = [];
-	var dataPortholding = [];
-
-	$.ajax({
+function showViewAUM() {
+	$
+			.ajax({
 				type : "GET",
 				url : 'viewAUMJson.action',
-				data : {},
+				data : {
+					year : years
+				},
 				success : function(response) {
 
 					asset = response.asset;
@@ -24,7 +37,8 @@ $(function() {
 											type : 'spline'
 										},
 										title : {
-											text : 'Data Monthly Users AUM'
+											text : 'Data Year ' + years
+													+ ' Users AUM'
 										},
 										subtitle : {
 											text : ''
@@ -56,23 +70,20 @@ $(function() {
 												borderWidth : 0
 											}
 										},
-										series : [
-												{
-													name : asset[0],
-													data : dataAUMBYCIF
-												},
-												{
-													name : asset[1],
-													data : dataAUMBYBranch
-												},
-												{
-													name : asset[2],
-													data : dataPortholding
-												} ]
+										series : [ {
+											name : asset[0],
+											data : dataAUMBYCIF
+										}, {
+											name : asset[1],
+											data : dataAUMBYBranch
+										}, {
+											name : asset[2],
+											data : dataPortholding
+										} ]
 									});
 				},
 				error : function(e) {
 					alert('Error: ' + e);
 				}
 			});
-});
+}

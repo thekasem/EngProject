@@ -24,5 +24,9 @@ public class ContactAUMByCIF implements IAUMByCIFController{
 	public List<Double> getSumAumCIFByYear(String year) {
 		return aumByCIFController.getSumAumCIFByYear(year);
 	}
+
+	public List<String> getListYear() {
+		return aumByCIFController.getListYear();
+	}
 	
 }

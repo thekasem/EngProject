@@ -9,6 +9,7 @@ import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.contact.action.ContactAUMByCIF;
 import com.contact.action.ContactBranchCustomer;
 import com.contact.action.ContactLogin;
 import com.opensymphony.xwork2.ActionSupport;
@@ -35,6 +36,7 @@ public class DashBoardAction extends ActionSupport {
 	private String date;
 	private ContactLogin userController;
 	private ContactBranchCustomer ControllerCustomer;
+	private ContactAUMByCIF ControllerAUM;
 	private List<String> listYears = new ArrayList<String>();
 	
 	public void ContactController() {
@@ -42,6 +44,7 @@ public class DashBoardAction extends ActionSupport {
 				"SpringBeans.xml");
 		userController = (ContactLogin)context.getBean("userAction");
 		ControllerCustomer = (ContactBranchCustomer) context.getBean("branchcustomers");
+		ControllerAUM = (ContactAUMByCIF) context.getBean("aumByCIF");
 		HttpSession session = ServletActionContext.getRequest().getSession();
 		userNameLogin = (String) session.getAttribute("user");
 		
@@ -101,6 +104,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String viewAUM() {
 		ContactController();
+		listYears = ControllerAUM.getListYear();
 		return VIEWAUM;
 	}
 

@@ -30,6 +30,8 @@ public interface IActivityLogDao {
 	 
 	 public int getDataAction(String name, String year);
 	 
-	 public List<Integer> getListSumTimeUsingSite(String yearAndMonth);
+	 public List<Integer> getListSumTimeUsingSite(String yearAndMonth ,boolean modeSearch ,int memberId);
+	 
+	 public List<Object[]> getListTopUser(String year);
 	 
  }

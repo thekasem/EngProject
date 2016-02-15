@@ -16,16 +16,18 @@ public class ActivityLogDao implements IActivityLogDao {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		List<ActivityLogMini> result = null;
-		try{
-			Query query = sessionB.createQuery("from ActivityLogMini where logDate "+condition+" '"+date+"'");
+		try {
+			Query query = sessionB
+					.createQuery("from ActivityLogMini where logDate "
+							+ condition + " '" + date + "'");
 			query.setFirstResult(0);
 			query.setMaxResults(500);
 			result = query.list();
-		}catch(Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		sessionB.getTransaction().commit();
- 		return result;
+		return result;
 	}
 
 	public String createCriteriaSearch(ActivityLogMini obj, boolean isOrdering,
@@ -177,7 +179,7 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.beginTransaction();
 		sessionB.save(entity);
 		sessionB.getTransaction().commit();
-		
+
 	}
 
 	public void delete(ActivityLogMini entity) {
@@ -185,15 +187,26 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.beginTransaction();
 		sessionB.delete(entity);
 		sessionB.getTransaction().commit();
-		
+
 	}
-	
-	private String criteriaGetDataBrowsers(String name, Boolean searchBy, String year){
+
+	private String criteriaGetDataBrowsers(String name, Boolean searchBy,
+			String year) {
 		String command = "";
-		if(searchBy){
-			command = "SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%"+ name +"%') and logDate between '"+year+"0101' and '"+year+"1231' ";
-		}else{
-			command = "SELECT  COUNT(browser) from ActivityLogMini where browser = '"+ name +"' and logDate between '"+year+"0101' and '"+year+"1231'";
+		if (searchBy) {
+			command = "SELECT  COUNT(browser) from ActivityLogMini where UPPER(browser) LIKE UPPER('%"
+					+ name
+					+ "%') and logDate between '"
+					+ year
+					+ "0101' and '"
+					+ year + "1231' ";
+		} else {
+			command = "SELECT  COUNT(browser) from ActivityLogMini where browser = '"
+					+ name
+					+ "' and logDate between '"
+					+ year
+					+ "0101' and '"
+					+ year + "1231'";
 		}
 		return command;
 	}
@@ -203,7 +216,8 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.beginTransaction();
 		int result = 0;
 		try {
-			Query query = sessionB.createQuery(criteriaGetDataBrowsers(name, searchBy, year));
+			Query query = sessionB.createQuery(criteriaGetDataBrowsers(name,
+					searchBy, year));
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -217,7 +231,12 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.beginTransaction();
 		List<String> result = null;
 		try {
-			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%" +name+ "%') and logDate between '"+year+"0101' and '"+year+"1231' ");
+			Query query = sessionB
+					.createQuery("SELECT DISTINCT browser from ActivityLogMini where UPPER(browser) LIKE UPPER('%"
+							+ name
+							+ "%') and logDate between '"
+							+ year
+							+ "0101' and '" + year + "1231' ");
 			result = query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -231,7 +250,12 @@ public class ActivityLogDao implements IActivityLogDao {
 		sessionB.beginTransaction();
 		List<String> result = null;
 		try {
-			Query query = sessionB.createQuery("SELECT  actionClass from ActivityLogMini where logDate between '"+year+"0101' and '"+year+"1231' group by actionClass order by count(actionClass) desc ");
+			Query query = sessionB
+					.createQuery("SELECT  actionClass from ActivityLogMini where logDate between '"
+							+ year
+							+ "0101' and '"
+							+ year
+							+ "1231' group by actionClass order by count(actionClass) desc ");
 			query.setFirstResult(0);
 			query.setMaxResults(5);
 			result = query.list();
@@ -242,12 +266,17 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
-	public int getDataAction(String name, String year) { // year sent xxxxXX 
+	public int getDataAction(String name, String year) { // year sent xxxxXX
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
-		int result = 0 ;
+		int result = 0;
 		try {
-			Query query = sessionB.createQuery("SELECT  COUNT(actionClass) from ActivityLogMini where logDate between '"+year+"01' and '"+year+"31' and actionClass = '"+name+"'");
+			Query query = sessionB
+					.createQuery("SELECT  COUNT(actionClass) from ActivityLogMini where logDate between '"
+							+ year
+							+ "01' and '"
+							+ year
+							+ "31' and actionClass = '" + name + "'");
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -255,12 +284,35 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
-	public List<Integer> getListSumTimeUsingSite(String yearAndMonth) {
+	private String commandQuery(String yearAndMonth, boolean modeSearch,
+			int memberId) {
+		String command = "";
+		if (modeSearch) {
+			command = "select  sum(usigTime)  from ActivityLogMini where logDate between '"
+					+ yearAndMonth
+					+ "01' and '"
+					+ yearAndMonth
+					+ "31' Group by logDate, memberId ";
+		} else {
+			command = "select  sum(usigTime) from ActivityLogMini where logDate between '"
+					+ yearAndMonth
+					+ "01' and '"
+					+ yearAndMonth
+					+ "31' and memberId ="
+					+ memberId
+					+ " Group by logDate, memberId";
+		}
+		return command;
+	}
+
+	public List<Integer> getListSumTimeUsingSite(String yearAndMonth,
+			boolean modeSearch, int memberId) {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		List<Integer> result = null;
 		try {
-			Query query = sessionB.createQuery("select  sum(usigTime)  from ActivityLogMini where logDate between '"+yearAndMonth+"01' and '"+yearAndMonth+"31' Group by logDate, memberId ");
+			Query query = sessionB.createQuery(commandQuery(yearAndMonth,
+					modeSearch, memberId));
 			result = (List<Integer>) query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -269,5 +321,25 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
-	
+	public List<Object[]> getListTopUser(String year) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<Object[]> result = null;
+		try {
+			Query query = sessionB
+					.createQuery("select  sum(usigTime), memberId  from ActivityLogMini where logDate between '"
+							+ year
+							+ "0101' and '"
+							+ year
+							+ "1231' Group by memberId order by sum(usigTime) desc  ");
+			query.setFirstResult(0);
+			query.setMaxResults(5);
+			result = (List<Object[]>) query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 }

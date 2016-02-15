@@ -18,14 +18,9 @@
 	href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
 <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="plugins/datepicker/datepicker3.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-	<s:url action="activityArchive_search" var="searchactivity"></s:url>
-	<s:url action="activityArchive_list" var="listac"></s:url>
-	<s:url action="activityArchive_add" var="addactivity"></s:url>
 	<div class="wrapper">
-		<s:url action="activityArchive_search" var="search"></s:url>
 		<s:include value="/pages/Menu/menuV.jsp"></s:include>
 
 
@@ -62,14 +57,14 @@
 												<h4>
 													<span class="fa fa-user"> <b>Top User</b></span>
 												</h4>
-												<div class="form-group" style="margin-left: 50px;">
-													<label class="col-md-2 control-label">From Date :</label>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Year :</label>
 													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
-													</div>
-													<label class="col-md-2 control-label">To Date :</label>
-													<div class="col-md-3">
-														<s:textfield name="" cssClass="datepicker form-control"></s:textfield>
+														<div class="form-group has-feedback">
+															<s:select id="top-module" class="form-control"
+																headerKey="-1" list="listYears" name="year" />
+															<span class="fa fa-calendar form-control-feedback"></span>
+														</div>
 													</div>
 												</div>
 
@@ -100,6 +95,7 @@
 	<script src="js/highcharts.js"></script>
 	<script src="js/exporting.js"></script>
 	<script src="js/team-highcharts.js"></script>
+	<script src="js/moment.js"></script>
 	<script src="DetailsDashboardSidebar/topuser.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="plugins/fastclick/fastclick.min.js"></script>
@@ -110,11 +106,5 @@
 	<script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 	<script src="plugins/chartjs/Chart.min.js"></script>
 	<script src="dist/js/demo.js"></script>
-	<script src="plugins/datepicker/bootstrap-datepicker.js"></script>
-	<script>
-		$('.datepicker').datepicker({
-			format : 'yyyymmdd'
-		});
-	</script>
 </body>
 </html>

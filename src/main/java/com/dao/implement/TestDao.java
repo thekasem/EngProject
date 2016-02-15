@@ -9,16 +9,16 @@ import com.entity.HibernateUtil;
 
 public class TestDao {
 
-	public static List<Integer> getListByDate() {
+	public static List<Object[]> getListByDate() {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
-		List<Integer> result = null;
+		List<Object[]> result = null;
 		try {
-//			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini ");
-			Query query = sessionB.createQuery("select  sum(usigTime)  from ActivityLogMini where logDate between '20150101' and '20150131' Group by logDate, memberId ");
-//			query.setFirstResult(0);
-//			query.setMaxResults(5);
-			result = (List<Integer>) query.list();
+//			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini ");   //select  sum(usigTime), memberId  from ActivityLogMini where logDate between '20150101' and '20150131' and memberId =1 Group by logDate, memberId 
+			Query query = sessionB.createQuery("select  sum(usigTime), memberId  from ActivityLogMini where logDate between '20150101' and '20151231' Group by memberId order by sum(usigTime) desc  ");
+			query.setFirstResult(0);
+			query.setMaxResults(10);
+			result = (List<Object[]>) query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,15 +43,18 @@ public class TestDao {
 	}
 
 	public static void main(String[] args) {
-		List<Integer> list = getListByDate();
+		List<Object[]> list = getListByDate();
 		int result = getcount();
+		Object[] test4 = getListByDate().get(1);
+		int test5 = (Integer) test4[1];
+		System.out.println("test value " + test5 +" "+ test4[0]);
 		System.out
 				.println("++++++++++++++++++++++++++++ test browser ++++++++++++++++++++++++++++++++");
 		System.out.println("count list : " + list.size());
 		float i = 0;
-		for (Object te : list) {
-			System.out.println(te);
-			i = i + Integer.parseInt(te.toString());
+		for (Object[] te : list) {
+			System.out.println(te[0] + " "+ te[1]);
+			i = i + Integer.parseInt(te[0].toString());
 		}
 		float results = i / Float.parseFloat(list.size()+"");
 		System.out.println("\n average time is : "+ results);

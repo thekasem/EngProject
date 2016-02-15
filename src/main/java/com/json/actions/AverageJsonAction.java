@@ -30,6 +30,7 @@ public class AverageJsonAction extends ActionSupport {
 
 	public String execute() {
 		ContactController();
+		//List<String> test4 = Controller.nameTopUser(year);
 		dataaverage = Controller.getListAverageTimeOnSite(year);
 		return Action.SUCCESS;
 	}

@@ -1,35 +1,34 @@
+var user = [];
+var datauser1 = [];
+var datauser2 = [];
+var datauser3 = [];
+var datauser4 = [];
+var datauser5 = [];
+
+var sex = [];
+$('#top-module').val(moment().format("YYYY"));
+var years = $('#top-module').val();
 $(function() {
+	showTopUser();
+	$('#top-module').change(function() {
+		years = $('#top-module').val()
+		showTopUser();
+	});
+});
 
-	var user = [];
-
-	var datauser1 = [];
-	var datauser2 = [];
-	var datauser3 = [];
-	var datauser4 = [];
-	var datauser5 = [];
-	var datauser6 = [];
-	var datauser7 = [];
-	var datauser8 = [];
-	var datauser9 = [];
-	var datauser10 = [];
-
-	var sex = [];
-
+function showTopUser() {
 	$.ajax({
 		type : "GET",
 		url : 'TopUserJson.action',
-		data : {},
+		data : {
+			year : years
+		},
 		success : function(response) {
 			datauser1 = response.datauser1;
 			datauser2 = response.datauser2;
 			datauser3 = response.datauser3;
 			datauser4 = response.datauser4;
 			datauser5 = response.datauser5;
-			datauser6 = response.datauser6;
-			datauser7 = response.datauser7;
-			datauser8 = response.datauser8;
-			datauser9 = response.datauser9;
-			datauser10 = response.datauser10;
 
 			user = response.user;
 
@@ -40,13 +39,15 @@ $(function() {
 							type : 'column'
 						},
 						title : {
-							text : 'Data Monthly Users Top Users'
+							text : 'Year ' + years + ' Users Top Users'
 						},
 						subtitle : {
 							text : ''
 						},
 						xAxis : {
-							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ],
+							categories : [ 'Jan', 'Feb', 'Mar', 'Apr', 'May',
+									'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov',
+									'Dec' ],
 							tickmarkPlacement : 'on',
 							title : {
 								enabled : false
@@ -64,7 +65,7 @@ $(function() {
 						},
 						tooltip : {
 							shared : true,
-							valueSuffix : ' millions'
+							valueSuffix : ' ms.'
 						},
 						plotOptions : {
 							area : {
@@ -97,26 +98,6 @@ $(function() {
 							name : user[4],
 							data : datauser5,
 							stack : sex[0]
-						}, {
-							name : user[5],
-							data : datauser6,
-							stack : sex[1]
-						}, {
-							name : user[6],
-							data : datauser7,
-							stack : sex[0]
-						}, {
-							name : user[7],
-							data : datauser8,
-							stack : sex[0]
-						}, {
-							name : user[8],
-							data : datauser9,
-							stack : sex[0]
-						}, {
-							name : user[9],
-							data : datauser10,
-							stack : sex[0]
 						} ]
 					});
 		},
@@ -124,4 +105,4 @@ $(function() {
 			alert('Error: ' + e);
 		}
 	});
-});
+}

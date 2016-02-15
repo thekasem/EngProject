@@ -89,6 +89,7 @@ public class DashBoardAction extends ActionSupport {
 
 	public String topUser() {
 		ContactController();
+		listYears = userController.getListYear();
 		return TOPUSER;
 	}
 

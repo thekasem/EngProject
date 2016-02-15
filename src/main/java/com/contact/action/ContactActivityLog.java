@@ -43,5 +43,13 @@ public class ContactActivityLog implements IActivityLogController {
 	public List<Float> getListAverageTimeOnSite(String year) {
 		return activityLogController.getListAverageTimeOnSite(year);
 	}
+
+	public List<String> nameTopUser(String year) {
+		return activityLogController.nameTopUser(year);
+	}
+
+	public List<Float> getDataAverageTimeByUser(String year, int numberTop) {
+		return activityLogController.getDataAverageTimeByUser(year, numberTop);
+	}
 	
 }

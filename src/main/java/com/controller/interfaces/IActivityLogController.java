@@ -18,4 +18,8 @@ public interface IActivityLogController {
 	public int getCountByCriteriaSearch(ActivityLogMini criteriaSearch);
 	
 	public List<Float> getListAverageTimeOnSite(String year);
+	
+	public List<String> nameTopUser(String year);
+	
+	public List<Float> getDataAverageTimeByUser(String year, int numberTop);
 }

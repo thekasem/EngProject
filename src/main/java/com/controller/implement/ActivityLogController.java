@@ -6,11 +6,22 @@ import java.util.List;
 
 import com.controller.interfaces.IActivityLogController;
 import com.dao.interfaces.IActivityLogDao;
+import com.dao.interfaces.IMemberDao;
 import com.entity.bonanza.ActivityLogMini;
+import com.entity.bonanza.MemberMini;
 
 public class ActivityLogController implements IActivityLogController {
 
 	private IActivityLogDao activityLogDao;
+	private IMemberDao memberDao;
+
+	public IMemberDao getMemberDao() {
+		return memberDao;
+	}
+
+	public void setMemberDao(IMemberDao memberDao) {
+		this.memberDao = memberDao;
+	}
 
 	public IActivityLogDao getActivityLogDao() {
 		return activityLogDao;
@@ -74,8 +85,7 @@ public class ActivityLogController implements IActivityLogController {
 	public List<Float> getListAverageTimeOnSite(String year) {
 		List<Float> result = new ArrayList<Float>();
 		for (int i = 1; i <= 12; i++) {
-			result.add(calAverage(activityLogDao
-					.getListSumTimeUsingSite(yearAndMonth(year, i))));
+			result.add(calAverage(activityLogDao.getListSumTimeUsingSite(yearAndMonth(year, i), true, 0)));
 		}
 		return result;
 	}
@@ -97,6 +107,27 @@ public class ActivityLogController implements IActivityLogController {
 		}
 
 		return average;
+	}
+
+	public List<String> nameTopUser(String year) {
+		List<String> result = new ArrayList<String>();
+		List<Object[]> listTopUser = activityLogDao.getListTopUser(year);
+		for (Object[] ob : listTopUser) {
+			MemberMini memberMini = memberDao.getObjectById((Integer) ob[1]);
+			result.add(memberMini.getLoginName());
+		}
+
+		return result;
+	}
+
+	public List<Float> getDataAverageTimeByUser(String year, int numberTop) {
+		List<Float> result = new ArrayList<Float>();
+		Object[]  topUser = activityLogDao.getListTopUser(year).get(numberTop-1);
+		for (int i = 1; i <= 12; i++) {
+			result.add(calAverage(activityLogDao.getListSumTimeUsingSite(yearAndMonth(year, i), false,(Integer) topUser[1])));
+		}
+		
+		return result;
 	}
 
 }

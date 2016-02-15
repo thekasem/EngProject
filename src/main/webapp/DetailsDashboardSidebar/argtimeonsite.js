@@ -39,7 +39,8 @@ function showAverageTimeOnSite() {
 							}
 						},
 						title : {
-							text : 'Data Monthly Users Average Time On Site'
+							text : 'Data Year ' + years
+									+ ' Users Average Time On Site'
 						},
 						subtitle : {
 							text : ''

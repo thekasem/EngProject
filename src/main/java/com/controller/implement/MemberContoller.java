@@ -60,7 +60,9 @@ public class MemberContoller implements IMemberController {
 			float count = memberDao.getNewUser(yearAndMonth(year, i), false);
 			float count_1 = memberDao.getNewUser(
 					yearAndMonth((Integer.parseInt(year) - 1) + "", i), false);
-			result.add((count + count_1) / 2);
+			float countAllByYear = memberDao.getNewUser(year, true);
+			float average = (((count + count_1) / 2)/countAllByYear)*100;
+			result.add(average);
 		}
 		return result;
 	}

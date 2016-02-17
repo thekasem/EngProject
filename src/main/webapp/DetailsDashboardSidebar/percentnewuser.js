@@ -4,7 +4,7 @@ var monthName = [];
 var avgDate = [];
 var totalCurrentYear;
 var totalLastYear;
-$('#top-module').val(moment().format("2014"));
+$('#top-module').val(moment().format("YYYY"));
 var years = $('#top-module').val();
 $(function() {
 	showPercentNewUser();

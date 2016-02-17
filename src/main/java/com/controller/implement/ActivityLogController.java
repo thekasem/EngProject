@@ -49,8 +49,7 @@ public class ActivityLogController implements IActivityLogController {
 	private float calPercent(String name, Boolean searchBy, String year) {
 		float countBrowser = activityLogDao.getDataBrowsers(name, searchBy,
 				year);
-		float countAll = activityLogDao
-				.getCountByCriteriaSearch(new ActivityLogMini());
+		float countAll = activityLogDao.countAllByYear(year);
 		float result = (countBrowser / countAll) * 100;
 		return result;
 	}

@@ -18,5 +18,8 @@ public interface IMemberDao {
 	 public void save(MemberMini entity);
 	 
 	 public void delete(MemberMini entity);
+	 
+	 public float getNewUser(String date, boolean allAndSome);
 
+	 public List<String> getListYear();
 }

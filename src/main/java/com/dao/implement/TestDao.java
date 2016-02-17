@@ -9,16 +9,16 @@ import com.entity.HibernateUtil;
 
 public class TestDao {
 
-	public static List<Integer> getListByDate() {
+	public static List<String> getListByDate() {
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
-		List<Integer> result = null;
+		List<String> result = null;
 		try {
 //			Query query = sessionB.createQuery("SELECT DISTINCT browser from ActivityLogMini ");   //select  sum(usigTime), memberId  from ActivityLogMini where logDate between '20150101' and '20150131' and memberId =1 Group by logDate, memberId 
-			Query query = sessionB.createQuery("select  aumMarketValue  from AUMByBranchMini where aumDate between '20150104' and '20150104'");
+			Query query = sessionB.createQuery("select  createDate  from MemberMini where createDate between '20140101' and '20141231'");
 //			query.setFirstResult(0);
 //			query.setMaxResults(10);
-			result = (List<Integer>) query.list();
+			result = (List<String>) query.list();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,7 +43,7 @@ public class TestDao {
 	}
 
 	public static void main(String[] args) {
-		List<Integer> list = getListByDate();
+		List<String> list = getListByDate();
 		double result = getcount();
 		System.out
 				.println("++++++++++++++++++++++++++++ test browser ++++++++++++++++++++++++++++++++");

@@ -1,5 +1,18 @@
 package com.json.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.contact.action.ContactAUMByCIF;
+import com.contact.action.ContactBranchCustomer;
+import com.contact.action.ContactLogin;
+import com.contact.action.ContactMember;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -11,13 +24,28 @@ public class PercentNewUserJsonAction extends ActionSupport {
 	private static final long serialVersionUID = 7612478744414801297L;
 	private String[] month = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
 			"Aug", "Sep", "Oct", "Nov", "Dec" };
-	private int[] dataCurrentYear = { 1, 13, 6, 5, 25, 40, 12, 15, 17, 28, 29,
-			10 };
-	private int[] dataLastYear = { 3, 6, 7, 2, 32, 12, 45, 56, 75, 76, 24, 25 };
-	private float[] avgDate={2, 10, 6, 5, 23, 44, 10, 10, 10, 24, 26,
-			14};
+	private List<Float> dataCurrentYear = new ArrayList<Float>();
+	private List<Float> dataLastYear = new ArrayList<Float>();
+	private List<Float> avgDate = new ArrayList<Float>();
+	private float totalCurrentYear = 0.0f;
+	private float totalLastYear = 0.0f;
+	private String year = "";
+    private ContactMember controllerMember;
+	
+    public void ContactController() {
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"SpringBeans.xml");
+		controllerMember = (ContactMember) context.getBean("members");
+		
+	}
 
 	public String execute() {
+		ContactController();
+		dataCurrentYear = controllerMember.getListAverageNewUser(year);
+		dataLastYear = controllerMember.getListAverageNewUser((Integer.parseInt(year)-1)+"");
+		totalCurrentYear = controllerMember.countAllByYear(year);
+		totalLastYear = controllerMember.countAllByYear((Integer.parseInt(year)-1)+"");
+		avgDate = controllerMember.getAverage(year);
 		return Action.SUCCESS;
 	}
 
@@ -25,16 +53,33 @@ public class PercentNewUserJsonAction extends ActionSupport {
 		return month;
 	}
 
-	public int[] getDataCurrentYear() {
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public List<Float> getDataCurrentYear() {
 		return dataCurrentYear;
 	}
 
-	public int[] getDataLastYear() {
+	public List<Float> getDataLastYear() {
 		return dataLastYear;
 	}
 
-	public float[] getAvgDate() {
+	public List<Float> getAvgDate() {
 		return avgDate;
 	}
 
+	public float getTotalCurrentYear() {
+		return totalCurrentYear;
+	}
+
+	public float getTotalLastYear() {
+		return totalLastYear;
+	}
+
+	
 }

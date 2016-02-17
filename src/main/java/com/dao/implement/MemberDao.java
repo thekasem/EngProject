@@ -9,7 +9,7 @@ import com.dao.interfaces.IMemberDao;
 import com.entity.HibernateUtil;
 import com.entity.bonanza.MemberMini;
 
-public class MemberDao implements IMemberDao{
+public class MemberDao implements IMemberDao {
 
 	public String createCriteriaSearch(MemberMini obj, boolean isOrdering,
 			boolean isAscending, boolean isCount) {
@@ -18,24 +18,27 @@ public class MemberDao implements IMemberDao{
 		try {
 			if (isCount) {
 				command += "SELECT COUNT(*) FROM MemberMini ";
-			}else {
+			} else {
 				command += "FROM MemberMini";
 			}
 			if (obj.getMemberId() != 0) {
 				if (where) {
-					command += "WHERE memberId = "+ obj.getMemberId();
-					where= false;
-				}
-			}
-			if (obj.getFirstNameEn() != null && obj.getFirstNameEn().trim().equals("")) {
-				if (where) {
-					command += "WHERE UPPER(firstNameEn) LIKE UPPER('%"+obj.getFirstNameEn().toUpperCase().trim()+"%')";
+					command += "WHERE memberId = " + obj.getMemberId();
 					where = false;
-				}else {
-					command += "AND UPPER(firstNameEn) LIKE UPPER('%"+obj.getFirstNameEn().toUpperCase().trim()+"%')";
 				}
 			}
-			
+			if (obj.getFirstNameEn() != null
+					&& obj.getFirstNameEn().trim().equals("")) {
+				if (where) {
+					command += "WHERE UPPER(firstNameEn) LIKE UPPER('%"
+							+ obj.getFirstNameEn().toUpperCase().trim() + "%')";
+					where = false;
+				} else {
+					command += "AND UPPER(firstNameEn) LIKE UPPER('%"
+							+ obj.getFirstNameEn().toUpperCase().trim() + "%')";
+				}
+			}
+
 			if (!isCount) {
 				if (isOrdering) {
 					if (isAscending)
@@ -57,7 +60,8 @@ public class MemberDao implements IMemberDao{
 		sessionB.beginTransaction();
 		List<MemberMini> result = null;
 		try {
-			Query query = sessionB.createQuery(createCriteriaSearch(criteriaSearch, isOrdering, isAscending, false));
+			Query query = sessionB.createQuery(createCriteriaSearch(
+					criteriaSearch, isOrdering, isAscending, false));
 			query.setFirstResult(firstResult);
 			query.setMaxResults(maxResult);
 			result = query.list();
@@ -73,7 +77,8 @@ public class MemberDao implements IMemberDao{
 		Session sessionB = HibernateUtil.getSessionFactory().openSession();
 		sessionB.beginTransaction();
 		try {
-			Query query = sessionB.createQuery(createCriteriaSearch(criteriaSearch, false, false, true));
+			Query query = sessionB.createQuery(createCriteriaSearch(
+					criteriaSearch, false, false, true));
 			result = Integer.parseInt(query.uniqueResult().toString());
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -103,6 +108,46 @@ public class MemberDao implements IMemberDao{
 		sessionB.beginTransaction();
 		sessionB.delete(entity);
 		sessionB.getTransaction().commit();
+	}
+
+	private String commandQuery(String date, boolean allAndSome) {
+		String command = "";
+		if (allAndSome) {
+			command = "select  count(createDate)  from MemberMini where createDate between '"
+					+ date + "0101' and '" + date + "1231'";
+		} else {
+			command = "select  count(createDate)  from MemberMini where createDate between '"
+					+ date + "01' and '" + date + "31'";
+		}
+		return command;
+	}
+
+	public float getNewUser(String date, boolean allAndSome) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		float result = 0.0f;
+		try {
+			Query query = sessionB.createQuery(commandQuery(date, allAndSome));
+			result = Float.parseFloat(query.uniqueResult().toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
+	public List<String> getListYear() {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		List<String> result = null;
+		try {
+			Query query = sessionB.createSQLQuery("select distinct(SUBSTR(createdate,1,4))  from cm_member");
+			result = query.list();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
 	}
 
 }

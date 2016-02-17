@@ -342,4 +342,21 @@ public class ActivityLogDao implements IActivityLogDao {
 		return result;
 	}
 
+	public int countAllByYear(String year) {
+		int result = 0;
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		try {
+			Query query = sessionB.createQuery("SELECT  COUNT(browser) from ActivityLogMini where logDate between '"
+					+ year
+					+ "0101' and '"
+					+ year + "1231' ");
+			result = Integer.parseInt(query.uniqueResult().toString());
+		} catch (HibernateException ex) {
+			ex.printStackTrace();
+		}
+		sessionB.getTransaction().commit();
+		return result;
+	}
+
 }

@@ -25,24 +25,28 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="portHoldingBySubAccountArchiveCotroller" ref="portholdingbysubaccountarchivecontroller" />
 	</bean>
 	<bean id="activitylog" class="com.contact.action.ContactActivityLog">
-	   <property name="activityLogController" ref="activitylogcontroller" />
+		<property name="activityLogController" ref="activitylogcontroller" />
 	</bean>
 	<bean id="applicationlog" class="com.contact.action.ContactApplicationLog">
-	   <property name="applicationLogController" ref="applicationlogcontroller" />
+		<property name="applicationLogController" ref="applicationlogcontroller" />
 	</bean>
 	<bean id="aumByCIF" class="com.contact.action.ContactAUMByCIF">
-	   <property name="aumByCIFController" ref="aumbycifcontroller" />
+		<property name="aumByCIFController" ref="aumbycifcontroller" />
 	</bean>
 	<bean id="aumByBranch" class="com.contact.action.ContactAUMByBranch">
-	   <property name="aumByBranchController" ref="aumbybranchcontroller" />
+		<property name="aumByBranchController" ref="aumbybranchcontroller" />
 	</bean>
 	<bean id="portHoldingBySubAccount" class="com.contact.action.ContactPortHoldingBySubAccount">
-	   <property name="portHoldingBySubAccountController" ref="portholdingbysubaccountcontroller" />
+		<property name="portHoldingBySubAccountController" ref="portholdingbysubaccountcontroller" />
 	</bean>
 	<bean id="branchcustomers" class="com.contact.action.ContactBranchCustomer">
 		<property name="branchCustomerController" ref="branchcustomercontroller"></property>
 	</bean>
+	<bean id="members" class="com.contact.action.ContactMember" >
+	 	<property name="memberController" ref="membercontroller"></property>
+	</bean>
 	
+
 	<!-- inject to Controller -->
 	<bean id="logincontroller" class="com.controller.implement.LoginController">
 		<property name="loginDao" ref="logindao" />
@@ -69,7 +73,7 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 		<property name="portHoldingBySubAccountArchiveDao" ref="portholdingbysubaccountarchivedao" />
 		<property name="portHoldingBySubAccountDao" ref="portholdingbysubaccountdao" />
 	</bean>
-	
+
 	<bean id="activitylogcontroller" class="com.controller.implement.ActivityLogController">
 		<property name="activityLogDao" ref="activitylogdao" />
 		<property name="memberDao" ref="member" />
@@ -89,6 +93,9 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 	</bean>
 	<bean id="branchcustomercontroller" class="com.controller.implement.BranchCustomerController">
 		<property name="branchCustomerDao" ref="branchcustomer"></property>
+	</bean>
+	<bean id="membercontroller" class="com.controller.implement.MemberContoller">
+		<property name="memberDao" ref="member" />
 	</bean>
 
 	<!-- inject to Dao -->

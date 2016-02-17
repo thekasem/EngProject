@@ -34,4 +34,6 @@ public interface IActivityLogDao {
 	 
 	 public List<Object[]> getListTopUser(String year);
 	 
+	 public int countAllByYear(String year);
+	 
  }

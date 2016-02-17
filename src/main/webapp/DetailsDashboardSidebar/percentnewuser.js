@@ -33,7 +33,7 @@ function showPercentNewUser() {
 							.highcharts(
 									{
 										title : {
-											text : 'Data Monthly Percent New Users'
+											text : 'Year '+years+' Percent New Users'
 										},
 										xAxis : {
 											categories : monthName

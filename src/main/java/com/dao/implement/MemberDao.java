@@ -2,15 +2,16 @@ package com.dao.implement;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 
 import com.dao.interfaces.IMemberDao;
 import com.entity.HibernateUtil;
 import com.entity.bonanza.MemberMini;
 
 public class MemberDao implements IMemberDao {
-
 	public String createCriteriaSearch(MemberMini obj, boolean isOrdering,
 			boolean isAscending, boolean isCount) {
 		boolean where = true;
@@ -148,6 +149,19 @@ public class MemberDao implements IMemberDao {
 		}
 		sessionB.getTransaction().commit();
 		return result;
+	}
+
+	public MemberMini showProfile(String loginname) {
+		Session sessionB = HibernateUtil.getSessionFactory().openSession();
+		sessionB.beginTransaction();
+		Criteria criteria = sessionB.createCriteria(MemberMini.class);
+		criteria.add(Restrictions.eq("loginName",  loginname));
+		
+		MemberMini memberMini = (MemberMini) criteria.list().get(0);
+
+		sessionB.getTransaction().commit();
+
+		return memberMini;
 	}
 
 }

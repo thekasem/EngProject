@@ -19,6 +19,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 	<s:url action="login_logout" var="logout"></s:url>
 	<s:url action="login_homeFirst" var="home"></s:url>
+	<s:url action="profile" var="profile"></s:url>
 	<s:url action="activityArchive_list" var="listactivity"></s:url>
 	<s:url action="applicationArchive_list" var="listapplication"></s:url>
 	<s:url action="aumByCIFArchive_list" var="listaumbycif"></s:url>

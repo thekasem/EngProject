@@ -2,6 +2,8 @@ package com.controller.interfaces;
 
 import java.util.List;
 
+import com.entity.bonanza.MemberMini;
+
 public interface IMemberController {
 	
 	public int countAllByYear(String year);
@@ -12,4 +14,6 @@ public interface IMemberController {
 	
 	public List<Float> getAverage(String year);
 	
-	}
+	public MemberMini showProfile(String loginname);
+	
+}

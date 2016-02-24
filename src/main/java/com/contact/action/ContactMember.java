@@ -3,6 +3,7 @@ package com.contact.action;
 import java.util.List;
 
 import com.controller.interfaces.IMemberController;
+import com.entity.bonanza.MemberMini;
 
 
 public class ContactMember implements IMemberController {
@@ -31,6 +32,10 @@ public class ContactMember implements IMemberController {
 
 	public List<Float> getAverage(String year) {
 		return memberController.getAverage(year);
+	}
+
+	public MemberMini showProfile(String loginname) {
+		return memberController.showProfile(loginname);
 	}
 
 }

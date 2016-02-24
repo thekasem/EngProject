@@ -2,7 +2,6 @@ package com.entity.bonanza;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -71,6 +70,12 @@ public class MemberMini {
 	@Column(name = "LASTNAMEEN")
 	private String lastNameEn;
 
+	@Column(name = "MOBILE")
+	private String mobile;
+	
+	@Column(name = "EMAIL")
+	private String email;
+	
 	public int getMemberId() {
 		return memberId;
 	}
@@ -230,4 +235,21 @@ public class MemberMini {
 	public void setLastNameEn(String lastNameEn) {
 		this.lastNameEn = lastNameEn;
 	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 }

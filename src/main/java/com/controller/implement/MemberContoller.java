@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.controller.interfaces.IMemberController;
 import com.dao.interfaces.IMemberDao;
+import com.entity.bonanza.MemberMini;
 
 public class MemberContoller implements IMemberController {
 
@@ -65,6 +66,10 @@ public class MemberContoller implements IMemberController {
 			result.add(average);
 		}
 		return result;
+	}
+
+	public MemberMini showProfile(String loginname) {
+		return memberDao.showProfile(loginname);
 	}
 
 }

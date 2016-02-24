@@ -14,6 +14,10 @@
 			<result name="fail">/index.jsp</result>
 			<result name="logout">/index.jsp</result>
 		</action>
+		
+		<action name="profile_*" class="com.actions.ProfileAction" method="{1}">
+			<result name="profile">/pages/Menu/profile.jsp</result>
+		</action>
 
 		<action name="activityArchive_*" class="com.actions.ActivityArchiveAction"
 			method="{1}">

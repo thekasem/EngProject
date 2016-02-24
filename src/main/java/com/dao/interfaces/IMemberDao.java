@@ -22,4 +22,6 @@ public interface IMemberDao {
 	 public float getNewUser(String date, boolean allAndSome);
 
 	 public List<String> getListYear();
+	 
+	 public MemberMini showProfile(String loginname);
 }

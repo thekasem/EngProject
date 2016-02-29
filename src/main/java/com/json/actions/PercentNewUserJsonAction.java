@@ -3,15 +3,9 @@ package com.json.actions;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.ServletActionContext;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.contact.action.ContactAUMByCIF;
-import com.contact.action.ContactBranchCustomer;
-import com.contact.action.ContactLogin;
 import com.contact.action.ContactMember;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
@@ -45,7 +39,7 @@ public class PercentNewUserJsonAction extends ActionSupport {
 		dataLastYear = controllerMember.getListAverageNewUser((Integer.parseInt(year)-1)+"");
 		totalCurrentYear = controllerMember.countAllByYear(year);
 		totalLastYear = controllerMember.countAllByYear((Integer.parseInt(year)-1)+"");
-		avgDate = controllerMember.getAverage(year);
+		avgDate = controllerMember.getAverage(dataCurrentYear, dataLastYear);
 		return Action.SUCCESS;
 	}
 

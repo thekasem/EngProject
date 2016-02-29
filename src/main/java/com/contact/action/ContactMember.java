@@ -30,12 +30,12 @@ public class ContactMember implements IMemberController {
 		return memberController.getListYear();
 	}
 
-	public List<Float> getAverage(String year) {
-		return memberController.getAverage(year);
-	}
-
 	public MemberMini showProfile(String loginname) {
 		return memberController.showProfile(loginname);
+	}
+
+	public List<Float> getAverage(List<Float> datacurrentyear, List<Float> datalastyear) {
+		return memberController.getAverage(datacurrentyear, datalastyear);
 	}
 
 }

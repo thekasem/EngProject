@@ -55,14 +55,10 @@ public class MemberContoller implements IMemberController {
 		return memberDao.getListYear();
 	}
 
-	public List<Float> getAverage(String year) {
+	public List<Float> getAverage(List<Float> datacurrentyear, List<Float> datalastyear) {
 		List<Float> result = new ArrayList<Float>();
 		for (int i = 1; i <= 12; i++) {
-			float count = memberDao.getNewUser(yearAndMonth(year, i), false);
-			float count_1 = memberDao.getNewUser(
-					yearAndMonth((Integer.parseInt(year) - 1) + "", i), false);
-			float countAllByYear = memberDao.getNewUser(year, true);
-			float average = (((count + count_1) / 2)/countAllByYear)*100;
+			float average = ((datacurrentyear.get(i-1) + datalastyear.get(i-1)) / 2);
 			result.add(average);
 		}
 		return result;

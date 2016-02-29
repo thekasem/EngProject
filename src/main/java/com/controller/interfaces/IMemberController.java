@@ -12,7 +12,7 @@ public interface IMemberController {
 	
 	public List<String> getListYear();
 	
-	public List<Float> getAverage(String year);
+	public List<Float> getAverage(List<Float> datacurrentyear, List<Float> datalastyear);
 	
 	public MemberMini showProfile(String loginname);
 	
